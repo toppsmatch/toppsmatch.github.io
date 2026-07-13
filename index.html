@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ToppsMatch | Find Your Perfect Pack</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="reveal" class="reveal hidden">
+  <div id="confettiWrap"></div>
+  <div class="reveal-inner">
+    <div class="reveal-title">It's a Match! 💘</div>
+    <img id="revealImg" class="reveal-img hidden" alt="">
+    <div class="reveal-sub" id="revealName"></div>
+    <div class="reveal-pct" id="revealPct"></div>
+    <button class="btn-start" onclick="meetMatch()">Meet Your Match →</button>
+  </div>
+</div>
+<div class="app">
+
+  <div class="header">
+    <div class="logo-row">
+      <span class="logo-badge">Topps</span>
+      <span class="logo-sep">×</span>
+      <span class="logo-fan">Fanatics Collectibles</span>
+    </div>
+    <h1>Topps<em>Match</em></h1>
+    <p class="header-sub">Six questions. Two minutes. Your perfect pull.</p>
+  </div>
+
+  <!-- INTRO -->
+  <div class="intro" id="intro">
+    <div class="intro-card">
+      <div class="intro-emoji">🃏</div>
+      <h2>Every collector has a type.</h2>
+      <p>Baseball, basketball, football, soccer, F1, UFC, Star Wars, Marvel, Disney — there's a Topps product built exactly for you. Rank your interests and we'll find your perfect match.<br><br>Takes about 90 seconds.</p>
+      <div class="brand-pills">
+        <span class="pill">Baseball</span><span class="pill">NFL</span><span class="pill">NBA</span>
+        <span class="pill">Soccer</span><span class="pill">F1</span><span class="pill">UFC</span>
+        <span class="pill">WWE</span><span class="pill">Star Wars</span><span class="pill">Marvel</span>
+        <span class="pill">Disney</span><span class="pill">VeeFriends</span><span class="pill">GPK</span>
+      </div>
+    </div>
+    <button class="btn-start" id="btnStart" onclick="startQuiz()" disabled>Find My Match →</button>
+  </div>
+
+  <!-- QUIZ -->
+  <div id="quiz" class="hidden">
+    <div class="prog-wrap">
+      <div class="prog-meta">
+        <span id="qCounter">Question 1 of 6</span>
+        <span id="qPct">0%</span>
+      </div>
+      <div class="prog-bar"><div class="prog-fill" id="progFill" style="width:0%"></div></div>
+    </div>
+    <div class="q-card" id="qCard"></div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results" class="results hidden">
+    <div class="results-hdr">
+      <div class="ey">Your Results</div>
+      <h2>You've Got Matches 🎯</h2>
+      <p>Ranked by how well each brand fits your collector profile.</p>
+    </div>
+    <div id="resultsContent"></div>
+    <button class="btn-restart" onclick="restart()">↺ Retake the Quiz</button>
+  </div>
+
+</div>
+<script type="module" src="app.js"></script>
+</body>
+</html>
