@@ -1,5 +1,5 @@
 import { BRANDS, QUESTIONS } from "./data.js";
-import { score, topMatches, wildcard } from "./scoring.js";
+import { score, topMatches, wildcard, maxScore } from "./scoring.js";
 
 // One tally submission per page load, fire-and-forget; never blocks the reveal.
 let submitted = false;
@@ -121,7 +121,7 @@ function showResults() {
 
   const sc = score(answers, BRANDS);
   const sports = answers.sport || [];
-  const top = topMatches(sc, sports, BRANDS, 3);
+  const top = topMatches(sc, sports, BRANDS, 3, maxScore(answers));
   const wcKey = wildcard(sc, top.map(t => t.key), sports, BRANDS);
   lastResults = { top, wcKey };
   submitResult(top[0].key);

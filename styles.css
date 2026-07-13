@@ -142,5 +142,7 @@ h1 em{font-style:normal;color:var(--red)}
 
 /* PRODUCT IMAGES (downloaded by sync into site/img/, optional per brand) */
 .match-id{display:flex;gap:12px;align-items:flex-start;min-width:0}
-.match-img{width:56px;height:56px;object-fit:cover;border-radius:10px;border:1px solid var(--border);flex-shrink:0;background:#101010}
-.reveal-img{display:block;width:120px;height:120px;object-fit:cover;border-radius:14px;border:2px solid var(--border);margin:0 auto 16px;background:#101010}
+/* Box images are shot on white, so sit them on a soft light slab (not pure white on
+   near-black) and use contain so the whole box shows and its white edge blends in. */
+.match-img{width:58px;height:58px;object-fit:contain;padding:5px;border-radius:10px;border:1px solid var(--border);flex-shrink:0;background:linear-gradient(160deg,#f4f5f7,#e4e7ec)}
+.reveal-img{display:block;width:124px;height:124px;object-fit:contain;padding:9px;border-radius:14px;border:1px solid var(--border);margin:0 auto 16px;background:linear-gradient(160deg,#f4f5f7,#e4e7ec)}
