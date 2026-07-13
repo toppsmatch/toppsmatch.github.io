@@ -146,3 +146,26 @@ h1 em{font-style:normal;color:var(--red)}
    near-black) and use contain so the whole box shows and its white edge blends in. */
 .match-img{width:58px;height:58px;object-fit:contain;padding:5px;border-radius:10px;border:1px solid var(--border);flex-shrink:0;background:linear-gradient(160deg,#f4f5f7,#e4e7ec)}
 .reveal-img{display:block;width:124px;height:124px;object-fit:contain;padding:9px;border-radius:14px;border:1px solid var(--border);margin:0 auto 16px;background:linear-gradient(160deg,#f4f5f7,#e4e7ec)}
+
+/* SWIPE DECK (Tinder-style results) */
+#resultsContent{position:relative;min-height:500px}
+.swipe-peek{position:absolute;top:16px;left:50%;transform:translateX(-50%) scale(.94);width:100%;max-width:360px;height:440px;background:var(--card);border:1px solid var(--border);border-radius:20px;opacity:.45}
+.swipe-card{position:relative;margin:0 auto;width:100%;max-width:360px;background:var(--card);border:1px solid var(--border);border-radius:20px;padding:22px 22px 18px;box-shadow:0 12px 34px rgba(0,0,0,.4);will-change:transform;touch-action:pan-y;user-select:none}
+.sc-label{font-size:12px;font-weight:800;letter-spacing:1px;color:var(--red);text-transform:uppercase;margin-bottom:12px;text-align:center}
+.sc-img{display:block;width:150px;height:150px;object-fit:contain;padding:10px;margin:0 auto 14px;border-radius:16px;border:1px solid var(--border);background:linear-gradient(160deg,#f4f5f7,#e4e7ec)}
+.sc-img-none{display:flex;align-items:center;justify-content:center;font-size:54px;background:#1a1a1a}
+.sc-name{font-size:22px;font-weight:800;text-align:center;margin-bottom:4px}
+.sc-tier{font-size:12px;color:var(--muted);text-align:center;margin-bottom:10px}
+.sc-pct{font-size:15px;font-weight:800;color:var(--gold);text-align:center;margin-bottom:14px}
+.sc-pct-wild{color:var(--muted);font-weight:600}
+.sc-detail{margin-top:12px;border-top:1px solid var(--border);padding-top:12px}
+.swipe-actions{display:flex;gap:10px;justify-content:center;margin-top:18px}
+.sc-btn{border:none;border-radius:12px;padding:13px 18px;font-weight:800;font-size:14px;font-family:inherit;cursor:pointer}
+.sc-nope{background:var(--card);border:1.5px solid var(--border);color:var(--muted);flex:0 0 auto;width:56px}
+.sc-nope:disabled{opacity:.3;cursor:default}
+.sc-like{background:var(--red);color:#fff;flex:1}
+.sc-back,.sc-next{background:var(--card);border:1.5px solid var(--border);color:var(--text);flex:1}
+.swipe-hint{text-align:center;font-size:11px;color:var(--muted);margin-top:14px}
+.swipe-card.hint-like{border-color:var(--red);box-shadow:0 12px 34px rgba(227,25,55,.35)}
+.swipe-card.hint-nope{border-color:var(--muted)}
+.swipe-end{text-align:center;padding:70px 20px;color:var(--muted)}

@@ -114,7 +114,10 @@ function goBack(){ if(qIdx>0){ qIdx--; renderQ(); } }
 function catClass(cat){ return cat==="ent"?"cat-ent":cat==="nonsport"?"cat-nonsport":"cat-sport"; }
 
 let lastResults = null;   // { top, wcKey }
-let rebound = false;
+// Swipe deck state (Tinder-style results).
+let deck = [];            // [{ key, pct, label }]
+let deckIdx = 0;
+let expanded = false;
 
 function showResults() {
   document.getElementById("quiz").classList.add("hidden");
@@ -125,7 +128,6 @@ function showResults() {
   const wcKey = wildcard(sc, top.map(t => t.key), sports, BRANDS);
   lastResults = { top, wcKey };
   submitResult(top[0].key);
-  rebound = false;
 
   // Dating-app reveal moment first, results behind it.
   const b = BRANDS[top[0].key];
@@ -157,85 +159,123 @@ function meetMatch() {
   document.documentElement.style.overflow = "";
   document.getElementById("reveal").classList.add("hidden");
   document.getElementById("results").classList.remove("hidden");
-  renderResults();
+  buildDeck();
+  renderCard();
 }
 
-function toggleRebound() {
-  if (!lastResults) return;
-  rebound = !rebound;
-  renderResults();
-}
-
-function renderResults() {
+// Build the swipe deck: your ranked matches, then the wildcard as a final card.
+function buildDeck() {
   const { top, wcKey } = lastResults;
-  // Rebound swaps your #1 and #2 match.
-  const order = rebound && top.length > 1 ? [top[1], top[0], ...top.slice(2)] : top;
+  const labels = ["⭐ Your Perfect Pull", "💔 The Rebound", "✨ Also Sparked"];
+  deck = top.map((m, i) => ({ key: m.key, pct: m.pct, label: labels[i] || "Another Match" }));
+  if (wcKey && BRANDS[wcKey]) deck.push({ key: wcKey, pct: null, label: "🃏 Wildcard" });
+  deckIdx = 0;
+  expanded = false;
+}
 
-  let html = "";
-  order.forEach((m, i) => {
-    const b = BRANDS[m.key];
-    if (!b) return;
-    const isTop = i === 0;
-    const banner = rebound ? "💔 The Rebound" : "⭐ Your Perfect Pull";
-    const profile =
-      (b.lookingFor ? `<div class="profile-line"><strong>Looking for:</strong> ${esc(b.lookingFor)}</div>` : "") +
-      (b.redFlag ? `<div class="profile-line"><strong>Red flag:</strong> ${esc(b.redFlag)}</div>` : "");
-    html += `
-    <div class="match${isTop ? " top" : ""}">
-      ${isTop ? `<div class="match-banner">${banner}</div>` : ""}
-      <div class="match-body">
-        <div class="match-row">
-          <div class="match-id">
-            ${b.img ? `<img class="match-img" src="${esc(b.img)}" alt="${esc(b.name)}" loading="lazy">` : ""}
-            <div>
-              <div class="match-name">${esc(b.name)}</div>
-              <div class="match-tier">${esc(b.tier)}</div>
-              <span class="match-cat ${catClass(b.cat)}">${esc(b.catLabel)}</span>
-            </div>
-          </div>
-          <div class="score-col">
-            <div class="score-num">${m.pct}%</div>
-            <div class="score-lbl">match</div>
-          </div>
-        </div>
-        <div class="bar-wrap"><div class="bar" style="width:${m.pct}%"></div></div>
-        <div class="match-desc">${esc(b.desc)}</div>
-        ${profile}
-        <div class="tags">
-          <span class="tag price">📦 ${esc(b.price)}</span>
-          ${(b.tags || []).map(t => `<span class="tag">${esc(t)}</span>`).join("")}
-        </div>
+function cardInner(card) {
+  const b = BRANDS[card.key];
+  const img = b.img
+    ? `<img class="sc-img" src="${esc(b.img)}" alt="${esc(b.name)}" loading="lazy">`
+    : `<div class="sc-img sc-img-none">🃏</div>`;
+  const pct = card.pct != null
+    ? `<div class="sc-pct">${card.pct}% match</div>`
+    : `<div class="sc-pct sc-pct-wild">outside your usual lane</div>`;
+  const teaser =
+    (b.lookingFor ? `<div class="profile-line"><strong>Looking for:</strong> ${esc(b.lookingFor)}</div>` : "") +
+    (b.redFlag ? `<div class="profile-line"><strong>Red flag:</strong> ${esc(b.redFlag)}</div>` : "");
+  const detail = expanded ? `
+    <div class="sc-detail">
+      <div class="match-desc">${esc(b.desc)}</div>
+      <div class="tags">
+        <span class="tag price">📦 ${esc(b.price)}</span>
+        ${(b.tags || []).map(t => `<span class="tag">${esc(t)}</span>`).join("")}
       </div>
-      ${isTop && top.length > 1 ? `<div class="match-body" style="padding-top:0">
-        <button class="btn-rebound" onclick="toggleRebound()">${rebound ? "Take me back 💘" : "Not feeling it? Meet your rebound 💔"}</button>
-      </div>` : ""}
-    </div>`;
-  });
+    </div>` : "";
+  return `
+    <div class="sc-label">${card.label}</div>
+    ${img}
+    <div class="sc-name">${esc(b.name)}</div>
+    <div class="sc-tier">${esc(b.tier)} · <span class="match-cat ${catClass(b.cat)}">${esc(b.catLabel)}</span></div>
+    ${pct}
+    ${teaser}
+    ${detail}`;
+}
 
-  if (wcKey && BRANDS[wcKey]) {
-    const wb = BRANDS[wcKey];
-    html += `
-    <div class="section-lbl">Venture Outside Your Comfort Zone</div>
-    <div class="wildcard">
-      <div class="wc-lbl">🃏 Wildcard Pick</div>
-      <div class="wc-text">You didn't ask for this — but hear us out. <strong>${esc(wb.name)}</strong> (${esc(wb.price)}) is outside your usual lane. ${esc((wb.desc || "").split(".")[0])}.</div>
-    </div>`;
+function renderCard() {
+  const host = document.getElementById("resultsContent");
+  if (deckIdx >= deck.length) {
+    host.innerHTML = `<div class="swipe-end"><div class="sc-label">That's your lineup 🎴</div><p>Those are your top matches. Run it back below anytime.</p></div>`;
+    return;
   }
+  const card = deck[deckIdx];
+  const more = deckIdx < deck.length - 1;
+  host.innerHTML = `
+    ${more ? `<div class="swipe-peek"></div>` : ""}
+    <div class="swipe-card${expanded ? " expanded" : ""}" id="swipeCard">
+      ${cardInner(card)}
+      <div class="swipe-actions">
+        ${expanded
+          ? `<button class="sc-btn sc-back" id="scBack">← Back</button>${more ? `<button class="sc-btn sc-next" id="scNext">See next ✕</button>` : ""}`
+          : `<button class="sc-btn sc-nope" id="scNope"${more ? "" : " disabled"}>✕</button><button class="sc-btn sc-like" id="scLike">♥ Learn more</button>`}
+      </div>
+      ${!expanded ? `<div class="swipe-hint">${more ? "Swipe right to learn more · left for your next best" : "Swipe right to learn more"}</div>` : ""}
+    </div>`;
+  wireCard();
+}
 
-  document.getElementById("resultsContent").innerHTML = html;
+function acceptCard() { expanded = true; renderCard(); }
+function collapseCard() { expanded = false; renderCard(); }
+function advanceCard() { deckIdx++; expanded = false; renderCard(); }
 
-  setTimeout(() => {
-    document.querySelectorAll(".bar").forEach(el => {
-      const w = el.style.width; el.style.width = "0%";
-      setTimeout(() => el.style.width = w, 80);
-    });
-  }, 150);
+function flingNext(el) {
+  el.style.transition = "transform .3s ease, opacity .3s ease";
+  el.style.transform = "translateX(-140%) rotate(-18deg)";
+  el.style.opacity = "0";
+  setTimeout(advanceCard, 260);
+}
+
+function wireCard() {
+  const el = document.getElementById("swipeCard");
+  if (!el) return;
+  const more = deckIdx < deck.length - 1;
+  document.getElementById("scLike")?.addEventListener("click", acceptCard);
+  document.getElementById("scBack")?.addEventListener("click", collapseCard);
+  document.getElementById("scNope")?.addEventListener("click", () => { if (more) flingNext(el); });
+  document.getElementById("scNext")?.addEventListener("click", () => { if (more) flingNext(el); });
+  if (expanded) return; // no dragging once expanded
+
+  let startX = 0, dx = 0, dragging = false;
+  el.addEventListener("pointerdown", e => {
+    if (e.target.closest(".sc-btn")) return; // let buttons click normally
+    dragging = true; startX = e.clientX; dx = 0;
+    try { el.setPointerCapture(e.pointerId); } catch {}
+    el.style.transition = "none";
+  });
+  el.addEventListener("pointermove", e => {
+    if (!dragging) return;
+    dx = e.clientX - startX;
+    el.style.transform = `translateX(${dx}px) rotate(${dx / 22}deg)`;
+    el.classList.toggle("hint-like", dx > 40);
+    el.classList.toggle("hint-nope", dx < -40 && more);
+  });
+  const end = () => {
+    if (!dragging) return;
+    dragging = false;
+    el.style.transition = "transform .3s ease, opacity .3s ease";
+    el.classList.remove("hint-like", "hint-nope");
+    if (dx > 90) { el.style.transform = ""; acceptCard(); }
+    else if (dx < -90 && more) { flingNext(el); }
+    else { el.style.transform = ""; }
+  };
+  el.addEventListener("pointerup", end);
+  el.addEventListener("pointercancel", end);
 }
 
 function restart(){
   document.getElementById("reveal").classList.add("hidden");
   document.documentElement.style.overflow = "";
-  rebound = false; lastResults = null;
+  lastResults = null; deck = []; deckIdx = 0; expanded = false;
   qIdx = 0;
   Object.keys(answers).forEach(k=>delete answers[k]);
   document.getElementById("results").classList.add("hidden");
@@ -247,4 +287,4 @@ function restart(){
 document.getElementById("btnStart").disabled = false;
 
 // Inline onclick handlers in the HTML resolve against window.
-Object.assign(window, { startQuiz, pick, goNext, goBack, restart, meetMatch, toggleRebound });
+Object.assign(window, { startQuiz, pick, goNext, goBack, restart, meetMatch });
