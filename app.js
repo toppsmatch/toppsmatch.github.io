@@ -210,16 +210,25 @@ function renderCard() {
   }
   const card = deck[deckIdx];
   const more = deckIdx < deck.length - 1;
+  const waiting = deck.length - deckIdx - 1;
   host.innerHTML = `
-    ${more ? `<div class="swipe-peek"></div>` : ""}
-    <div class="swipe-card${expanded ? " expanded" : ""}" id="swipeCard">
-      ${cardInner(card)}
-      <div class="swipe-actions">
-        ${expanded
-          ? `<button class="sc-btn sc-back" id="scBack">← Back</button>${more ? `<button class="sc-btn sc-next" id="scNext">See next ✕</button>` : ""}`
-          : `<button class="sc-btn sc-nope" id="scNope"${more ? "" : " disabled"}>✕</button><button class="sc-btn sc-like" id="scLike">♥ Learn more</button>`}
+    <div class="deck">
+      ${more ? `<div class="swipe-peek"><span>${waiting} more match${waiting > 1 ? "es" : ""} waiting</span></div>` : ""}
+      <div class="swipe-card${expanded ? " expanded" : ""}" id="swipeCard">
+        ${!expanded ? `<div class="stamp stamp-like">LEARN MORE ♥</div><div class="stamp stamp-nope">✕ NEXT BEST</div>` : ""}
+        ${cardInner(card)}
+        <div class="swipe-actions">
+          ${expanded
+            ? `<button class="sc-btn sc-back" id="scBack">← Back</button>${more ? `<button class="sc-btn sc-next" id="scNext">Next best ✕</button>` : ""}`
+            : `
+          <div class="act"><button class="act-btn act-nope" id="scNope" aria-label="Next best match"${more ? "" : " disabled"}>✕</button><span class="act-lbl lbl-nope">Next best</span></div>
+          <div class="act"><button class="act-btn act-like" id="scLike" aria-label="Learn more">♥</button><span class="act-lbl lbl-like">Learn more</span></div>`}
+        </div>
+        ${!expanded ? `<div class="swipe-hint">
+          <div class="hint-row">${more ? `<span class="h-nope">👈 next match</span>` : `<span class="h-nope h-off">👈 last one</span>`}<span class="h-like">learn more 👉</span></div>
+          <div class="hint-kbd">swipe the card, tap a button, or use ← → keys</div>
+        </div>` : ""}
       </div>
-      ${!expanded ? `<div class="swipe-hint">${more ? "Swipe right to learn more · left for your next best" : "Swipe right to learn more"}</div>` : ""}
     </div>`;
   wireCard();
 }
@@ -245,9 +254,11 @@ function wireCard() {
   document.getElementById("scNext")?.addEventListener("click", () => { if (more) flingNext(el); });
   if (expanded) return; // no dragging once expanded
 
+  const likeStamp = el.querySelector(".stamp-like");
+  const nopeStamp = el.querySelector(".stamp-nope");
   let startX = 0, dx = 0, dragging = false;
   el.addEventListener("pointerdown", e => {
-    if (e.target.closest(".sc-btn")) return; // let buttons click normally
+    if (e.target.closest("button")) return; // let buttons click normally
     dragging = true; startX = e.clientX; dx = 0;
     try { el.setPointerCapture(e.pointerId); } catch {}
     el.style.transition = "none";
@@ -256,14 +267,20 @@ function wireCard() {
     if (!dragging) return;
     dx = e.clientX - startX;
     el.style.transform = `translateX(${dx}px) rotate(${dx / 22}deg)`;
-    el.classList.toggle("hint-like", dx > 40);
-    el.classList.toggle("hint-nope", dx < -40 && more);
+    // Tinder-style feedback: green glow + LEARN MORE stamp fading in on a right
+    // drag, red glow + NEXT BEST stamp on a left drag.
+    el.classList.toggle("glow-like", dx > 30);
+    el.classList.toggle("glow-nope", dx < -30 && more);
+    if (likeStamp) likeStamp.style.opacity = Math.min(1, Math.max(0, dx / 80));
+    if (nopeStamp) nopeStamp.style.opacity = more ? Math.min(1, Math.max(0, -dx / 80)) : 0;
   });
   const end = () => {
     if (!dragging) return;
     dragging = false;
     el.style.transition = "transform .3s ease, opacity .3s ease";
-    el.classList.remove("hint-like", "hint-nope");
+    el.classList.remove("glow-like", "glow-nope");
+    if (likeStamp) likeStamp.style.opacity = 0;
+    if (nopeStamp) nopeStamp.style.opacity = 0;
     if (dx > 90) { el.style.transform = ""; acceptCard(); }
     else if (dx < -90 && more) { flingNext(el); }
     else { el.style.transform = ""; }
@@ -271,6 +288,21 @@ function wireCard() {
   el.addEventListener("pointerup", end);
   el.addEventListener("pointercancel", end);
 }
+
+// Laptop support: ← → arrow keys drive the deck whenever a card is on screen.
+document.addEventListener("keydown", e => {
+  if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+  const el = document.getElementById("swipeCard");
+  if (!el || document.getElementById("results").classList.contains("hidden")) return;
+  const more = deckIdx < deck.length - 1;
+  if (expanded) {
+    if (e.key === "ArrowLeft") collapseCard();
+    else if (more) flingNext(el);
+  } else {
+    if (e.key === "ArrowRight") acceptCard();
+    else if (more) flingNext(el);
+  }
+});
 
 function restart(){
   document.getElementById("reveal").classList.add("hidden");
