@@ -149,49 +149,54 @@ h1 em{font-style:normal;color:var(--red)}
 
 /* SWIPE DECK (Tinder-style results) */
 #resultsContent{min-height:520px}
-.deck{position:relative;padding-bottom:22px}
-.swipe-peek{position:absolute;z-index:0;top:14px;bottom:0;left:50%;transform:translateX(-50%) rotate(-2.5deg);width:100%;max-width:344px;background:#1c1c1c;border:1px solid #333;border-radius:20px}
-.swipe-peek span{position:absolute;bottom:4px;left:0;right:0;text-align:center;font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#8a8a8a}
-.swipe-card{position:relative;z-index:1;margin:0 auto;width:100%;max-width:360px;background:var(--card);border:1px solid var(--border);border-radius:20px;padding:22px 22px 16px;box-shadow:0 12px 34px rgba(0,0,0,.4);will-change:transform;touch-action:pan-y;user-select:none;cursor:grab}
+.deck{position:relative;padding:4px 12px 0}
+
+/* The rest of the deck fans out to the side behind the top card */
+.fan{position:absolute;z-index:0;top:4px;bottom:0;left:50%;width:100%;max-width:356px;background:#151515;border:1px solid #2b2b2b;border-radius:22px;transform-origin:50% 120%}
+.fan1{transform:translateX(-50%) rotate(4deg)}
+.fan2{transform:translateX(-50%) rotate(8deg);opacity:.55}
+
+.swipe-card{position:relative;z-index:1;margin:0 auto;width:100%;max-width:360px;background:var(--card);border:1px solid var(--border);border-radius:22px;padding:20px 22px 18px;will-change:transform;touch-action:pan-y;user-select:none;cursor:grab;animation:cardIn .28s ease;
+  /* resting state: faint red glow peeking on the left edge, green on the right */
+  box-shadow:0 12px 34px rgba(0,0,0,.4), -12px 0 22px -12px rgba(227,25,55,.35), 12px 0 22px -12px rgba(92,206,160,.35)}
 .swipe-card:active{cursor:grabbing}
-.sc-label{font-size:12px;font-weight:800;letter-spacing:1px;color:var(--red);text-transform:uppercase;margin-bottom:12px;text-align:center}
-.sc-img{display:block;width:170px;height:170px;object-fit:contain;margin:0 auto 14px;filter:drop-shadow(0 12px 24px rgba(0,0,0,.55));pointer-events:none}
+@keyframes cardIn{from{opacity:0}to{opacity:1}}
+
+/* Tiny swipe cues on the card edges — the only "instructions" */
+.chev{position:absolute;top:50%;transform:translateY(-50%);font-size:24px;font-weight:600;opacity:.4;pointer-events:none;line-height:1}
+.chev-l{left:10px;color:var(--red)}
+.chev-r{right:10px;color:var(--green)}
+.swipe-card.expanded .chev{opacity:0;transition:opacity .2s}
+
+.sc-label{font-size:11px;font-weight:800;letter-spacing:2px;color:var(--red);text-transform:uppercase;margin-bottom:14px;text-align:center}
+.sc-img{display:block;width:168px;height:168px;object-fit:contain;margin:0 auto 16px;filter:drop-shadow(0 12px 24px rgba(0,0,0,.55));pointer-events:none}
 .sc-img-none{display:flex;align-items:center;justify-content:center;font-size:54px;border-radius:16px;background:#1a1a1a}
-.sc-name{font-size:22px;font-weight:800;text-align:center;margin-bottom:4px}
-.sc-tier{font-size:12px;color:var(--muted);text-align:center;margin-bottom:10px}
-.sc-pct{font-size:15px;font-weight:800;color:var(--gold);text-align:center;margin-bottom:14px}
+.sc-name{font-size:20px;font-weight:900;text-align:center;line-height:1.2;margin-bottom:6px}
+.sc-tier{font-size:10.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);text-align:center;margin-bottom:7px}
+.sc-cat{text-align:center;margin-bottom:10px}
+.sc-cat .match-cat{margin-top:0}
+.sc-pct{font-size:14px;font-weight:800;color:var(--gold);text-align:center;margin-bottom:6px}
 .sc-pct-wild{color:var(--muted);font-weight:600}
-.sc-detail{margin-top:12px;border-top:1px solid var(--border);padding-top:12px}
 
-/* Tinder-style stamps: fade in as you drag (opacity driven from JS) */
-.stamp{position:absolute;top:26px;z-index:3;padding:5px 12px;border:3px solid;border-radius:9px;font-size:19px;font-weight:900;letter-spacing:1.5px;opacity:0;pointer-events:none;background:rgba(13,13,13,.6)}
-.stamp-like{left:12px;color:var(--green);border-color:var(--green);transform:rotate(-13deg)}
-.stamp-nope{right:12px;color:var(--red);border-color:var(--red);transform:rotate(13deg)}
-.swipe-card.glow-like{border-color:var(--green);box-shadow:0 0 0 1px var(--green),0 12px 40px rgba(92,206,160,.4)}
-.swipe-card.glow-nope{border-color:var(--red);box-shadow:0 0 0 1px var(--red),0 12px 40px rgba(227,25,55,.4)}
+/* Detail lives in the DOM permanently; .expanded slides it open (no re-render) */
+.sc-detail{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
+.sc-detail-in{overflow:hidden;min-height:0;opacity:0;transition:opacity .25s ease}
+.swipe-card.expanded .sc-detail-in{opacity:1;transition:opacity .3s ease .12s}
+.sc-detail-in .match-desc{border-top:1px solid var(--border);padding-top:14px;margin-top:8px}
+.swipe-card.expanded .sc-detail{grid-template-rows:1fr}
 
-/* Big labeled Tinder buttons */
-.swipe-actions{display:flex;gap:12px;justify-content:center;align-items:flex-start;margin-top:16px}
-.act{display:flex;flex-direction:column;align-items:center;gap:7px;flex:0 0 auto;width:104px}
-.act-btn{width:62px;height:62px;border-radius:50%;font-size:25px;font-family:inherit;cursor:pointer;line-height:1;transition:transform .12s}
-.act-btn:not(:disabled):hover{transform:scale(1.08)}
-.act-nope{background:rgba(227,25,55,.12);border:2px solid var(--red);color:var(--red)}
-.act-nope:disabled{opacity:.22;cursor:default}
-.act-like{background:rgba(92,206,160,.12);border:2px solid var(--green);color:var(--green)}
-.act-lbl{font-size:12px;font-weight:800;letter-spacing:.3px}
-.lbl-nope{color:var(--red)}
-.lbl-like{color:var(--green)}
+/* Modern icon-only action buttons */
+.swipe-actions{display:flex;gap:28px;justify-content:center;margin-top:16px}
+.act-btn{width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-family:inherit;background:#1b1b1b;box-shadow:0 4px 16px rgba(0,0,0,.45);transition:transform .12s,box-shadow .12s}
+.act-nope{border:1px solid rgba(227,25,55,.45);color:var(--red)}
+.act-like{border:1px solid rgba(92,206,160,.45);color:var(--green)}
+.act-nope:not(:disabled):hover{transform:scale(1.08);box-shadow:0 4px 20px rgba(227,25,55,.35)}
+.act-like:hover{transform:scale(1.08);box-shadow:0 4px 20px rgba(92,206,160,.35)}
+.act-nope:disabled{opacity:.2;cursor:default}
 
-/* Expanded-state buttons */
-.sc-btn{border:none;border-radius:12px;padding:14px 18px;font-weight:800;font-size:14px;font-family:inherit;cursor:pointer;flex:1}
-.sc-back,.sc-next{background:var(--card);border:1.5px solid var(--border);color:var(--text)}
-.sc-next{border-color:rgba(227,25,55,.5);color:var(--red)}
+/* Deck position dots */
+.deck-dots{display:flex;gap:7px;justify-content:center;margin:16px 0 4px}
+.dot{width:7px;height:7px;border-radius:50%;background:#333}
+.dot.on{background:var(--gold)}
 
-/* Hint: bright, color-coded, readable */
-.swipe-hint{margin-top:16px}
-.hint-row{display:flex;justify-content:space-between;gap:10px;font-size:13px;font-weight:800}
-.h-nope{color:var(--red)}
-.h-nope.h-off{color:var(--muted)}
-.h-like{color:var(--green)}
-.hint-kbd{text-align:center;font-size:11.5px;color:#9a9a9a;margin-top:7px}
 .swipe-end{text-align:center;padding:70px 20px;color:var(--muted)}
