@@ -159,6 +159,8 @@ function meetMatch() {
   document.documentElement.style.overflow = "";
   document.getElementById("reveal").classList.add("hidden");
   document.getElementById("results").classList.remove("hidden");
+  // Results are card-first on a small screen: hide the page/results headers.
+  document.body.classList.add("in-results");
   buildDeck();
   renderCard();
 }
@@ -213,12 +215,8 @@ function cardInner(card) {
 
 function renderCard() {
   const host = document.getElementById("resultsContent");
-  if (deckIdx >= deck.length) {
-    host.innerHTML = `<div class="swipe-end"><div class="sc-label">That's your lineup 🎴</div><p>Those are your top matches. Run it back below anytime.</p></div>`;
-    return;
-  }
+  if (deckIdx >= deck.length) { renderListView(); return; }
   const card = deck[deckIdx];
-  const more = deckIdx < deck.length - 1;
   const waiting = deck.length - deckIdx - 1;
   const dots = deck.map((_, i) => `<span class="dot${i === deckIdx ? " on" : ""}"></span>`).join("");
   host.innerHTML = `
@@ -229,13 +227,73 @@ function renderCard() {
         <span class="chev chev-l">‹</span><span class="chev chev-r">›</span>
         ${cardInner(card)}
         <div class="swipe-actions">
-          <button class="act-btn act-nope" id="scNope" aria-label="Next match"${more ? "" : " disabled"}>${ICONS.x}</button>
+          <button class="act-btn act-nope" id="scNope" aria-label="${waiting ? "Next match" : "See the full list"}">${ICONS.x}</button>
           <button class="act-btn act-like" id="scLike" aria-label="Learn more">${ICONS.heart}</button>
         </div>
       </div>
     </div>
     <div class="deck-dots">${dots}</div>`;
   wireCard();
+}
+
+// After the last card, everything lands in a classic list view (the original
+// pre-swipe results page) so people can compare all their matches at once.
+function renderListView() {
+  const host = document.getElementById("resultsContent");
+  const { top, wcKey } = lastResults;
+  const labels = ["⭐ Your Perfect Pull", "💔 The Rebound", "✨ Also Sparked"];
+  let html = `<div class="list-head"><span>Your full lineup</span><button class="btn-mini" id="swipeAgain">↺ Swipe again</button></div>`;
+  top.forEach((m, i) => {
+    const b = BRANDS[m.key];
+    if (!b) return;
+    const profile =
+      (b.lookingFor ? `<div class="profile-line"><strong>Looking for:</strong> ${esc(b.lookingFor)}</div>` : "") +
+      (b.redFlag ? `<div class="profile-line"><strong>Red flag:</strong> ${esc(b.redFlag)}</div>` : "");
+    html += `
+    <div class="match${i === 0 ? " top" : ""}">
+      <div class="match-banner${i === 0 ? "" : " alt"}">${labels[i] || "Another Match"}</div>
+      <div class="match-body">
+        <div class="match-row">
+          <div class="match-id">
+            ${b.img ? `<img class="match-img" src="${esc(b.img)}" alt="${esc(b.name)}" loading="lazy">` : ""}
+            <div>
+              <div class="match-name">${esc(b.name)}</div>
+              <div class="match-tier">${esc(b.tier)}</div>
+              <span class="match-cat ${catClass(b.cat)}">${esc(b.catLabel)}</span>
+            </div>
+          </div>
+          <div class="score-col">
+            <div class="score-num">${m.pct}%</div>
+            <div class="score-lbl">match</div>
+          </div>
+        </div>
+        <div class="bar-wrap"><div class="bar" style="width:${m.pct}%"></div></div>
+        <div class="match-desc">${esc(b.desc)}</div>
+        ${profile}
+        <div class="tags">
+          <span class="tag price">📦 ${esc(b.price)}</span>
+          ${(b.tags || []).map(t => `<span class="tag">${esc(t)}</span>`).join("")}
+        </div>
+      </div>
+    </div>`;
+  });
+  if (wcKey && BRANDS[wcKey]) {
+    const wb = BRANDS[wcKey];
+    html += `
+    <div class="section-lbl">Venture Outside Your Comfort Zone</div>
+    <div class="wildcard">
+      <div class="wc-lbl">🃏 Wildcard Pick</div>
+      <div class="wc-text">You didn't ask for this, but hear us out. <strong>${esc(wb.name)}</strong> (${esc(wb.price)}) is outside your usual lane. ${esc((wb.desc || "").split(".")[0])}.</div>
+    </div>`;
+  }
+  host.innerHTML = html;
+  document.getElementById("swipeAgain")?.addEventListener("click", () => { buildDeck(); renderCard(); });
+  setTimeout(() => {
+    document.querySelectorAll(".bar").forEach(el => {
+      const w = el.style.width; el.style.width = "0%";
+      setTimeout(() => el.style.width = w, 80);
+    });
+  }, 150);
 }
 
 // Expand/collapse is a class toggle, not a re-render — the drag handlers stay
@@ -276,9 +334,8 @@ function setGlow(el, x) {
 function wireCard() {
   const el = document.getElementById("swipeCard");
   if (!el) return;
-  const more = deckIdx < deck.length - 1;
   document.getElementById("scLike")?.addEventListener("click", () => setExpanded(!expanded));
-  document.getElementById("scNope")?.addEventListener("click", () => { if (more) flingNext(el); });
+  document.getElementById("scNope")?.addEventListener("click", () => flingNext(el));
 
   let startX = 0, baseX = 0, dx = 0, dragging = false;
   el.addEventListener("pointerdown", e => {
@@ -306,7 +363,7 @@ function wireCard() {
     setGlow(el, 0);
     if (!expanded) {
       if (x > 80) { el.style.transform = ""; setExpanded(true); }
-      else if (x < -80 && more) { flingNext(el); }
+      else if (x < -80) { flingNext(el); } // past the last card -> list view
       else { el.style.transform = ""; }
     } else {
       // Swipe back out of the detail view.
@@ -323,19 +380,19 @@ document.addEventListener("keydown", e => {
   if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
   const el = document.getElementById("swipeCard");
   if (!el || document.getElementById("results").classList.contains("hidden")) return;
-  const more = deckIdx < deck.length - 1;
   if (expanded) {
     if (e.key === "ArrowLeft") collapseCard();
-    else if (more) flingNext(el);
+    else flingNext(el);
   } else {
     if (e.key === "ArrowRight") acceptCard();
-    else if (more) flingNext(el);
+    else flingNext(el);
   }
 });
 
 function restart(){
   document.getElementById("reveal").classList.add("hidden");
   document.documentElement.style.overflow = "";
+  document.body.classList.remove("in-results");
   lastResults = null; deck = []; deckIdx = 0; expanded = false;
   qIdx = 0;
   Object.keys(answers).forEach(k=>delete answers[k]);

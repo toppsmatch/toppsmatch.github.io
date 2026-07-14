@@ -149,12 +149,19 @@ h1 em{font-style:normal;color:var(--red)}
 
 /* SWIPE DECK (Tinder-style results) */
 #resultsContent{min-height:520px}
-.deck{position:relative;padding:4px 12px 0}
+.deck{position:relative;padding:14px 12px 0}
+html,body{overflow-x:hidden} /* rotated fan corners may poke past the viewport edge */
 
-/* The rest of the deck fans out to the side behind the top card */
-.fan{position:absolute;z-index:0;top:4px;bottom:0;left:50%;width:100%;max-width:356px;background:#151515;border:1px solid #2b2b2b;border-radius:22px;transform-origin:50% 120%}
-.fan1{transform:translateX(-50%) rotate(4deg)}
-.fan2{transform:translateX(-50%) rotate(8deg);opacity:.55}
+/* Results are card-first: drop the big page header + results header (Gus: the
+   final page was too crowded on mobile, deck crammed at the bottom) */
+body.in-results .header{display:none}
+body.in-results .results-hdr{display:none}
+
+/* The rest of the deck: simple solid sheets stacked behind the card,
+   slightly rotated (navy in back, light in the middle, card on top) */
+.fan{position:absolute;z-index:0;top:14px;bottom:0;left:50%;width:100%;max-width:352px;border-radius:22px;transform-origin:50% 55%;pointer-events:none}
+.fan1{background:#dfe3ee;transform:translateX(-50%) rotate(2.6deg)}
+.fan2{background:#233258;transform:translateX(-50%) rotate(-5.5deg)}
 
 .swipe-card{position:relative;z-index:1;margin:0 auto;width:100%;max-width:360px;background:var(--card);border:1px solid var(--border);border-radius:22px;padding:20px 22px 18px;will-change:transform;touch-action:pan-y;user-select:none;cursor:grab;animation:cardIn .28s ease;
   /* resting state: faint red glow peeking on the left edge, green on the right */
@@ -195,8 +202,13 @@ h1 em{font-style:normal;color:var(--red)}
 .act-nope:disabled{opacity:.2;cursor:default}
 
 /* Deck position dots */
-.deck-dots{display:flex;gap:7px;justify-content:center;margin:16px 0 4px}
+.deck-dots{display:flex;gap:7px;justify-content:center;margin:20px 0 4px}
 .dot{width:7px;height:7px;border-radius:50%;background:#333}
 .dot.on{background:var(--gold)}
 
-.swipe-end{text-align:center;padding:70px 20px;color:var(--muted)}
+/* End-of-deck list view */
+.list-head{display:flex;align-items:center;justify-content:space-between;margin:2px 2px 12px}
+.list-head span{font-size:11px;font-weight:800;letter-spacing:2px;color:var(--red);text-transform:uppercase}
+.btn-mini{background:transparent;border:1.5px solid var(--border);color:var(--muted);border-radius:99px;padding:7px 14px;font-size:12px;font-weight:700;font-family:inherit;cursor:pointer;transition:all .15s}
+.btn-mini:hover{border-color:var(--text);color:var(--text)}
+.match-banner.alt{background:#232323;color:#aaa}
