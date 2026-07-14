@@ -320,15 +320,15 @@ function flingNext(el) {
   setTimeout(advanceCard, 260);
 }
 
-// Side glows: a hint of Lava Red (left) and Official Blue (right) rests on the
+// Side glows: a hint of Lava Red (left) and steel blue (right) rests on the
 // card edges at all times; dragging deepens the side you're heading toward.
 function setGlow(el, x) {
   if (x === 0) { el.style.boxShadow = ""; return; } // CSS resting state
-  const b = Math.min(0.75, 0.3 + Math.max(0, x) / 140);
-  const r = Math.min(0.8, 0.35 + Math.max(0, -x) / 140);
+  const b = Math.min(0.9, 0.5 + Math.max(0, x) / 140);
+  const r = Math.min(0.9, 0.5 + Math.max(0, -x) / 140);
   const bs = 22 + Math.min(18, Math.max(0, x) / 6);
   const rs = 22 + Math.min(18, Math.max(0, -x) / 6);
-  el.style.boxShadow = `0 12px 30px rgba(9,31,64,.10), -12px 0 ${rs}px -12px rgba(229,60,46,${r}), 12px 0 ${bs}px -12px rgba(9,31,64,${b})`;
+  el.style.boxShadow = `0 16px 38px rgba(0,0,0,.4), -12px 0 ${rs}px -12px rgba(229,60,46,${r}), 12px 0 ${bs}px -12px rgba(157,177,212,${b})`;
 }
 
 function wireCard() {
