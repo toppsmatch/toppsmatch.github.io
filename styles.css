@@ -9,7 +9,7 @@
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
   --red:#E53C2E;--blue:#091F40;--grey:#6B686B;--lightgrey:#DDE0E0;
-  --bg:#FFFFFF;--card:#FFFFFF;--border:#DDE0E0;--text:#091F40;--muted:#6B686B;
+  --bg:#091F40;--card:#DDE0E0;--border:#C7CDD9;--text:#091F40;--muted:#6B686B;
   --impact:'Fan Impact','Anton',sans-serif;
   --sans:'Fan Sans','Inter',sans-serif;
   --serif:'Fan Serif','Instrument Serif',serif;
@@ -34,7 +34,7 @@ h1 em{font-style:normal;color:var(--red)}
 .prog-fill{height:100%;background:var(--red);border-radius:999px;transition:width .45s cubic-bezier(.4,0,.2,1)}
 
 /* QUESTION CARD */
-.q-card{background:#fff;border:none;border-radius:16px;padding:26px 26px 22px;box-shadow:0 16px 40px rgba(0,0,0,.35);animation:up .3s ease}
+.q-card{background:var(--card);border:none;border-radius:16px;padding:26px 26px 22px;box-shadow:0 16px 40px rgba(0,0,0,.35);animation:up .3s ease}
 @keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
 .q-eyebrow{font-size:10px;font-weight:800;letter-spacing:3px;color:var(--red);text-transform:uppercase;margin-bottom:9px}
 .q-title{font-size:21px;font-weight:800;line-height:1.25;color:var(--blue);margin-bottom:5px}
@@ -73,13 +73,13 @@ h1 em{font-style:normal;color:var(--red)}
 
 /* INTRO */
 .intro{animation:up .35s ease}
-.intro-card{background:#fff;border:none;border-radius:16px;padding:34px 30px;margin-bottom:16px;text-align:center;box-shadow:0 16px 40px rgba(0,0,0,.35)}
+.intro-card{background:var(--card);border:none;border-radius:16px;padding:34px 30px;margin-bottom:16px;text-align:center;box-shadow:0 16px 40px rgba(0,0,0,.35)}
 .intro-art{width:110px;height:110px;margin:0 auto 18px;display:block}
 .intro-time{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--grey);margin-top:10px}
 .intro-card h2{font-family:var(--impact);font-weight:400;font-size:30px;letter-spacing:-.01em;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
 .intro-card p{color:var(--grey);font-size:14px;line-height:1.75}
 .brand-pills{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:16px}
-.pill{font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;background:var(--lightgrey);color:var(--blue)}
+.pill{font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;background:#fff;color:var(--blue)}
 .btn-start{width:100%;padding:17px;background:var(--red);color:#fff;border:none;border-radius:8px;font-size:15px;font-family:var(--sans);font-weight:700;cursor:pointer;transition:opacity .15s}
 .btn-start:hover{opacity:.88}
 .btn-start:disabled{opacity:.4;cursor:default}
@@ -91,7 +91,7 @@ h1 em{font-style:normal;color:var(--red)}
 .results-hdr h2{font-family:var(--impact);font-weight:400;font-size:30px;text-transform:uppercase;color:#fff;margin-bottom:6px}
 .results-hdr p{font-family:var(--serif);font-style:italic;color:#B9C4D9;font-size:14px}
 
-.match{background:#fff;border:none;border-radius:16px;overflow:hidden;margin-bottom:12px;box-shadow:0 12px 32px rgba(0,0,0,.3)}
+.match{background:var(--card);border:none;border-radius:16px;overflow:hidden;margin-bottom:12px;box-shadow:0 12px 32px rgba(0,0,0,.3)}
 .match.top{border-color:var(--red);box-shadow:0 0 0 1px var(--red),0 10px 30px rgba(229,60,46,.12)}
 .match-banner{background:var(--red);color:#fff;font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;padding:6px 18px}
 .match-banner.alt{background:#22345C;color:#fff}
@@ -107,13 +107,13 @@ h1 em{font-style:normal;color:var(--red)}
 .score-num{font-size:28px;font-weight:900;color:var(--red);line-height:1}
 .match:not(.top) .score-num{color:var(--blue)}
 .score-lbl{font-size:9px;color:var(--grey);font-weight:700;letter-spacing:1px;text-transform:uppercase}
-.bar-wrap{height:4px;background:var(--lightgrey);border-radius:999px;overflow:hidden;margin-bottom:14px}
+.bar-wrap{height:4px;background:#fff;border-radius:999px;overflow:hidden;margin-bottom:14px}
 .bar{height:100%;border-radius:999px;background:var(--red);transition:width 1s cubic-bezier(.4,0,.2,1)}
 .match:not(.top) .bar{background:var(--blue)}
 .match-desc{font-size:13px;color:var(--grey);line-height:1.65;margin-bottom:14px}
 .tags{display:flex;flex-wrap:wrap;gap:5px}
-.tag{font-size:10px;font-weight:700;padding:3px 9px;border-radius:999px;background:var(--lightgrey);color:var(--grey)}
-.tag.price{background:rgba(9,31,64,.08);color:var(--blue)}
+.tag{font-size:10px;font-weight:700;padding:3px 9px;border-radius:999px;background:#fff;color:var(--grey)}
+.tag.price{background:rgba(9,31,64,.10);color:var(--blue)}
 
 .section-lbl{font-size:10px;font-weight:800;letter-spacing:2px;color:#B9C4D9;text-transform:uppercase;margin:18px 0 10px;padding:0 2px}
 .wildcard{background:rgba(229,60,46,.10);border:1.5px dashed rgba(229,60,46,.55);border-radius:16px;padding:16px 18px;margin-bottom:14px}
@@ -167,15 +167,15 @@ body.in-results .results-hdr{display:none}
 /* Paper stack behind the card, straight from Gus's reference: Official Blue
    sheet in back, light grey in the middle, white card on top. Both pivot from
    the same bottom-right corner so corners cluster at the top-left. */
-.fan{position:absolute;z-index:0;top:12px;bottom:8px;left:50%;width:100%;max-width:352px;border-radius:22px;transform-origin:84% 96%;pointer-events:none;box-shadow:0 10px 24px rgba(0,0,0,.35)}
-.fan1{background:var(--lightgrey);transform:translateX(-50%) rotate(-3deg)}
-.fan2{background:#22345C;transform:translateX(-50%) rotate(-6.5deg)}
+.fan{position:absolute;z-index:0;top:12px;bottom:10px;left:50%;width:100%;max-width:352px;border-radius:22px;transform-origin:6% 94%;pointer-events:none;box-shadow:0 10px 24px rgba(0,0,0,.35)}
+.fan1{background:#fff;transform:translateX(-52.5%) rotate(-3.2deg)}
+.fan2{background:#22345C;transform:translateX(-55%) rotate(-7deg)}
 @media (max-width:430px){
-  .fan1{transform:translateX(-50%) rotate(-2.4deg)}
-  .fan2{transform:translateX(-50%) rotate(-5deg)}
+  .fan1{transform:translateX(-52%) rotate(-2.6deg)}
+  .fan2{transform:translateX(-54%) rotate(-5.5deg)}
 }
 
-.swipe-card{position:relative;z-index:1;margin:0 auto;width:100%;max-width:360px;background:#fff;border:1px solid var(--border);border-radius:22px;padding:20px 22px 18px;will-change:transform;touch-action:pan-y;user-select:none;cursor:grab;animation:cardIn .28s ease;
+.swipe-card{position:relative;z-index:1;margin:0 auto;width:100%;max-width:360px;background:var(--card);border:1px solid var(--border);border-radius:22px;padding:20px 22px 18px;will-change:transform;touch-action:pan-y;user-select:none;cursor:grab;animation:cardIn .28s ease;
   /* resting state: faint Lava Red glow on the left edge, Official Blue on the right */
   box-shadow:0 16px 38px rgba(0,0,0,.4), -12px 0 22px -12px rgba(229,60,46,.55), 12px 0 22px -12px rgba(157,177,212,.55)}
 .swipe-card:active{cursor:grabbing}
@@ -193,7 +193,7 @@ body.in-results .results-hdr{display:none}
 
 .sc-label{font-size:11px;font-weight:800;letter-spacing:2px;color:var(--red);text-transform:uppercase;margin-bottom:14px;text-align:center}
 .sc-img{display:block;width:168px;height:168px;object-fit:contain;margin:0 auto 16px;filter:drop-shadow(0 14px 24px rgba(9,31,64,.28));pointer-events:none}
-.sc-img-none{display:flex;align-items:center;justify-content:center;font-size:54px;border-radius:16px;background:var(--lightgrey)}
+.sc-img-none{display:flex;align-items:center;justify-content:center;font-size:54px;border-radius:16px;background:#fff}
 .sc-name{font-family:var(--impact);font-weight:400;font-size:23px;letter-spacing:.02em;text-transform:uppercase;color:var(--blue);text-align:center;line-height:1.15;margin-bottom:6px}
 .sc-tier{font-size:10.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--grey);text-align:center;margin-bottom:7px}
 .sc-cat{text-align:center;margin-bottom:10px}
