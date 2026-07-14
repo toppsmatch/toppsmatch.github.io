@@ -160,8 +160,9 @@ h1 em{font-style:normal;color:var(--red)}
 #resultsContent{min-height:520px}
 .deck{position:relative;padding:14px 12px 0}
 
-/* Results keep the page + results headers (Gus wants to iterate from the full
-   layout; earlier blanket hiding left the page top-heavy on desktop). */
+/* Results hide ONLY the page header (logo row + TOPPSMATCH + subtitle);
+   the results header (You've Got Matches) stays. Per Gus, July 14. */
+body.in-results .header{display:none}
 
 /* Paper stack behind the card, straight from Gus's reference: Official Blue
    sheet in back, light grey in the middle, white card on top. Both pivot from
