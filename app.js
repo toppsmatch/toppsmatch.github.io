@@ -44,7 +44,7 @@ function renderQ(){
     <div class="q-hint">${esc(q.hint)}</div>`;
 
   if (isRanked){
-    html += `<div class="rank-tag">🏅 Tap in order of preference — #1 matters most</div>`;
+    html += `<div class="rank-tag">🏅 Tap in order: #1 matters most</div>`;
   }
 
   const gridCls = q.layout === "grid2" ? " grid2" : "";

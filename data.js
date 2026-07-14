@@ -1,4 +1,4 @@
-// GENERATED from Airtable "Topps Match HQ" by scripts/sync-airtable.mjs — do not edit by hand.
+// GENERATED from Airtable "Topps Match HQ" by scripts/sync-airtable.mjs. Do not edit by hand.
 // Edit content in Airtable, then run: npm run sync
 export const BRANDS = {
   "royalty_tennis": {
@@ -36,7 +36,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Baseball",
     "price": "$350–$440/box",
-    "desc": "The bible of baseball prospecting since 1948 — where future superstars make their first licensed appearance. If finding the next Mike Trout before the world catches on is your thrill, this is your church.",
+    "desc": "The bible of baseball prospecting since 1948, where future superstars make their first licensed appearance. If finding the next Mike Trout before the world catches on is your thrill, this is your church.",
     "tags": [
       "Baseball",
       "Prospects",
@@ -343,7 +343,7 @@ export const BRANDS = {
     "cat": "ent",
     "catLabel": "Entertainment",
     "price": "$280–$300/box",
-    "desc": "Chrome meets the Marvel Universe. Topps Chrome Marvel brings the refractor treatment to your favorite heroes and villains — on-card autographs from cast members, character art parallels, and the most visually stunning Marvel cards ever produced.",
+    "desc": "Chrome meets the Marvel Universe. Topps Chrome Marvel brings the refractor treatment to your favorite heroes and villains, on-card autographs from cast members, character art parallels, and the most visually stunning Marvel cards ever produced.",
     "tags": [
       "Marvel",
       "Entertainment",
@@ -525,7 +525,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Baseball",
     "price": "$4,000–$5,000/box",
-    "desc": "The pinnacle. Definitive Collection exists in a tier most collectors only read about — tiny print runs, on-card autos from the game's biggest names, and production quality that makes every card feel like a masterpiece.",
+    "desc": "The pinnacle. Definitive Collection exists in a tier most collectors only read about, tiny print runs, on-card autos from the game's biggest names, and production quality that makes every card feel like a masterpiece.",
     "tags": [
       "Baseball",
       "On-Card Autos",
@@ -708,7 +708,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Soccer",
     "price": "$230–$280/box",
-    "desc": "Soccer's Chrome. Merlin is the flagship premium soccer product — clean design, Chrome refractor technology, and autographs from the world's biggest footballers. Built for the global football collector.",
+    "desc": "Soccer's Chrome. Merlin is the flagship premium soccer product, clean design, Chrome refractor technology, and autographs from the world's biggest footballers. Built for the global football collector.",
     "tags": [
       "Soccer",
       "Chrome",
@@ -1010,7 +1010,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Baseball",
     "price": "$2,500–$3,500/box",
-    "desc": "Multi-relic dynasty content — massive patch booklets, powerful on-card autos, and the kind of hits that anchor a serious collection. For the collector who measures their hobby in legacy.",
+    "desc": "Multi-relic dynasty content, massive patch booklets, powerful on-card autos, and the kind of hits that anchor a serious collection. For the collector who measures their hobby in legacy.",
     "tags": [
       "Baseball",
       "Patches",
@@ -1154,7 +1154,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Baseball",
     "price": "$950–$1,200/box",
-    "desc": "Relic-heavy, hit-loaded, and layered with jersey patches and autographs. Booklets, letter relics, multi-player combo patches — for the collector who wants proof their players' gear was on the field.",
+    "desc": "Relic-heavy, hit-loaded, and layered with jersey patches and autographs. Booklets, letter relics, multi-player combo patches, for the collector who wants proof their players' gear was on the field.",
     "tags": [
       "Baseball",
       "Relics",
@@ -1248,7 +1248,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Baseball",
     "price": "$145–$180/box",
-    "desc": "Photography-first collecting. Stadium Club cards are cinematic — action shots so clean they belong in a gallery. No gimmicks, no foil overload. Just the pure art of the card.",
+    "desc": "Photography-first collecting. Stadium Club cards are cinematic, action shots so clean they belong in a gallery. No gimmicks, no foil overload. Just the pure art of the card.",
     "tags": [
       "Baseball",
       "Photography",
@@ -1368,7 +1368,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "NFL Football",
     "price": "$550–$700/box",
-    "desc": "Topps returned to the NFL in 2025 after nearly a decade away — and Chrome Football is the flagship comeback product. Chrome refractor technology applied to NFL stars and rookies, featuring the 1/1 Rookie PREM1ERE Patch Autos and Gold Shield autos exclusively through Fanatics Collectibles.",
+    "desc": "Topps returned to the NFL in 2025 after nearly a decade away, and Chrome Football is the flagship comeback product. Chrome refractor technology applied to NFL stars and rookies, featuring the 1/1 Rookie PREM1ERE Patch Autos and Gold Shield autos exclusively through Fanatics Collectibles.",
     "tags": [
       "NFL",
       "Football",
@@ -1463,7 +1463,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Baseball",
     "price": "$250–$330/box",
-    "desc": "A time machine through Topps history. Archives reprints classic vintage designs with current and retired players — often with autographs of legends signing in their old card style. Nostalgia with modern collectibility.",
+    "desc": "A time machine through Topps history. Archives reprints classic vintage designs with current and retired players, often with autographs of legends signing in their old card style. Nostalgia with modern collectibility.",
     "tags": [
       "Baseball",
       "Retro",
@@ -1496,7 +1496,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "NFL Football",
     "price": "$100–$150/box",
-    "desc": "Topps' flagship NFL product — the entry point for football collecting under the newly reclaimed exclusive license. Every player, every team, every rookie. The foundational football set rebuilt from the ground up through Fanatics Collectibles.",
+    "desc": "Topps' flagship NFL product, the entry point for football collecting under the newly reclaimed exclusive license. Every player, every team, every rookie. The foundational football set rebuilt from the ground up through Fanatics Collectibles.",
     "tags": [
       "NFL",
       "Football",
@@ -1530,7 +1530,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "NBA Basketball",
     "price": "$380–$430/box",
-    "desc": "Topps' flagship NBA product making its long-awaited return. Every player from all 30 teams plus select NBA legends — the most complete basketball set Topps has ever produced, launching October 23, 2025.",
+    "desc": "Topps' flagship NBA product making its long-awaited return. Every player from all 30 teams plus select NBA legends, the most complete basketball set Topps has ever produced, launching October 23, 2025.",
     "tags": [
       "NBA",
       "Basketball",
@@ -1878,7 +1878,7 @@ export const BRANDS = {
     "cat": "nonsport",
     "catLabel": "Non-Sport",
     "price": "$125–$450/box",
-    "desc": "Since 1985, Garbage Pail Kids has been gross, irreverent, and absolutely iconic. The satirical sticker line still commands massive passion across generations — from vintage restoration sets to new annual releases. Its community is one of the most fiercely devoted in the hobby.",
+    "desc": "Since 1985, Garbage Pail Kids has been gross, irreverent, and absolutely iconic. The satirical sticker line still commands massive passion across generations, from vintage restoration sets to new annual releases. Its community is one of the most fiercely devoted in the hobby.",
     "lookingFor": "Someone who never fully grew up and is proud of it.",
     "redFlag": "Gross-out humor is not a phase. It's a lifestyle.",
     "tags": [
@@ -2029,7 +2029,7 @@ export const BRANDS = {
     "cat": "ent",
     "catLabel": "Entertainment",
     "price": "$430–$515/box",
-    "desc": "The magic of Disney in card form. Topps holds global Disney and Pixar trading card rights — covering Mickey Mouse to Moana, Toy Story to Encanto. Multiple formats from accessible sets to premium chrome editions.",
+    "desc": "The magic of Disney in card form. Topps holds global Disney and Pixar trading card rights, covering Mickey Mouse to Moana, Toy Story to Encanto. Multiple formats from accessible sets to premium chrome editions.",
     "tags": [
       "Disney",
       "Pixar",
@@ -2208,7 +2208,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "WWE",
     "price": "$270–$300/box",
-    "desc": "Chrome meets sports entertainment. WWE Chrome brings refractor parallels and superstar autographs to professional wrestling — the kind of hit chase that has wrestling fans as hooked as any baseball collector.",
+    "desc": "Chrome meets sports entertainment. WWE Chrome brings refractor parallels and superstar autographs to professional wrestling, the kind of hit chase that has wrestling fans as hooked as any baseball collector.",
     "tags": [
       "WWE",
       "Wrestling",
@@ -2417,7 +2417,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Baseball",
     "price": "$240–$300/box",
-    "desc": "The universal crowd-pleaser. Chrome takes the flagship set and supercharges it — rainbow refractors, rookie auto parallels, and a pull-rate that keeps you ripping. If you want one product that does everything well, this is it.",
+    "desc": "The universal crowd-pleaser. Chrome takes the flagship set and supercharges it, rainbow refractors, rookie auto parallels, and a pull-rate that keeps you ripping. If you want one product that does everything well, this is it.",
     "lookingFor": "Someone who appreciates a good refractor and isn't afraid of a little shine.",
     "redFlag": "Will make you check eBay comps at 1am.",
     "tags": [
@@ -2483,7 +2483,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Baseball",
     "price": "$575–$750/box",
-    "desc": "Cards as gallery pieces. Museum Collection frames every card in a thick, art-book aesthetic — ornate borders, premium weight, and design that makes people stop and look twice.",
+    "desc": "Cards as gallery pieces. Museum Collection frames every card in a thick, art-book aesthetic, ornate borders, premium weight, and design that makes people stop and look twice.",
     "tags": [
       "Baseball",
       "Art",
@@ -2603,7 +2603,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "NBA Basketball",
     "price": "$950–$1,250/box",
-    "desc": "Topps returned to NBA basketball in 2025-26 for the first time since 2010 — and Chrome Basketball is the marquee product. Featuring LeBron James, Victor Wembanyama, Cooper Flagg, and Dylan Harper with Chrome refractor treatment and exclusive Fanatics Collectibles content.",
+    "desc": "Topps returned to NBA basketball in 2025-26 for the first time since 2010, and Chrome Basketball is the marquee product. Featuring LeBron James, Victor Wembanyama, Cooper Flagg, and Dylan Harper with Chrome refractor treatment and exclusive Fanatics Collectibles content.",
     "tags": [
       "NBA",
       "Basketball",
@@ -2669,7 +2669,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Baseball",
     "price": "$450–$600/box",
-    "desc": "Refractor-first, design-forward, and consistent year after year. Finest packs a premium experience into a mid-tier price — great hit rates and one of the hobby's most reliable products.",
+    "desc": "Refractor-first, design-forward, and consistent year after year. Finest packs a premium experience into a mid-tier price, great hit rates and one of the hobby's most reliable products.",
     "tags": [
       "Baseball",
       "Refractors",
@@ -2823,7 +2823,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Formula 1",
     "price": "$300–$400/box",
-    "desc": "The fastest-growing segment in the hobby. F1 Chrome brings the Chrome ecosystem to racing — driver autographs, helmet parallels, and refractors. The sport's explosion in global popularity has made F1 cards one of the hottest markets in collecting.",
+    "desc": "The fastest-growing segment in the hobby. F1 Chrome brings the Chrome ecosystem to racing, driver autographs, helmet parallels, and refractors. The sport's explosion in global popularity has made F1 cards one of the hottest markets in collecting.",
     "tags": [
       "Formula 1",
       "Chrome",
@@ -2887,7 +2887,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Baseball",
     "price": "$20,000–$26,000/box",
-    "desc": "The most exclusive Topps product made. Transcendent is a VIP experience — multiple legendary autos, massive relics, and content you simply cannot find anywhere else. Extremely limited. This isn't just collecting — it's an event.",
+    "desc": "The most exclusive Topps product made. Transcendent is a VIP experience, multiple legendary autos, massive relics, and content you simply cannot find anywhere else. Extremely limited. This isn't just collecting, it's an event.",
     "tags": [
       "Baseball",
       "VIP",
@@ -3095,7 +3095,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Soccer",
     "price": "$250–$330/box",
-    "desc": "The pinnacle of European football collecting. UCL Chrome covers the Champions League — the world's most prestigious club competition — with Chrome refractors and on-card autos from soccer's biggest stars.",
+    "desc": "The pinnacle of European football collecting. UCL Chrome covers the Champions League, the world's most prestigious club competition, with Chrome refractors and on-card autos from soccer's biggest stars.",
     "tags": [
       "Soccer",
       "UCL",
@@ -3217,7 +3217,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Baseball",
     "price": "$500–$650/box",
-    "desc": "Bowman elevated. Chrome technology turns prospect autos into shimmering refractors. The most popular prospecting product in the hobby — enormous community, massive lottery pull rates, and the most coveted prospect autos in baseball.",
+    "desc": "Bowman elevated. Chrome technology turns prospect autos into shimmering refractors. The most popular prospecting product in the hobby, enormous community, massive lottery pull rates, and the most coveted prospect autos in baseball.",
     "lookingFor": "A believer. Someone who falls in love with potential.",
     "redFlag": "Talks about prospects you've never heard of like you know them.",
     "tags": [
@@ -3310,7 +3310,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Baseball",
     "price": "$160–$190/box",
-    "desc": "A love letter to the golden age of the hobby. Heritage recreates iconic classic Topps designs from decades past — the 1968 wood grain, the 1975 two-tone — with today's players. Pure nostalgia with modern collectibility.",
+    "desc": "A love letter to the golden age of the hobby. Heritage recreates iconic classic Topps designs from decades past, the 1968 wood grain, the 1975 two-tone, with today's players. Pure nostalgia with modern collectibility.",
     "lookingFor": "An old soul who thinks they were born in the wrong decade.",
     "redFlag": "Will explain the 1975 two-tone design at parties. Repeatedly.",
     "tags": [
@@ -3345,7 +3345,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "WWE",
     "price": "$160–$250/box",
-    "desc": "Premium WWE collecting enters a new tier. Exalted brings a high-end aesthetic to sports entertainment — guaranteed premium autos, low print runs, and a product that finally gives wrestling collecting the respect it deserves.",
+    "desc": "Premium WWE collecting enters a new tier. Exalted brings a high-end aesthetic to sports entertainment, guaranteed premium autos, low print runs, and a product that finally gives wrestling collecting the respect it deserves.",
     "tags": [
       "WWE",
       "Wrestling",
@@ -3460,7 +3460,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Baseball",
     "price": "$275–$400/box",
-    "desc": "On-card autos at a mid-tier price — the best value play in the premium space. Tight print runs and pen-to-card autographs without the four-figure price tag.",
+    "desc": "On-card autos at a mid-tier price, the best value play in the premium space. Tight print runs and pen-to-card autographs without the four-figure price tag.",
     "tags": [
       "Baseball",
       "On-Card Autos",
@@ -3552,7 +3552,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Baseball",
     "price": "$700–$800/box",
-    "desc": "Less is more. Pristine strips the hobby to its purest form — on-card autographs, premium stock, minimal design clutter. For the collector who believes the card itself is the art.",
+    "desc": "Less is more. Pristine strips the hobby to its purest form, on-card autographs, premium stock, minimal design clutter. For the collector who believes the card itself is the art.",
     "tags": [
       "Baseball",
       "On-Card Autos",
@@ -3760,7 +3760,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Baseball",
     "price": "$125–$210/box",
-    "desc": "The original. Every collector starts somewhere — for millions it was here. The complete MLB experience: every player, every team, and the best flagship set-building in baseball. Topps has produced this set since 1952.",
+    "desc": "The original. Every collector starts somewhere, for millions it was here. The complete MLB experience: every player, every team, and the best flagship set-building in baseball. Topps has produced this set since 1952.",
     "tags": [
       "Baseball",
       "Full Sets",
@@ -3938,7 +3938,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Baseball",
     "price": "$130–$150/box",
-    "desc": "Every card is an autograph — literally. Clearly Authentic uses acetate card stock and guarantees a certified auto in every pack. No filler. All hits. Perfect for the collector who hates opening cardboard.",
+    "desc": "Every card is an autograph, literally. Clearly Authentic uses acetate card stock and guarantees a certified auto in every pack. No filler. All hits. Perfect for the collector who hates opening cardboard.",
     "tags": [
       "Baseball",
       "Autographs",
@@ -4087,7 +4087,7 @@ export const BRANDS = {
     "cat": "nonsport",
     "catLabel": "Non-Sport",
     "price": "$110–$120/box",
-    "desc": "Topps' original gross-out parody brand. Wacky Packages satirizes consumer products with twisted, punny stickers that kids have been trading since 1967. The original non-sport collectible — and a fiercely nostalgic brand with a devoted vintage collector community.",
+    "desc": "Topps' original gross-out parody brand. Wacky Packages satirizes consumer products with twisted, punny stickers that kids have been trading since 1967. The original non-sport collectible, and a fiercely nostalgic brand with a devoted vintage collector community.",
     "tags": [
       "Non-Sport",
       "Stickers",
@@ -4176,7 +4176,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "UFC",
     "price": "$200–$280/box",
-    "desc": "Combat sports meets Chrome. Fighter autographs, refractors, and the same dynamic pull experience as Chrome Baseball — but for the fastest-growing combat sports audience in the world.",
+    "desc": "Combat sports meets Chrome. Fighter autographs, refractors, and the same dynamic pull experience as Chrome Baseball, but for the fastest-growing combat sports audience in the world.",
     "tags": [
       "UFC",
       "MMA",
@@ -4353,7 +4353,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "UFC",
     "price": "$750–$1,100/box",
-    "desc": "Elite treatment for elite fighters. UFC Royalty brings a premium high-end experience to combat sports — regal design, top-tier autos, and production quality that signals you're serious about the sport.",
+    "desc": "Elite treatment for elite fighters. UFC Royalty brings a premium high-end experience to combat sports, regal design, top-tier autos, and production quality that signals you're serious about the sport.",
     "tags": [
       "UFC",
       "MMA",
@@ -4472,7 +4472,7 @@ export const BRANDS = {
     "cat": "ent",
     "catLabel": "Entertainment",
     "price": "$325–$450/box",
-    "desc": "Where collector culture meets. VeeFriends — the character universe built by Gary Vaynerchuk — now carries the Topps Chrome label in a multi-year partnership. Chrome refractors on collectible characters with genuine community value behind them.",
+    "desc": "Where collector culture meets. VeeFriends, the character universe built by Gary Vaynerchuk, now carries the Topps Chrome label in a multi-year partnership. Chrome refractors on collectible characters with genuine community value behind them.",
     "tags": [
       "VeeFriends",
       "Gary Vee",
@@ -4565,7 +4565,7 @@ export const BRANDS = {
     "cat": "ent",
     "catLabel": "Entertainment",
     "price": "$100–$130/box",
-    "desc": "A galaxy of cards, 50 years in the making. Topps has produced Star Wars cards since 1977. From the original trilogy to The Mandalorian, there's a set for every era — from accessible entry sets to premium sketch-card and autograph releases.",
+    "desc": "A galaxy of cards, 50 years in the making. Topps has produced Star Wars cards since 1977. From the original trilogy to The Mandalorian, there's a set for every era, from accessible entry sets to premium sketch-card and autograph releases.",
     "tags": [
       "Star Wars",
       "Entertainment",
@@ -4715,7 +4715,7 @@ export const QUESTIONS = [
   {
     "id": "exp",
     "ranked": false,
-    "eyebrow": "Question 1 — Experience",
+    "eyebrow": "Question 1 · Experience",
     "title": "Have you collected cards before?",
     "hint": "No experience needed we'll meet you where you are",
     "opts": [
@@ -4742,7 +4742,7 @@ export const QUESTIONS = [
   {
     "id": "sport",
     "ranked": true,
-    "eyebrow": "Question 2 — Interests",
+    "eyebrow": "Question 2 · Interests",
     "title": "What are your interests?",
     "hint": "Tap everything that excites you in the order you care about it. Your first pick matters most.",
     "layout": "grid2",
@@ -4824,20 +4824,20 @@ export const QUESTIONS = [
   {
     "id": "budget",
     "ranked": false,
-    "eyebrow": "Question 3 — Budget",
+    "eyebrow": "Question 3 · Budget",
     "title": "How much are you willing to spend?",
     "hint": "There's a great Topps product at every budget.",
     "opts": [
       {
         "icon": "🪙",
         "label": "Under $50",
-        "sub": "Just getting started — I want to try a pack or two",
+        "sub": "Just getting started, I want to try a pack or two",
         "val": "starter"
       },
       {
         "icon": "💵",
         "label": "$50-$100",
-        "sub": "Casual and fun — no major commitment",
+        "sub": "Casual and fun, no major commitment",
         "val": "entry"
       },
       {
@@ -4869,9 +4869,9 @@ export const QUESTIONS = [
   {
     "id": "identity",
     "ranked": true,
-    "eyebrow": "Question 4 — Collector Identity",
+    "eyebrow": "Question 4 · Collector Identity",
     "title": "What matters most to you?",
-    "hint": "Pick what resonates in order of what matters most to you. Your first choice carries the most weight.",
+    "hint": "",
     "layout": "grid2",
     "opts": [
       {
@@ -4889,7 +4889,7 @@ export const QUESTIONS = [
       {
         "icon": "📦",
         "label": "Completing the whole picture",
-        "sub": "Every card in the set — nothing missing",
+        "sub": "Every card in the set, nothing missing",
         "val": "set"
       },
       {
@@ -4901,7 +4901,7 @@ export const QUESTIONS = [
       {
         "icon": "❤️",
         "label": "Going all in on my favorites",
-        "sub": "One team, one player — that's my whole collection",
+        "sub": "One team, one player, that's my whole collection",
         "val": "team"
       },
       {
@@ -4915,14 +4915,14 @@ export const QUESTIONS = [
   {
     "id": "risk",
     "ranked": false,
-    "eyebrow": "Question 5 — Risk Tolerance",
-    "title": "Do you love surprises, or do you prefer knowing what you're getting?",
-    "hint": "Do you want guarantees of what's inside, or is the surprise what excites you?",
+    "eyebrow": "Question 5 · Risk Tolerance",
+    "title": "How do you feel about surprises?",
+    "hint": "",
     "opts": [
       {
         "icon": "🎯",
         "label": "I want to know what I'm getting",
-        "sub": "No surprises —  I want guarantees",
+        "sub": "No surprises, I want guarantees",
         "val": "guaranteed"
       },
       {
@@ -4942,13 +4942,13 @@ export const QUESTIONS = [
   {
     "id": "vibe",
     "ranked": true,
-    "eyebrow": "Question 6 — Aesthetic",
-    "title": "When you picture your perfect card, what do you see?",
-    "hint": "Go with your gut your first pick tells us the most",
+    "eyebrow": "Question 6 · Aesthetic",
+    "title": "Picture your perfect card, what do you see?",
+    "hint": "Go with your gut.",
     "layout": "grid2",
     "opts": [
       {
-        "icon": "🖤",
+        "icon": "💎",
         "label": "Clean and prestigious",
         "sub": "Simple, premium, and built to impress",
         "val": "prestige"
@@ -4966,7 +4966,7 @@ export const QUESTIONS = [
         "val": "flashy"
       },
       {
-        "icon": "🔭",
+        "icon": "🔥",
         "label": "Raw and exciting",
         "sub": "Find tomorrow's star today",
         "val": "prospect"
