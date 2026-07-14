@@ -157,11 +157,16 @@ html,body{overflow-x:hidden} /* rotated fan corners may poke past the viewport e
 body.in-results .header{display:none}
 body.in-results .results-hdr{display:none}
 
-/* The rest of the deck: simple solid sheets stacked behind the card,
-   slightly rotated (navy in back, light in the middle, card on top) */
-.fan{position:absolute;z-index:0;top:14px;bottom:0;left:50%;width:100%;max-width:352px;border-radius:22px;transform-origin:50% 55%;pointer-events:none}
-.fan1{background:#dfe3ee;transform:translateX(-50%) rotate(2.6deg)}
-.fan2{background:#233258;transform:translateX(-50%) rotate(-5.5deg)}
+/* The rest of the deck: a neat paper stack behind the card. Both sheets pivot
+   from the same bottom-right corner in the same direction (like Gus's reference
+   image) so corners cluster at the top-left instead of poking out everywhere. */
+.fan{position:absolute;z-index:0;top:12px;bottom:8px;left:50%;width:100%;max-width:352px;border-radius:22px;transform-origin:84% 96%;pointer-events:none;box-shadow:0 6px 20px rgba(0,0,0,.35)}
+.fan1{background:#dfe3ee;transform:translateX(-50%) rotate(-3deg)}
+.fan2{background:#233258;transform:translateX(-50%) rotate(-6.5deg)}
+@media (max-width:430px){
+  .fan1{transform:translateX(-50%) rotate(-2.4deg)}
+  .fan2{transform:translateX(-50%) rotate(-5deg)}
+}
 
 .swipe-card{position:relative;z-index:1;margin:0 auto;width:100%;max-width:360px;background:var(--card);border:1px solid var(--border);border-radius:22px;padding:20px 22px 18px;will-change:transform;touch-action:pan-y;user-select:none;cursor:grab;animation:cardIn .28s ease;
   /* resting state: faint red glow peeking on the left edge, green on the right */
