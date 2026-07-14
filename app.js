@@ -145,7 +145,7 @@ let confettiTimer = null;
 
 function spawnConfetti() {
   const wrap = document.getElementById("confettiWrap");
-  const colors = ["#E31937", "#f0c040", "#5ccea0", "#a78bfa", "#60a5fa", "#fb923c"];
+  const colors = ["#E53C2E", "#FFFFFF", "#DDE0E0", "#F4A9A1", "#3D5170", "#FFFFFF"];
   wrap.innerHTML = Array.from({ length: 28 }, (_, i) => {
     const left = (i * 37) % 100;
     const delay = (i % 7) * 0.35;
@@ -223,7 +223,7 @@ function renderCard() {
     <div class="deck">
       ${waiting > 1 ? `<div class="fan fan2"></div>` : ""}
       ${waiting > 0 ? `<div class="fan fan1"></div>` : ""}
-      <div class="swipe-card" id="swipeCard">
+      <div class="swipe-card${card.pct == null ? " wild" : ""}" id="swipeCard">
         <span class="chev chev-l">‹</span><span class="chev chev-r">›</span>
         ${cardInner(card)}
         <div class="swipe-actions">
@@ -320,15 +320,15 @@ function flingNext(el) {
   setTimeout(advanceCard, 260);
 }
 
-// Side glows: a hint of red (left) and green (right) rests on the card edges at
-// all times; dragging deepens the side you're heading toward.
+// Side glows: a hint of Lava Red (left) and Official Blue (right) rests on the
+// card edges at all times; dragging deepens the side you're heading toward.
 function setGlow(el, x) {
   if (x === 0) { el.style.boxShadow = ""; return; } // CSS resting state
-  const g = Math.min(0.8, 0.35 + Math.max(0, x) / 140);
+  const b = Math.min(0.75, 0.3 + Math.max(0, x) / 140);
   const r = Math.min(0.8, 0.35 + Math.max(0, -x) / 140);
-  const gs = 22 + Math.min(18, Math.max(0, x) / 6);
+  const bs = 22 + Math.min(18, Math.max(0, x) / 6);
   const rs = 22 + Math.min(18, Math.max(0, -x) / 6);
-  el.style.boxShadow = `0 12px 34px rgba(0,0,0,.4), -12px 0 ${rs}px -12px rgba(227,25,55,${r}), 12px 0 ${gs}px -12px rgba(92,206,160,${g})`;
+  el.style.boxShadow = `0 12px 30px rgba(9,31,64,.10), -12px 0 ${rs}px -12px rgba(229,60,46,${r}), 12px 0 ${bs}px -12px rgba(9,31,64,${b})`;
 }
 
 function wireCard() {
