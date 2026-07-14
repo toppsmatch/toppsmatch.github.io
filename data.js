@@ -1927,9 +1927,36 @@ export const BRANDS = {
 
 export const QUESTIONS = [
   {
+    "id": "exp",
+    "ranked": false,
+    "eyebrow": "Question 1 — Experience",
+    "title": "Have you collected cards before?",
+    "hint": "No experience needed we'll meet you where you are",
+    "opts": [
+      {
+        "icon": "🌱",
+        "label": "Just getting started",
+        "sub": "New to trading cards entirely",
+        "val": "new"
+      },
+      {
+        "icon": "📚",
+        "label": "Getting the hang of it",
+        "sub": "Know the basics, still learning",
+        "val": "some"
+      },
+      {
+        "icon": "🧠",
+        "label": "I know my stuff",
+        "sub": "Been collecting for a while",
+        "val": "expert"
+      }
+    ]
+  },
+  {
     "id": "sport",
     "ranked": true,
-    "eyebrow": "Question 1 — Interests",
+    "eyebrow": "Question 2 — Interests",
     "title": "What are your interests?",
     "hint": "Tap everything that excites you in the order you care about it. Your first pick matters most.",
     "layout": "grid2",
@@ -1943,49 +1970,49 @@ export const QUESTIONS = [
       {
         "icon": "🏈",
         "label": "NFL Football",
-        "sub": "Returning exclusively to Topps 2025",
+        "sub": "The NFL is back on Topps",
         "val": "nfl"
       },
       {
         "icon": "🏀",
         "label": "NBA Basketball",
-        "sub": "Topps returns 2025-26 season",
+        "sub": "Basketball returns to Topps",
         "val": "nba"
       },
       {
         "icon": "⚽",
         "label": "Soccer / Football",
-        "sub": "UCL, Premier League, global",
+        "sub": "The beautiful game, from every corner of the world",
         "val": "soccer"
       },
       {
         "icon": "🏎️",
         "label": "Formula 1",
-        "sub": "Drivers, race moments",
+        "sub": "The fastest sport on the planet",
         "val": "f1"
       },
       {
         "icon": "🥊",
         "label": "UFC / Combat Sports",
-        "sub": "MMA, boxing, fighters",
+        "sub": "The fighters who define the sport",
         "val": "ufc"
       },
       {
         "icon": "🤼",
         "label": "WWE / Wrestling",
-        "sub": "Superstars, sports entertainment",
+        "sub": "Legends and today's biggest superstars",
         "val": "wwe"
       },
       {
         "icon": "🌟",
         "label": "Pop Culture & Entertainment",
-        "sub": "Star Wars, Marvel, Disney, VeeFriends",
+        "sub": "Star Wars, Marvel, Disney, VeeFriends, and more",
         "val": "ent"
       },
       {
         "icon": "🃏",
         "label": "Non-Sport Classics",
-        "sub": "GPK, Wacky Packages, stickers",
+        "sub": "Garbage Pail Kids, stickers, and cult classics",
         "val": "nonsport"
       },
       {
@@ -1997,13 +2024,13 @@ export const QUESTIONS = [
       {
         "icon": "🎾",
         "label": "Tennis",
-        "sub": "Pro tour, Graphite",
+        "sub": "Grand Slams, legends, and the sport's biggest stars",
         "val": "tennis"
       },
       {
         "icon": "🎓",
         "label": "College Sports",
-        "sub": "NCAA, Bowman U",
+        "sub": "Root for your team before they go pro",
         "val": "college"
       }
     ]
@@ -2011,20 +2038,26 @@ export const QUESTIONS = [
   {
     "id": "budget",
     "ranked": false,
-    "eyebrow": "Question 2 — Budget",
+    "eyebrow": "Question 3 — Budget",
     "title": "How much are you willing to spend?",
     "hint": "There's a great Topps product at every budget.",
     "opts": [
       {
+        "icon": "🪙",
+        "label": "Under $50",
+        "sub": "Just getting started — I want to try a pack or two",
+        "val": "starter"
+      },
+      {
         "icon": "💵",
-        "label": "Under $100",
-        "sub": "Keep it accessible",
+        "label": "$50-$100",
+        "sub": "Casual and fun — no major commitment",
         "val": "entry"
       },
       {
         "icon": "💳",
         "label": "$100–$300",
-        "sub": "Room for some nice pulls",
+        "sub": "I'm ready to open something exciting",
         "val": "mid_low"
       },
       {
@@ -2042,7 +2075,7 @@ export const QUESTIONS = [
       {
         "icon": "👑",
         "label": "$1,000+",
-        "sub": "Only the absolute best",
+        "sub": "Nothing but the best",
         "val": "ultra"
       }
     ]
@@ -2050,88 +2083,73 @@ export const QUESTIONS = [
   {
     "id": "identity",
     "ranked": true,
-    "eyebrow": "Question 3 — Collector Identity",
-    "title": "What kind of collector are you?",
+    "eyebrow": "Question 4 — Collector Identity",
+    "title": "What matters most to you?",
     "hint": "Pick what resonates in order of what matters most to you. Your first choice carries the most weight.",
     "layout": "grid2",
     "opts": [
       {
         "icon": "🚀",
-        "label": "Prospect Hunter",
-        "sub": "Find the next star early",
+        "label": "Finding the next big thing",
+        "sub": "Discovering tomorrow's star before anyone else does",
         "val": "prospect"
       },
       {
         "icon": "✨",
-        "label": "Premium Chaser",
-        "sub": "Rare, beautiful, high-value",
+        "label": "Owning something truly special",
+        "sub": "Rare, beautiful cards that are hard to find",
         "val": "premium"
       },
       {
         "icon": "📦",
-        "label": "Set Builder",
-        "sub": "Complete sets, every card",
+        "label": "Completing the whole picture",
+        "sub": "Every card in the set — nothing missing",
         "val": "set"
       },
       {
         "icon": "📸",
-        "label": "Nostalgia Collector",
-        "sub": "Cards that take you back",
+        "label": "Chasing memories",
+        "sub": "Players and moments from the eras of the past",
         "val": "nostalgia"
+      },
+      {
+        "icon": "❤️",
+        "label": "Going all in on my favorites",
+        "sub": "One team, one player — that's my whole collection",
+        "val": "team"
+      },
+      {
+        "icon": "📈",
+        "label": "Building something valuable",
+        "sub": "Cards that could be worth more down the road",
+        "val": "invest"
       }
     ]
   },
   {
     "id": "risk",
     "ranked": false,
-    "eyebrow": "Question 4 — Risk Tolerance",
+    "eyebrow": "Question 5 — Risk Tolerance",
     "title": "Do you love surprises, or do you prefer knowing what you're getting?",
     "hint": "Do you want guarantees of what's inside, or is the surprise what excites you?",
     "opts": [
       {
         "icon": "🎯",
-        "label": "Guaranteed hits only",
-        "sub": "I paid for it, I expect it",
+        "label": "I want to know what I'm getting",
+        "sub": "No surprises —  I want guarantees",
         "val": "guaranteed"
       },
       {
         "icon": "⚖️",
-        "label": "Decent odds with upside",
-        "sub": "Risk, but not reckless",
+        "label": "Somewhere in the middle",
+        "sub": "Some mystery is fine as long as there's a shot at something great",
         "val": "balanced"
       },
       {
         "icon": "🎲",
-        "label": "I live for the thrill",
+        "label": "Surprise me",
         "sub": "Big risk, big reward, big adrenaline",
         "val": "thrill"
-      }
-    ]
-  },
-  {
-    "id": "exp",
-    "ranked": false,
-    "eyebrow": "Question 5 — Experience",
-    "title": "Have you collected cards before?",
-    "hint": "No experience needed we'll meet you where you are",
-    "opts": [
-      {
-        "icon": "🌱",
-        "label": "Just getting started",
-        "sub": "New to trading cards entirely",
-        "val": "new"
-      },
-      {
-        "icon": "📚",
-        "label": "I've dabbled",
-        "sub": "Know the basics, still learning",
-        "val": "some"
-      },
-      {
-        "icon": "🧠",
-        "label": "Seasoned collector",
-        "sub": "I know my stuff",
-        "val": "expert"
       }
     ]
   },
@@ -2145,25 +2163,25 @@ export const QUESTIONS = [
     "opts": [
       {
         "icon": "🖤",
-        "label": "Sleek & Prestigious",
-        "sub": "Clean, minimal, elite",
+        "label": "Clean and prestigious",
+        "sub": "Simple, premium, and built to impress",
         "val": "prestige"
       },
       {
         "icon": "🕰️",
-        "label": "Retro & Nostalgic",
-        "sub": "Vintage designs, classic feel",
+        "label": "Retro and nostalgic",
+        "sub": "Old-school designs that feel like the golden era of collecting",
         "val": "retro"
       },
       {
         "icon": "⚡",
-        "label": "Bold & Flashy",
-        "sub": "Refractors, color, prizms",
+        "label": "Bold and eye-catching",
+        "sub": "Shiny, colorful, impossible to ignore",
         "val": "flashy"
       },
       {
         "icon": "🔭",
-        "label": "Prospect Energy",
+        "label": "Raw and exciting",
         "sub": "Find tomorrow's star today",
         "val": "prospect"
       }
