@@ -78,7 +78,7 @@ h1 em{font-style:normal;color:var(--red)}
 /* INTRO */
 .intro{animation:up .35s ease}
 .intro-card{background:var(--card);border:none;border-radius:16px;padding:34px 30px;margin-bottom:16px;text-align:center;box-shadow:0 16px 40px rgba(0,0,0,.35)}
-.intro-art{width:120px;height:120px;object-fit:contain;margin:0 auto 18px;display:block}
+.intro-art{width:120px;height:120px;object-fit:contain;margin:0 auto 18px;display:block;filter:drop-shadow(0 10px 16px rgba(9,31,64,.35)) drop-shadow(0 0 18px rgba(229,60,46,.28))}
 .intro-time{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--grey);margin-top:10px}
 .intro-card h2{font-family:var(--impact);font-weight:400;font-size:30px;letter-spacing:-.01em;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
 .intro-card p{color:var(--grey);font-size:14px;line-height:1.75;white-space:nowrap}

@@ -1,5 +1,5 @@
 // Live tally board. ?demo=1 runs a scripted feed so the finale never depends on wifi.
-import { BRANDS } from "./data.js?v=1784155624";
+import { BRANDS } from "./data.js?v=1784155905";
 
 const DEMO = new URLSearchParams(location.search).get("demo") === "1";
 const boardEl = document.getElementById("board");
