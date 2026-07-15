@@ -83,9 +83,17 @@ h1 em{font-style:normal;color:var(--red)}
 .intro-card h2{font-family:var(--impact);font-weight:400;font-size:30px;letter-spacing:-.01em;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
 .intro-card p{color:var(--grey);font-size:14px;line-height:1.75;white-space:nowrap}
 @media (max-width:520px){.intro-card p{white-space:normal}}
-.brand-pills{display:flex;flex-direction:column;gap:6px;align-items:center;margin-top:16px}
-.pill-row{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
-.pill{font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;background:#fff;color:var(--blue)}
+/* Sports ticker: one seamless marquee line (the track holds the pill set twice,
+   sliding -50% loops perfectly; margins not flex-gap keep the midpoint exact) */
+.pill-ticker{overflow:hidden;margin-top:16px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.pill-track{display:flex;width:max-content;animation:ticker 32s linear infinite}
+@keyframes ticker{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion: reduce){
+  .pill-ticker{mask-image:none;-webkit-mask-image:none}
+  .pill-track{animation:none;flex-wrap:wrap;justify-content:center;width:auto}
+  .pill-track .pill:nth-child(n+15){display:none} /* hide the duplicate half */
+}
+.pill{font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;background:#fff;color:var(--blue);white-space:nowrap;margin-right:6px}
 .btn-start{width:100%;padding:17px;background:var(--red);color:#fff;border:none;border-radius:8px;font-size:15px;font-family:var(--sans);font-weight:700;cursor:pointer;transition:opacity .15s}
 .btn-start:hover{opacity:.88}
 .btn-start:disabled{opacity:.4;cursor:default}
