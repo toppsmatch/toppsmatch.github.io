@@ -1,5 +1,5 @@
-import { BRANDS, QUESTIONS } from "./data.js?v=1784324080";
-import { score, topMatches, wildcard, maxScore } from "./scoring.js?v=1784324080";
+import { BRANDS, QUESTIONS } from "./data.js?v=1784324838";
+import { score, topMatches, wildcard, maxScore } from "./scoring.js?v=1784324838";
 
 // One tally submission per page load, fire-and-forget; never blocks the reveal.
 let submitted = false;
@@ -335,17 +335,25 @@ async function buildShareCard(b, pct) {
   ctx.fillStyle = "#E53C2E"; ctx.fillText("MATCH", (W - tw) / 2 + ctx.measureText("TOPPS").width, 290);
   ctx.textAlign = "center";
 
-  const titleGrad = ctx.createLinearGradient(W / 2 - 430, 0, W / 2 + 430, 0);
-  titleGrad.addColorStop(0, "#962014"); titleGrad.addColorStop(.3, "#C52A1E");
-  titleGrad.addColorStop(.48, "#FF8A7C"); titleGrad.addColorStop(.62, "#E53C2E");
-  titleGrad.addColorStop(1, "#962014");
-  ctx.fillStyle = titleGrad;
-  ctx.font = '128px "Fan Impact", sans-serif';
+  // solid red title with a heart-and-arrow on either side, shrunk to fit
+  let titleSize = 116, heartSize = 78, gap = 34;
+  const fitTitle = () => {
+    ctx.font = `${titleSize}px "Fan Impact", sans-serif`;
+    const tw = ctx.measureText("IT'S A MATCH!").width;
+    ctx.font = `${heartSize}px serif`;
+    const hw = ctx.measureText("💘").width;
+    return { tw, hw, total: tw + 2 * (hw + gap) };
+  };
+  let dims = fitTitle();
+  while (dims.total > W - 60 && titleSize > 80) { titleSize -= 4; heartSize -= 2; dims = fitTitle(); }
+  ctx.fillStyle = "#E53C2E";
+  ctx.font = `${titleSize}px "Fan Impact", sans-serif`;
   ctx.shadowColor = "rgba(229,60,46,.5)"; ctx.shadowBlur = 60;
-  ctx.fillText("IT'S A MATCH!", W / 2, 560);
+  ctx.fillText("IT'S A MATCH!", W / 2, 600);
   ctx.shadowBlur = 0;
-  ctx.font = "96px serif";
-  ctx.fillText("💘", W / 2, 690);
+  ctx.font = `${heartSize}px serif`;
+  ctx.fillText("💘", W / 2 - dims.tw / 2 - gap - dims.hw / 2, 592);
+  ctx.fillText("💘", W / 2 + dims.tw / 2 + gap + dims.hw / 2, 592);
 
   // spotlight pool under the product
   {
