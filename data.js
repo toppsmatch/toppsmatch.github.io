@@ -4948,7 +4948,7 @@ export const QUESTIONS = [
     "layout": "grid2",
     "opts": [
       {
-        "icon": "💎",
+        "icon": "🖤",
         "label": "Clean and prestigious",
         "sub": "Simple, premium, and built to impress",
         "val": "prestige"
