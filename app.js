@@ -1,5 +1,5 @@
-import { BRANDS, QUESTIONS } from "./data.js?v=1784323531";
-import { score, topMatches, wildcard, maxScore } from "./scoring.js?v=1784323531";
+import { BRANDS, QUESTIONS } from "./data.js?v=1784324080";
+import { score, topMatches, wildcard, maxScore } from "./scoring.js?v=1784324080";
 
 // One tally submission per page load, fire-and-forget; never blocks the reveal.
 let submitted = false;
@@ -336,12 +336,12 @@ async function buildShareCard(b, pct) {
   ctx.textAlign = "center";
 
   const titleGrad = ctx.createLinearGradient(W / 2 - 430, 0, W / 2 + 430, 0);
-  titleGrad.addColorStop(0, "#7E93BD"); titleGrad.addColorStop(.3, "#EAF0FA");
-  titleGrad.addColorStop(.48, "#FFFFFF"); titleGrad.addColorStop(.62, "#B9C4D9");
-  titleGrad.addColorStop(1, "#7E93BD");
+  titleGrad.addColorStop(0, "#962014"); titleGrad.addColorStop(.3, "#C52A1E");
+  titleGrad.addColorStop(.48, "#FF8A7C"); titleGrad.addColorStop(.62, "#E53C2E");
+  titleGrad.addColorStop(1, "#962014");
   ctx.fillStyle = titleGrad;
   ctx.font = '128px "Fan Impact", sans-serif';
-  ctx.shadowColor = "rgba(150,185,255,.45)"; ctx.shadowBlur = 60;
+  ctx.shadowColor = "rgba(229,60,46,.5)"; ctx.shadowBlur = 60;
   ctx.fillText("IT'S A MATCH!", W / 2, 560);
   ctx.shadowBlur = 0;
   ctx.font = "96px serif";
