@@ -4966,9 +4966,9 @@ export const QUESTIONS = [
         "val": "flashy"
       },
       {
-        "icon": "🔥",
-        "label": "Raw and exciting",
-        "sub": "Find tomorrow's star today",
+        "icon": "🛡️",
+        "label": "The rookie card look",
+        "sub": "Fresh faces, RC shields, 1st Bowman stamps",
         "val": "prospect"
       }
     ]
