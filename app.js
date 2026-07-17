@@ -1,5 +1,5 @@
-import { BRANDS, QUESTIONS } from "./data.js?v=1784322973";
-import { score, topMatches, wildcard, maxScore } from "./scoring.js?v=1784322973";
+import { BRANDS, QUESTIONS } from "./data.js?v=1784323531";
+import { score, topMatches, wildcard, maxScore } from "./scoring.js?v=1784323531";
 
 // One tally submission per page load, fire-and-forget; never blocks the reveal.
 let submitted = false;
@@ -270,6 +270,7 @@ async function buildShareCard(b, pct) {
     document.fonts.load('italic 44px "Fan Serif"'),
   ]).catch(() => {});
   const img = b.img ? await loadImg(b.img).catch(() => null) : null;
+  const wall = await loadImg("img/brand-wall.webp").catch(() => null);
 
   const W = 1080, H = 1920;
   const cv = document.createElement("canvas"); cv.width = W; cv.height = H;
@@ -279,17 +280,32 @@ async function buildShareCard(b, pct) {
   bg.addColorStop(0, "#16305e"); bg.addColorStop(.55, "#091F40"); bg.addColorStop(1, "#060f22");
   ctx.fillStyle = bg; ctx.fillRect(0, 0, W, H);
 
+  // the brand-wall collage as a dim texture (cover-crop to 9:16). Blur it by
+  // round-tripping through a tiny canvas — ctx.filter isn't reliable on Safari.
+  if (wall) {
+    const tiny = document.createElement("canvas");
+    tiny.width = 108; tiny.height = 192;
+    const tctx = tiny.getContext("2d");
+    const s = Math.max(tiny.width / wall.naturalWidth, tiny.height / wall.naturalHeight);
+    const ww = wall.naturalWidth * s, wh = wall.naturalHeight * s;
+    tctx.drawImage(wall, (tiny.width - ww) / 2, (tiny.height - wh) / 2, ww, wh);
+    ctx.globalAlpha = .16;
+    ctx.imageSmoothingQuality = "high";
+    ctx.drawImage(tiny, 0, 0, W, H);
+    ctx.globalAlpha = 1;
+  }
+
   // sunburst rays radiating from the product, fading out with distance
   ctx.save();
   ctx.translate(W / 2, 1080);
-  const goldRay = ctx.createRadialGradient(0, 0, 70, 0, 0, 760);
-  goldRay.addColorStop(0, "rgba(231,194,79,.16)"); goldRay.addColorStop(1, "rgba(231,194,79,0)");
-  const redRay = ctx.createRadialGradient(0, 0, 70, 0, 0, 760);
-  redRay.addColorStop(0, "rgba(229,60,46,.10)"); redRay.addColorStop(1, "rgba(229,60,46,0)");
+  const iceRay = ctx.createRadialGradient(0, 0, 70, 0, 0, 760);
+  iceRay.addColorStop(0, "rgba(185,196,217,.17)"); iceRay.addColorStop(1, "rgba(185,196,217,0)");
+  const whiteRay = ctx.createRadialGradient(0, 0, 70, 0, 0, 760);
+  whiteRay.addColorStop(0, "rgba(255,255,255,.09)"); whiteRay.addColorStop(1, "rgba(255,255,255,0)");
   for (let i = 0; i < 24; i++) {
     const a0 = i * Math.PI / 12 + .12, a1 = a0 + Math.PI / 30;
     ctx.beginPath(); ctx.moveTo(0, 0); ctx.arc(0, 0, 760, a0, a1); ctx.closePath();
-    ctx.fillStyle = i % 2 ? goldRay : redRay;
+    ctx.fillStyle = i % 2 ? iceRay : whiteRay;
     ctx.fill();
   }
   ctx.restore();
@@ -320,12 +336,12 @@ async function buildShareCard(b, pct) {
   ctx.textAlign = "center";
 
   const titleGrad = ctx.createLinearGradient(W / 2 - 430, 0, W / 2 + 430, 0);
-  titleGrad.addColorStop(0, "#E7C24F"); titleGrad.addColorStop(.35, "#E53C2E");
-  titleGrad.addColorStop(.5, "#FFD9A0"); titleGrad.addColorStop(.65, "#E53C2E");
-  titleGrad.addColorStop(1, "#E7C24F");
+  titleGrad.addColorStop(0, "#7E93BD"); titleGrad.addColorStop(.3, "#EAF0FA");
+  titleGrad.addColorStop(.48, "#FFFFFF"); titleGrad.addColorStop(.62, "#B9C4D9");
+  titleGrad.addColorStop(1, "#7E93BD");
   ctx.fillStyle = titleGrad;
   ctx.font = '128px "Fan Impact", sans-serif';
-  ctx.shadowColor = "rgba(229,60,46,.5)"; ctx.shadowBlur = 60;
+  ctx.shadowColor = "rgba(150,185,255,.45)"; ctx.shadowBlur = 60;
   ctx.fillText("IT'S A MATCH!", W / 2, 560);
   ctx.shadowBlur = 0;
   ctx.font = "96px serif";
@@ -335,7 +351,7 @@ async function buildShareCard(b, pct) {
   {
     const fy = 1400;
     const floor = ctx.createRadialGradient(W / 2, fy, 10, W / 2, fy, 330);
-    floor.addColorStop(0, "rgba(231,194,79,.26)");
+    floor.addColorStop(0, "rgba(200,215,245,.26)");
     floor.addColorStop(.5, "rgba(255,255,255,.06)");
     floor.addColorStop(1, "rgba(255,255,255,0)");
     ctx.save();
@@ -362,17 +378,6 @@ async function buildShareCard(b, pct) {
       ctx.drawImage(img, cx - w / 2, cy - h / 2, w, h);
       ctx.restore();
     }
-    // mirrored reflection fading out below the product (offscreen canvas so
-    // the fade masks only the reflection, not the background behind it)
-    const rc = document.createElement("canvas");
-    rc.width = Math.ceil(w); rc.height = Math.ceil(h * .3);
-    const rx = rc.getContext("2d");
-    rx.save(); rx.scale(1, -1); rx.drawImage(img, 0, -h, w, h); rx.restore();
-    const fade = rx.createLinearGradient(0, 0, 0, rc.height);
-    fade.addColorStop(0, "rgba(255,255,255,.22)"); fade.addColorStop(1, "rgba(255,255,255,0)");
-    rx.globalCompositeOperation = "destination-in";
-    rx.fillStyle = fade; rx.fillRect(0, 0, rc.width, rc.height);
-    ctx.drawImage(rc, cx - w / 2, cy + h / 2 + 14);
   } else {
     // No product shot: draw the same light name card the reveal shows
     const cw = 520, ch = 600, cx = W / 2, cy = 1080;
