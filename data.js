@@ -4916,7 +4916,7 @@ export const QUESTIONS = [
     "id": "risk",
     "ranked": false,
     "eyebrow": "Question 5 · Risk Tolerance",
-    "title": "How do you feel about surprises?",
+    "title": "How do you like your odds?",
     "hint": "",
     "opts": [
       {
