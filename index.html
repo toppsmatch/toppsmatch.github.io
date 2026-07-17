@@ -4,17 +4,27 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ToppsMatch | Find Your Perfect Pack</title>
-<link rel="stylesheet" href="styles.css?v=1784319738">
+<link rel="stylesheet" href="styles.css?v=1784321282">
 </head>
 <body>
 <div id="reveal" class="reveal hidden">
+  <div class="reveal-shine"></div>
   <div id="confettiWrap"></div>
+  <div id="heartsWrap"></div>
   <div class="reveal-inner">
     <div class="reveal-title">It's a Match! 💘</div>
-    <img id="revealImg" class="reveal-img hidden" alt="">
+    <div class="spin-stage">
+      <div class="reveal-glow"></div>
+      <div class="reveal-burst" id="revealBurst"></div>
+      <div class="spin-card" id="spinCard"><img id="revealImg" class="reveal-img" alt=""><div id="spinNamecard" class="spin-namecard" style="display:none"></div></div>
+    </div>
     <div class="reveal-sub" id="revealName"></div>
     <div class="reveal-pct" id="revealPct"></div>
-    <button class="btn-start" onclick="meetMatch()">Meet Your Match →</button>
+    <div class="reveal-actions">
+      <button class="btn-start" onclick="meetMatch()">Meet Your Match →</button>
+      <button class="btn-share" onclick="shareMatch(this)" aria-label="Share your match"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13"/><path d="M7 8l5-5 5 5"/><path d="M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"/></svg></button>
+    </div>
+    <div class="reveal-url">toppsmatch.github.io</div>
   </div>
 </div>
 <div class="app">
@@ -68,6 +78,6 @@
   </div>
 
 </div>
-<script type="module" src="app.js?v=1784319738"></script>
+<script type="module" src="app.js?v=1784321282"></script>
 </body>
 </html>

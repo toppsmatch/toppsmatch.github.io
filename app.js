@@ -1,5 +1,5 @@
-import { BRANDS, QUESTIONS } from "./data.js?v=1784319738";
-import { score, topMatches, wildcard, maxScore } from "./scoring.js?v=1784319738";
+import { BRANDS, QUESTIONS } from "./data.js?v=1784321282";
+import { score, topMatches, wildcard, maxScore } from "./scoring.js?v=1784321282";
 
 // One tally submission per page load, fire-and-forget; never blocks the reveal.
 let submitted = false;
@@ -131,14 +131,90 @@ function showResults() {
 
   // Dating-app reveal moment first, results behind it.
   const b = BRANDS[top[0].key];
-  const revealImg = document.getElementById("revealImg");
-  if (b.img) { revealImg.src = b.img; revealImg.alt = b.name; revealImg.classList.remove("hidden"); }
-  else { revealImg.classList.add("hidden"); revealImg.removeAttribute("src"); revealImg.alt = ""; }
   document.getElementById("revealName").textContent = `You + ${b.name}`;
   document.getElementById("revealPct").textContent = `${top[0].pct}% compatible`;
-  spawnConfetti();
   document.documentElement.style.overflow = "hidden";
   document.getElementById("reveal").classList.remove("hidden");
+  runSpinReveal(b);
+}
+
+// Slot-machine reveal: the card whips through other products and eases out to
+// land on the match. rotateY is driven by rAF; the face image swaps while the
+// card is edge-on (90°/270°) so each half-turn shows a new product, and the
+// inner image counter-flips on the "back" half so it never renders mirrored.
+function runSpinReveal(b) {
+  const reveal = document.getElementById("reveal");
+  const card = document.getElementById("spinCard");
+  const img = document.getElementById("revealImg");
+  const namecard = document.getElementById("spinNamecard");
+  reveal.classList.remove("landed");
+  img.alt = b.name || "";
+  img.style.display = "";
+  namecard.style.display = "none";
+  namecard.textContent = b.name || "";
+
+  const land = () => {
+    card.style.transform = "";
+    img.style.transform = "";
+    namecard.style.transform = "";
+    if (b.img) img.src = b.img;
+    else { img.style.display = "none"; img.removeAttribute("src"); namecard.style.display = "flex"; }
+    reveal.classList.add("landed");
+    spawnConfetti();
+    spawnHearts();
+    // Pre-render the share card now so the share button can hand a ready blob
+    // to navigator.share() inside its tap's transient activation (Safari drops
+    // the share sheet if the gesture goes stale while a canvas renders).
+    sharePromise = buildShareCard(b, lastResults.top[0].pct).catch(() => null);
+  };
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) { land(); return; }
+
+  // Faces the spin flashes through: other products, the match itself last.
+  const others = Object.values(BRANDS).filter(o => o.img && o.img !== b.img).map(o => o.img);
+  for (let i = others.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [others[i], others[j]] = [others[j], others[i]]; }
+  const TURNS = 5; // 10 half-turn face swaps
+  const faces = others.slice(0, TURNS * 2);
+  faces.forEach(src => { new Image().src = src; }); // warm the cache
+  faces.push(b.img || null); // null face = the namecard shows at landing
+  img.src = faces[0];
+
+  const DUR = 2800, TOTAL = TURNS * 360;
+  const ease = t => 1 - Math.pow(1 - t, 3);
+  let start = null, lastFace = 0;
+  function frame(now) {
+    if (start === null) start = now;
+    const t = Math.min((now - start) / DUR, 1);
+    const deg = ease(t) * TOTAL;
+    const face = Math.min(Math.floor((deg + 90) / 180), faces.length - 1);
+    if (face !== lastFace) {
+      lastFace = face;
+      const src = faces[face];
+      if (src) { img.src = src; img.style.display = ""; namecard.style.display = "none"; }
+      else { img.style.display = "none"; namecard.style.display = "flex"; }
+    }
+    const m = deg % 360;
+    const flip = (m > 90 && m < 270) ? "rotateY(180deg)" : "";
+    img.style.transform = flip;
+    namecard.style.transform = flip;
+    card.style.transform = `rotateY(${deg}deg)`;
+    if (t < 1) requestAnimationFrame(frame);
+    else land();
+  }
+  requestAnimationFrame(frame);
+}
+
+function spawnHearts() {
+  const wrap = document.getElementById("heartsWrap");
+  const glyphs = ["💘", "❤️", "💙", "🤍", "💖"];
+  wrap.innerHTML = Array.from({ length: 14 }, (_, i) => {
+    const left = 4 + (i * 41) % 92;
+    const delay = (i % 7) * 0.5;
+    const dur = 3.4 + (i % 5) * 0.7;
+    const sway = ((i % 3) - 1) * 46;
+    const size = 16 + (i * 13) % 16;
+    return `<span class="heart" style="left:${left}%;--sway:${sway}px;font-size:${size}px;animation-duration:${dur}s;animation-delay:${delay}s">${glyphs[i % glyphs.length]}</span>`;
+  }).join("");
+  setTimeout(() => { wrap.innerHTML = ""; }, 9000);
 }
 
 let confettiTimer = null;
@@ -153,6 +229,178 @@ function spawnConfetti() {
     return `<span class="confetti" style="left:${left}%;background:${colors[i % colors.length]};animation-duration:${dur}s;animation-delay:${delay}s"></span>`;
   }).join("");
   clearTimeout(confettiTimer); confettiTimer = setTimeout(() => { wrap.innerHTML = ""; }, 6000);
+}
+
+// ─── SHARE CARD (9:16 story image via canvas -> native share sheet) ──────────
+let sharePromise = null;
+
+async function shareMatch(btn) {
+  if (!lastResults || !sharePromise) return;
+  if (btn) btn.disabled = true;
+  const m = lastResults.top[0];
+  const b = BRANDS[m.key];
+  try {
+    const blob = await sharePromise;
+    if (!blob) return;
+    const file = new File([blob], "toppsmatch.png", { type: "image/png" });
+    if (navigator.canShare && navigator.canShare({ files: [file] })) {
+      await navigator.share({
+        files: [file],
+        title: "ToppsMatch",
+        text: `I matched with ${b.name} 💘 ${m.pct}% compatible. Find yours: https://toppsmatch.github.io`,
+      });
+    } else {
+      // Laptop fallback: save the image so it can be posted anywhere.
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "toppsmatch.png";
+      a.click();
+      setTimeout(() => URL.revokeObjectURL(a.href), 30000);
+    }
+  } catch { /* share sheet dismissed — nothing to do */ }
+  if (btn) btn.disabled = false;
+}
+
+// Keep in sync with the img[src*=...] white-tile rule in styles.css.
+const TILE_SRCS = ["definitive", "diamond_icons", "dynasty_f1", "inception.", "pristine", "royalty_tennis"];
+
+function loadImg(src) {
+  return new Promise((res, rej) => { const i = new Image(); i.onload = () => res(i); i.onerror = rej; i.src = src; });
+}
+
+function roundRect(ctx, x, y, w, h, r) {
+  ctx.beginPath();
+  ctx.moveTo(x + r, y);
+  ctx.arcTo(x + w, y, x + w, y + h, r);
+  ctx.arcTo(x + w, y + h, x, y + h, r);
+  ctx.arcTo(x, y + h, x, y, r);
+  ctx.arcTo(x, y, x + w, y, r);
+  ctx.closePath();
+}
+
+async function buildShareCard(b, pct) {
+  await Promise.all([
+    document.fonts.load('90px "Fan Impact"'),
+    document.fonts.load('800 54px "Fan Sans"'),
+    document.fonts.load('italic 44px "Fan Serif"'),
+  ]).catch(() => {});
+  const img = b.img ? await loadImg(b.img).catch(() => null) : null;
+
+  const W = 1080, H = 1920;
+  const cv = document.createElement("canvas"); cv.width = W; cv.height = H;
+  const ctx = cv.getContext("2d");
+
+  const bg = ctx.createRadialGradient(W / 2, 760, 80, W / 2, 900, 1250);
+  bg.addColorStop(0, "#16305e"); bg.addColorStop(.55, "#091F40"); bg.addColorStop(1, "#060f22");
+  ctx.fillStyle = bg; ctx.fillRect(0, 0, W, H);
+
+  // scattered confetti, deterministic so every card looks composed
+  const colors = ["#E53C2E", "#FFFFFF", "#E7C24F", "#3D5170", "#F4A9A1"];
+  for (let i = 0; i < 90; i++) {
+    const x = (i * 397.31) % W, y = (i * 211.7 + 137) % H;
+    if (Math.abs(x - W / 2) < 330 && y > 560 && y < 1450) continue; // keep the middle clean
+    ctx.save();
+    ctx.translate(x, y); ctx.rotate((i * 47) % 360 * Math.PI / 180);
+    ctx.globalAlpha = .22 + (i % 4) * .1;
+    ctx.fillStyle = colors[i % colors.length];
+    ctx.fillRect(-5, -9, 10, 18);
+    ctx.restore();
+  }
+
+  ctx.textAlign = "center";
+  ctx.fillStyle = "#B9C4D9";
+  ctx.font = '700 26px "Fan Sans", sans-serif';
+  drawSpaced(ctx, "TOPPS × FANATICS COLLECTIBLES", W / 2, 170, 8);
+
+  ctx.font = '90px "Fan Impact", sans-serif';
+  const tw = ctx.measureText("TOPPS").width + ctx.measureText("MATCH").width;
+  ctx.textAlign = "left";
+  ctx.fillStyle = "#fff"; ctx.fillText("TOPPS", (W - tw) / 2, 290);
+  ctx.fillStyle = "#E53C2E"; ctx.fillText("MATCH", (W - tw) / 2 + ctx.measureText("TOPPS").width, 290);
+  ctx.textAlign = "center";
+
+  ctx.fillStyle = "#E53C2E";
+  ctx.font = '128px "Fan Impact", sans-serif';
+  ctx.shadowColor = "rgba(229,60,46,.5)"; ctx.shadowBlur = 60;
+  ctx.fillText("IT'S A MATCH!", W / 2, 560);
+  ctx.shadowBlur = 0;
+  ctx.font = "96px serif";
+  ctx.fillText("💘", W / 2, 690);
+
+  if (img) {
+    const box = 600, cx = W / 2, cy = 1080;
+    const s = Math.min(box / img.naturalWidth, box / img.naturalHeight);
+    const w = img.naturalWidth * s, h = img.naturalHeight * s;
+    if (TILE_SRCS.some(t => b.img.includes(t))) {
+      ctx.save();
+      roundRect(ctx, cx - w / 2 - 24, cy - h / 2 - 24, w + 48, h + 48, 28);
+      ctx.shadowColor = "rgba(0,0,0,.55)"; ctx.shadowBlur = 70; ctx.shadowOffsetY = 30;
+      ctx.fillStyle = "#fff"; ctx.fill();
+      ctx.restore();
+      ctx.drawImage(img, cx - w / 2, cy - h / 2, w, h);
+    } else {
+      ctx.save();
+      ctx.shadowColor = "rgba(0,0,0,.6)"; ctx.shadowBlur = 70; ctx.shadowOffsetY = 30;
+      ctx.drawImage(img, cx - w / 2, cy - h / 2, w, h);
+      ctx.restore();
+    }
+  } else {
+    // No product shot: draw the same light name card the reveal shows
+    const cw = 520, ch = 600, cx = W / 2, cy = 1080;
+    ctx.save();
+    roundRect(ctx, cx - cw / 2, cy - ch / 2, cw, ch, 40);
+    ctx.shadowColor = "rgba(0,0,0,.55)"; ctx.shadowBlur = 70; ctx.shadowOffsetY = 30;
+    const tile = ctx.createLinearGradient(cx - cw / 2, cy - ch / 2, cx + cw / 2, cy + ch / 2);
+    tile.addColorStop(0, "#F4F6FA"); tile.addColorStop(1, "#DDE0E0");
+    ctx.fillStyle = tile; ctx.fill();
+    ctx.restore();
+    ctx.fillStyle = "#091F40";
+    ctx.font = '64px "Fan Impact", sans-serif';
+    const words = (b.name || "").toUpperCase().split(" ");
+    const lines = [];
+    let line = "";
+    for (const wd of words) {
+      const tryLine = line ? line + " " + wd : wd;
+      if (ctx.measureText(tryLine).width > cw - 90 && line) { lines.push(line); line = wd; }
+      else line = tryLine;
+    }
+    if (line) lines.push(line);
+    lines.slice(0, 4).forEach((l, i) => ctx.fillText(l, cx, cy - (lines.length - 1) * 40 + i * 80 + 20));
+  }
+
+  ctx.fillStyle = "#fff";
+  let nameSize = 56;
+  ctx.font = `800 ${nameSize}px "Fan Sans", sans-serif`;
+  while (ctx.measureText(`You + ${b.name}`).width > W - 100 && nameSize > 34) {
+    nameSize -= 2;
+    ctx.font = `800 ${nameSize}px "Fan Sans", sans-serif`;
+  }
+  ctx.fillText(`You + ${b.name}`, W / 2, 1520);
+
+  const badge = `${pct}% compatible`;
+  ctx.font = 'italic 46px "Fan Serif", serif';
+  const bw = ctx.measureText(badge).width + 96;
+  roundRect(ctx, (W - bw) / 2, 1560, bw, 92, 46);
+  ctx.strokeStyle = "rgba(231,194,79,.75)"; ctx.lineWidth = 3; ctx.stroke();
+  ctx.fillStyle = "rgba(231,194,79,.1)"; ctx.fill();
+  ctx.fillStyle = "#E7C24F";
+  ctx.fillText(badge, W / 2, 1623);
+
+  ctx.fillStyle = "#B9C4D9";
+  ctx.font = '700 30px "Fan Sans", sans-serif';
+  drawSpaced(ctx, "TOPPSMATCH.GITHUB.IO", W / 2, 1800, 10);
+
+  return new Promise(res => cv.toBlob(res, "image/png"));
+}
+
+// canvas has no letter-spacing; draw char by char around the center
+function drawSpaced(ctx, text, cx, y, gap) {
+  const widths = [...text].map(c => ctx.measureText(c).width);
+  const total = widths.reduce((a, w) => a + w, 0) + gap * (text.length - 1);
+  let x = cx - total / 2;
+  const align = ctx.textAlign; ctx.textAlign = "left";
+  [...text].forEach((c, i) => { ctx.fillText(c, x, y); x += widths[i] + gap; });
+  ctx.textAlign = align;
 }
 
 function meetMatch() {
@@ -405,4 +653,4 @@ function restart(){
 document.getElementById("btnStart").disabled = false;
 
 // Inline onclick handlers in the HTML resolve against window.
-Object.assign(window, { startQuiz, pick, goNext, goBack, restart, meetMatch });
+Object.assign(window, { startQuiz, pick, goNext, goBack, restart, meetMatch, shareMatch });
