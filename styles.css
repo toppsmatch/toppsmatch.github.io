@@ -239,8 +239,8 @@ body.in-results .header{display:none}
    the top-left corner can only move DOWN (never touches the header text), and
    only the back sheet's bottom-left corner dips slightly below the card. */
 .fan{position:absolute;z-index:0;top:4%;bottom:4%;left:50%;width:100%;max-width:352px;border-radius:22px;transform-origin:100% 50%;pointer-events:none;box-shadow:0 10px 24px rgba(0,0,0,.35)}
-.fan1{background:#fff;transform:translateX(-53%) rotate(-3deg)}
-.fan2{background:#22345C;transform:translateX(-56%) rotate(-6deg)}
+.fan1{background:var(--card);border:1px solid var(--border);transform:translateX(-53%) rotate(-3deg);box-shadow:0 10px 24px rgba(0,0,0,.35),0 0 24px 5px rgba(229,60,46,.65)}
+.fan2{background:var(--card);border:1px solid var(--border);transform:translateX(-56%) rotate(-6deg);box-shadow:0 10px 24px rgba(0,0,0,.35),0 0 26px 6px rgba(96,150,255,.75)}
 @media (max-width:430px){
   .fan1{transform:translateX(-52.5%) rotate(-2.6deg)}
   .fan2{transform:translateX(-55%) rotate(-5deg)}
