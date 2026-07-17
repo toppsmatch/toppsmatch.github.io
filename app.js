@@ -1,5 +1,5 @@
-import { BRANDS, QUESTIONS } from "./data.js?v=1784325067";
-import { score, topMatches, wildcard, maxScore } from "./scoring.js?v=1784325067";
+import { BRANDS, QUESTIONS } from "./data.js?v=1784325800";
+import { score, topMatches, wildcard, maxScore } from "./scoring.js?v=1784325800";
 
 // One tally submission per page load, fire-and-forget; never blocks the reveal.
 let submitted = false;
@@ -419,14 +419,11 @@ async function buildShareCard(b, pct) {
   }
   ctx.fillText(`You + ${b.name}`, W / 2, 1520);
 
-  const badge = `${pct}% compatible`;
-  ctx.font = 'italic 46px "Fan Serif", serif';
-  const bw = ctx.measureText(badge).width + 96;
-  roundRect(ctx, (W - bw) / 2, 1560, bw, 92, 46);
-  ctx.strokeStyle = "rgba(231,194,79,.75)"; ctx.lineWidth = 3; ctx.stroke();
-  ctx.fillStyle = "rgba(231,194,79,.1)"; ctx.fill();
   ctx.fillStyle = "#E7C24F";
-  ctx.fillText(badge, W / 2, 1623);
+  ctx.font = 'italic 54px "Fan Serif", serif';
+  ctx.shadowColor = "rgba(231,194,79,.45)"; ctx.shadowBlur = 40;
+  ctx.fillText(`${pct}% compatible`, W / 2, 1618);
+  ctx.shadowBlur = 0;
 
   ctx.fillStyle = "#B9C4D9";
   ctx.font = '700 30px "Fan Sans", sans-serif';

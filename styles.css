@@ -153,7 +153,7 @@ h1 em{font-style:normal;color:var(--red)}
 @keyframes pop{from{opacity:0;transform:scale(.7)}to{opacity:1;transform:scale(1)}}
 .reveal-title{font-family:var(--impact);font-weight:400;font-size:42px;text-transform:uppercase;letter-spacing:-.01em;color:var(--red);margin-bottom:10px;filter:drop-shadow(0 4px 24px rgba(229,60,46,.45))}
 .reveal-sub{font-size:19px;font-weight:800;color:#fff;margin-bottom:10px}
-.reveal-pct{display:inline-block;font-family:var(--serif);font-style:italic;font-size:17px;color:#E7C24F;border:1.5px solid rgba(231,194,79,.65);border-radius:999px;padding:7px 18px;margin-bottom:24px;background:rgba(231,194,79,.08);box-shadow:0 0 24px rgba(231,194,79,.18)}
+.reveal-pct{display:block;font-family:var(--serif);font-style:italic;font-size:22px;color:#E7C24F;margin-bottom:24px;text-shadow:0 0 26px rgba(231,194,79,.45)}
 .confetti{position:absolute;top:-14px;width:8px;height:14px;border-radius:2px;opacity:.9;animation:fall linear infinite}
 @keyframes fall{to{transform:translateY(105vh) rotate(720deg)}}
 
