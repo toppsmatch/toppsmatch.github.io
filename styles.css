@@ -195,7 +195,8 @@ h1 em{font-style:normal;color:var(--red)}
 
 .reveal-actions{display:flex;flex-direction:column;gap:10px;align-items:stretch}
 .reveal:not(.landed) .reveal-actions{pointer-events:none}
-.btn-share{width:100%;padding:12px;display:flex;align-items:center;justify-content:center;background:transparent;border:2px solid rgba(255,255,255,.55);color:#fff;border-radius:10px;cursor:pointer;transition:border-color .15s,background .15s}
+.btn-share{align-self:center;width:auto;padding:8px 24px;display:flex;align-items:center;justify-content:center;background:transparent;border:1.5px solid rgba(255,255,255,.5);color:#fff;border-radius:999px;cursor:pointer;transition:border-color .15s,background .15s}
+.btn-share svg{width:17px;height:17px}
 .btn-share:hover{border-color:#fff;background:rgba(255,255,255,.08)}
 .btn-share:disabled{opacity:.5;cursor:default}
 
