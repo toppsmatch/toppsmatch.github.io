@@ -171,20 +171,14 @@ h1 em{font-style:normal;color:var(--red)}
 .landed .reveal-shine{animation:shine 1.1s ease-out .15s forwards}
 @keyframes shine{to{transform:translateX(120%)}}
 
-/* Floating hearts: rise from the bottom with a gentle sway */
-#heartsWrap{position:absolute;inset:0;pointer-events:none;overflow:hidden}
-.heart{position:absolute;bottom:-40px;font-size:22px;opacity:0;animation:rise linear forwards}
-@keyframes rise{6%{opacity:.9}100%{transform:translateY(-108vh) translateX(var(--sway,20px)) rotate(14deg);opacity:0}}
-
 /* Type + actions hold until the card lands, then stagger in */
-.reveal-title,.reveal-sub,.reveal-pct,.reveal-actions,.reveal-url{opacity:0;transform:translateY(10px);transition:opacity .5s ease,transform .5s ease}
+.reveal-title,.reveal-sub,.reveal-pct,.reveal-actions{opacity:0;transform:translateY(10px);transition:opacity .5s ease,transform .5s ease}
 .landed .reveal-title{opacity:1;transform:none;transition-delay:.12s}
 .landed .reveal-sub{opacity:1;transform:none;transition-delay:.26s}
 .landed .reveal-pct{opacity:1;transform:none;transition-delay:.38s}
 .landed .reveal-actions{opacity:1;transform:none;transition-delay:.52s}
-.landed .reveal-url{opacity:1;transform:none;transition-delay:.66s}
 @media (prefers-reduced-motion:reduce){
-  .reveal-title,.reveal-sub,.reveal-pct,.reveal-actions,.reveal-url{opacity:1;transform:none;transition:none}
+  .reveal-title,.reveal-sub,.reveal-pct,.reveal-actions{opacity:1;transform:none;transition:none}
   .landed .reveal-shine,.landed .reveal-burst,.landed .spin-card{animation:none}
 }
 
@@ -193,7 +187,6 @@ h1 em{font-style:normal;color:var(--red)}
 .btn-share{width:52px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:transparent;border:2px solid rgba(255,255,255,.55);color:#fff;border-radius:10px;cursor:pointer;transition:border-color .15s,background .15s}
 .btn-share:hover{border-color:#fff;background:rgba(255,255,255,.08)}
 .btn-share:disabled{opacity:.5;cursor:default}
-.reveal-url{margin-top:18px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#B9C4D9}
 
 /* DATING PROFILE LINES */
 .profile-line{font-size:13px;line-height:1.6;margin-bottom:8px;color:var(--grey)}

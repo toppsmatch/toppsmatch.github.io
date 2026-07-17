@@ -1,5 +1,5 @@
-import { BRANDS, QUESTIONS } from "./data.js?v=1784321282";
-import { score, topMatches, wildcard, maxScore } from "./scoring.js?v=1784321282";
+import { BRANDS, QUESTIONS } from "./data.js?v=1784321767";
+import { score, topMatches, wildcard, maxScore } from "./scoring.js?v=1784321767";
 
 // One tally submission per page load, fire-and-forget; never blocks the reveal.
 let submitted = false;
@@ -161,7 +161,6 @@ function runSpinReveal(b) {
     else { img.style.display = "none"; img.removeAttribute("src"); namecard.style.display = "flex"; }
     reveal.classList.add("landed");
     spawnConfetti();
-    spawnHearts();
     // Pre-render the share card now so the share button can hand a ready blob
     // to navigator.share() inside its tap's transient activation (Safari drops
     // the share sheet if the gesture goes stale while a canvas renders).
@@ -203,22 +202,9 @@ function runSpinReveal(b) {
   requestAnimationFrame(frame);
 }
 
-function spawnHearts() {
-  const wrap = document.getElementById("heartsWrap");
-  const glyphs = ["💘", "❤️", "💙", "🤍", "💖"];
-  wrap.innerHTML = Array.from({ length: 14 }, (_, i) => {
-    const left = 4 + (i * 41) % 92;
-    const delay = (i % 7) * 0.5;
-    const dur = 3.4 + (i % 5) * 0.7;
-    const sway = ((i % 3) - 1) * 46;
-    const size = 16 + (i * 13) % 16;
-    return `<span class="heart" style="left:${left}%;--sway:${sway}px;font-size:${size}px;animation-duration:${dur}s;animation-delay:${delay}s">${glyphs[i % glyphs.length]}</span>`;
-  }).join("");
-  setTimeout(() => { wrap.innerHTML = ""; }, 9000);
-}
-
-let confettiTimer = null;
-
+// Confetti loops for as long as the reveal is up (Gus's call, July 17: the
+// party doesn't stop). The overlay goes display:none once dismissed, so the
+// endless animation costs nothing after Meet Your Match.
 function spawnConfetti() {
   const wrap = document.getElementById("confettiWrap");
   const colors = ["#E53C2E", "#FFFFFF", "#DDE0E0", "#F4A9A1", "#3D5170", "#FFFFFF"];
@@ -228,7 +214,6 @@ function spawnConfetti() {
     const dur = 2.2 + (i % 5) * 0.4;
     return `<span class="confetti" style="left:${left}%;background:${colors[i % colors.length]};animation-duration:${dur}s;animation-delay:${delay}s"></span>`;
   }).join("");
-  clearTimeout(confettiTimer); confettiTimer = setTimeout(() => { wrap.innerHTML = ""; }, 6000);
 }
 
 // ─── SHARE CARD (9:16 story image via canvas -> native share sheet) ──────────
