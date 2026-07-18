@@ -66,18 +66,82 @@ export function topMatches(sc, sports, brands, n = 3, maxPossible = 100) {
     return (brands[k].sport || []).some(sp => sports.includes(sp));
   });
   const sorted = relevant.sort((a, b) => b[1] - a[1]);
-  return sorted.slice(0, n).map(([k, raw]) => ({
+
+  // Coverage guarantee (Gus, July 17): every chosen sport gets at least one
+  // representative in the results — rank order, as many as fit in n slots —
+  // then the best remaining brands fill what's left. A brand that spans two
+  // chosen sports covers both.
+  const picks = [];
+  const covers = (k, sp) => (brands[k].sport || []).includes(sp);
+  for (const sp of sports.filter(s => s !== "multi").slice(0, n)) {
+    if (picks.some(([k]) => covers(k, sp))) continue;
+    const cand = sorted.find(([k]) => !picks.some(p => p[0] === k) && covers(k, sp));
+    if (cand) picks.push(cand);
+  }
+  for (const entry of sorted) {
+    if (picks.length >= n) break;
+    if (!picks.some(p => p[0] === entry[0])) picks.push(entry);
+  }
+  picks.sort((a, b) => b[1] - a[1]);
+  return picks.slice(0, n).map(([k, raw]) => ({
     key: k,
     pct: Math.min(99, Math.max(40, Math.round((raw / maxPossible) * 100)))
   }));
 }
 
+// Interest adjacency for the wildcard: fans of X plausibly collect Y next.
+// Values are quiz sport slugs (Answer Options "Value" column).
+const SPORT_AFFINITY = {
+  nba: ["college"], nfl: ["college"], baseball: ["college"],
+  college: ["nba", "nfl"],
+  ufc: ["wwe"], wwe: ["ufc"],
+  f1: ["soccer"], soccer: ["f1"], tennis: ["soccer"],
+  ent: ["nonsport"], nonsport: ["ent"],
+};
+// Pop culture is one sport bucket ("ent"), so cross-franchise affinity detects
+// the franchise from the brand name + category label (labels alone are
+// inconsistent: "Topps Star Wars" is labeled "Entertainment" in Airtable).
+const FRANCHISES = [
+  ["starwars", /star wars/i],
+  ["marvel", /marvel|deadpool|captain america/i],
+  ["disney", /disney|pixar|toy story/i],
+  ["veefriends", /veefriends/i],
+  ["nick", /spongebob|nickelodeon/i],
+];
+const FRANCHISE_AFFINITY = {
+  starwars: ["marvel"], marvel: ["starwars"],
+  disney: ["veefriends"], veefriends: ["disney"], nick: ["disney"],
+};
+function franchiseOf(b) {
+  const hay = `${b?.name || ""} ${b?.catLabel || ""}`;
+  return FRANCHISES.find(([, re]) => re.test(hay))?.[0];
+}
+
 export function wildcard(sc, topKeys, sports, brands) {
   const topSet = new Set(topKeys);
   const sorted = Object.entries(sc).sort((a, b) => b[1] - a[1]);
-  const wc = sorted.find(([k]) => {
+  const offSport = k => !(brands[k].sport || []).some(sp => sports.includes(sp));
+
+  // Franchise neighbours of the actual top matches (Star Wars -> Marvel...).
+  // These share the "ent" sport bucket, so require a different franchise from
+  // every top match instead of a different sport.
+  const topFr = new Set(topKeys.map(k => franchiseOf(brands[k])).filter(Boolean));
+  const frTargets = new Set([...topFr].flatMap(f => FRANCHISE_AFFINITY[f] || []));
+  const byFr = sorted.find(([k]) => {
     if (topSet.has(k)) return false;
-    return !(brands[k].sport || []).some(sp => sports.includes(sp));
+    const f = franchiseOf(brands[k]);
+    return f && frTargets.has(f) && !topFr.has(f);
   });
+  if (byFr) return byFr[0];
+
+  // Sport neighbours of the chosen interests (nba -> college, ufc -> wwe...),
+  // strongest scorer first; must sit outside the sports they already chose.
+  const sportTargets = sports.flatMap(sp => SPORT_AFFINITY[sp] || []).filter(t => !sports.includes(t));
+  const bySport = sorted.find(([k]) =>
+    !topSet.has(k) && offSport(k) && (brands[k].sport || []).some(sp => sportTargets.includes(sp)));
+  if (bySport) return bySport[0];
+
+  // Fallbacks: best brand outside the chosen sports, else best non-top brand.
+  const wc = sorted.find(([k]) => !topSet.has(k) && offSport(k));
   return wc?.[0] ?? sorted.find(([k]) => !topSet.has(k))?.[0];
 }
