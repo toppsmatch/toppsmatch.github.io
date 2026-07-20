@@ -4802,7 +4802,7 @@ export const QUESTIONS = [
       {
         "icon": "🪙",
         "label": "Under $50",
-        "sub": "Just getting started, I want to try a pack or two",
+        "sub": "Just getting started",
         "val": "starter"
       },
       {
