@@ -1,5 +1,5 @@
-import { BRANDS, QUESTIONS } from "./data.js?v=1784572735";
-import { score, topMatches, wildcard, maxScore } from "./scoring.js?v=1784572735";
+import { BRANDS, QUESTIONS } from "./data.js?v=1784575179";
+import { score, topMatches, wildcard, maxScore } from "./scoring.js?v=1784575179";
 
 // One tally submission per page load, fire-and-forget; never blocks the reveal.
 let submitted = false;
@@ -166,11 +166,33 @@ function runSpinReveal(b) {
     // the share sheet if the gesture goes stale while a canvas renders).
     sharePromise = buildShareCard(b, lastResults.top[0].pct).catch(() => null);
   };
-  if (matchMedia("(prefers-reduced-motion: reduce)").matches) { land(); return; }
-
   // Faces the spin flashes through: other products, the match itself last.
   const others = Object.values(BRANDS).filter(o => o.img && o.img !== b.img).map(o => o.img);
   for (let i = others.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [others[i], others[j]] = [others[j], others[i]]; }
+
+  // Reduced motion (common iPhone accessibility setting): no 3D spin, but the
+  // reveal still cycles a few products with soft opacity crossfades, so the
+  // moment reads without motion that triggers vestibular symptoms.
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    const calm = others.slice(0, 4);
+    if (!calm.length) { land(); return; }
+    calm.forEach(src => { new Image().src = src; });
+    img.style.transition = "opacity .16s ease";
+    let k = -1;
+    (function step() {
+      img.style.opacity = "0";
+      setTimeout(() => {
+        k++;
+        if (k >= calm.length) { img.style.transition = ""; img.style.opacity = ""; land(); return; }
+        img.src = calm[k];
+        img.style.display = "";
+        namecard.style.display = "none";
+        img.style.opacity = "1";
+        setTimeout(step, 360);
+      }, 170);
+    })();
+    return;
+  }
   const TURNS = 5; // 10 half-turn face swaps
   const faces = others.slice(0, TURNS * 2);
   faces.forEach(src => { new Image().src = src; }); // warm the cache
