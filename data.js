@@ -4859,13 +4859,13 @@ export const QUESTIONS = [
       },
       {
         "icon": "❤️",
-        "label": "Team loyalty",
+        "label": "My favorites",
         "sub": "One team, one player, that's my whole collection",
         "val": "team"
       },
       {
         "icon": "📈",
-        "label": "Smart investment",
+        "label": "Smart investments",
         "sub": "Cards that could be worth more down the road",
         "val": "invest"
       },
