@@ -4261,35 +4261,6 @@ export const BRANDS = {
     ],
     "img": "img/dune_chrome.webp"
   },
-  "f1_now": {
-    "name": "Topps NOW Formula 1",
-    "tier": "Print-to-Order | Racing",
-    "cat": "sport",
-    "catLabel": "Formula 1",
-    "price": "$9–$12/card",
-    "desc": "On-demand cards the day after race day. Topps NOW F1 captures race wins, pole positions, and championship moments in real-time. Own Verstappen's race win by Tuesday. For the fan who wants to live the season card by card.",
-    "tags": [
-      "Formula 1",
-      "On-Demand",
-      "Real-Time",
-      "Race Moments"
-    ],
-    "sport": [
-      "f1"
-    ],
-    "budget": [
-      "entry"
-    ],
-    "identity": [
-      "nostalgia"
-    ],
-    "risk": [
-      "thrill"
-    ],
-    "vibe": [
-      "flashy"
-    ]
-  },
   "inception_nfl": {
     "name": "Topps Inception Football",
     "tier": "Mid-Tier | Premium",
@@ -4920,10 +4891,10 @@ export const QUESTIONS = [
     "hint": "",
     "opts": [
       {
-        "icon": "🎯",
-        "label": "I want to know what I'm getting",
-        "sub": "No surprises, I want guarantees",
-        "val": "guaranteed"
+        "icon": "🎲",
+        "label": "Surprise me",
+        "sub": "Big risk, big reward, big adrenaline",
+        "val": "thrill"
       },
       {
         "icon": "⚖️",
@@ -4932,10 +4903,10 @@ export const QUESTIONS = [
         "val": "balanced"
       },
       {
-        "icon": "🎲",
-        "label": "Surprise me",
-        "sub": "Big risk, big reward, big adrenaline",
-        "val": "thrill"
+        "icon": "🎯",
+        "label": "I want to know what I'm getting",
+        "sub": "No surprises, I want guarantees",
+        "val": "guaranteed"
       }
     ]
   },
@@ -4948,16 +4919,16 @@ export const QUESTIONS = [
     "layout": "grid2",
     "opts": [
       {
-        "icon": "🖤",
-        "label": "Clean and prestigious",
-        "sub": "Simple, premium, and built to impress",
-        "val": "prestige"
-      },
-      {
         "icon": "🕰️",
         "label": "Retro and nostalgic",
         "sub": "Old-school designs that feel like the golden era of collecting",
         "val": "retro"
+      },
+      {
+        "icon": "🖤",
+        "label": "Clean and prestigious",
+        "sub": "Simple, premium, and built to impress",
+        "val": "prestige"
       },
       {
         "icon": "⚡",
