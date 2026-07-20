@@ -4727,13 +4727,13 @@ export const QUESTIONS = [
       {
         "icon": "🏈",
         "label": "NFL Football",
-        "sub": "The NFL is back on Topps",
+        "sub": "NFL players and rookies",
         "val": "nfl"
       },
       {
         "icon": "🏀",
         "label": "NBA Basketball",
-        "sub": "Basketball returns to Topps",
+        "sub": "Premier League, UEFA Champions League, Bundesliga, MLS",
         "val": "nba"
       },
       {
@@ -4848,37 +4848,37 @@ export const QUESTIONS = [
       {
         "icon": "🚀",
         "label": "Future stars",
-        "sub": "Prospects before the hype",
+        "sub": "Rookies before the hype",
         "val": "prospect"
       },
       {
         "icon": "✨",
         "label": "Rare finds",
-        "sub": "Rare, beautiful, hard to pull",
+        "sub": "The cards everyone chases",
         "val": "premium"
       },
       {
         "icon": "❤️",
         "label": "My favorites",
-        "sub": "All in on my team",
+        "sub": "One team, all in",
         "val": "team"
       },
       {
         "icon": "📈",
         "label": "Smart investments",
-        "sub": "Worth more down the road",
+        "sub": "Value that grows over time",
         "val": "invest"
       },
       {
         "icon": "📦",
         "label": "Full sets",
-        "sub": "Every card, nothing missing",
+        "sub": "Every card, start to finish",
         "val": "set"
       },
       {
         "icon": "📸",
         "label": "The classics",
-        "sub": "Old-school legends and moments",
+        "sub": "Vintage vibes, legendary names",
         "val": "nostalgia"
       }
     ]
