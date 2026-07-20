@@ -146,11 +146,11 @@ h1 em{font-style:normal;color:var(--red)}
 .reveal{position:fixed;inset:0;background:#091F40;display:flex;align-items:center;justify-content:center;z-index:50;text-align:center;padding:24px;overflow:hidden}
 /* Gus's brand-wall collage behind everything, blurred, under a navy tint */
 .reveal::before{content:"";position:absolute;inset:-24px;background:url('img/brand-wall.webp') center/cover;filter:blur(5px)}
-/* Phones get Gus's portrait collage (brand-wall-mobile.webp, 1080x1920) so
+/* Phones get Gus's portrait collage (brand-wall-mobile.webp?v=1784573638, 1080x1920) so
    the wall isn't a center-crop of the landscape design. Same veils apply. */
 @media (max-width:700px){
-  body::before{background-image:linear-gradient(rgba(9,31,64,.86),rgba(9,31,64,.86)),url('img/brand-wall-mobile.webp')}
-  .reveal::before{background-image:url('img/brand-wall-mobile.webp')}
+  body::before{background-image:linear-gradient(rgba(9,31,64,.86),rgba(9,31,64,.86)),url('img/brand-wall-mobile.webp?v=1784573638')}
+  .reveal::before{background-image:url('img/brand-wall-mobile.webp?v=1784573638')}
 }
 .reveal::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 90% at 50% 38%,rgba(18,43,85,.82) 0%,rgba(9,31,64,.9) 55%,rgba(6,15,34,.95) 100%)}
 .reveal.hidden{display:none!important}
