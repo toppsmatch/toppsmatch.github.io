@@ -4860,7 +4860,7 @@ export const QUESTIONS = [
       {
         "icon": "❤️",
         "label": "My favorites",
-        "sub": "Teams and players I love the most",
+        "sub": "Teams and players I love most",
         "val": "team"
       },
       {
