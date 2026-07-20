@@ -1,5 +1,5 @@
-import { BRANDS, QUESTIONS } from "./data.js?v=1784580713";
-import { score, topMatches, wildcard, maxScore } from "./scoring.js?v=1784580713";
+import { BRANDS, QUESTIONS } from "./data.js?v=1784581029";
+import { score, topMatches, wildcard, maxScore } from "./scoring.js?v=1784581029";
 
 // One tally submission per page load, fire-and-forget; never blocks the reveal.
 let submitted = false;
@@ -321,7 +321,10 @@ async function buildShareCard(b, pct) {
     const s = Math.max(W / wall.naturalWidth, H / wall.naturalHeight);
     const ww = wall.naturalWidth * s, wh = wall.naturalHeight * s;
     cx2.drawImage(wall, (W - ww) / 2, (H - wh) / 2, ww, wh);
-    const soft = pass(pass(pass(crop, 270, 480), 135, 240), 270, 480);
+    // step every resize by ≤2x — single big jumps are what reintroduce blocks
+    let soft = pass(pass(pass(crop, 540, 960), 270, 480), 135, 240);
+    soft = pass(pass(pass(soft, 90, 160), 180, 320), 360, 640);
+    soft = pass(soft, 540, 960);
     ctx.globalAlpha = .2;
     ctx.imageSmoothingQuality = "high";
     ctx.drawImage(soft, 0, 0, W, H);
@@ -330,7 +333,7 @@ async function buildShareCard(b, pct) {
 
   // sunburst rays radiating from the product, fading out with distance
   ctx.save();
-  ctx.translate(W / 2, 940);
+  ctx.translate(W / 2, 840);
   const iceRay = ctx.createRadialGradient(0, 0, 70, 0, 0, 900);
   iceRay.addColorStop(0, "rgba(185,196,217,.32)"); iceRay.addColorStop(1, "rgba(185,196,217,0)");
   const whiteRay = ctx.createRadialGradient(0, 0, 70, 0, 0, 900);
@@ -347,7 +350,7 @@ async function buildShareCard(b, pct) {
   const colors = ["#E53C2E", "#FFFFFF", "#E7C24F", "#3D5170", "#F4A9A1"];
   for (let i = 0; i < 90; i++) {
     const x = (i * 397.31) % W, y = (i * 211.7 + 137) % H;
-    if (Math.abs(x - W / 2) < 360 && y > 460 && y < 1360) continue; // keep the middle clean
+    if (Math.abs(x - W / 2) < 360 && y > 420 && y < 1260) continue; // keep the middle clean
     ctx.save();
     ctx.translate(x, y); ctx.rotate((i * 47) % 360 * Math.PI / 180);
     ctx.globalAlpha = .22 + (i % 4) * .1;
@@ -385,7 +388,7 @@ async function buildShareCard(b, pct) {
 
   // spotlight pool under the product
   {
-    const fy = 1290;
+    const fy = 1190;
     const floor = ctx.createRadialGradient(W / 2, fy, 10, W / 2, fy, 330);
     floor.addColorStop(0, "rgba(200,215,245,.26)");
     floor.addColorStop(.5, "rgba(255,255,255,.06)");
@@ -398,7 +401,7 @@ async function buildShareCard(b, pct) {
   }
 
   if (img) {
-    const box = 680, cx = W / 2, cy = 940;
+    const box = 680, cx = W / 2, cy = 840;
     const s = Math.min(box / img.naturalWidth, box / img.naturalHeight);
     const w = img.naturalWidth * s, h = img.naturalHeight * s;
     if (TILE_SRCS.some(t => b.img.includes(t))) {
@@ -416,7 +419,7 @@ async function buildShareCard(b, pct) {
     }
   } else {
     // No product shot: draw the same light name card the reveal shows
-    const cw = 520, ch = 600, cx = W / 2, cy = 940;
+    const cw = 520, ch = 600, cx = W / 2, cy = 840;
     ctx.save();
     roundRect(ctx, cx - cw / 2, cy - ch / 2, cw, ch, 40);
     ctx.shadowColor = "rgba(0,0,0,.55)"; ctx.shadowBlur = 70; ctx.shadowOffsetY = 30;
@@ -445,12 +448,12 @@ async function buildShareCard(b, pct) {
     nameSize -= 2;
     ctx.font = `800 ${nameSize}px "Fan Sans", sans-serif`;
   }
-  ctx.fillText(`You + ${b.name}`, W / 2, 1430);
+  ctx.fillText(`You + ${b.name}`, W / 2, 1330);
 
   ctx.fillStyle = "#E7C24F";
   ctx.font = 'italic 56px "Fan Serif", serif';
   ctx.shadowColor = "rgba(231,194,79,.45)"; ctx.shadowBlur = 40;
-  ctx.fillText(`${pct}% compatible`, W / 2, 1532);
+  ctx.fillText(`${pct}% compatible`, W / 2, 1432);
   ctx.shadowBlur = 0;
 
   // CTA cluster: small wordmark, invitation line, then the link
@@ -463,7 +466,7 @@ async function buildShareCard(b, pct) {
 
   ctx.fillStyle = "#B9C4D9";
   ctx.font = '600 34px "Fan Sans", sans-serif';
-  ctx.fillText("Find yours in two minutes", W / 2, 1768);
+  ctx.fillText("Find yours in under two minutes", W / 2, 1768);
 
   ctx.fillStyle = "#fff";
   ctx.font = '700 32px "Fan Sans", sans-serif';
