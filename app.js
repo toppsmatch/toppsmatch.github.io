@@ -1,5 +1,5 @@
-import { BRANDS, QUESTIONS } from "./data.js?v=1784585281";
-import { score, topMatches, wildcard, maxScore } from "./scoring.js?v=1784585281";
+import { BRANDS, QUESTIONS } from "./data.js?v=1784586837";
+import { score, topMatches, wildcard, maxScore } from "./scoring.js?v=1784586837";
 
 // One tally submission per page load, fire-and-forget; never blocks the reveal.
 let submitted = false;

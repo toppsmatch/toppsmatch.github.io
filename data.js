@@ -4848,7 +4848,7 @@ export const QUESTIONS = [
       {
         "icon": "🚀",
         "label": "Future stars",
-        "sub": "Rookies on the rise",
+        "sub": "Investing in young talent",
         "val": "prospect"
       },
       {
@@ -4860,7 +4860,7 @@ export const QUESTIONS = [
       {
         "icon": "❤️",
         "label": "My favorites",
-        "sub": "One team, all in",
+        "sub": "Teams and players I love the most",
         "val": "team"
       },
       {
@@ -4872,7 +4872,7 @@ export const QUESTIONS = [
       {
         "icon": "📦",
         "label": "Full sets",
-        "sub": "Every card, start to finish",
+        "sub": "Completing the set with every card",
         "val": "set"
       },
       {
