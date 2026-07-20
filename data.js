@@ -4848,37 +4848,37 @@ export const QUESTIONS = [
       {
         "icon": "🚀",
         "label": "Future stars",
-        "sub": "Discovering tomorrow's star before anyone else does",
+        "sub": "Prospects before the hype",
         "val": "prospect"
       },
       {
         "icon": "✨",
         "label": "Rare finds",
-        "sub": "Rare, beautiful cards that are hard to find",
+        "sub": "Rare, beautiful, hard to pull",
         "val": "premium"
       },
       {
         "icon": "❤️",
         "label": "My favorites",
-        "sub": "One team, one player, that's my whole collection",
+        "sub": "All in on my team",
         "val": "team"
       },
       {
         "icon": "📈",
         "label": "Smart investments",
-        "sub": "Cards that could be worth more down the road",
+        "sub": "Worth more down the road",
         "val": "invest"
       },
       {
         "icon": "📦",
         "label": "Full sets",
-        "sub": "Every card in the set, nothing missing",
+        "sub": "Every card, nothing missing",
         "val": "set"
       },
       {
         "icon": "📸",
         "label": "The classics",
-        "sub": "Players and moments from the eras of the past",
+        "sub": "Old-school legends and moments",
         "val": "nostalgia"
       }
     ]
