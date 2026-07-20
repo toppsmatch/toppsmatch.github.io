@@ -4888,7 +4888,7 @@ export const QUESTIONS = [
     "ranked": false,
     "eyebrow": "Question 5 · Risk Tolerance",
     "title": "How do you like your odds?",
-    "hint": "Some boxes are lottery tickets: one lucky pull can pay for everything. Others cost more but promise their hits.",
+    "hint": "Some boxes hide one massive pull in a sea of cards. Others promise big hits every time.",
     "opts": [
       {
         "icon": "🎲",
