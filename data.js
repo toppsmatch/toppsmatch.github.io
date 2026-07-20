@@ -4733,31 +4733,31 @@ export const QUESTIONS = [
       {
         "icon": "🏀",
         "label": "NBA Basketball",
-        "sub": "Premier League, UEFA Champions League, Bundesliga, MLS",
+        "sub": "NBA stars and rookies",
         "val": "nba"
       },
       {
         "icon": "⚽",
         "label": "Soccer / Football",
-        "sub": "The beautiful game, from every corner of the world",
+        "sub": "Premier League, UEFA Champions League, Bundesliga, MLS",
         "val": "soccer"
       },
       {
         "icon": "🏎️",
         "label": "Formula 1",
-        "sub": "The fastest sport on the planet",
+        "sub": "F1 drivers and teams",
         "val": "f1"
       },
       {
         "icon": "🥊",
         "label": "UFC / Combat Sports",
-        "sub": "The fighters who define the sport",
+        "sub": "UFC fighters and events",
         "val": "ufc"
       },
       {
         "icon": "🤼",
         "label": "WWE / Wrestling",
-        "sub": "Legends and today's biggest superstars",
+        "sub": "WWE superstars and legends",
         "val": "wwe"
       },
       {
@@ -4775,7 +4775,7 @@ export const QUESTIONS = [
       {
         "icon": "🏆",
         "label": "Multi-Sport",
-        "sub": "A little bit of everything",
+        "sub": "Cards spanning multiple sports",
         "val": "multi"
       },
       {
@@ -4848,7 +4848,7 @@ export const QUESTIONS = [
       {
         "icon": "🚀",
         "label": "Future stars",
-        "sub": "Rookies before the hype",
+        "sub": "Rookies on the rise",
         "val": "prospect"
       },
       {
@@ -4878,7 +4878,7 @@ export const QUESTIONS = [
       {
         "icon": "📸",
         "label": "The classics",
-        "sub": "Vintage vibes, legendary names",
+        "sub": "Retro vibes and legendary names",
         "val": "nostalgia"
       }
     ]
