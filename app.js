@@ -1,5 +1,5 @@
-import { BRANDS, QUESTIONS } from "./data.js?v=1784337907";
-import { score, topMatches, wildcard, maxScore } from "./scoring.js?v=1784337907";
+import { BRANDS, QUESTIONS } from "./data.js?v=1784572735";
+import { score, topMatches, wildcard, maxScore } from "./scoring.js?v=1784572735";
 
 // One tally submission per page load, fire-and-forget; never blocks the reveal.
 let submitted = false;
@@ -270,7 +270,8 @@ async function buildShareCard(b, pct) {
     document.fonts.load('italic 44px "Fan Serif"'),
   ]).catch(() => {});
   const img = b.img ? await loadImg(b.img).catch(() => null) : null;
-  const wall = await loadImg("img/brand-wall.webp").catch(() => null);
+  // The share card is 9:16, so it uses the portrait wall (no crop needed).
+  const wall = await loadImg("img/brand-wall-mobile.webp").catch(() => null);
 
   const W = 1080, H = 1920;
   const cv = document.createElement("canvas"); cv.width = W; cv.height = H;
