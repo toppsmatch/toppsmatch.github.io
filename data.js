@@ -4842,42 +4842,42 @@ export const QUESTIONS = [
     "ranked": true,
     "eyebrow": "Question 4 · Collector Identity",
     "title": "What matters most to you?",
-    "hint": "",
+    "hint": "Different collectors want different things.",
     "layout": "grid2",
     "opts": [
       {
         "icon": "🚀",
-        "label": "Finding the next big thing",
+        "label": "Future stars",
         "sub": "Discovering tomorrow's star before anyone else does",
         "val": "prospect"
       },
       {
         "icon": "✨",
-        "label": "Owning something truly special",
+        "label": "Rare finds",
         "sub": "Rare, beautiful cards that are hard to find",
         "val": "premium"
       },
       {
         "icon": "❤️",
-        "label": "Going all in on my favorites",
+        "label": "Team loyalty",
         "sub": "One team, one player, that's my whole collection",
         "val": "team"
       },
       {
         "icon": "📈",
-        "label": "Building something valuable",
+        "label": "Smart investment",
         "sub": "Cards that could be worth more down the road",
         "val": "invest"
       },
       {
         "icon": "📦",
-        "label": "Completing the whole picture",
+        "label": "Full sets",
         "sub": "Every card in the set, nothing missing",
         "val": "set"
       },
       {
         "icon": "📸",
-        "label": "Chasing memories",
+        "label": "The classics",
         "sub": "Players and moments from the eras of the past",
         "val": "nostalgia"
       }
