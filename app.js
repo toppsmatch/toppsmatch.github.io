@@ -1,5 +1,5 @@
-import { BRANDS, QUESTIONS } from "./data.js?v=1784582451";
-import { score, topMatches, wildcard, maxScore } from "./scoring.js?v=1784582451";
+import { BRANDS, QUESTIONS } from "./data.js?v=1784583044";
+import { score, topMatches, wildcard, maxScore } from "./scoring.js?v=1784583044";
 
 // One tally submission per page load, fire-and-forget; never blocks the reveal.
 let submitted = false;
@@ -28,7 +28,7 @@ function startQuiz(){
   renderQ();
 }
 
-function renderQ(){
+function renderQ(animate = true){
   const q = QUESTIONS[qIdx];
   const pct = Math.round((qIdx / QUESTIONS.length) * 100);
   document.getElementById("qCounter").textContent = `Question ${qIdx+1} of ${QUESTIONS.length}`;
@@ -81,9 +81,13 @@ function renderQ(){
 
   const card = document.getElementById("qCard");
   card.innerHTML = html;
-  card.style.animation = "none";
-  card.offsetHeight;
-  card.style.animation = "";
+  // Replay the entrance animation only when arriving at a question. Re-renders
+  // from picking an option keep the card still (Gus, July 20: no blinking).
+  if (animate) {
+    card.style.animation = "none";
+    card.offsetHeight;
+    card.style.animation = "";
+  }
 }
 
 function answered(q){
@@ -101,7 +105,7 @@ function pick(id, val, ranked){
   } else {
     answers[id] = val;
   }
-  renderQ();
+  renderQ(false);
 }
 
 function goNext(){
