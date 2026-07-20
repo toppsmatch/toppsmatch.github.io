@@ -4820,7 +4820,7 @@ export const QUESTIONS = [
       {
         "icon": "💎",
         "label": "$300–$600",
-        "sub": "Ready to invest",
+        "sub": "Time to invest",
         "val": "mid_high"
       },
       {
