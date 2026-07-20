@@ -4715,7 +4715,7 @@ export const QUESTIONS = [
     "ranked": true,
     "eyebrow": "Question 2 · Interests",
     "title": "What are your interests?",
-    "hint": "Tap everything that excites you in the order you care about it. Your first pick matters most.",
+    "hint": "Tap everything that excites you. Your first pick matters most.",
     "layout": "grid2",
     "opts": [
       {
@@ -4858,18 +4858,6 @@ export const QUESTIONS = [
         "val": "premium"
       },
       {
-        "icon": "📦",
-        "label": "Completing the whole picture",
-        "sub": "Every card in the set, nothing missing",
-        "val": "set"
-      },
-      {
-        "icon": "📸",
-        "label": "Chasing memories",
-        "sub": "Players and moments from the eras of the past",
-        "val": "nostalgia"
-      },
-      {
         "icon": "❤️",
         "label": "Going all in on my favorites",
         "sub": "One team, one player, that's my whole collection",
@@ -4880,6 +4868,18 @@ export const QUESTIONS = [
         "label": "Building something valuable",
         "sub": "Cards that could be worth more down the road",
         "val": "invest"
+      },
+      {
+        "icon": "📦",
+        "label": "Completing the whole picture",
+        "sub": "Every card in the set, nothing missing",
+        "val": "set"
+      },
+      {
+        "icon": "📸",
+        "label": "Chasing memories",
+        "sub": "Players and moments from the eras of the past",
+        "val": "nostalgia"
       }
     ]
   },
@@ -4888,7 +4888,7 @@ export const QUESTIONS = [
     "ranked": false,
     "eyebrow": "Question 5 · Risk Tolerance",
     "title": "How do you like your odds?",
-    "hint": "",
+    "hint": "Some people love the thrill of not knowing. Others want to know exactly what they're getting.",
     "opts": [
       {
         "icon": "🎲",
