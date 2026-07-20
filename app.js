@@ -1,5 +1,5 @@
-import { BRANDS, QUESTIONS } from "./data.js?v=1784579517";
-import { score, topMatches, wildcard, maxScore } from "./scoring.js?v=1784579517";
+import { BRANDS, QUESTIONS } from "./data.js?v=1784580713";
+import { score, topMatches, wildcard, maxScore } from "./scoring.js?v=1784580713";
 
 // One tally submission per page load, fire-and-forget; never blocks the reveal.
 let submitted = false;
@@ -303,31 +303,41 @@ async function buildShareCard(b, pct) {
   bg.addColorStop(0, "#16305e"); bg.addColorStop(.55, "#091F40"); bg.addColorStop(1, "#060f22");
   ctx.fillStyle = bg; ctx.fillRect(0, 0, W, H);
 
-  // the brand-wall collage as a dim texture (cover-crop to 9:16). Blur it by
-  // round-tripping through a tiny canvas — ctx.filter isn't reliable on Safari.
+  // the brand-wall collage as a dim texture. Blur via three smoothed
+  // downscale/upscale passes — ctx.filter isn't reliable on Safari, and a
+  // single tiny round-trip (the old 108px hack) upscales into pixel blocks.
   if (wall) {
-    const tiny = document.createElement("canvas");
-    tiny.width = 108; tiny.height = 192;
-    const tctx = tiny.getContext("2d");
-    const s = Math.max(tiny.width / wall.naturalWidth, tiny.height / wall.naturalHeight);
+    const pass = (src, w, h) => {
+      const c = document.createElement("canvas");
+      c.width = w; c.height = h;
+      const cc = c.getContext("2d");
+      cc.imageSmoothingQuality = "high";
+      cc.drawImage(src, 0, 0, w, h);
+      return c;
+    };
+    const crop = document.createElement("canvas");
+    crop.width = W; crop.height = H;
+    const cx2 = crop.getContext("2d");
+    const s = Math.max(W / wall.naturalWidth, H / wall.naturalHeight);
     const ww = wall.naturalWidth * s, wh = wall.naturalHeight * s;
-    tctx.drawImage(wall, (tiny.width - ww) / 2, (tiny.height - wh) / 2, ww, wh);
-    ctx.globalAlpha = .16;
+    cx2.drawImage(wall, (W - ww) / 2, (H - wh) / 2, ww, wh);
+    const soft = pass(pass(pass(crop, 270, 480), 135, 240), 270, 480);
+    ctx.globalAlpha = .2;
     ctx.imageSmoothingQuality = "high";
-    ctx.drawImage(tiny, 0, 0, W, H);
+    ctx.drawImage(soft, 0, 0, W, H);
     ctx.globalAlpha = 1;
   }
 
   // sunburst rays radiating from the product, fading out with distance
   ctx.save();
-  ctx.translate(W / 2, 1080);
-  const iceRay = ctx.createRadialGradient(0, 0, 70, 0, 0, 760);
-  iceRay.addColorStop(0, "rgba(185,196,217,.17)"); iceRay.addColorStop(1, "rgba(185,196,217,0)");
-  const whiteRay = ctx.createRadialGradient(0, 0, 70, 0, 0, 760);
-  whiteRay.addColorStop(0, "rgba(255,255,255,.09)"); whiteRay.addColorStop(1, "rgba(255,255,255,0)");
+  ctx.translate(W / 2, 940);
+  const iceRay = ctx.createRadialGradient(0, 0, 70, 0, 0, 900);
+  iceRay.addColorStop(0, "rgba(185,196,217,.32)"); iceRay.addColorStop(1, "rgba(185,196,217,0)");
+  const whiteRay = ctx.createRadialGradient(0, 0, 70, 0, 0, 900);
+  whiteRay.addColorStop(0, "rgba(255,255,255,.17)"); whiteRay.addColorStop(1, "rgba(255,255,255,0)");
   for (let i = 0; i < 24; i++) {
-    const a0 = i * Math.PI / 12 + .12, a1 = a0 + Math.PI / 30;
-    ctx.beginPath(); ctx.moveTo(0, 0); ctx.arc(0, 0, 760, a0, a1); ctx.closePath();
+    const a0 = i * Math.PI / 12 + .12, a1 = a0 + Math.PI / 22;
+    ctx.beginPath(); ctx.moveTo(0, 0); ctx.arc(0, 0, 900, a0, a1); ctx.closePath();
     ctx.fillStyle = i % 2 ? iceRay : whiteRay;
     ctx.fill();
   }
@@ -337,7 +347,7 @@ async function buildShareCard(b, pct) {
   const colors = ["#E53C2E", "#FFFFFF", "#E7C24F", "#3D5170", "#F4A9A1"];
   for (let i = 0; i < 90; i++) {
     const x = (i * 397.31) % W, y = (i * 211.7 + 137) % H;
-    if (Math.abs(x - W / 2) < 330 && y > 560 && y < 1450) continue; // keep the middle clean
+    if (Math.abs(x - W / 2) < 360 && y > 460 && y < 1360) continue; // keep the middle clean
     ctx.save();
     ctx.translate(x, y); ctx.rotate((i * 47) % 360 * Math.PI / 180);
     ctx.globalAlpha = .22 + (i % 4) * .1;
@@ -346,20 +356,15 @@ async function buildShareCard(b, pct) {
     ctx.restore();
   }
 
+  // Top: eyebrow only. The big TOPPSMATCH wordmark moved to the bottom CTA
+  // cluster so it stops twinning with the hero title (Gus, July 20).
   ctx.textAlign = "center";
   ctx.fillStyle = "#B9C4D9";
   ctx.font = '700 26px "Fan Sans", sans-serif';
-  drawSpaced(ctx, "TOPPS × FANATICS COLLECTIBLES", W / 2, 170, 8);
+  drawSpaced(ctx, "TOPPS × FANATICS COLLECTIBLES", W / 2, 150, 8);
 
-  ctx.font = '90px "Fan Impact", sans-serif';
-  const tw = ctx.measureText("TOPPS").width + ctx.measureText("MATCH").width;
-  ctx.textAlign = "left";
-  ctx.fillStyle = "#fff"; ctx.fillText("TOPPS", (W - tw) / 2, 290);
-  ctx.fillStyle = "#E53C2E"; ctx.fillText("MATCH", (W - tw) / 2 + ctx.measureText("TOPPS").width, 290);
-  ctx.textAlign = "center";
-
-  // solid red title with a heart-and-arrow on either side, shrunk to fit
-  let titleSize = 116, heartSize = 78, gap = 34;
+  // hero title with a heart-and-arrow on either side, shrunk to fit
+  let titleSize = 126, heartSize = 84, gap = 36;
   const fitTitle = () => {
     ctx.font = `${titleSize}px "Fan Impact", sans-serif`;
     const tw = ctx.measureText("IT'S A MATCH!").width;
@@ -372,15 +377,15 @@ async function buildShareCard(b, pct) {
   ctx.fillStyle = "#E53C2E";
   ctx.font = `${titleSize}px "Fan Impact", sans-serif`;
   ctx.shadowColor = "rgba(229,60,46,.5)"; ctx.shadowBlur = 60;
-  ctx.fillText("IT'S A MATCH!", W / 2, 600);
+  ctx.fillText("IT'S A MATCH!", W / 2, 360);
   ctx.shadowBlur = 0;
   ctx.font = `${heartSize}px serif`;
-  ctx.fillText("💘", W / 2 - dims.tw / 2 - gap - dims.hw / 2, 592);
-  ctx.fillText("💘", W / 2 + dims.tw / 2 + gap + dims.hw / 2, 592);
+  ctx.fillText("💘", W / 2 - dims.tw / 2 - gap - dims.hw / 2, 352);
+  ctx.fillText("💘", W / 2 + dims.tw / 2 + gap + dims.hw / 2, 352);
 
   // spotlight pool under the product
   {
-    const fy = 1400;
+    const fy = 1290;
     const floor = ctx.createRadialGradient(W / 2, fy, 10, W / 2, fy, 330);
     floor.addColorStop(0, "rgba(200,215,245,.26)");
     floor.addColorStop(.5, "rgba(255,255,255,.06)");
@@ -393,7 +398,7 @@ async function buildShareCard(b, pct) {
   }
 
   if (img) {
-    const box = 600, cx = W / 2, cy = 1080;
+    const box = 680, cx = W / 2, cy = 940;
     const s = Math.min(box / img.naturalWidth, box / img.naturalHeight);
     const w = img.naturalWidth * s, h = img.naturalHeight * s;
     if (TILE_SRCS.some(t => b.img.includes(t))) {
@@ -411,7 +416,7 @@ async function buildShareCard(b, pct) {
     }
   } else {
     // No product shot: draw the same light name card the reveal shows
-    const cw = 520, ch = 600, cx = W / 2, cy = 1080;
+    const cw = 520, ch = 600, cx = W / 2, cy = 940;
     ctx.save();
     roundRect(ctx, cx - cw / 2, cy - ch / 2, cw, ch, 40);
     ctx.shadowColor = "rgba(0,0,0,.55)"; ctx.shadowBlur = 70; ctx.shadowOffsetY = 30;
@@ -440,17 +445,29 @@ async function buildShareCard(b, pct) {
     nameSize -= 2;
     ctx.font = `800 ${nameSize}px "Fan Sans", sans-serif`;
   }
-  ctx.fillText(`You + ${b.name}`, W / 2, 1520);
+  ctx.fillText(`You + ${b.name}`, W / 2, 1430);
 
   ctx.fillStyle = "#E7C24F";
-  ctx.font = 'italic 54px "Fan Serif", serif';
+  ctx.font = 'italic 56px "Fan Serif", serif';
   ctx.shadowColor = "rgba(231,194,79,.45)"; ctx.shadowBlur = 40;
-  ctx.fillText(`${pct}% compatible`, W / 2, 1618);
+  ctx.fillText(`${pct}% compatible`, W / 2, 1532);
   ctx.shadowBlur = 0;
 
+  // CTA cluster: small wordmark, invitation line, then the link
+  ctx.font = '46px "Fan Impact", sans-serif';
+  const mw = ctx.measureText("TOPPS").width + ctx.measureText("MATCH").width;
+  ctx.textAlign = "left";
+  ctx.fillStyle = "#fff"; ctx.fillText("TOPPS", (W - mw) / 2, 1706);
+  ctx.fillStyle = "#E53C2E"; ctx.fillText("MATCH", (W - mw) / 2 + ctx.measureText("TOPPS").width, 1706);
+  ctx.textAlign = "center";
+
   ctx.fillStyle = "#B9C4D9";
-  ctx.font = '700 30px "Fan Sans", sans-serif';
-  drawSpaced(ctx, "TOPPSMATCH.GITHUB.IO", W / 2, 1800, 10);
+  ctx.font = '600 34px "Fan Sans", sans-serif';
+  ctx.fillText("Find yours in two minutes", W / 2, 1768);
+
+  ctx.fillStyle = "#fff";
+  ctx.font = '700 32px "Fan Sans", sans-serif';
+  drawSpaced(ctx, "TOPPSMATCH.GITHUB.IO", W / 2, 1836, 10);
 
   return new Promise(res => cv.toBlob(res, "image/png"));
 }
