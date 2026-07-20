@@ -4893,7 +4893,7 @@ export const QUESTIONS = [
       {
         "icon": "🎲",
         "label": "Surprise me",
-        "sub": "Big risk, big reward, big adrenaline",
+        "sub": "Big box, big risk, big reward",
         "val": "thrill"
       },
       {
@@ -4905,7 +4905,7 @@ export const QUESTIONS = [
       {
         "icon": "🎯",
         "label": "I want to know what I'm getting",
-        "sub": "No surprises, I want guaranteed hits",
+        "sub": "Fewer cards, more guaranteed hits",
         "val": "guaranteed"
       }
     ]
