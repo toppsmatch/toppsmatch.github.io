@@ -4888,7 +4888,7 @@ export const QUESTIONS = [
     "ranked": false,
     "eyebrow": "Question 5 · Risk Tolerance",
     "title": "How do you like your odds?",
-    "hint": "Some people love the thrill of not knowing. Others want to know exactly what they're getting.",
+    "hint": "Some boxes are lottery tickets: one lucky pull can pay for everything. Others cost more but promise their hits.",
     "opts": [
       {
         "icon": "🎲",
@@ -4899,13 +4899,13 @@ export const QUESTIONS = [
       {
         "icon": "⚖️",
         "label": "Somewhere in the middle",
-        "sub": "Some mystery is fine as long as there's a shot at something great",
+        "sub": "A real chance at something big without betting it all",
         "val": "balanced"
       },
       {
         "icon": "🎯",
         "label": "I want to know what I'm getting",
-        "sub": "No surprises, I want guarantees",
+        "sub": "No surprises, I want guaranteed hits",
         "val": "guaranteed"
       }
     ]
