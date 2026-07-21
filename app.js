@@ -1,5 +1,5 @@
-import { BRANDS, QUESTIONS } from "./data.js?v=1784657543";
-import { score, topMatches, wildcard, maxScore } from "./scoring.js?v=1784657543";
+import { BRANDS, QUESTIONS } from "./data.js?v=1784658666";
+import { score, topMatches, wildcard, maxScore } from "./scoring.js?v=1784658666";
 
 // One tally submission per page load, fire-and-forget; never blocks the reveal.
 let submitted = false;
@@ -549,17 +549,16 @@ function renderCard() {
     + (card.pct == null ? `<span class="dot gold on"></span>` : "");
   // Sheets under the top card show the REAL neighbor cards, so a mid-swipe
   // reveal is never blank; past the last card it teases the list view.
-  const prev = deck[deckIdx - 1];
   const next = deck[deckIdx + 1];
+  // the sheet under the top card is ALWAYS the next card down: the card you
+  // return to comes from the bottom of the pile, never from under the top
   const underNext = next
     ? `<div class="fan fan-under fan-next${next.pct == null ? " wild" : ""}">${cardInner(next)}</div>`
     : `<div class="fan fan-under fan-next fan-lineup"><div class="fan-lineup-in">Your full lineup ↓</div></div>`;
-  const underPrev = prev ? `<div class="fan fan-under fan-prev">${cardInner(prev)}</div>` : "";
   host.innerHTML = `
     <div class="deck" id="deckEl">
       <div class="fan fan2"></div>
       <div class="fan fan1"></div>
-      ${underPrev}
       ${underNext}
       <div class="swipe-card${card.pct == null ? " wild" : ""}${firstDeckRender ? "" : " no-anim"}" id="swipeCard">
         <button class="chev chev-l" id="chevL" aria-label="Previous match"${deckIdx === 0 ? " disabled" : ""}>‹</button>
@@ -736,7 +735,6 @@ function wireCard() {
     dx = e.clientX - startX;
     const x = baseX + dx;
     el.style.transform = `translateX(${x}px) rotate(${x / 22}deg)`;
-    deckEl?.classList.toggle("show-prev", x > 0 && deckIdx > 0);
   });
   // iOS Safari: claim horizontal drags before the scroller cancels them.
   let tX = 0, tY = 0, intent = null;
@@ -757,7 +755,7 @@ function wireCard() {
     el.style.transition = "transform .3s cubic-bezier(.2,.9,.3,1.2), opacity .3s ease";
     if (x < -80) goTo(deckIdx + 1, -140);
     else if (x > 80 && deckIdx > 0) goTo(deckIdx - 1, 140);
-    else { el.style.transform = ""; deckEl?.classList.remove("show-prev"); }
+    else { el.style.transform = ""; }
   };
   el.addEventListener("pointerup", end);
   el.addEventListener("pointercancel", end);
