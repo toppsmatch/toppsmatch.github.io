@@ -1501,7 +1501,8 @@ export const BRANDS = {
       "balanced"
     ],
     "vibe": [
-      "retro"
+      "retro",
+      "prestige"
     ],
     "img": "img/archives.png"
   },
@@ -2221,7 +2222,8 @@ export const BRANDS = {
       "balanced"
     ],
     "vibe": [
-      "flashy"
+      "flashy",
+      "prestige"
     ],
     "img": "img/pixar_gold.png"
   },
@@ -2498,7 +2500,8 @@ export const BRANDS = {
       "balanced"
     ],
     "vibe": [
-      "flashy"
+      "flashy",
+      "prestige"
     ],
     "img": "img/sw_galaxy.png"
   },
@@ -2558,7 +2561,8 @@ export const BRANDS = {
       "balanced"
     ],
     "vibe": [
-      "flashy"
+      "flashy",
+      "prestige"
     ],
     "img": "img/finest_marvel.png"
   },
@@ -2587,7 +2591,8 @@ export const BRANDS = {
       "guaranteed"
     ],
     "vibe": [
-      "prestige"
+      "prestige",
+      "retro"
     ],
     "img": "img/tier_one.png"
   },
@@ -3212,7 +3217,8 @@ export const BRANDS = {
       "guaranteed"
     ],
     "vibe": [
-      "prestige"
+      "prestige",
+      "retro"
     ],
     "img": "img/sterling.png"
   },
@@ -3334,7 +3340,8 @@ export const BRANDS = {
       "balanced"
     ],
     "vibe": [
-      "flashy"
+      "flashy",
+      "prestige"
     ],
     "img": "img/finest_mls.png"
   },
@@ -3369,7 +3376,8 @@ export const BRANDS = {
       "balanced"
     ],
     "vibe": [
-      "retro"
+      "retro",
+      "flashy"
     ],
     "img": "img/heritage.png"
   },
@@ -3517,7 +3525,8 @@ export const BRANDS = {
     ],
     "vibe": [
       "prestige",
-      "flashy"
+      "flashy",
+      "prospect"
     ],
     "img": "img/inception.png"
   },
@@ -3608,7 +3617,8 @@ export const BRANDS = {
       "guaranteed"
     ],
     "vibe": [
-      "prestige"
+      "prestige",
+      "retro"
     ],
     "img": "img/pristine.png"
   },
@@ -3697,7 +3707,8 @@ export const BRANDS = {
       "guaranteed"
     ],
     "vibe": [
-      "prestige"
+      "prestige",
+      "retro"
     ],
     "img": "img/museum_ucl.png"
   },
@@ -3786,7 +3797,8 @@ export const BRANDS = {
       "guaranteed"
     ],
     "vibe": [
-      "prestige"
+      "prestige",
+      "flashy"
     ],
     "img": "img/gilded.png"
   },
@@ -4209,7 +4221,8 @@ export const BRANDS = {
       "balanced"
     ],
     "vibe": [
-      "flashy"
+      "flashy",
+      "prestige"
     ],
     "img": "img/chrome_pl.png"
   },
@@ -4300,7 +4313,8 @@ export const BRANDS = {
       "balanced"
     ],
     "vibe": [
-      "flashy"
+      "flashy",
+      "retro"
     ],
     "img": "img/dune_chrome.png"
   },
@@ -4543,7 +4557,8 @@ export const BRANDS = {
       "guaranteed"
     ],
     "vibe": [
-      "prestige"
+      "prestige",
+      "retro"
     ],
     "img": "img/diamond_icons.png"
   },
@@ -4637,7 +4652,8 @@ export const BRANDS = {
       "balanced"
     ],
     "vibe": [
-      "flashy"
+      "flashy",
+      "prestige"
     ],
     "img": "img/ucc_flagship.png"
   },
@@ -4666,7 +4682,8 @@ export const BRANDS = {
       "balanced"
     ],
     "vibe": [
-      "prestige"
+      "prestige",
+      "flashy"
     ],
     "img": "img/sapphire_mls.png"
   },
@@ -4694,7 +4711,8 @@ export const BRANDS = {
       "balanced"
     ],
     "vibe": [
-      "flashy"
+      "flashy",
+      "retro"
     ],
     "img": "img/sw_chrome.png"
   },
@@ -4723,7 +4741,8 @@ export const BRANDS = {
       "guaranteed"
     ],
     "vibe": [
-      "prestige"
+      "prestige",
+      "retro"
     ],
     "img": "img/midnight_bundesliga.png"
   }
