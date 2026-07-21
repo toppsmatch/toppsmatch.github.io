@@ -1930,7 +1930,7 @@ export const BRANDS = {
     "name": "Topps Midnight UFC",
     "tier": "High-End",
     "cat": "sport",
-    "catLabel": "Combat Sports",
+    "catLabel": "UFC",
     "price": "$260–$300/box",
     "desc": "Dark-mode UFC with three autographs per box. Fight-night aesthetics for the hit hunter.",
     "tags": [
@@ -1989,7 +1989,7 @@ export const BRANDS = {
     "name": "Topps Chrome Sapphire UFC",
     "tier": "High-End",
     "cat": "sport",
-    "catLabel": "Combat Sports",
+    "catLabel": "UFC",
     "price": "$250–$340/box",
     "desc": "The full Chrome UFC base recut on Sapphire stock with one autograph per box.",
     "tags": [
@@ -2379,7 +2379,7 @@ export const BRANDS = {
     "name": "Topps Finest UFC",
     "tier": "Mid-Tier",
     "cat": "sport",
-    "catLabel": "Combat Sports",
+    "catLabel": "UFC",
     "price": "$230–$290/box",
     "desc": "Finest brings its refractor shine to the octagon: a 300-card tiered base with two autographs per box.",
     "tags": [
@@ -2883,7 +2883,7 @@ export const BRANDS = {
     "name": "Topps Chrome Boxing",
     "tier": "Mid-Tier",
     "cat": "sport",
-    "catLabel": "Combat Sports",
+    "catLabel": "Boxing",
     "price": "$250–$300/box",
     "desc": "The first Topps boxing set since 1951. Multi-promoter checklist running from Tyson to Fury on Chrome.",
     "tags": [
@@ -4251,7 +4251,7 @@ export const BRANDS = {
     "name": "Stadium Club UFC",
     "tier": "Mid-Tier",
     "cat": "sport",
-    "catLabel": "Combat Sports",
+    "catLabel": "UFC",
     "price": "$130–$160/box",
     "desc": "Stadium Club's legendary photography turned on the octagon: a 300-card set built on the best fight photos, two autographs per box.",
     "tags": [
