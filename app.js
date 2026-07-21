@@ -1,5 +1,5 @@
-import { BRANDS, QUESTIONS } from "./data.js?v=1784659553";
-import { score, topMatches, wildcard, maxScore } from "./scoring.js?v=1784659553";
+import { BRANDS, QUESTIONS } from "./data.js?v=1784660186";
+import { score, topMatches, wildcard, maxScore } from "./scoring.js?v=1784660186";
 
 // One tally submission per page load, fire-and-forget; never blocks the reveal.
 let submitted = false;
@@ -492,7 +492,7 @@ let firstDeckRender = true;
 function buildDeck() {
   firstDeckRender = true;
   const { top, wcKey } = lastResults;
-  const labels = ["⭐ Your Perfect Pull", "💔 The Rebound", "✨ Also Sparked"];
+  const labels = ["⭐ Your Perfect Pull", "💔 The Rebound", "💡 Also Sparked"];
   deck = top.map((m, i) => ({ key: m.key, pct: m.pct, label: labels[i] || "Another Match" }));
   if (wcKey && BRANDS[wcKey]) deck.push({ key: wcKey, pct: null, label: "🃏 Wildcard" });
   deckIdx = 0;
@@ -590,7 +590,7 @@ function sizeFans() {
 function renderListView() {
   const host = document.getElementById("resultsContent");
   const { top, wcKey } = lastResults;
-  const labels = ["⭐ Your Perfect Pull", "💔 The Rebound", "✨ Also Sparked"];
+  const labels = ["⭐ Your Perfect Pull", "💔 The Rebound", "💡 Also Sparked"];
   let html = `<div class="list-head"><span>Your full lineup</span><button class="btn-mini" id="swipeAgain">↺ Swipe again</button></div>`;
   top.forEach((m, i) => {
     const b = BRANDS[m.key];
