@@ -1,5 +1,5 @@
-import { BRANDS, QUESTIONS } from "./data.js?v=1784592909";
-import { score, topMatches, wildcard, maxScore } from "./scoring.js?v=1784592909";
+import { BRANDS, QUESTIONS } from "./data.js?v=1784595206";
+import { score, topMatches, wildcard, maxScore } from "./scoring.js?v=1784595206";
 
 // One tally submission per page load, fire-and-forget; never blocks the reveal.
 let submitted = false;
@@ -553,12 +553,22 @@ function renderCard() {
   const card = deck[deckIdx];
   const waiting = deck.length - deckIdx - 1;
   const dots = deck.map((_, i) => `<span class="dot${i === deckIdx ? " on" : ""}"></span>`).join("");
+  // The sheet under the top card shows the REAL next card, so a mid-swipe
+  // reveal is never blank; after the last card it teases the list view.
+  const next = deck[deckIdx + 1];
+  const under = next
+    ? `<div class="fan fan-under">${cardInner(next)}</div>`
+    : `<div class="fan fan-under fan-lineup"><div class="fan-lineup-in">Your full lineup ↓</div></div>`;
+  const nextStamp = next ? (next.label.split(" ").slice(1).join(" ") || next.label) : "Full lineup";
   host.innerHTML = `
     <div class="deck">
       ${waiting > 1 ? `<div class="fan fan2"></div>` : ""}
       ${waiting > 0 ? `<div class="fan fan1"></div>` : ""}
+      ${under}
       <div class="swipe-card${card.pct == null ? " wild" : ""}" id="swipeCard">
         <span class="chev chev-l">‹</span><span class="chev chev-r">›</span>
+        <span class="stamp stamp-next" id="stampNext">${esc(nextStamp)}</span>
+        <span class="stamp stamp-info" id="stampInfo">More info</span>
         ${cardInner(card)}
         <div class="swipe-actions">
           <button class="act-btn act-nope" id="scNope" aria-label="${waiting ? "Next match" : "See the full list"}">${ICONS.x}</button>
@@ -682,19 +692,41 @@ function wireCard() {
     try { el.setPointerCapture(e.pointerId); } catch {}
     el.style.transition = "none";
   });
+  const stampInfo = document.getElementById("stampInfo");
+  const stampNext = document.getElementById("stampNext");
+  const setStamps = x => {
+    if (!stampInfo || !stampNext) return;
+    stampInfo.style.opacity = (!expanded && x > 0) ? Math.min(1, (x - 14) / 96) : 0;
+    stampNext.style.opacity = (x < 0) ? Math.min(1, (-x - 14) / 96) : 0;
+  };
   el.addEventListener("pointermove", e => {
     if (!dragging) return;
     dx = e.clientX - startX;
     const x = baseX + dx;
     el.style.transform = `translateX(${x}px) rotate(${x / 22}deg)`;
     setGlow(el, x);
+    setStamps(x);
   });
+  // iOS Safari: claim horizontal drags before the scroller does, or it fires
+  // pointercancel a few px in and the swipe feels dead.
+  let tX = 0, tY = 0, intent = null;
+  el.addEventListener("touchstart", e => {
+    tX = e.touches[0].clientX; tY = e.touches[0].clientY; intent = null;
+  }, { passive: true });
+  el.addEventListener("touchmove", e => {
+    if (intent === null) {
+      const ax = Math.abs(e.touches[0].clientX - tX), ay = Math.abs(e.touches[0].clientY - tY);
+      if (ax > 6 || ay > 6) intent = ax > ay ? "h" : "v";
+    }
+    if (intent === "h") e.preventDefault();
+  }, { passive: false });
   const end = () => {
     if (!dragging) return;
     dragging = false;
     const x = baseX + dx;
     el.style.transition = "transform .3s cubic-bezier(.2,.9,.3,1.2), opacity .3s ease";
     setGlow(el, 0);
+    setStamps(0);
     if (!expanded) {
       if (x > 80) { el.style.transform = ""; setExpanded(true); }
       else if (x < -80) { flingNext(el); } // past the last card -> list view
