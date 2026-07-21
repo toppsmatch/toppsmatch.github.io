@@ -4793,37 +4793,37 @@ export const QUESTIONS = [
       {
         "icon": "🏈",
         "label": "NFL Football",
-        "sub": "NFL players and rookies",
+        "sub": "From draft night to the Hall of Fame",
         "val": "nfl"
       },
       {
         "icon": "🏀",
         "label": "NBA Basketball",
-        "sub": "NBA stars and rookies",
+        "sub": "Topps is back in the NBA and so is the hype",
         "val": "nba"
       },
       {
         "icon": "⚽",
         "label": "Soccer / Football",
-        "sub": "Premier League, UEFA Champions League, Bundesliga, MLS",
+        "sub": "The world's favorite game",
         "val": "soccer"
       },
       {
         "icon": "🏎️",
         "label": "Formula 1",
-        "sub": "F1 drivers and teams",
+        "sub": "Where speed meets scarcity",
         "val": "f1"
       },
       {
         "icon": "🥊",
         "label": "UFC / Combat Sports",
-        "sub": "UFC fighters and events",
+        "sub": "Fighters, title fights, octagon debuts",
         "val": "ufc"
       },
       {
         "icon": "🤼",
         "label": "WWE / Wrestling",
-        "sub": "WWE superstars and legends",
+        "sub": "Champions, challengers, and title moments",
         "val": "wwe"
       },
       {
@@ -4835,7 +4835,7 @@ export const QUESTIONS = [
       {
         "icon": "🃏",
         "label": "Non-Sport Favorites",
-        "sub": "Garbage Pail Kids, Wacky Packages, and VeeFriends",
+        "sub": "Garbage Pail Kids, VeeFriends, and Wacky Packages",
         "val": "nonsport"
       },
       {
@@ -4847,13 +4847,13 @@ export const QUESTIONS = [
       {
         "icon": "🎾",
         "label": "Tennis",
-        "sub": "Grand Slams, legends, and the sport's biggest stars",
+        "sub": "Grand Slam champions and rising stars",
         "val": "tennis"
       },
       {
         "icon": "🎓",
         "label": "College Sports",
-        "sub": "Root for your team before they go pro",
+        "sub": "Rep your school spirit",
         "val": "college"
       }
     ]
