@@ -4786,7 +4786,7 @@ export const QUESTIONS = [
     "opts": [
       {
         "icon": "⚾",
-        "label": "Baseball",
+        "label": "MLB Baseball",
         "sub": "The flagship hobby since 1951",
         "val": "baseball"
       },
