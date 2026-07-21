@@ -16,10 +16,10 @@
 }
 html,body{overflow-x:hidden}
 body{font-family:var(--sans);background:var(--blue);color:#fff;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;padding:28px 20px 60px}
-/* Brand wall: a collage of Topps brand logos (site/img/brand-wall.webp?v=1784595206, built
+/* Brand wall: a collage of Topps brand logos (site/img/brand-wall.webp?v=1784595603, built
    from the Vault's _Logo_Library) behind everything, veiled in Official Blue
    so it reads as texture. Tune the veil via the rgba alphas below. */
-body::before{content:"";position:fixed;inset:0;z-index:-1;background-image:linear-gradient(rgba(9,31,64,.86),rgba(9,31,64,.86)),url('img/brand-wall.webp?v=1784595206');background-size:cover;background-position:center}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background-image:linear-gradient(rgba(9,31,64,.86),rgba(9,31,64,.86)),url('img/brand-wall.webp?v=1784595603');background-size:cover;background-position:center}
 .app{width:100%;max-width:640px}
 
 .header{text-align:center;margin-bottom:26px;padding-top:4px}
@@ -145,12 +145,12 @@ h1 em{font-style:normal;color:var(--red)}
    the type in. Everything staged is opacity/transform only, cheap on phones. */
 .reveal{position:fixed;inset:0;background:#091F40;display:flex;align-items:center;justify-content:center;z-index:50;text-align:center;padding:24px;overflow:hidden}
 /* Gus's brand-wall collage behind everything, blurred, under a navy tint */
-.reveal::before{content:"";position:absolute;inset:-24px;background:url('img/brand-wall.webp?v=1784595206') center/cover;filter:blur(5px)}
-/* Phones get Gus's portrait collage (brand-wall-mobile.webp?v=1784595206, 1080x1920) so
+.reveal::before{content:"";position:absolute;inset:-24px;background:url('img/brand-wall.webp?v=1784595603') center/cover;filter:blur(5px)}
+/* Phones get Gus's portrait collage (brand-wall-mobile.webp?v=1784595603, 1080x1920) so
    the wall isn't a center-crop of the landscape design. Same veils apply. */
 @media (max-width:700px){
-  body::before{background-image:linear-gradient(rgba(9,31,64,.86),rgba(9,31,64,.86)),url('img/brand-wall-mobile.webp?v=1784595206')}
-  .reveal::before{background-image:url('img/brand-wall-mobile.webp?v=1784595206')}
+  body::before{background-image:linear-gradient(rgba(9,31,64,.86),rgba(9,31,64,.86)),url('img/brand-wall-mobile.webp?v=1784595603')}
+  .reveal::before{background-image:url('img/brand-wall-mobile.webp?v=1784595603')}
 }
 .reveal::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 90% at 50% 38%,rgba(18,43,85,.82) 0%,rgba(9,31,64,.9) 55%,rgba(6,15,34,.95) 100%)}
 .reveal.hidden{display:none!important}
@@ -250,6 +250,9 @@ body.in-results .header{display:none}
 /* the sheet that actually shows through a swipe: pinned under the top card */
 .fan-under{background:var(--card);border:1px solid var(--border);transform:translate(-50%,4px) rotate(-1deg)}
 .fan .sc-detail,.fan .chev{display:none}
+.fan-prev{visibility:hidden}
+.deck.show-prev .fan-prev{visibility:visible}
+.deck.show-prev .fan-next{visibility:hidden}
 .fan-lineup{display:flex;align-items:center;justify-content:center}
 .fan-lineup-in{font-size:14px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--grey)}
 @media (max-width:430px){
@@ -269,14 +272,16 @@ body.in-results .header{display:none}
 .swipe-card.wild .sc-label{color:var(--grey)}
 
 /* Tiny swipe cues on the card edges */
-.chev{position:absolute;top:50%;transform:translateY(-50%);font-size:24px;font-weight:600;opacity:.45;pointer-events:none;line-height:1}
-.chev-l{left:10px;color:var(--red)}
-.chev-r{right:10px;color:var(--blue)}
+.chev{position:absolute;top:50%;transform:translateY(-50%);font-size:26px;font-weight:600;opacity:.5;line-height:1;background:none;border:none;cursor:pointer;padding:8px 10px;color:#8B96AD;z-index:3;font-family:var(--sans)}
+.chev:hover{opacity:.9}
+.chev[disabled]{opacity:.12;cursor:default}
+.chev-l{left:2px}
+.chev-r{right:2px}
 .swipe-card.expanded .chev{opacity:0;transition:opacity .2s}
 
 /* Mid-swipe direction stamps: fade in with drag distance, never crowd the card */
 .stamp{position:absolute;top:16px;padding:7px 13px;border-radius:10px;font-size:12px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;opacity:0;pointer-events:none;z-index:3;box-shadow:0 6px 16px rgba(0,0,0,.25)}
-.stamp-info{left:14px;color:#fff;background:var(--blue);transform:rotate(-6deg)}
+.stamp-prev{left:14px;color:#fff;background:var(--red);transform:rotate(-6deg)}
 .stamp-next{right:14px;color:#fff;background:var(--red);transform:rotate(6deg)}
 .sc-label{font-size:11px;font-weight:800;letter-spacing:2px;color:var(--red);text-transform:uppercase;margin-bottom:14px;text-align:center}
 .sc-img{display:block;width:168px;height:168px;object-fit:contain;margin:0 auto 16px;filter:drop-shadow(0 14px 24px rgba(9,31,64,.28));pointer-events:none}
@@ -289,6 +294,8 @@ body.in-results .header{display:none}
 .sc-pct-wild{color:var(--grey);font-weight:600}
 
 /* Detail slides open in place (no re-render) */
+.more-toggle{display:block;margin:12px auto 2px;background:none;border:none;cursor:pointer;font-family:var(--sans);font-size:11px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:var(--grey);padding:6px 10px}
+.more-toggle:hover{color:var(--blue)}
 .sc-detail{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
 .sc-detail-in{overflow:hidden;min-height:0;opacity:0;transition:opacity .25s ease}
 .swipe-card.expanded .sc-detail-in{opacity:1;transition:opacity .3s ease .12s}

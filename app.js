@@ -1,5 +1,5 @@
-import { BRANDS, QUESTIONS } from "./data.js?v=1784595206";
-import { score, topMatches, wildcard, maxScore } from "./scoring.js?v=1784595206";
+import { BRANDS, QUESTIONS } from "./data.js?v=1784595603";
+import { score, topMatches, wildcard, maxScore } from "./scoring.js?v=1784595603";
 
 // One tally submission per page load, fire-and-forget; never blocks the reveal.
 let submitted = false;
@@ -553,27 +553,29 @@ function renderCard() {
   const card = deck[deckIdx];
   const waiting = deck.length - deckIdx - 1;
   const dots = deck.map((_, i) => `<span class="dot${i === deckIdx ? " on" : ""}"></span>`).join("");
-  // The sheet under the top card shows the REAL next card, so a mid-swipe
-  // reveal is never blank; after the last card it teases the list view.
+  // Sheets under the top card show the REAL neighbor cards, so a mid-swipe
+  // reveal is never blank; past the last card it teases the list view.
+  const prev = deck[deckIdx - 1];
   const next = deck[deckIdx + 1];
-  const under = next
-    ? `<div class="fan fan-under">${cardInner(next)}</div>`
-    : `<div class="fan fan-under fan-lineup"><div class="fan-lineup-in">Your full lineup ↓</div></div>`;
+  const underNext = next
+    ? `<div class="fan fan-under fan-next">${cardInner(next)}</div>`
+    : `<div class="fan fan-under fan-next fan-lineup"><div class="fan-lineup-in">Your full lineup ↓</div></div>`;
+  const underPrev = prev ? `<div class="fan fan-under fan-prev">${cardInner(prev)}</div>` : "";
   const nextStamp = next ? (next.label.split(" ").slice(1).join(" ") || next.label) : "Full lineup";
+  const prevStamp = prev ? "‹ " + (prev.label.split(" ").slice(1).join(" ") || prev.label) : "";
   host.innerHTML = `
-    <div class="deck">
+    <div class="deck" id="deckEl">
       ${waiting > 1 ? `<div class="fan fan2"></div>` : ""}
       ${waiting > 0 ? `<div class="fan fan1"></div>` : ""}
-      ${under}
+      ${underPrev}
+      ${underNext}
       <div class="swipe-card${card.pct == null ? " wild" : ""}" id="swipeCard">
-        <span class="chev chev-l">‹</span><span class="chev chev-r">›</span>
+        <button class="chev chev-l" id="chevL" aria-label="Previous match"${deckIdx === 0 ? " disabled" : ""}>‹</button>
+        <button class="chev chev-r" id="chevR" aria-label="Next match">›</button>
         <span class="stamp stamp-next" id="stampNext">${esc(nextStamp)}</span>
-        <span class="stamp stamp-info" id="stampInfo">More info</span>
+        <span class="stamp stamp-prev" id="stampPrev">${esc(prevStamp)}</span>
         ${cardInner(card)}
-        <div class="swipe-actions">
-          <button class="act-btn act-nope" id="scNope" aria-label="${waiting ? "Next match" : "See the full list"}">${ICONS.x}</button>
-          <button class="act-btn act-like" id="scLike" aria-label="Learn more">${ICONS.heart}</button>
-        </div>
+        <button class="more-toggle" id="scMore">More info ▾</button>
       </div>
     </div>
     <div class="deck-dots">${dots}</div>`;
@@ -640,75 +642,59 @@ function renderListView() {
   }, 150);
 }
 
-// Expand/collapse is a class toggle, not a re-render — the drag handlers stay
-// alive, so you can swipe in and out of the detail view as much as you want.
+// Expand/collapse is a class toggle, not a re-render — drag handlers stay alive.
 function setExpanded(v) {
   expanded = v;
   const el = document.getElementById("swipeCard");
-  const like = document.getElementById("scLike");
   if (!el) return;
   el.classList.toggle("expanded", v);
-  if (like) {
-    like.innerHTML = v ? ICONS.up : ICONS.heart;
-    like.setAttribute("aria-label", v ? "Close details" : "Learn more");
-  }
+  const btn = document.getElementById("scMore");
+  if (btn) btn.textContent = v ? "Less ▴" : "More info ▾";
 }
-function acceptCard() { setExpanded(true); }
-function collapseCard() { setExpanded(false); }
-function advanceCard() { deckIdx++; expanded = false; renderCard(); }
 
-function flingNext(el) {
+// Carousel navigation: forward flies the card left, back flies it right.
+function goTo(i, flyX) {
+  const el = document.getElementById("swipeCard");
+  if (!el) { deckIdx = i; expanded = false; renderCard(); return; }
   el.style.transition = "transform .3s ease, opacity .3s ease";
-  el.style.transform = "translateX(-140%) rotate(-18deg)";
+  el.style.transform = `translateX(${flyX}%) rotate(${flyX / 8}deg)`;
   el.style.opacity = "0";
-  setTimeout(advanceCard, 260);
-}
-
-// Side glows: a hint of Lava Red (left) and steel blue (right) rests on the
-// card edges at all times; dragging deepens the side you're heading toward.
-function setGlow(el, x) {
-  if (x === 0) { el.style.boxShadow = ""; return; } // CSS resting state
-  const b = Math.min(0.9, 0.5 + Math.max(0, x) / 140);
-  const r = Math.min(0.9, 0.5 + Math.max(0, -x) / 140);
-  const bs = 22 + Math.min(18, Math.max(0, x) / 6);
-  const rs = 22 + Math.min(18, Math.max(0, -x) / 6);
-  el.style.boxShadow = `0 16px 38px rgba(0,0,0,.4), -12px 0 ${rs}px -12px rgba(229,60,46,${r}), 12px 0 ${bs}px -12px rgba(157,177,212,${b})`;
+  setTimeout(() => { deckIdx = i; expanded = false; renderCard(); }, 240);
 }
 
 function wireCard() {
   const el = document.getElementById("swipeCard");
   if (!el) return;
-  document.getElementById("scLike")?.addEventListener("click", () => setExpanded(!expanded));
-  document.getElementById("scNope")?.addEventListener("click", () => flingNext(el));
+  const deckEl = document.getElementById("deckEl");
+  document.getElementById("scMore")?.addEventListener("click", () => setExpanded(!expanded));
+  document.getElementById("chevL")?.addEventListener("click", () => { if (deckIdx > 0) goTo(deckIdx - 1, 140); });
+  document.getElementById("chevR")?.addEventListener("click", () => goTo(deckIdx + 1, -140));
+
+  const stampNext = document.getElementById("stampNext");
+  const stampPrev = document.getElementById("stampPrev");
+  const setStamps = x => {
+    if (stampNext) stampNext.style.opacity = x < 0 ? Math.min(1, (-x - 14) / 96) : 0;
+    if (stampPrev) stampPrev.style.opacity = (x > 0 && deckIdx > 0) ? Math.min(1, (x - 14) / 96) : 0;
+  };
 
   let startX = 0, baseX = 0, dx = 0, dragging = false;
   el.addEventListener("pointerdown", e => {
-    if (e.target.closest("button")) return; // let buttons click normally
+    if (e.target.closest("button")) return; // buttons click normally
     dragging = true; startX = e.clientX; dx = 0;
-    // Pick up from wherever the card currently is (mid-snap-back re-grabs
-    // shouldn't jump) — read the live transform as the new base.
     const t = getComputedStyle(el).transform;
     baseX = t && t !== "none" ? new DOMMatrixReadOnly(t).m41 : 0;
     try { el.setPointerCapture(e.pointerId); } catch {}
     el.style.transition = "none";
   });
-  const stampInfo = document.getElementById("stampInfo");
-  const stampNext = document.getElementById("stampNext");
-  const setStamps = x => {
-    if (!stampInfo || !stampNext) return;
-    stampInfo.style.opacity = (!expanded && x > 0) ? Math.min(1, (x - 14) / 96) : 0;
-    stampNext.style.opacity = (x < 0) ? Math.min(1, (-x - 14) / 96) : 0;
-  };
   el.addEventListener("pointermove", e => {
     if (!dragging) return;
     dx = e.clientX - startX;
     const x = baseX + dx;
     el.style.transform = `translateX(${x}px) rotate(${x / 22}deg)`;
-    setGlow(el, x);
     setStamps(x);
+    deckEl?.classList.toggle("show-prev", x > 0 && deckIdx > 0);
   });
-  // iOS Safari: claim horizontal drags before the scroller does, or it fires
-  // pointercancel a few px in and the swipe feels dead.
+  // iOS Safari: claim horizontal drags before the scroller cancels them.
   let tX = 0, tY = 0, intent = null;
   el.addEventListener("touchstart", e => {
     tX = e.touches[0].clientX; tY = e.touches[0].clientY; intent = null;
@@ -725,34 +711,22 @@ function wireCard() {
     dragging = false;
     const x = baseX + dx;
     el.style.transition = "transform .3s cubic-bezier(.2,.9,.3,1.2), opacity .3s ease";
-    setGlow(el, 0);
     setStamps(0);
-    if (!expanded) {
-      if (x > 80) { el.style.transform = ""; setExpanded(true); }
-      else if (x < -80) { flingNext(el); } // past the last card -> list view
-      else { el.style.transform = ""; }
-    } else {
-      // Swipe back out of the detail view.
-      if (x < -80) { el.style.transform = ""; setExpanded(false); }
-      else { el.style.transform = ""; }
-    }
+    if (x < -80) goTo(deckIdx + 1, -140);
+    else if (x > 80 && deckIdx > 0) goTo(deckIdx - 1, 140);
+    else { el.style.transform = ""; deckEl?.classList.remove("show-prev"); }
   };
   el.addEventListener("pointerup", end);
   el.addEventListener("pointercancel", end);
 }
 
-// Laptop support: ← → arrow keys drive the deck whenever a card is on screen.
+// Laptop support: ← → arrow keys page through the deck.
 document.addEventListener("keydown", e => {
   if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
   const el = document.getElementById("swipeCard");
   if (!el || document.getElementById("results").classList.contains("hidden")) return;
-  if (expanded) {
-    if (e.key === "ArrowLeft") collapseCard();
-    else flingNext(el);
-  } else {
-    if (e.key === "ArrowRight") acceptCard();
-    else flingNext(el);
-  }
+  if (e.key === "ArrowLeft") { if (deckIdx > 0) goTo(deckIdx - 1, 140); }
+  else goTo(deckIdx + 1, -140);
 });
 
 function restart(){
