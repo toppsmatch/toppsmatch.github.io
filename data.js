@@ -4787,7 +4787,7 @@ export const QUESTIONS = [
       {
         "icon": "⚾",
         "label": "Baseball",
-        "sub": "MLB, minors, prospects",
+        "sub": "The flagship hobby since 1951",
         "val": "baseball"
       },
       {
@@ -4805,7 +4805,7 @@ export const QUESTIONS = [
       {
         "icon": "⚽",
         "label": "Soccer / Football",
-        "sub": "The world's favorite game",
+        "sub": "The world's biggest game",
         "val": "soccer"
       },
       {
