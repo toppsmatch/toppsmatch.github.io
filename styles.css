@@ -16,10 +16,10 @@
 }
 html,body{overflow-x:hidden}
 body{font-family:var(--sans);background:var(--blue);color:#fff;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;padding:28px 20px 60px}
-/* Brand wall: a collage of Topps brand logos (site/img/brand-wall.webp?v=1784595603, built
+/* Brand wall: a collage of Topps brand logos (site/img/brand-wall.webp?v=1784652710, built
    from the Vault's _Logo_Library) behind everything, veiled in Official Blue
    so it reads as texture. Tune the veil via the rgba alphas below. */
-body::before{content:"";position:fixed;inset:0;z-index:-1;background-image:linear-gradient(rgba(9,31,64,.86),rgba(9,31,64,.86)),url('img/brand-wall.webp?v=1784595603');background-size:cover;background-position:center}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background-image:linear-gradient(rgba(9,31,64,.86),rgba(9,31,64,.86)),url('img/brand-wall.webp?v=1784652710');background-size:cover;background-position:center}
 .app{width:100%;max-width:640px}
 
 .header{text-align:center;margin-bottom:26px;padding-top:4px}
@@ -145,12 +145,12 @@ h1 em{font-style:normal;color:var(--red)}
    the type in. Everything staged is opacity/transform only, cheap on phones. */
 .reveal{position:fixed;inset:0;background:#091F40;display:flex;align-items:center;justify-content:center;z-index:50;text-align:center;padding:24px;overflow:hidden}
 /* Gus's brand-wall collage behind everything, blurred, under a navy tint */
-.reveal::before{content:"";position:absolute;inset:-24px;background:url('img/brand-wall.webp?v=1784595603') center/cover;filter:blur(5px)}
-/* Phones get Gus's portrait collage (brand-wall-mobile.webp?v=1784595603, 1080x1920) so
+.reveal::before{content:"";position:absolute;inset:-24px;background:url('img/brand-wall.webp?v=1784652710') center/cover;filter:blur(5px)}
+/* Phones get Gus's portrait collage (brand-wall-mobile.webp?v=1784652710, 1080x1920) so
    the wall isn't a center-crop of the landscape design. Same veils apply. */
 @media (max-width:700px){
-  body::before{background-image:linear-gradient(rgba(9,31,64,.86),rgba(9,31,64,.86)),url('img/brand-wall-mobile.webp?v=1784595603')}
-  .reveal::before{background-image:url('img/brand-wall-mobile.webp?v=1784595603')}
+  body::before{background-image:linear-gradient(rgba(9,31,64,.86),rgba(9,31,64,.86)),url('img/brand-wall-mobile.webp?v=1784652710')}
+  .reveal::before{background-image:url('img/brand-wall-mobile.webp?v=1784652710')}
 }
 .reveal::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 90% at 50% 38%,rgba(18,43,85,.82) 0%,rgba(9,31,64,.9) 55%,rgba(6,15,34,.95) 100%)}
 .reveal.hidden{display:none!important}
@@ -244,11 +244,11 @@ body.in-results .header{display:none}
    small counterclockwise tilt: they fan out to the LEFT flank (like the logo),
    the top-left corner can only move DOWN (never touches the header text), and
    only the back sheet's bottom-left corner dips slightly below the card. */
-.fan{position:absolute;z-index:0;top:0;bottom:0;left:50%;width:100%;max-width:360px;border-radius:22px;pointer-events:none;box-shadow:0 10px 24px rgba(0,0,0,.35);overflow:hidden;padding:20px 22px 18px}
+.fan{position:absolute;z-index:0;top:0;bottom:0;left:50%;width:100%;max-width:360px;border-radius:22px;pointer-events:none;box-shadow:0 10px 24px rgba(0,0,0,.35);overflow:hidden;padding:20px 22px 18px;transition:height .35s ease}
 .fan1{background:var(--card);border:1px solid var(--border);transform:translate(calc(-50% - 26px),16px) rotate(-5.5deg)}
-.fan2{background:#F7F9FC;border:1px solid var(--border);transform:translate(calc(-50% - 52px),32px) rotate(-11deg)}
+.fan2{background:var(--card);border:1px solid var(--border);transform:translate(calc(-50% - 52px),32px) rotate(-11deg)}
 /* the sheet that actually shows through a swipe: pinned under the top card */
-.fan-under{background:var(--card);border:1px solid var(--border);transform:translate(-50%,4px) rotate(-1deg)}
+.fan-under{background:var(--card);border:1px solid var(--border);transform:translate(-50%,2px) rotate(-.6deg)}
 .fan .sc-detail,.fan .chev{display:none}
 .fan-prev{visibility:hidden}
 .deck.show-prev .fan-prev{visibility:visible}
@@ -258,12 +258,11 @@ body.in-results .header{display:none}
 @media (max-width:430px){
   .fan1{transform:translate(calc(-50% - 20px),13px) rotate(-4.5deg)}
   .fan2{transform:translate(calc(-50% - 40px),26px) rotate(-9deg)}
-  .fan-under{transform:translate(-50%,3px) rotate(-1deg)}
+  .fan-under{transform:translate(-50%,2px) rotate(-.5deg)}
 }
 
 .swipe-card{position:relative;z-index:1;margin:0 auto;width:100%;max-width:360px;background:var(--card);border:1px solid var(--border);border-radius:22px;padding:20px 22px 18px;will-change:transform;touch-action:pan-y;user-select:none;cursor:grab;animation:cardIn .28s ease;
-  /* resting state: faint Lava Red glow on the left edge, Official Blue on the right */
-  box-shadow:0 16px 38px rgba(0,0,0,.4), -12px 0 22px -12px rgba(229,60,46,.55), 12px 0 22px -12px rgba(157,177,212,.55)}
+  box-shadow:0 16px 38px rgba(0,0,0,.4)}
 .swipe-card:active{cursor:grabbing}
 @keyframes cardIn{from{opacity:0}to{opacity:1}}
 
@@ -290,12 +289,14 @@ body.in-results .header{display:none}
 .sc-tier{font-size:10.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--grey);text-align:center;margin-bottom:7px}
 .sc-cat{text-align:center;margin-bottom:10px}
 .sc-cat .match-cat{margin-top:0}
-.sc-pct{font-size:15px;font-weight:800;color:var(--red);text-align:center;margin-bottom:6px}
+.sc-pct{font-family:var(--serif);font-style:italic;font-size:19px;font-weight:400;color:var(--red);text-align:center;margin-bottom:4px}
 .sc-pct-wild{color:var(--grey);font-weight:600}
 
 /* Detail slides open in place (no re-render) */
-.more-toggle{display:block;margin:12px auto 2px;background:none;border:none;cursor:pointer;font-family:var(--sans);font-size:11px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:var(--grey);padding:6px 10px}
-.more-toggle:hover{color:var(--blue)}
+.more-toggle{display:block;margin:14px auto 4px;background:#fff;border:1.5px solid var(--blue);border-radius:999px;cursor:pointer;font-family:var(--sans);font-size:11.5px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:var(--blue);padding:10px 22px;transition:background .15s,color .15s,transform .15s;box-shadow:0 4px 12px rgba(9,31,64,.12)}
+.more-toggle:hover{background:var(--blue);color:#fff}
+.more-toggle:active{transform:scale(.97)}
+.swipe-card.expanded .more-toggle{background:var(--blue);color:#fff}
 .sc-detail{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
 .sc-detail-in{overflow:hidden;min-height:0;opacity:0;transition:opacity .25s ease}
 .swipe-card.expanded .sc-detail-in{opacity:1;transition:opacity .3s ease .12s}

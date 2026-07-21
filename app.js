@@ -1,5 +1,5 @@
-import { BRANDS, QUESTIONS } from "./data.js?v=1784595603";
-import { score, topMatches, wildcard, maxScore } from "./scoring.js?v=1784595603";
+import { BRANDS, QUESTIONS } from "./data.js?v=1784652710";
+import { score, topMatches, wildcard, maxScore } from "./scoring.js?v=1784652710";
 
 // One tally submission per page load, fire-and-forget; never blocks the reveal.
 let submitted = false;
@@ -575,11 +575,24 @@ function renderCard() {
         <span class="stamp stamp-next" id="stampNext">${esc(nextStamp)}</span>
         <span class="stamp stamp-prev" id="stampPrev">${esc(prevStamp)}</span>
         ${cardInner(card)}
-        <button class="more-toggle" id="scMore">More info ▾</button>
+        <button class="more-toggle" id="scMore">Learn more ▾</button>
       </div>
     </div>
     <div class="deck-dots">${dots}</div>`;
   wireCard();
+  requestAnimationFrame(sizeFans);
+}
+
+// Sheets mirror the top card's exact box so the stack reads as one deck —
+// no sheet ever pokes out below a shorter top card.
+function sizeFans() {
+  const el = document.getElementById("swipeCard");
+  if (!el) return;
+  document.querySelectorAll("#deckEl .fan").forEach(f => {
+    f.style.top = el.offsetTop + "px";
+    f.style.height = el.offsetHeight + "px";
+    f.style.bottom = "auto";
+  });
 }
 
 // After the last card, everything lands in a classic list view (the original
@@ -649,23 +662,51 @@ function setExpanded(v) {
   if (!el) return;
   el.classList.toggle("expanded", v);
   const btn = document.getElementById("scMore");
-  if (btn) btn.textContent = v ? "Less ▴" : "More info ▾";
+  if (btn) btn.textContent = v ? "Show less ▴" : "Learn more ▾";
 }
 
-// Carousel navigation: forward flies the card left, back flies it right.
+// Carousel navigation with deck-physics: going forward the card flies out
+// and tucks into the BACK of the pile; going back the previous card rises
+// from the pile to the front. flyX < 0 means forward.
 function goTo(i, flyX) {
   const el = document.getElementById("swipeCard");
-  if (!el) { deckIdx = i; expanded = false; renderCard(); return; }
-  el.style.transition = "transform .3s ease, opacity .3s ease";
-  el.style.transform = `translateX(${flyX}%) rotate(${flyX / 8}deg)`;
-  el.style.opacity = "0";
-  setTimeout(() => { deckIdx = i; expanded = false; renderCard(); }, 240);
+  const deckEl = document.getElementById("deckEl");
+  const land = () => { deckIdx = i; expanded = false; renderCard(); };
+  if (!el || !deckEl || matchMedia("(prefers-reduced-motion: reduce)").matches) { land(); return; }
+  if (flyX < 0) {
+    el.style.transition = "transform .2s ease-in";
+    el.style.transform = "translateX(-115%) rotate(-10deg)";
+    setTimeout(() => {
+      el.style.zIndex = "-1"; // slip beneath the sheets
+      el.style.transition = "transform .3s ease-out, opacity .3s ease-out";
+      el.style.transform = "translate(-46px,30px) rotate(-11deg) scale(.98)";
+      el.style.opacity = "0";
+      setTimeout(land, 290);
+    }, 190);
+  } else {
+    const ghost = document.createElement("div");
+    ghost.className = "fan";
+    ghost.innerHTML = cardInner(deck[i]);
+    ghost.style.cssText = `visibility:visible;z-index:4;top:${el.offsetTop}px;height:${el.offsetHeight}px;bottom:auto;opacity:.75;transform:translate(calc(-50% - 52px),32px) rotate(-11deg)`;
+    deckEl.appendChild(ghost);
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      ghost.style.transition = "transform .34s cubic-bezier(.2,.8,.3,1), opacity .34s ease";
+      ghost.style.transform = "translate(-50%,0) rotate(0deg)";
+      ghost.style.opacity = "1";
+    }));
+    setTimeout(land, 350);
+  }
 }
 
+let fanRO = null;
 function wireCard() {
   const el = document.getElementById("swipeCard");
   if (!el) return;
   const deckEl = document.getElementById("deckEl");
+  // sheets track the card's box through expands, image loads, and rotations
+  fanRO?.disconnect();
+  fanRO = new ResizeObserver(sizeFans);
+  fanRO.observe(el);
   document.getElementById("scMore")?.addEventListener("click", () => setExpanded(!expanded));
   document.getElementById("chevL")?.addEventListener("click", () => { if (deckIdx > 0) goTo(deckIdx - 1, 140); });
   document.getElementById("chevR")?.addEventListener("click", () => goTo(deckIdx + 1, -140));
