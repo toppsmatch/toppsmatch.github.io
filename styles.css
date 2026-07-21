@@ -262,10 +262,9 @@ body.in-results .header{display:none}
 @keyframes cardIn{from{opacity:0}to{opacity:1}}
 .swipe-card.no-anim{animation:none}
 
-/* Wildcard card: the red parallel of the base card — same grey stock,
-   rarity signaled only by the inner frame and an occasional foil sweep */
-.swipe-card.wild,.fan.wild{background:var(--card);border:1px solid var(--border)}
-.swipe-card.wild::before,.fan.wild::before{content:"";position:absolute;inset:7px;border:2.5px solid var(--red);border-radius:15px;pointer-events:none;z-index:2}
+/* Wildcard card: the red parallel of the base card — same grey stock with a
+   faint red pinstripe texture in the card stock and an occasional foil sweep */
+.swipe-card.wild,.fan.wild{background-color:var(--card);background-image:repeating-linear-gradient(115deg,rgba(229,60,46,.11) 0 2px,transparent 2px 9px);border:1px solid var(--border)}
 .swipe-card.wild::after{content:"";position:absolute;inset:0;border-radius:22px;pointer-events:none;z-index:2;background:linear-gradient(115deg,transparent 40%,rgba(255,255,255,.05) 46%,rgba(255,255,255,.55) 50%,rgba(255,255,255,.05) 54%,transparent 60%);background-size:280% 100%;background-position:100% 0;animation:foilSweep 5s ease-in-out infinite}
 @keyframes foilSweep{0%,12%{background-position:100% 0}60%,100%{background-position:0% 0}}
 @media (prefers-reduced-motion:reduce){.swipe-card.wild::after{content:none}}
