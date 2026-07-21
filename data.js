@@ -4835,7 +4835,7 @@ export const QUESTIONS = [
       {
         "icon": "🃏",
         "label": "Non-Sport Favorites",
-        "sub": "Garbage Pail Kids, VeeFriends, and Wacky Packages",
+        "sub": "Garbage Pail Kids, VeeFriends, and more",
         "val": "nonsport"
       },
       {
