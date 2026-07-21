@@ -4817,7 +4817,7 @@ export const QUESTIONS = [
       {
         "icon": "🥊",
         "label": "UFC / Combat Sports",
-        "sub": "Fighters, title fights, octagon debuts",
+        "sub": "Fighters, title shots, octagon debuts",
         "val": "ufc"
       },
       {
