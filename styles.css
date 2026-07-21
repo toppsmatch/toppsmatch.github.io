@@ -16,10 +16,10 @@
 }
 html,body{overflow-x:hidden}
 body{font-family:var(--sans);background:var(--blue);color:#fff;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;padding:28px 20px 60px}
-/* Brand wall: a collage of Topps brand logos (site/img/brand-wall.webp?v=1784653678, built
+/* Brand wall: a collage of Topps brand logos (site/img/brand-wall.webp?v=1784654923, built
    from the Vault's _Logo_Library) behind everything, veiled in Official Blue
    so it reads as texture. Tune the veil via the rgba alphas below. */
-body::before{content:"";position:fixed;inset:0;z-index:-1;background-image:linear-gradient(rgba(9,31,64,.86),rgba(9,31,64,.86)),url('img/brand-wall.webp?v=1784653678');background-size:cover;background-position:center}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background-image:linear-gradient(rgba(9,31,64,.86),rgba(9,31,64,.86)),url('img/brand-wall.webp?v=1784654923');background-size:cover;background-position:center}
 .app{width:100%;max-width:640px}
 
 .header{text-align:center;margin-bottom:26px;padding-top:4px}
@@ -145,12 +145,12 @@ h1 em{font-style:normal;color:var(--red)}
    the type in. Everything staged is opacity/transform only, cheap on phones. */
 .reveal{position:fixed;inset:0;background:#091F40;display:flex;align-items:center;justify-content:center;z-index:50;text-align:center;padding:24px;overflow:hidden}
 /* Gus's brand-wall collage behind everything, blurred, under a navy tint */
-.reveal::before{content:"";position:absolute;inset:-24px;background:url('img/brand-wall.webp?v=1784653678') center/cover;filter:blur(5px)}
-/* Phones get Gus's portrait collage (brand-wall-mobile.webp?v=1784653678, 1080x1920) so
+.reveal::before{content:"";position:absolute;inset:-24px;background:url('img/brand-wall.webp?v=1784654923') center/cover;filter:blur(5px)}
+/* Phones get Gus's portrait collage (brand-wall-mobile.webp?v=1784654923, 1080x1920) so
    the wall isn't a center-crop of the landscape design. Same veils apply. */
 @media (max-width:700px){
-  body::before{background-image:linear-gradient(rgba(9,31,64,.86),rgba(9,31,64,.86)),url('img/brand-wall-mobile.webp?v=1784653678')}
-  .reveal::before{background-image:url('img/brand-wall-mobile.webp?v=1784653678')}
+  body::before{background-image:linear-gradient(rgba(9,31,64,.86),rgba(9,31,64,.86)),url('img/brand-wall-mobile.webp?v=1784654923')}
+  .reveal::before{background-image:url('img/brand-wall-mobile.webp?v=1784654923')}
 }
 .reveal::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 90% at 50% 38%,rgba(18,43,85,.82) 0%,rgba(9,31,64,.9) 55%,rgba(6,15,34,.95) 100%)}
 .reveal.hidden{display:none!important}
@@ -226,7 +226,6 @@ h1 em{font-style:normal;color:var(--red)}
 /* White-box products can't be auto-cut (white packaging on a white photo bg
    eats the box itself). Those keep their original photo, shown as a small
    white tile. Keep this list in sync with SKIP_STRIP in scripts/strip-image-bg.mjs. */
-img[src*="definitive"],img[src*="diamond_icons"],img[src*="dynasty_f1"],img[src*="inception."],img[src*="pristine"],img[src*="royalty_tennis"]{background:#fff;border-radius:10px;padding:3%}
 .match-img{width:58px;height:58px;object-fit:contain;flex-shrink:0;filter:drop-shadow(0 4px 8px rgba(9,31,64,.22))}
 
 /* SWIPE DECK (Tinder-style results) */
@@ -265,20 +264,21 @@ body.in-results .header{display:none}
   box-shadow:0 16px 38px rgba(0,0,0,.4)}
 .swipe-card:active{cursor:grabbing}
 @keyframes cardIn{from{opacity:0}to{opacity:1}}
+.swipe-card.no-anim{animation:none}
 
 /* Wildcard card: unmistakably NOT a match */
-.swipe-card.wild,.fan.wild{background:var(--blue);border:1px solid rgba(255,255,255,.18)}
-.wild .sc-label{color:#E7C24F}
-.wild .sc-name{color:#fff}
-.wild .sc-tier{color:#B9C4D9}
-.wild .sc-pct-wild{color:#E7C24F}
-.wild .profile-line{color:#B9C4D9}
-.wild .profile-line strong{color:#fff}
-.wild .match-desc{color:#C7CDD9}
-.wild .sc-detail-in .match-desc{border-top-color:rgba(255,255,255,.22)}
-.wild .more-toggle{background:transparent;border-color:#fff;color:#fff;box-shadow:none}
-.wild .more-toggle:hover,.swipe-card.wild.expanded .more-toggle{background:#fff;color:var(--blue)}
-.wild .chev{color:rgba(255,255,255,.5)}
+.swipe-card.wild,.fan.wild{background:linear-gradient(160deg,#F6E7B3,#E7C24F);border:1px solid #D9B23A}
+.wild .sc-label{color:var(--blue)}
+.wild .sc-name{color:var(--blue)}
+.wild .sc-tier{color:#7A6420}
+.wild .sc-pct-wild{color:var(--red)}
+.wild .profile-line{color:#5C4D1D}
+.wild .profile-line strong{color:var(--blue)}
+.wild .match-desc{color:#4A3F1E}
+.wild .sc-detail-in .match-desc{border-top-color:rgba(9,31,64,.25)}
+.wild .more-toggle{background:transparent;border-color:var(--blue);color:var(--blue);box-shadow:none}
+.wild .more-toggle:hover,.swipe-card.wild.expanded .more-toggle{background:var(--blue);color:#fff}
+.wild .chev{color:rgba(9,31,64,.45)}
 .dot.gold{background:#E7C24F}
 
 /* Tiny swipe cues on the card edges */
@@ -289,10 +289,6 @@ body.in-results .header{display:none}
 .chev-r{right:2px}
 .swipe-card.expanded .chev{opacity:0;transition:opacity .2s}
 
-/* Mid-swipe direction stamps: fade in with drag distance, never crowd the card */
-.stamp{position:absolute;top:16px;padding:7px 13px;border-radius:10px;font-size:12px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;opacity:0;pointer-events:none;z-index:3;box-shadow:0 6px 16px rgba(0,0,0,.25)}
-.stamp-prev{left:14px;color:#fff;background:var(--red);transform:rotate(-6deg)}
-.stamp-next{right:14px;color:#fff;background:var(--red);transform:rotate(6deg)}
 .sc-label{font-size:11px;font-weight:800;letter-spacing:2px;color:var(--red);text-transform:uppercase;margin-bottom:14px;text-align:center}
 .sc-img{display:block;width:168px;height:168px;object-fit:contain;margin:0 auto 16px;filter:drop-shadow(0 14px 24px rgba(9,31,64,.28));pointer-events:none}
 .sc-img-none{display:flex;align-items:center;justify-content:center;font-size:54px;border-radius:16px;background:#fff}

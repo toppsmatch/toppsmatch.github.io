@@ -1,5 +1,5 @@
-import { BRANDS, QUESTIONS } from "./data.js?v=1784653678";
-import { score, topMatches, wildcard, maxScore } from "./scoring.js?v=1784653678";
+import { BRANDS, QUESTIONS } from "./data.js?v=1784654923";
+import { score, topMatches, wildcard, maxScore } from "./scoring.js?v=1784654923";
 
 // One tally submission per page load, fire-and-forget; never blocks the reveal.
 let submitted = false;
@@ -272,9 +272,6 @@ async function shareMatch(btn) {
   if (btn) btn.disabled = false;
 }
 
-// Keep in sync with the img[src*=...] white-tile rule in styles.css.
-const TILE_SRCS = ["definitive", "diamond_icons", "dynasty_f1", "inception.", "pristine", "royalty_tennis"];
-
 function loadImg(src) {
   return new Promise((res, rej) => { const i = new Image(); i.onload = () => res(i); i.onerror = rej; i.src = src; });
 }
@@ -408,19 +405,10 @@ async function buildShareCard(b, pct) {
     const box = 680, cx = W / 2, cy = 840;
     const s = Math.min(box / img.naturalWidth, box / img.naturalHeight);
     const w = img.naturalWidth * s, h = img.naturalHeight * s;
-    if (TILE_SRCS.some(t => b.img.includes(t))) {
-      ctx.save();
-      roundRect(ctx, cx - w / 2 - 24, cy - h / 2 - 24, w + 48, h + 48, 28);
-      ctx.shadowColor = "rgba(0,0,0,.55)"; ctx.shadowBlur = 70; ctx.shadowOffsetY = 30;
-      ctx.fillStyle = "#fff"; ctx.fill();
-      ctx.restore();
-      ctx.drawImage(img, cx - w / 2, cy - h / 2, w, h);
-    } else {
-      ctx.save();
-      ctx.shadowColor = "rgba(0,0,0,.6)"; ctx.shadowBlur = 70; ctx.shadowOffsetY = 30;
-      ctx.drawImage(img, cx - w / 2, cy - h / 2, w, h);
-      ctx.restore();
-    }
+    ctx.save();
+    ctx.shadowColor = "rgba(0,0,0,.6)"; ctx.shadowBlur = 70; ctx.shadowOffsetY = 30;
+    ctx.drawImage(img, cx - w / 2, cy - h / 2, w, h);
+    ctx.restore();
   } else {
     // No product shot: draw the same light name card the reveal shows
     const cw = 520, ch = 600, cx = W / 2, cy = 840;
@@ -500,7 +488,9 @@ function meetMatch() {
 }
 
 // Build the swipe deck: your ranked matches, then the wildcard as a final card.
+let firstDeckRender = true;
 function buildDeck() {
+  firstDeckRender = true;
   const { top, wcKey } = lastResults;
   const labels = ["⭐ Your Perfect Pull", "💔 The Rebound", "✨ Also Sparked"];
   deck = top.map((m, i) => ({ key: m.key, pct: m.pct, label: labels[i] || "Another Match" }));
@@ -565,24 +555,21 @@ function renderCard() {
     ? `<div class="fan fan-under fan-next${next.pct == null ? " wild" : ""}">${cardInner(next)}</div>`
     : `<div class="fan fan-under fan-next fan-lineup"><div class="fan-lineup-in">Your full lineup ↓</div></div>`;
   const underPrev = prev ? `<div class="fan fan-under fan-prev">${cardInner(prev)}</div>` : "";
-  const nextStamp = next ? (next.label.split(" ").slice(1).join(" ") || next.label) : "Full lineup";
-  const prevStamp = prev ? "‹ " + (prev.label.split(" ").slice(1).join(" ") || prev.label) : "";
   host.innerHTML = `
     <div class="deck" id="deckEl">
-      ${waiting > 1 ? `<div class="fan fan2"></div>` : ""}
-      ${waiting > 0 ? `<div class="fan fan1"></div>` : ""}
+      <div class="fan fan2"></div>
+      <div class="fan fan1"></div>
       ${underPrev}
       ${underNext}
-      <div class="swipe-card${card.pct == null ? " wild" : ""}" id="swipeCard">
+      <div class="swipe-card${card.pct == null ? " wild" : ""}${firstDeckRender ? "" : " no-anim"}" id="swipeCard">
         <button class="chev chev-l" id="chevL" aria-label="Previous match"${deckIdx === 0 ? " disabled" : ""}>‹</button>
         <button class="chev chev-r" id="chevR" aria-label="Next match">›</button>
-        <span class="stamp stamp-next" id="stampNext">${esc(nextStamp)}</span>
-        <span class="stamp stamp-prev" id="stampPrev">${esc(prevStamp)}</span>
         ${cardInner(card)}
         <button class="more-toggle" id="scMore">Learn more ▾</button>
       </div>
     </div>
     <div class="deck-dots">${dots}</div>`;
+  firstDeckRender = false;
   wireCard();
   requestAnimationFrame(sizeFans);
 }
@@ -591,7 +578,7 @@ function renderCard() {
 // no sheet ever pokes out below a shorter top card.
 function sizeFans() {
   const el = document.getElementById("swipeCard");
-  if (!el) return;
+  if (!el || expanded) return; // the pile never grows with the front card
   document.querySelectorAll("#deckEl .fan").forEach(f => {
     f.style.top = el.offsetTop + "px";
     f.style.height = el.offsetHeight + "px";
@@ -677,6 +664,7 @@ function goTo(i, flyX) {
   const deckEl = document.getElementById("deckEl");
   const land = () => { deckIdx = i; expanded = false; renderCard(); };
   if (!el || !deckEl || matchMedia("(prefers-reduced-motion: reduce)").matches) { land(); return; }
+  if (expanded) setExpanded(false); // details retract as the card leaves
   if (flyX < 0) {
     el.style.transition = "transform .2s ease-in";
     el.style.transform = "translateX(-115%) rotate(-10deg)";
@@ -731,13 +719,6 @@ function wireCard() {
   document.getElementById("chevL")?.addEventListener("click", () => { if (deckIdx > 0) goTo(deckIdx - 1, 140); });
   document.getElementById("chevR")?.addEventListener("click", () => goTo(deckIdx + 1, -140));
 
-  const stampNext = document.getElementById("stampNext");
-  const stampPrev = document.getElementById("stampPrev");
-  const setStamps = x => {
-    if (stampNext) stampNext.style.opacity = x < 0 ? Math.min(1, (-x - 14) / 96) : 0;
-    if (stampPrev) stampPrev.style.opacity = (x > 0 && deckIdx > 0) ? Math.min(1, (x - 14) / 96) : 0;
-  };
-
   let startX = 0, baseX = 0, dx = 0, dragging = false;
   el.addEventListener("pointerdown", e => {
     if (e.target.closest("button")) return; // buttons click normally
@@ -752,7 +733,6 @@ function wireCard() {
     dx = e.clientX - startX;
     const x = baseX + dx;
     el.style.transform = `translateX(${x}px) rotate(${x / 22}deg)`;
-    setStamps(x);
     deckEl?.classList.toggle("show-prev", x > 0 && deckIdx > 0);
   });
   // iOS Safari: claim horizontal drags before the scroller cancels them.
@@ -772,7 +752,6 @@ function wireCard() {
     dragging = false;
     const x = baseX + dx;
     el.style.transition = "transform .3s cubic-bezier(.2,.9,.3,1.2), opacity .3s ease";
-    setStamps(0);
     if (x < -80) goTo(deckIdx + 1, -140);
     else if (x > 80 && deckIdx > 0) goTo(deckIdx - 1, 140);
     else { el.style.transform = ""; deckEl?.classList.remove("show-prev"); }
