@@ -59,13 +59,26 @@ export function score(answers, brands) {
   return sc;
 }
 
-export function topMatches(sc, sports, brands, n = 3, maxPossible = 100) {
+// Tie rotation (pending Noah): equal scores used to break by catalog order,
+// so identical-profile brands could never surface. With a nonzero seed, ties
+// rotate deterministically per quiz run; seed 0 preserves the legacy order.
+function tieHash(key, seed) {
+  let h = seed >>> 0;
+  for (let i = 0; i < key.length; i++) {
+    h = Math.imul(h ^ key.charCodeAt(i), 2654435761) >>> 0;
+  }
+  h ^= h >>> 16; h = Math.imul(h, 2246822507) >>> 0; h ^= h >>> 13;
+  return h >>> 0;
+}
+
+export function topMatches(sc, sports, brands, n = 3, maxPossible = 100, seed = 0) {
   const incAll = sports.includes("multi");
   const relevant = Object.entries(sc).filter(([k]) => {
     if (incAll || sports.length === 0) return true;
     return (brands[k].sport || []).some(sp => sports.includes(sp));
   });
-  const sorted = relevant.sort((a, b) => b[1] - a[1]);
+  const sorted = relevant.sort((a, b) =>
+    (b[1] - a[1]) || (seed ? tieHash(a[0], seed) - tieHash(b[0], seed) : 0));
 
   // Coverage guarantee (Gus, July 17): every chosen sport gets at least one
   // representative in the results — rank order, as many as fit in n slots —

@@ -1,5 +1,5 @@
-import { BRANDS, QUESTIONS } from "./data.js?v=1784667119";
-import { score, topMatches, wildcard, maxScore } from "./scoring.js?v=1784667119";
+import { BRANDS, QUESTIONS } from "./data.js?v=1784667344";
+import { score, topMatches, wildcard, maxScore } from "./scoring.js?v=1784667344";
 
 // One tally submission per page load, fire-and-forget; never blocks the reveal.
 let submitted = false;
@@ -128,7 +128,9 @@ function showResults() {
 
   const sc = score(answers, BRANDS);
   const sports = answers.sport || [];
-  const top = topMatches(sc, sports, BRANDS, 3, maxScore(answers));
+  // fresh seed per quiz run: ties rotate between retakes instead of always
+  // breaking the same way (pending Noah's sign-off)
+  const top = topMatches(sc, sports, BRANDS, 3, maxScore(answers), 1 + Math.floor(Math.random() * 2147483646));
   const wcKey = wildcard(sc, top.map(t => t.key), sports, BRANDS);
   lastResults = { top, wcKey };
   submitResult(top[0].key);
