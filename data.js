@@ -253,7 +253,7 @@ export const BRANDS = {
     "name": "Topps Knockout UFC",
     "tier": "Mid-Tier",
     "cat": "sport",
-    "catLabel": "UFC/Combat Sports",
+    "catLabel": "Combat Sports",
     "price": "$240–$330/box",
     "desc": "Fight night in a box. Knockout is UFC's dedicated mid-level line: fighter autographs and bold designs built around the biggest moments in the octagon, sitting between Chrome UFC and high-end Royalty.",
     "tags": [
@@ -558,7 +558,7 @@ export const BRANDS = {
     "name": "Topps Cosmic Chrome WWE",
     "tier": "High-End",
     "cat": "sport",
-    "catLabel": "WWE/Wrestling",
+    "catLabel": "Wrestling",
     "price": "$275–$440/box",
     "desc": "Space-themed chromium for WWE, the second wrestling chromium line with deep-space designs.",
     "tags": [
@@ -1294,7 +1294,7 @@ export const BRANDS = {
     "name": "Topps Finest WWE",
     "tier": "High-End",
     "cat": "sport",
-    "catLabel": "WWE/Wrestling",
+    "catLabel": "Wrestling",
     "price": "$500–$550/box",
     "desc": "Finest returns to the ring: refractor-loaded WWE cards with two autographs per box, including The Rock's first in-pack autos since 1998.",
     "tags": [
@@ -1323,7 +1323,7 @@ export const BRANDS = {
     "name": "Topps Chrome Sapphire WWE",
     "tier": "High-End",
     "cat": "sport",
-    "catLabel": "WWE/Wrestling",
+    "catLabel": "Wrestling",
     "price": "$335–$450/box",
     "desc": "Chrome WWE on blue Sapphire stock, one autograph per box, sold as an online-exclusive drop.",
     "tags": [
@@ -1930,7 +1930,7 @@ export const BRANDS = {
     "name": "Topps Midnight UFC",
     "tier": "High-End",
     "cat": "sport",
-    "catLabel": "UFC/Combat Sports",
+    "catLabel": "Combat Sports",
     "price": "$260–$300/box",
     "desc": "Dark-mode UFC with three autographs per box. Fight-night aesthetics for the hit hunter.",
     "tags": [
@@ -1989,7 +1989,7 @@ export const BRANDS = {
     "name": "Topps Chrome Sapphire UFC",
     "tier": "High-End",
     "cat": "sport",
-    "catLabel": "UFC/Combat Sports",
+    "catLabel": "Combat Sports",
     "price": "$250–$340/box",
     "desc": "The full Chrome UFC base recut on Sapphire stock with one autograph per box.",
     "tags": [
@@ -2229,7 +2229,7 @@ export const BRANDS = {
     "name": "Topps Chrome WWE",
     "tier": "Mid-Tier",
     "cat": "sport",
-    "catLabel": "WWE/Wrestling",
+    "catLabel": "Wrestling",
     "price": "$270–$300/box",
     "desc": "Chrome meets sports entertainment. WWE Chrome brings refractor parallels and superstar autographs to professional wrestling, the kind of hit chase that has wrestling fans as hooked as any baseball collector.",
     "tags": [
@@ -2379,7 +2379,7 @@ export const BRANDS = {
     "name": "Topps Finest UFC",
     "tier": "Mid-Tier",
     "cat": "sport",
-    "catLabel": "UFC/Combat Sports",
+    "catLabel": "Combat Sports",
     "price": "$230–$290/box",
     "desc": "Finest brings its refractor shine to the octagon: a 300-card tiered base with two autographs per box.",
     "tags": [
@@ -2883,7 +2883,7 @@ export const BRANDS = {
     "name": "Topps Chrome Boxing",
     "tier": "Mid-Tier",
     "cat": "sport",
-    "catLabel": "UFC/Combat Sports",
+    "catLabel": "Combat Sports",
     "price": "$250–$300/box",
     "desc": "The first Topps boxing set since 1951. Multi-promoter checklist running from Tyson to Fury on Chrome.",
     "tags": [
@@ -3377,7 +3377,7 @@ export const BRANDS = {
     "name": "Topps Exalted WWE",
     "tier": "High-End",
     "cat": "sport",
-    "catLabel": "WWE/Wrestling",
+    "catLabel": "Wrestling",
     "price": "$160–$250/box",
     "desc": "Premium WWE collecting enters a new tier. Exalted brings a high-end aesthetic to sports entertainment, guaranteed premium autos, low print runs, and a product that finally gives wrestling collecting the respect it deserves.",
     "tags": [
@@ -3464,7 +3464,7 @@ export const BRANDS = {
     "name": "Topps Royalty WWE",
     "tier": "Ultra High-End",
     "cat": "sport",
-    "catLabel": "WWE/Wrestling",
+    "catLabel": "Wrestling",
     "price": "$1,250–$1,450/box",
     "desc": "Ultra-premium WWE: ten cards, six autographs, two relics, including WrestleMania 41 patch autographs.",
     "tags": [
@@ -3555,7 +3555,7 @@ export const BRANDS = {
     "name": "Topps Universe WWE",
     "tier": "Mid-Tier",
     "cat": "sport",
-    "catLabel": "WWE/Wrestling",
+    "catLabel": "Wrestling",
     "price": "$180–$210/box",
     "desc": "A 300-card galactic-design WWE set with two autographs and a relic guaranteed in every hobby box.",
     "tags": [
@@ -4217,7 +4217,7 @@ export const BRANDS = {
     "name": "Topps Chrome UFC",
     "tier": "Mid-Tier",
     "cat": "sport",
-    "catLabel": "UFC/Combat Sports",
+    "catLabel": "Combat Sports",
     "price": "$200–$280/box",
     "desc": "Combat sports meets Chrome. Fighter autographs, refractors, and the same dynamic pull experience as Chrome Baseball, but for the fastest-growing combat sports audience in the world.",
     "tags": [
@@ -4251,7 +4251,7 @@ export const BRANDS = {
     "name": "Stadium Club UFC",
     "tier": "Mid-Tier",
     "cat": "sport",
-    "catLabel": "UFC/Combat Sports",
+    "catLabel": "Combat Sports",
     "price": "$130–$160/box",
     "desc": "Stadium Club's legendary photography turned on the octagon: a 300-card set built on the best fight photos, two autographs per box.",
     "tags": [
@@ -4366,7 +4366,7 @@ export const BRANDS = {
     "name": "Topps UFC Royalty",
     "tier": "High-End",
     "cat": "sport",
-    "catLabel": "UFC/Combat Sports",
+    "catLabel": "Combat Sports",
     "price": "$750–$1,100/box",
     "desc": "Elite treatment for elite fighters. UFC Royalty brings a premium high-end experience to combat sports, regal design, top-tier autos, and production quality that signals you're serious about the sport.",
     "tags": [
