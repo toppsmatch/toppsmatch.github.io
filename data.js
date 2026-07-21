@@ -803,8 +803,8 @@ export const BRANDS = {
   "veefriends_sapphire": {
     "name": "Chrome Sapphire VeeFriends",
     "tier": "High-End",
-    "cat": "ent",
-    "catLabel": "VeeFriends",
+    "cat": "nonsport",
+    "catLabel": "Non-Sport",
     "price": "$450–$600/box",
     "desc": "The most exclusive VeeFriends drop: the Chrome set on Sapphire stock, online only.",
     "tags": [
@@ -812,7 +812,7 @@ export const BRANDS = {
       "Sapphire"
     ],
     "sport": [
-      "ent"
+      "nonsport"
     ],
     "budget": [
       "high",
@@ -4499,8 +4499,8 @@ export const BRANDS = {
   "veefriends": {
     "name": "Topps Chrome VeeFriends",
     "tier": "Mid-Tier",
-    "cat": "ent",
-    "catLabel": "Entertainment",
+    "cat": "nonsport",
+    "catLabel": "Non-Sport",
     "price": "$325–$450/box",
     "desc": "Where collector culture meets. VeeFriends, the character universe built by Gary Vaynerchuk, now carries the Topps Chrome label in a multi-year partnership. Chrome refractors on collectible characters with genuine community value behind them.",
     "tags": [
@@ -4511,7 +4511,7 @@ export const BRANDS = {
       "Community"
     ],
     "sport": [
-      "ent"
+      "nonsport"
     ],
     "budget": [
       "mid_low",
@@ -4829,13 +4829,13 @@ export const QUESTIONS = [
       {
         "icon": "🌟",
         "label": "Pop Culture & Entertainment",
-        "sub": "Star Wars, Marvel, Disney, VeeFriends, and more",
+        "sub": "Star Wars, Marvel, Disney, and more",
         "val": "ent"
       },
       {
         "icon": "🃏",
-        "label": "Non-Sport Classics",
-        "sub": "Garbage Pail Kids, stickers, and cult classics",
+        "label": "Non-Sport Favorites",
+        "sub": "Garbage Pail Kids, Wacky Packages, and VeeFriends",
         "val": "nonsport"
       },
       {
