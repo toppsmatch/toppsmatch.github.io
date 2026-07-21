@@ -16,10 +16,10 @@
 }
 html,body{overflow-x:hidden}
 body{font-family:var(--sans);background:var(--blue);color:#fff;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;padding:28px 20px 60px}
-/* Brand wall: a collage of Topps brand logos (site/img/brand-wall.webp?v=1784658666, built
+/* Brand wall: a collage of Topps brand logos (site/img/brand-wall.webp?v=1784658951, built
    from the Vault's _Logo_Library) behind everything, veiled in Official Blue
    so it reads as texture. Tune the veil via the rgba alphas below. */
-body::before{content:"";position:fixed;inset:0;z-index:-1;background-image:linear-gradient(rgba(9,31,64,.86),rgba(9,31,64,.86)),url('img/brand-wall.webp?v=1784658666');background-size:cover;background-position:center}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background-image:linear-gradient(rgba(9,31,64,.86),rgba(9,31,64,.86)),url('img/brand-wall.webp?v=1784658951');background-size:cover;background-position:center}
 .app{width:100%;max-width:640px}
 
 .header{text-align:center;margin-bottom:26px;padding-top:4px}
@@ -113,8 +113,8 @@ h1 em{font-style:normal;color:var(--red)}
 .match-row{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:12px}
 .match-name{font-size:18px;font-weight:800;line-height:1.2;color:var(--blue)}
 .match-tier{font-size:10px;color:var(--grey);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-top:4px}
-.match-cat{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:999px;margin-top:6px;letter-spacing:.5px}
-.cat-sport,.cat-ent,.cat-nonsport{background:rgba(9,31,64,.08);color:var(--blue)}
+.match-cat{display:inline-block;font-size:11px;font-weight:700;padding:0;margin-top:4px;letter-spacing:.8px}
+.cat-sport,.cat-ent,.cat-nonsport{background:none;color:var(--blue)}
 .score-col{text-align:right;flex-shrink:0}
 .score-num{font-size:28px;font-weight:900;color:var(--red);line-height:1}
 .match:not(.top) .score-num{color:var(--blue)}
@@ -143,12 +143,12 @@ h1 em{font-style:normal;color:var(--red)}
    the type in. Everything staged is opacity/transform only, cheap on phones. */
 .reveal{position:fixed;inset:0;background:#091F40;display:flex;align-items:center;justify-content:center;z-index:50;text-align:center;padding:24px;overflow:hidden}
 /* Gus's brand-wall collage behind everything, blurred, under a navy tint */
-.reveal::before{content:"";position:absolute;inset:-24px;background:url('img/brand-wall.webp?v=1784658666') center/cover;filter:blur(5px)}
-/* Phones get Gus's portrait collage (brand-wall-mobile.webp?v=1784658666, 1080x1920) so
+.reveal::before{content:"";position:absolute;inset:-24px;background:url('img/brand-wall.webp?v=1784658951') center/cover;filter:blur(5px)}
+/* Phones get Gus's portrait collage (brand-wall-mobile.webp?v=1784658951, 1080x1920) so
    the wall isn't a center-crop of the landscape design. Same veils apply. */
 @media (max-width:700px){
-  body::before{background-image:linear-gradient(rgba(9,31,64,.86),rgba(9,31,64,.86)),url('img/brand-wall-mobile.webp?v=1784658666')}
-  .reveal::before{background-image:url('img/brand-wall-mobile.webp?v=1784658666')}
+  body::before{background-image:linear-gradient(rgba(9,31,64,.86),rgba(9,31,64,.86)),url('img/brand-wall-mobile.webp?v=1784658951')}
+  .reveal::before{background-image:url('img/brand-wall-mobile.webp?v=1784658951')}
 }
 .reveal::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 90% at 50% 38%,rgba(18,43,85,.82) 0%,rgba(9,31,64,.9) 55%,rgba(6,15,34,.95) 100%)}
 .reveal.hidden{display:none!important}
@@ -268,7 +268,7 @@ body.in-results .header{display:none}
 .wild .sc-name{color:#fff}
 .wild .sc-tier{color:rgba(255,255,255,.75)}
 .wild .sc-pct-wild{color:#fff}
-.wild .sc-cat .match-cat{background:transparent;color:rgba(255,255,255,.9);padding:2px 0}
+.wild .sc-cat .match-cat{color:rgba(255,255,255,.9)}
 .wild .profile-line{color:rgba(255,255,255,.85)}
 .wild .profile-line strong{color:#fff}
 .wild .match-desc{color:rgba(255,255,255,.92)}
