@@ -155,7 +155,7 @@ export const BRANDS = {
     "name": "Topps Finest Formula 1",
     "tier": "Mid-Tier",
     "cat": "sport",
-    "catLabel": "Racing",
+    "catLabel": "Formula 1",
     "price": "$650–$750/box",
     "desc": "Finest refractor tech for the grid, with race-worn relics in compact premium mini-boxes.",
     "tags": [
@@ -184,7 +184,7 @@ export const BRANDS = {
     "name": "Topps NOW",
     "tier": "Entry-Level",
     "cat": "sport",
-    "catLabel": "Multi-Sport + F1 + UFC",
+    "catLabel": "Multi-Sport",
     "price": "$9–$12/card",
     "desc": "Print-to-order cards of real moments, live within 24 hours across baseball, basketball, football, soccer, F1, UFC, WWE, and college. You collect the news.",
     "tags": [
@@ -558,7 +558,7 @@ export const BRANDS = {
     "name": "Topps Cosmic Chrome WWE",
     "tier": "High-End",
     "cat": "sport",
-    "catLabel": "Wrestling",
+    "catLabel": "WWE",
     "price": "$275–$440/box",
     "desc": "Space-themed chromium for WWE, the second wrestling chromium line with deep-space designs.",
     "tags": [
@@ -1294,7 +1294,7 @@ export const BRANDS = {
     "name": "Topps Finest WWE",
     "tier": "High-End",
     "cat": "sport",
-    "catLabel": "Wrestling",
+    "catLabel": "WWE",
     "price": "$500–$550/box",
     "desc": "Finest returns to the ring: refractor-loaded WWE cards with two autographs per box, including The Rock's first in-pack autos since 1998.",
     "tags": [
@@ -1323,7 +1323,7 @@ export const BRANDS = {
     "name": "Topps Chrome Sapphire WWE",
     "tier": "High-End",
     "cat": "sport",
-    "catLabel": "Wrestling",
+    "catLabel": "WWE",
     "price": "$335–$450/box",
     "desc": "Chrome WWE on blue Sapphire stock, one autograph per box, sold as an online-exclusive drop.",
     "tags": [
@@ -2321,7 +2321,7 @@ export const BRANDS = {
     "name": "Topps Dynasty Formula 1",
     "tier": "Ultra High-End",
     "cat": "sport",
-    "catLabel": "Racing",
+    "catLabel": "Formula 1",
     "price": "$2,800–$4,600/box",
     "desc": "One encased autograph relic numbered to 10 or less per box, with race-worn patches and Senna cut signatures.",
     "tags": [
@@ -3284,7 +3284,7 @@ export const BRANDS = {
     "name": "Topps Chrome Sapphire Formula 1",
     "tier": "High-End",
     "cat": "sport",
-    "catLabel": "Racing",
+    "catLabel": "Formula 1",
     "price": "$700–$1,100/box",
     "desc": "The complete Chrome F1 set on blue Sapphire stock, sold through online raffle drops.",
     "tags": [
@@ -3464,7 +3464,7 @@ export const BRANDS = {
     "name": "Topps Royalty WWE",
     "tier": "Ultra High-End",
     "cat": "sport",
-    "catLabel": "Wrestling",
+    "catLabel": "WWE",
     "price": "$1,250–$1,450/box",
     "desc": "Ultra-premium WWE: ten cards, six autographs, two relics, including WrestleMania 41 patch autographs.",
     "tags": [
@@ -3555,7 +3555,7 @@ export const BRANDS = {
     "name": "Topps Universe WWE",
     "tier": "Mid-Tier",
     "cat": "sport",
-    "catLabel": "Wrestling",
+    "catLabel": "WWE",
     "price": "$180–$210/box",
     "desc": "A 300-card galactic-design WWE set with two autographs and a relic guaranteed in every hobby box.",
     "tags": [
@@ -4426,7 +4426,7 @@ export const BRANDS = {
     "name": "Garbage Pail Kids Chrome",
     "tier": "Mid-Tier",
     "cat": "nonsport",
-    "catLabel": "Non-Sport Classic",
+    "catLabel": "Non-Sport",
     "price": "$200–$225/box",
     "desc": "The original GPK series art rebuilt on Chrome, with artist autographs and comic backs.",
     "tags": [

@@ -1,5 +1,5 @@
-import { BRANDS, QUESTIONS } from "./data.js?v=1784656831";
-import { score, topMatches, wildcard, maxScore } from "./scoring.js?v=1784656831";
+import { BRANDS, QUESTIONS } from "./data.js?v=1784657543";
+import { score, topMatches, wildcard, maxScore } from "./scoring.js?v=1784657543";
 
 // One tally submission per page load, fire-and-forget; never blocks the reveal.
 let submitted = false;
@@ -680,9 +680,12 @@ function goTo(i, flyX) {
     // out left, then lands on top. Fully opaque the whole way.
     const isWild = deck[i].pct == null;
     const ghost = document.createElement("div");
-    ghost.className = "fan" + (isWild ? " wild" : "");
+    ghost.className = "fan card-ghost" + (isWild ? " wild" : "");
     ghost.innerHTML = cardInner(deck[i]);
     el.style.zIndex = "2"; // current top card stays above the traveler at first
+    // the dragged card glides home while the returning card travels
+    el.style.transition = "transform .25s ease";
+    el.style.transform = "";
     ghost.style.cssText = `visibility:visible;z-index:1;top:${el.offsetTop}px;height:${el.offsetHeight}px;bottom:auto;transform:translate(calc(-50% - 68px),44px) rotate(-12deg) scale(.92)`;
     deckEl.appendChild(ghost);
     const safety = setTimeout(land, 1100); // never strand the deck on a missed event
