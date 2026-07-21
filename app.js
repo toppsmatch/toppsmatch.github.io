@@ -1,5 +1,5 @@
-import { BRANDS, QUESTIONS } from "./data.js?v=1784654923";
-import { score, topMatches, wildcard, maxScore } from "./scoring.js?v=1784654923";
+import { BRANDS, QUESTIONS } from "./data.js?v=1784655967";
+import { score, topMatches, wildcard, maxScore } from "./scoring.js?v=1784655967";
 
 // One tally submission per page load, fire-and-forget; never blocks the reveal.
 let submitted = false;
@@ -524,7 +524,7 @@ function cardInner(card) {
     <div class="sc-label">${card.label}</div>
     ${img}
     <div class="sc-name">${esc(b.name)}</div>
-    <div class="sc-tier">${esc(b.tier)}</div>
+    <div class="sc-tier">${esc((b.tier || "").split("|")[0].trim())}</div>
     <div class="sc-cat"><span class="match-cat ${catClass(b.cat)}">${esc(b.catLabel)}</span></div>
     ${pct}
     <div class="sc-detail"><div class="sc-detail-in">
@@ -608,7 +608,7 @@ function renderListView() {
             ${b.img ? `<img class="match-img" src="${esc(b.img)}" alt="${esc(b.name)}" loading="lazy">` : ""}
             <div>
               <div class="match-name">${esc(b.name)}</div>
-              <div class="match-tier">${esc(b.tier)}</div>
+              <div class="match-tier">${esc((b.tier || "").split("|")[0].trim())}</div>
               <span class="match-cat ${catClass(b.cat)}">${esc(b.catLabel)}</span>
             </div>
           </div>
@@ -669,10 +669,9 @@ function goTo(i, flyX) {
     el.style.transition = "transform .2s ease-in";
     el.style.transform = "translateX(-115%) rotate(-10deg)";
     setTimeout(() => {
-      el.style.zIndex = "-1"; // slip beneath the sheets
-      el.style.transition = "transform .3s ease-out, opacity .3s ease-out";
-      el.style.transform = "translate(-46px,30px) rotate(-11deg) scale(.92)";
-      el.style.opacity = "0";
+      el.style.zIndex = "-1"; // slip beneath the sheets, fully visible the whole way
+      el.style.transition = "transform .3s ease-out";
+      el.style.transform = "translate(-52px,32px) rotate(-11deg) scale(.92)";
       setTimeout(land, 290);
     }, 190);
   } else {
@@ -682,7 +681,7 @@ function goTo(i, flyX) {
     const ghost = document.createElement("div");
     ghost.className = "fan" + (isWild ? " wild" : "");
     ghost.innerHTML = cardInner(deck[i]);
-    ghost.style.cssText = `visibility:visible;z-index:-1;top:${el.offsetTop}px;height:${el.offsetHeight}px;bottom:auto;opacity:0;transform:translate(calc(-50% - 46px),30px) rotate(-11deg) scale(.92)`;
+    ghost.style.cssText = `visibility:visible;z-index:-1;top:${el.offsetTop}px;height:${el.offsetHeight}px;bottom:auto;transform:translate(calc(-50% - 52px),32px) rotate(-11deg) scale(.92)`;
     deckEl.appendChild(ghost);
     const safety = setTimeout(land, 900); // never strand the deck on a missed event
     let phase = 1;
@@ -699,8 +698,7 @@ function goTo(i, flyX) {
       }
     });
     requestAnimationFrame(() => requestAnimationFrame(() => {
-      ghost.style.transition = "transform .26s ease-in, opacity .1s linear";
-      ghost.style.opacity = "1";
+      ghost.style.transition = "transform .26s ease-in";
       ghost.style.transform = "translateX(-165%) rotate(-10deg) scale(1)";
     }));
   }

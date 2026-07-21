@@ -16,10 +16,10 @@
 }
 html,body{overflow-x:hidden}
 body{font-family:var(--sans);background:var(--blue);color:#fff;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;padding:28px 20px 60px}
-/* Brand wall: a collage of Topps brand logos (site/img/brand-wall.webp?v=1784654923, built
+/* Brand wall: a collage of Topps brand logos (site/img/brand-wall.webp?v=1784655967, built
    from the Vault's _Logo_Library) behind everything, veiled in Official Blue
    so it reads as texture. Tune the veil via the rgba alphas below. */
-body::before{content:"";position:fixed;inset:0;z-index:-1;background-image:linear-gradient(rgba(9,31,64,.86),rgba(9,31,64,.86)),url('img/brand-wall.webp?v=1784654923');background-size:cover;background-position:center}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background-image:linear-gradient(rgba(9,31,64,.86),rgba(9,31,64,.86)),url('img/brand-wall.webp?v=1784655967');background-size:cover;background-position:center}
 .app{width:100%;max-width:640px}
 
 .header{text-align:center;margin-bottom:26px;padding-top:4px}
@@ -145,12 +145,12 @@ h1 em{font-style:normal;color:var(--red)}
    the type in. Everything staged is opacity/transform only, cheap on phones. */
 .reveal{position:fixed;inset:0;background:#091F40;display:flex;align-items:center;justify-content:center;z-index:50;text-align:center;padding:24px;overflow:hidden}
 /* Gus's brand-wall collage behind everything, blurred, under a navy tint */
-.reveal::before{content:"";position:absolute;inset:-24px;background:url('img/brand-wall.webp?v=1784654923') center/cover;filter:blur(5px)}
-/* Phones get Gus's portrait collage (brand-wall-mobile.webp?v=1784654923, 1080x1920) so
+.reveal::before{content:"";position:absolute;inset:-24px;background:url('img/brand-wall.webp?v=1784655967') center/cover;filter:blur(5px)}
+/* Phones get Gus's portrait collage (brand-wall-mobile.webp?v=1784655967, 1080x1920) so
    the wall isn't a center-crop of the landscape design. Same veils apply. */
 @media (max-width:700px){
-  body::before{background-image:linear-gradient(rgba(9,31,64,.86),rgba(9,31,64,.86)),url('img/brand-wall-mobile.webp?v=1784654923')}
-  .reveal::before{background-image:url('img/brand-wall-mobile.webp?v=1784654923')}
+  body::before{background-image:linear-gradient(rgba(9,31,64,.86),rgba(9,31,64,.86)),url('img/brand-wall-mobile.webp?v=1784655967')}
+  .reveal::before{background-image:url('img/brand-wall-mobile.webp?v=1784655967')}
 }
 .reveal::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 90% at 50% 38%,rgba(18,43,85,.82) 0%,rgba(9,31,64,.9) 55%,rgba(6,15,34,.95) 100%)}
 .reveal.hidden{display:none!important}
@@ -267,19 +267,10 @@ body.in-results .header{display:none}
 .swipe-card.no-anim{animation:none}
 
 /* Wildcard card: unmistakably NOT a match */
-.swipe-card.wild,.fan.wild{background:linear-gradient(160deg,#F6E7B3,#E7C24F);border:1px solid #D9B23A}
-.wild .sc-label{color:var(--blue)}
-.wild .sc-name{color:var(--blue)}
-.wild .sc-tier{color:#7A6420}
+.swipe-card.wild,.fan.wild{border:2px dashed rgba(229,60,46,.65)}
+.wild .sc-label{color:var(--red)}
 .wild .sc-pct-wild{color:var(--red)}
-.wild .profile-line{color:#5C4D1D}
-.wild .profile-line strong{color:var(--blue)}
-.wild .match-desc{color:#4A3F1E}
-.wild .sc-detail-in .match-desc{border-top-color:rgba(9,31,64,.25)}
-.wild .more-toggle{background:transparent;border-color:var(--blue);color:var(--blue);box-shadow:none}
-.wild .more-toggle:hover,.swipe-card.wild.expanded .more-toggle{background:var(--blue);color:#fff}
-.wild .chev{color:rgba(9,31,64,.45)}
-.dot.gold{background:#E7C24F}
+.dot.gold{background:transparent;border:1.5px solid var(--red)}
 
 /* Tiny swipe cues on the card edges */
 .chev{position:absolute;top:50%;transform:translateY(-50%);font-size:26px;font-weight:600;opacity:.5;line-height:1;background:none;border:none;cursor:pointer;padding:8px 10px;color:#8B96AD;z-index:3;font-family:var(--sans)}
@@ -290,7 +281,7 @@ body.in-results .header{display:none}
 .swipe-card.expanded .chev{opacity:0;transition:opacity .2s}
 
 .sc-label{font-size:11px;font-weight:800;letter-spacing:2px;color:var(--red);text-transform:uppercase;margin-bottom:14px;text-align:center}
-.sc-img{display:block;width:168px;height:168px;object-fit:contain;margin:0 auto 16px;filter:drop-shadow(0 14px 24px rgba(9,31,64,.28));pointer-events:none}
+.sc-img{display:block;width:186px;height:186px;object-fit:contain;margin:0 auto 12px;padding:9px;filter:drop-shadow(0 14px 24px rgba(9,31,64,.28));pointer-events:none;background:radial-gradient(closest-side,rgba(255,255,255,.95) 0%,rgba(255,255,255,.4) 52%,rgba(229,60,46,.07) 68%,transparent 78%)}
 .sc-img-none{display:flex;align-items:center;justify-content:center;font-size:54px;border-radius:16px;background:#fff}
 .sc-name{font-family:var(--impact);font-weight:400;font-size:23px;letter-spacing:.02em;text-transform:uppercase;color:var(--blue);text-align:center;line-height:1.15;margin-bottom:6px}
 .sc-tier{font-size:10.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--grey);text-align:center;margin-bottom:7px}
