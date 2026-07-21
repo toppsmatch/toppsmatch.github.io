@@ -1,5 +1,5 @@
-import { BRANDS, QUESTIONS } from "./data.js?v=1784655967";
-import { score, topMatches, wildcard, maxScore } from "./scoring.js?v=1784655967";
+import { BRANDS, QUESTIONS } from "./data.js?v=1784656831";
+import { score, topMatches, wildcard, maxScore } from "./scoring.js?v=1784656831";
 
 // One tally submission per page load, fire-and-forget; never blocks the reveal.
 let submitted = false;
@@ -675,22 +675,24 @@ function goTo(i, flyX) {
       setTimeout(land, 290);
     }, 190);
   } else {
-    // reverse of the tuck: the card slips out of the pile from behind,
-    // sweeps out left, then lands on top
+    // visible shuffle: the returning card slides out from the very bottom of
+    // the pile IN FRONT of the sheets (but under the raised top card), sweeps
+    // out left, then lands on top. Fully opaque the whole way.
     const isWild = deck[i].pct == null;
     const ghost = document.createElement("div");
     ghost.className = "fan" + (isWild ? " wild" : "");
     ghost.innerHTML = cardInner(deck[i]);
-    ghost.style.cssText = `visibility:visible;z-index:-1;top:${el.offsetTop}px;height:${el.offsetHeight}px;bottom:auto;transform:translate(calc(-50% - 52px),32px) rotate(-11deg) scale(.92)`;
+    el.style.zIndex = "2"; // current top card stays above the traveler at first
+    ghost.style.cssText = `visibility:visible;z-index:1;top:${el.offsetTop}px;height:${el.offsetHeight}px;bottom:auto;transform:translate(calc(-50% - 68px),44px) rotate(-12deg) scale(.92)`;
     deckEl.appendChild(ghost);
-    const safety = setTimeout(land, 900); // never strand the deck on a missed event
+    const safety = setTimeout(land, 1100); // never strand the deck on a missed event
     let phase = 1;
     ghost.addEventListener("transitionend", e => {
       if (e.propertyName !== "transform") return;
       if (phase === 1) {
         phase = 2;
         ghost.style.zIndex = "4";
-        ghost.style.transition = "transform .22s ease-out";
+        ghost.style.transition = "transform .26s ease-out";
         ghost.style.transform = "translate(-50%,0) rotate(0deg) scale(1)";
       } else {
         clearTimeout(safety);
@@ -698,8 +700,8 @@ function goTo(i, flyX) {
       }
     });
     requestAnimationFrame(() => requestAnimationFrame(() => {
-      ghost.style.transition = "transform .26s ease-in";
-      ghost.style.transform = "translateX(-165%) rotate(-10deg) scale(1)";
+      ghost.style.transition = "transform .34s ease-in-out";
+      ghost.style.transform = "translateX(-170%) rotate(-9deg) scale(.97)";
     }));
   }
 }

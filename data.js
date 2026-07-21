@@ -3,7 +3,7 @@
 export const BRANDS = {
   "royalty_tennis": {
     "name": "Topps Royalty Tennis",
-    "tier": "High-End | Tennis",
+    "tier": "High-End",
     "cat": "sport",
     "catLabel": "Tennis",
     "price": "$650–$1,125/box",
@@ -32,7 +32,7 @@ export const BRANDS = {
   },
   "bowman": {
     "name": "Bowman Baseball",
-    "tier": "Mid-Tier | Prospecting",
+    "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "Baseball",
     "price": "$350–$440/box",
@@ -62,7 +62,7 @@ export const BRANDS = {
   },
   "sw_sapphire": {
     "name": "Topps Chrome Sapphire Star Wars",
-    "tier": "High-End | Online",
+    "tier": "High-End",
     "cat": "ent",
     "catLabel": "Star Wars",
     "price": "$275–$400/box",
@@ -91,7 +91,7 @@ export const BRANDS = {
   },
   "t205": {
     "name": "Topps T205",
-    "tier": "Entry-Level | Online",
+    "tier": "Entry-Level",
     "cat": "sport",
     "catLabel": "Baseball",
     "price": "$65–$85/box",
@@ -153,7 +153,7 @@ export const BRANDS = {
   },
   "finest_f1": {
     "name": "Topps Finest Formula 1",
-    "tier": "Mid-Tier | Racing",
+    "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "Racing",
     "price": "$650–$750/box",
@@ -182,7 +182,7 @@ export const BRANDS = {
   },
   "topps_now": {
     "name": "Topps NOW",
-    "tier": "Print-to-Order | Real-Time",
+    "tier": "Entry-Level",
     "cat": "sport",
     "catLabel": "Multi-Sport + F1 + UFC",
     "price": "$9–$12/card",
@@ -251,7 +251,7 @@ export const BRANDS = {
   },
   "knockout": {
     "name": "Topps Knockout UFC",
-    "tier": "Mid-Level | Combat Sports",
+    "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "UFC",
     "price": "$240–$330/box",
@@ -284,7 +284,7 @@ export const BRANDS = {
   },
   "sw_hyperspace": {
     "name": "Star Wars Hyperspace",
-    "tier": "Mid-Tier | Entertainment",
+    "tier": "Mid-Tier",
     "cat": "ent",
     "catLabel": "Star Wars",
     "price": "$300–$350/box",
@@ -313,7 +313,7 @@ export const BRANDS = {
   },
   "finest_ucc": {
     "name": "Topps Finest UEFA Club Competitions",
-    "tier": "Mid-Tier | Soccer",
+    "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "Soccer",
     "price": "$260–$300/box",
@@ -342,7 +342,7 @@ export const BRANDS = {
   },
   "marvel": {
     "name": "Topps Chrome Marvel",
-    "tier": "Entertainment | Mid-Tier",
+    "tier": "Mid-Tier",
     "cat": "ent",
     "catLabel": "Entertainment",
     "price": "$280–$300/box",
@@ -376,7 +376,7 @@ export const BRANDS = {
   },
   "gypsy_queen": {
     "name": "Topps Gypsy Queen",
-    "tier": "Entry-Level Hobby",
+    "tier": "Entry-Level",
     "cat": "sport",
     "catLabel": "Baseball",
     "price": "$240–$260/box",
@@ -409,7 +409,7 @@ export const BRANDS = {
   },
   "pro_debut": {
     "name": "Topps Pro Debut",
-    "tier": "Mid-Tier | MiLB",
+    "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "Baseball",
     "price": "$270–$300/box",
@@ -438,7 +438,7 @@ export const BRANDS = {
   },
   "disney_wonder": {
     "name": "Topps Disney Wonder",
-    "tier": "Mid-Tier | Entertainment",
+    "tier": "Mid-Tier",
     "cat": "ent",
     "catLabel": "Disney",
     "price": "$100–$150/box",
@@ -466,7 +466,7 @@ export const BRANDS = {
   },
   "inception_ucl": {
     "name": "Topps Inception UEFA",
-    "tier": "High-End | Soccer",
+    "tier": "High-End",
     "cat": "sport",
     "catLabel": "Soccer",
     "price": "$250–$300/box",
@@ -495,7 +495,7 @@ export const BRANDS = {
   },
   "bowman_draft_sapphire": {
     "name": "Bowman Draft Sapphire Edition",
-    "tier": "High-End | Online",
+    "tier": "High-End",
     "cat": "sport",
     "catLabel": "Baseball",
     "price": "$1,100–$1,400/box",
@@ -556,7 +556,7 @@ export const BRANDS = {
   },
   "cosmic_wwe": {
     "name": "Topps Cosmic Chrome WWE",
-    "tier": "High-End | Wrestling",
+    "tier": "High-End",
     "cat": "sport",
     "catLabel": "Wrestling",
     "price": "$275–$440/box",
@@ -584,7 +584,7 @@ export const BRANDS = {
   },
   "sigclass_nfl": {
     "name": "Topps Signature Class Football",
-    "tier": "High-End | Autographs",
+    "tier": "High-End",
     "cat": "sport",
     "catLabel": "NFL Football",
     "price": "$360–$430/box",
@@ -612,7 +612,7 @@ export const BRANDS = {
   },
   "sapphire": {
     "name": "Topps Chrome Sapphire Edition",
-    "tier": "Mid-Tier | Exclusive",
+    "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "Baseball",
     "price": "$900–$1,000/box",
@@ -646,7 +646,7 @@ export const BRANDS = {
   },
   "disney_genesis": {
     "name": "Topps Disney Genesis",
-    "tier": "High-End | Online",
+    "tier": "High-End",
     "cat": "ent",
     "catLabel": "Disney",
     "price": "$700–$850/box",
@@ -676,7 +676,7 @@ export const BRANDS = {
   },
   "allen_ginter": {
     "name": "Allen & Ginter",
-    "tier": "Entry-Level Hobby",
+    "tier": "Entry-Level",
     "cat": "sport",
     "catLabel": "Multi-Sport",
     "price": "$190–$260/box",
@@ -711,7 +711,7 @@ export const BRANDS = {
   },
   "merlin": {
     "name": "Topps Merlin",
-    "tier": "Mid-Tier | Soccer",
+    "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "Soccer",
     "price": "$230–$280/box",
@@ -744,7 +744,7 @@ export const BRANDS = {
   },
   "marvel_studios_sapphire": {
     "name": "Chrome Sapphire Marvel Studios",
-    "tier": "High-End | Online",
+    "tier": "High-End",
     "cat": "ent",
     "catLabel": "Marvel",
     "price": "$550–$625/box",
@@ -773,7 +773,7 @@ export const BRANDS = {
   },
   "inception_nba": {
     "name": "Topps Inception Basketball",
-    "tier": "Mid-Tier | Premium",
+    "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "NBA Basketball",
     "price": "$400–$500/box",
@@ -802,7 +802,7 @@ export const BRANDS = {
   },
   "veefriends_sapphire": {
     "name": "Chrome Sapphire VeeFriends",
-    "tier": "High-End | Online",
+    "tier": "High-End",
     "cat": "ent",
     "catLabel": "VeeFriends",
     "price": "$450–$600/box",
@@ -831,7 +831,7 @@ export const BRANDS = {
   },
   "heritage_high": {
     "name": "Topps Heritage High Number",
-    "tier": "Entry-Level Hobby",
+    "tier": "Entry-Level",
     "cat": "sport",
     "catLabel": "Baseball",
     "price": "$125–$150/box",
@@ -862,7 +862,7 @@ export const BRANDS = {
   },
   "finest_pl": {
     "name": "Topps Finest Premier League",
-    "tier": "Mid-Tier | Soccer",
+    "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "Soccer",
     "price": "$260–$300/box",
@@ -891,7 +891,7 @@ export const BRANDS = {
   },
   "sapphire_bundesliga": {
     "name": "Topps Chrome Sapphire Bundesliga",
-    "tier": "High-End | Online",
+    "tier": "High-End",
     "cat": "sport",
     "catLabel": "Soccer",
     "price": "$180–$220/box",
@@ -956,7 +956,7 @@ export const BRANDS = {
   },
   "graphite": {
     "name": "Topps Graphite",
-    "tier": "Mid-Level | Tennis",
+    "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "Tennis",
     "price": "$180–$280/box",
@@ -1049,7 +1049,7 @@ export const BRANDS = {
   },
   "chrome_bundesliga": {
     "name": "Topps Chrome Bundesliga",
-    "tier": "Mid-Tier | Soccer",
+    "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "Soccer",
     "price": "$320–$400/box",
@@ -1078,7 +1078,7 @@ export const BRANDS = {
   },
   "sapphire_nba": {
     "name": "Topps Chrome Sapphire Basketball",
-    "tier": "Ultra High-End | Online",
+    "tier": "Ultra High-End",
     "cat": "sport",
     "catLabel": "NBA Basketball",
     "price": "$3,500–$5,000/box",
@@ -1107,7 +1107,7 @@ export const BRANDS = {
   },
   "pristine_pl": {
     "name": "Topps Pristine Premier League",
-    "tier": "Mid-Tier | Premium",
+    "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "Soccer",
     "price": "$350–$400/box",
@@ -1136,7 +1136,7 @@ export const BRANDS = {
   },
   "disney_sapphire": {
     "name": "Topps Chrome Disney Sapphire Edition",
-    "tier": "High-End | Online",
+    "tier": "High-End",
     "cat": "ent",
     "catLabel": "Disney",
     "price": "$1,200–$1,300/box",
@@ -1196,7 +1196,7 @@ export const BRANDS = {
   },
   "pl_flagship": {
     "name": "Topps Premier League",
-    "tier": "Mid-Tier | Soccer",
+    "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "Soccer",
     "price": "$270–$315/box",
@@ -1226,7 +1226,7 @@ export const BRANDS = {
   },
   "match_attax": {
     "name": "Match Attax",
-    "tier": "Mass Market | Soccer",
+    "tier": "Entry-Level",
     "cat": "sport",
     "catLabel": "Soccer",
     "price": "$4–$8/pack",
@@ -1258,7 +1258,7 @@ export const BRANDS = {
   },
   "stadium_club": {
     "name": "Stadium Club",
-    "tier": "Entry-Level Hobby",
+    "tier": "Entry-Level",
     "cat": "sport",
     "catLabel": "Baseball",
     "price": "$145–$180/box",
@@ -1292,7 +1292,7 @@ export const BRANDS = {
   },
   "finest_wwe": {
     "name": "Topps Finest WWE",
-    "tier": "High-End | Wrestling",
+    "tier": "High-End",
     "cat": "sport",
     "catLabel": "Wrestling",
     "price": "$500–$550/box",
@@ -1321,7 +1321,7 @@ export const BRANDS = {
   },
   "sapphire_wwe": {
     "name": "Topps Chrome Sapphire WWE",
-    "tier": "High-End | Online",
+    "tier": "High-End",
     "cat": "sport",
     "catLabel": "Wrestling",
     "price": "$335–$450/box",
@@ -1379,7 +1379,7 @@ export const BRANDS = {
   },
   "chrome_nfl": {
     "name": "Topps Chrome Football",
-    "tier": "Mid-Tier | NFL",
+    "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "NFL Football",
     "price": "$550–$700/box",
@@ -1444,7 +1444,7 @@ export const BRANDS = {
   },
   "finest_nba": {
     "name": "Topps Finest Basketball",
-    "tier": "High-End | NBA",
+    "tier": "High-End",
     "cat": "sport",
     "catLabel": "NBA Basketball",
     "price": "$775–$900/box",
@@ -1474,7 +1474,7 @@ export const BRANDS = {
   },
   "archives": {
     "name": "Topps Archives",
-    "tier": "Entry-Level Hobby",
+    "tier": "Entry-Level",
     "cat": "sport",
     "catLabel": "Baseball",
     "price": "$250–$330/box",
@@ -1507,7 +1507,7 @@ export const BRANDS = {
   },
   "flagship_nfl": {
     "name": "Topps Football",
-    "tier": "Entry-Level Hobby | NFL",
+    "tier": "Entry-Level",
     "cat": "sport",
     "catLabel": "NFL Football",
     "price": "$100–$150/box",
@@ -1542,7 +1542,7 @@ export const BRANDS = {
   },
   "flagship_nba": {
     "name": "Topps Basketball",
-    "tier": "Entry-Level Hobby | NBA",
+    "tier": "Entry-Level",
     "cat": "sport",
     "catLabel": "NBA Basketball",
     "price": "$380–$430/box",
@@ -1607,7 +1607,7 @@ export const BRANDS = {
   },
   "motif": {
     "name": "Topps Motif",
-    "tier": "Ultra High-End | NBA",
+    "tier": "Ultra High-End",
     "cat": "sport",
     "catLabel": "NBA Basketball",
     "price": "$1,400–$2,000/box",
@@ -1638,7 +1638,7 @@ export const BRANDS = {
   },
   "bowmans_best": {
     "name": "Bowman's Best",
-    "tier": "Mid-Tier | Premium Prospecting",
+    "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "Baseball",
     "price": "$650–$750/box",
@@ -1671,7 +1671,7 @@ export const BRANDS = {
   },
   "sapphire_pl": {
     "name": "Topps Chrome Sapphire Premier League",
-    "tier": "High-End | Online",
+    "tier": "High-End",
     "cat": "sport",
     "catLabel": "Soccer",
     "price": "$880–$1,000/box",
@@ -1700,7 +1700,7 @@ export const BRANDS = {
   },
   "chrome_mls": {
     "name": "Topps Chrome MLS",
-    "tier": "Mid-Tier | Soccer",
+    "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "Soccer",
     "price": "$250–$300/box",
@@ -1730,7 +1730,7 @@ export const BRANDS = {
   },
   "bowman_nba": {
     "name": "Bowman Basketball",
-    "tier": "Mid-Tier | NBA Prospecting",
+    "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "NBA Basketball",
     "price": "$400–$500/box",
@@ -1764,7 +1764,7 @@ export const BRANDS = {
   },
   "chrome_black": {
     "name": "Topps Chrome Black Baseball",
-    "tier": "Mid-Tier | Premium",
+    "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "Baseball",
     "price": "$320–$390/box",
@@ -1796,7 +1796,7 @@ export const BRANDS = {
   },
   "sapphire_ucc": {
     "name": "Topps Chrome Sapphire UEFA Club Competitions",
-    "tier": "High-End | Online",
+    "tier": "High-End",
     "cat": "sport",
     "catLabel": "Soccer",
     "price": "$400–$520/box",
@@ -1825,7 +1825,7 @@ export const BRANDS = {
   },
   "bowman_u_best": {
     "name": "Bowman University Best",
-    "tier": "Mid-Tier | Premium College Prospecting",
+    "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "College Sports",
     "price": "$215–$280/box",
@@ -1859,7 +1859,7 @@ export const BRANDS = {
   },
   "masterwork": {
     "name": "Star Wars Masterwork",
-    "tier": "High-End | Entertainment",
+    "tier": "High-End",
     "cat": "ent",
     "catLabel": "Entertainment",
     "price": "$700–$750/box",
@@ -1892,7 +1892,7 @@ export const BRANDS = {
   },
   "gpk": {
     "name": "Garbage Pail Kids",
-    "tier": "Non-Sport Classic",
+    "tier": "Entry-Level",
     "cat": "nonsport",
     "catLabel": "Non-Sport",
     "price": "$125–$450/box",
@@ -1928,7 +1928,7 @@ export const BRANDS = {
   },
   "midnight_ufc": {
     "name": "Topps Midnight UFC",
-    "tier": "High-End | Combat Sports",
+    "tier": "High-End",
     "cat": "sport",
     "catLabel": "Combat Sports",
     "price": "$260–$300/box",
@@ -1956,7 +1956,7 @@ export const BRANDS = {
   },
   "chrome_uwcl": {
     "name": "Topps Chrome UEFA Women's Champions League",
-    "tier": "Entry-Level | Soccer",
+    "tier": "Entry-Level",
     "cat": "sport",
     "catLabel": "Soccer",
     "price": "$90–$100/box",
@@ -1987,7 +1987,7 @@ export const BRANDS = {
   },
   "sapphire_ufc": {
     "name": "Topps Chrome Sapphire UFC",
-    "tier": "High-End | Online",
+    "tier": "High-End",
     "cat": "sport",
     "catLabel": "Combat Sports",
     "price": "$250–$340/box",
@@ -2016,7 +2016,7 @@ export const BRANDS = {
   },
   "triumphant_tennis": {
     "name": "Topps Triumphant",
-    "tier": "High-End | Tennis",
+    "tier": "High-End",
     "cat": "sport",
     "catLabel": "Tennis",
     "price": "$130–$160/box",
@@ -2045,7 +2045,7 @@ export const BRANDS = {
   },
   "disney": {
     "name": "Topps Disney / Pixar",
-    "tier": "Entertainment",
+    "tier": "High-End",
     "cat": "ent",
     "catLabel": "Entertainment",
     "price": "$430–$515/box",
@@ -2080,7 +2080,7 @@ export const BRANDS = {
   },
   "archives_sig": {
     "name": "Topps Archives Signature Series",
-    "tier": "Mid-Tier | Buybacks",
+    "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "Baseball",
     "price": "$165–$210/box",
@@ -2110,7 +2110,7 @@ export const BRANDS = {
   },
   "sapphire_tennis": {
     "name": "Topps Chrome Sapphire Tennis",
-    "tier": "High-End | Online Exclusive",
+    "tier": "High-End",
     "cat": "sport",
     "catLabel": "Tennis",
     "price": "$175–$225/box",
@@ -2139,7 +2139,7 @@ export const BRANDS = {
   },
   "sapphire_nfl": {
     "name": "Topps Chrome Sapphire Football",
-    "tier": "Ultra High-End | Online",
+    "tier": "Ultra High-End",
     "cat": "sport",
     "catLabel": "NFL Football",
     "price": "$2,050–$2,400/box",
@@ -2168,7 +2168,7 @@ export const BRANDS = {
   },
   "reverence_ucl": {
     "name": "Topps Reverence UEFA",
-    "tier": "High-End | Soccer",
+    "tier": "High-End",
     "cat": "sport",
     "catLabel": "Soccer",
     "price": "$2,250–$2,500/box",
@@ -2198,7 +2198,7 @@ export const BRANDS = {
   },
   "pixar_gold": {
     "name": "Topps Pixar Gold",
-    "tier": "Mid-Tier | Entertainment",
+    "tier": "Mid-Tier",
     "cat": "ent",
     "catLabel": "Disney",
     "price": "$400–$425/box",
@@ -2227,7 +2227,7 @@ export const BRANDS = {
   },
   "wwe_chrome": {
     "name": "Topps Chrome WWE",
-    "tier": "Mid-Tier | Wrestling",
+    "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "WWE",
     "price": "$270–$300/box",
@@ -2260,7 +2260,7 @@ export const BRANDS = {
   },
   "spongebob_chrome": {
     "name": "Topps Chrome SpongeBob 25th Anniversary",
-    "tier": "Mid-Tier | Entertainment",
+    "tier": "Mid-Tier",
     "cat": "ent",
     "catLabel": "Nickelodeon",
     "price": "$400–$550/box",
@@ -2290,7 +2290,7 @@ export const BRANDS = {
   },
   "sw_chrome_black": {
     "name": "Star Wars Chrome Black",
-    "tier": "High-End | Entertainment",
+    "tier": "High-End",
     "cat": "ent",
     "catLabel": "Star Wars",
     "price": "$200–$225/box",
@@ -2348,7 +2348,7 @@ export const BRANDS = {
   },
   "marvel_comics_sapphire": {
     "name": "Chrome Sapphire Marvel Comics",
-    "tier": "Ultra High-End | Online",
+    "tier": "Ultra High-End",
     "cat": "ent",
     "catLabel": "Marvel",
     "price": "$600–$800/box",
@@ -2377,7 +2377,7 @@ export const BRANDS = {
   },
   "finest_ufc": {
     "name": "Topps Finest UFC",
-    "tier": "Mid-Tier | Combat Sports",
+    "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "Combat Sports",
     "price": "$230–$290/box",
@@ -2405,7 +2405,7 @@ export const BRANDS = {
   },
   "bowman_u": {
     "name": "Bowman University Chrome",
-    "tier": "Mid-Tier | College Prospecting",
+    "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "College Sports",
     "price": "$175–$220/box",
@@ -2475,7 +2475,7 @@ export const BRANDS = {
   },
   "sw_galaxy": {
     "name": "Star Wars Chrome Galaxy",
-    "tier": "Mid-Tier | Art",
+    "tier": "Mid-Tier",
     "cat": "ent",
     "catLabel": "Star Wars",
     "price": "$370–$390/box",
@@ -2535,7 +2535,7 @@ export const BRANDS = {
   },
   "finest_marvel": {
     "name": "Topps Finest Marvel",
-    "tier": "Mid-Tier | Entertainment",
+    "tier": "Mid-Tier",
     "cat": "ent",
     "catLabel": "Marvel",
     "price": "$280–$300/box",
@@ -2564,7 +2564,7 @@ export const BRANDS = {
   },
   "tier_one": {
     "name": "Topps Tier One",
-    "tier": "High-End | Baseball",
+    "tier": "High-End",
     "cat": "sport",
     "catLabel": "Baseball",
     "price": "$575–$650/box",
@@ -2593,7 +2593,7 @@ export const BRANDS = {
   },
   "bowman_draft": {
     "name": "Bowman Draft",
-    "tier": "Mid-Tier | Prospecting",
+    "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "Baseball",
     "price": "$700–$800/box",
@@ -2625,7 +2625,7 @@ export const BRANDS = {
   },
   "chrome_nba": {
     "name": "Topps Chrome Basketball",
-    "tier": "Mid-Tier | NBA",
+    "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "NBA Basketball",
     "price": "$950–$1,250/box",
@@ -2661,7 +2661,7 @@ export const BRANDS = {
   },
   "bowman_u_sapphire": {
     "name": "Bowman University Chrome Sapphire",
-    "tier": "Mid-Tier | Online Exclusive",
+    "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "College Sports",
     "price": "$230–$400/box",
@@ -2725,7 +2725,7 @@ export const BRANDS = {
   },
   "chrome_tennis": {
     "name": "Topps Chrome Tennis",
-    "tier": "Mid-Tier | Tennis",
+    "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "Tennis",
     "price": "$135–$170/box",
@@ -2755,7 +2755,7 @@ export const BRANDS = {
   },
   "bowman_chrome_sapphire": {
     "name": "Bowman Chrome Sapphire Edition",
-    "tier": "High-End | Online",
+    "tier": "High-End",
     "cat": "sport",
     "catLabel": "Baseball",
     "price": "$1,000–$1,250/box",
@@ -2786,7 +2786,7 @@ export const BRANDS = {
   },
   "bowman_sapphire_nba": {
     "name": "Bowman Sapphire Basketball",
-    "tier": "High-End | Online",
+    "tier": "High-End",
     "cat": "sport",
     "catLabel": "NBA Basketball",
     "price": "$2,400–$3,650/box",
@@ -2816,7 +2816,7 @@ export const BRANDS = {
   },
   "hoops": {
     "name": "NBA Hoops",
-    "tier": "Entry-Level | NBA",
+    "tier": "Entry-Level",
     "cat": "sport",
     "catLabel": "NBA Basketball",
     "price": "$260–$300/box",
@@ -2847,7 +2847,7 @@ export const BRANDS = {
   },
   "f1_chrome": {
     "name": "Topps Chrome Formula 1",
-    "tier": "Mid-Tier | Racing",
+    "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "Formula 1",
     "price": "$300–$400/box",
@@ -2881,7 +2881,7 @@ export const BRANDS = {
   },
   "chrome_boxing": {
     "name": "Topps Chrome Boxing",
-    "tier": "Mid-Tier | Boxing",
+    "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "Combat Sports",
     "price": "$250–$300/box",
@@ -2912,7 +2912,7 @@ export const BRANDS = {
   },
   "transcendent": {
     "name": "Topps Transcendent",
-    "tier": "Ultra High-End | VIP",
+    "tier": "Ultra High-End",
     "cat": "sport",
     "catLabel": "Baseball",
     "price": "$20,000–$26,000/box",
@@ -2943,7 +2943,7 @@ export const BRANDS = {
   },
   "chrome_update": {
     "name": "Topps Chrome Update Series",
-    "tier": "Mid-Tier | Baseball",
+    "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "Baseball",
     "price": "$220–$300/box",
@@ -2972,7 +2972,7 @@ export const BRANDS = {
   },
   "mls_superstars": {
     "name": "Topps MLS Super Stars",
-    "tier": "Entry-Level | Soccer",
+    "tier": "Entry-Level",
     "cat": "sport",
     "catLabel": "Soccer",
     "price": "$60–$70/box",
@@ -3002,7 +3002,7 @@ export const BRANDS = {
   },
   "gold_pl": {
     "name": "Topps Gold Premier League",
-    "tier": "Mid-Tier | Online",
+    "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "Soccer",
     "price": "$200–$270/box",
@@ -3031,7 +3031,7 @@ export const BRANDS = {
   },
   "midnight": {
     "name": "Topps Midnight Football",
-    "tier": "Mid-Tier | Premium",
+    "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "NFL Football",
     "price": "$790–$900/box",
@@ -3061,7 +3061,7 @@ export const BRANDS = {
   },
   "chrome_black_nfl": {
     "name": "Topps Chrome Black Football",
-    "tier": "Mid-Tier | Premium",
+    "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "NFL Football",
     "price": "$450–$560/box",
@@ -3091,7 +3091,7 @@ export const BRANDS = {
   },
   "chrome_platinum": {
     "name": "Topps Chrome Platinum Anniversary",
-    "tier": "Mid-Tier | Baseball",
+    "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "Baseball",
     "price": "$240–$300/box",
@@ -3123,7 +3123,7 @@ export const BRANDS = {
   },
   "ucl_chrome": {
     "name": "Topps Chrome UEFA Champions League",
-    "tier": "Mid-Tier | Soccer",
+    "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "Soccer",
     "price": "$250–$330/box",
@@ -3157,7 +3157,7 @@ export const BRANDS = {
   },
   "marvel_studios": {
     "name": "Topps Marvel Studios Chrome",
-    "tier": "High-End | Entertainment",
+    "tier": "High-End",
     "cat": "ent",
     "catLabel": "Marvel",
     "price": "$260–$380/box",
@@ -3218,7 +3218,7 @@ export const BRANDS = {
   },
   "brooklyn_cap": {
     "name": "Topps Brooklyn Collection Captain America",
-    "tier": "High-End | Entertainment",
+    "tier": "High-End",
     "cat": "ent",
     "catLabel": "Marvel",
     "price": "$220–$285/box",
@@ -3246,7 +3246,7 @@ export const BRANDS = {
   },
   "bowman_chrome": {
     "name": "Bowman Chrome",
-    "tier": "Mid-Tier | Prospecting",
+    "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "Baseball",
     "price": "$500–$650/box",
@@ -3282,7 +3282,7 @@ export const BRANDS = {
   },
   "sapphire_f1": {
     "name": "Topps Chrome Sapphire Formula 1",
-    "tier": "High-End | Online",
+    "tier": "High-End",
     "cat": "sport",
     "catLabel": "Racing",
     "price": "$700–$1,100/box",
@@ -3311,7 +3311,7 @@ export const BRANDS = {
   },
   "finest_mls": {
     "name": "Topps Finest MLS",
-    "tier": "Mid-Tier | Soccer",
+    "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "Soccer",
     "price": "$140–$175/box",
@@ -3340,7 +3340,7 @@ export const BRANDS = {
   },
   "heritage": {
     "name": "Topps Heritage",
-    "tier": "Entry-Level Hobby",
+    "tier": "Entry-Level",
     "cat": "sport",
     "catLabel": "Baseball",
     "price": "$160–$190/box",
@@ -3375,7 +3375,7 @@ export const BRANDS = {
   },
   "wwe_exalted": {
     "name": "Topps Exalted WWE",
-    "tier": "High-End | Wrestling",
+    "tier": "High-End",
     "cat": "sport",
     "catLabel": "WWE",
     "price": "$160–$250/box",
@@ -3406,7 +3406,7 @@ export const BRANDS = {
   },
   "sw_smugglers": {
     "name": "Star Wars Smugglers Outpost",
-    "tier": "Mid-Tier | Entertainment",
+    "tier": "Mid-Tier",
     "cat": "ent",
     "catLabel": "Star Wars",
     "price": "$670–$800/box",
@@ -3433,7 +3433,7 @@ export const BRANDS = {
   },
   "mls_flagship": {
     "name": "Topps MLS",
-    "tier": "Mid-Tier | Soccer",
+    "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "Soccer",
     "price": "$130–$195/box",
@@ -3491,7 +3491,7 @@ export const BRANDS = {
   },
   "inception": {
     "name": "Topps Inception",
-    "tier": "Mid-Tier | Premium",
+    "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "Baseball",
     "price": "$275–$400/box",
@@ -3523,7 +3523,7 @@ export const BRANDS = {
   },
   "chrome_deadpool": {
     "name": "Topps Chrome Deadpool",
-    "tier": "Mid-Tier | Entertainment",
+    "tier": "Mid-Tier",
     "cat": "ent",
     "catLabel": "Marvel",
     "price": "$400–$440/box",
@@ -3553,7 +3553,7 @@ export const BRANDS = {
   },
   "universe_wwe": {
     "name": "Topps Universe WWE",
-    "tier": "Mid-Tier | Wrestling",
+    "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "Wrestling",
     "price": "$180–$210/box",
@@ -3614,7 +3614,7 @@ export const BRANDS = {
   },
   "bowman_sapphire": {
     "name": "Bowman Sapphire Edition",
-    "tier": "High-End | Online",
+    "tier": "High-End",
     "cat": "sport",
     "catLabel": "Baseball",
     "price": "$1,250–$1,500/box",
@@ -3644,7 +3644,7 @@ export const BRANDS = {
   },
   "chrome_update_nba": {
     "name": "Topps Chrome Update Basketball",
-    "tier": "Mid-Tier | NBA",
+    "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "NBA Basketball",
     "price": "$530–$600/box",
@@ -3674,7 +3674,7 @@ export const BRANDS = {
   },
   "museum_ucl": {
     "name": "Museum Collection UEFA",
-    "tier": "High-End | Soccer",
+    "tier": "High-End",
     "cat": "sport",
     "catLabel": "Soccer",
     "price": "$390–$550/box",
@@ -3703,7 +3703,7 @@ export const BRANDS = {
   },
   "finest_nfl": {
     "name": "Topps Finest Football",
-    "tier": "High-End | NFL",
+    "tier": "High-End",
     "cat": "sport",
     "catLabel": "NFL Football",
     "price": "$630–$690/box",
@@ -3733,7 +3733,7 @@ export const BRANDS = {
   },
   "disney_mint": {
     "name": "Topps Disney Mint",
-    "tier": "High-End | Entertainment",
+    "tier": "High-End",
     "cat": "ent",
     "catLabel": "Disney",
     "price": "$600–$800/box",
@@ -3792,7 +3792,7 @@ export const BRANDS = {
   },
   "flagship": {
     "name": "Topps Series 1 / 2 / Update",
-    "tier": "Entry-Level Hobby",
+    "tier": "Entry-Level",
     "cat": "sport",
     "catLabel": "Baseball",
     "price": "$125–$210/box",
@@ -3856,7 +3856,7 @@ export const BRANDS = {
   },
   "cosmic_nba": {
     "name": "Topps Cosmic Chrome Basketball",
-    "tier": "High-End | NBA",
+    "tier": "High-End",
     "cat": "sport",
     "catLabel": "NBA Basketball",
     "price": "$920–$1,200/box",
@@ -3885,7 +3885,7 @@ export const BRANDS = {
   },
   "midnight_nba": {
     "name": "Topps Midnight Basketball",
-    "tier": "High-End | Online",
+    "tier": "High-End",
     "cat": "sport",
     "catLabel": "NBA Basketball",
     "price": "$695–$780/box",
@@ -3915,7 +3915,7 @@ export const BRANDS = {
   },
   "toy_story_crystal": {
     "name": "Topps Crystal: 30 Years of Toy Story",
-    "tier": "Mid-Tier | Entertainment",
+    "tier": "Mid-Tier",
     "cat": "ent",
     "catLabel": "Disney",
     "price": "$150–$250/box",
@@ -3944,7 +3944,7 @@ export const BRANDS = {
   },
   "knockout_ucl": {
     "name": "Topps Knockout UEFA Club Competitions",
-    "tier": "Entry-Level | Online",
+    "tier": "Entry-Level",
     "cat": "sport",
     "catLabel": "Soccer",
     "price": "$150–$180/box",
@@ -4003,7 +4003,7 @@ export const BRANDS = {
   },
   "holiday": {
     "name": "Topps Holiday",
-    "tier": "Entry-Level | Retail",
+    "tier": "Entry-Level",
     "cat": "sport",
     "catLabel": "Baseball",
     "price": "$25–$45/box",
@@ -4033,7 +4033,7 @@ export const BRANDS = {
   },
   "big_league": {
     "name": "Topps Big League",
-    "tier": "Entry-Level | Baseball",
+    "tier": "Entry-Level",
     "cat": "sport",
     "catLabel": "Baseball",
     "price": "$25–$100/box",
@@ -4064,7 +4064,7 @@ export const BRANDS = {
   },
   "living_set": {
     "name": "Topps Living Set",
-    "tier": "Print-to-Order | Weekly",
+    "tier": "Entry-Level",
     "cat": "sport",
     "catLabel": "Baseball + Soccer",
     "price": "$6–$9/card",
@@ -4096,7 +4096,7 @@ export const BRANDS = {
   },
   "inception_mls": {
     "name": "Topps Inception MLS",
-    "tier": "Mid-Tier | Premium",
+    "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "Soccer",
     "price": "$300–$350/box",
@@ -4125,7 +4125,7 @@ export const BRANDS = {
   },
   "wacky": {
     "name": "Wacky Packages",
-    "tier": "Non-Sport Classic",
+    "tier": "Entry-Level",
     "cat": "nonsport",
     "catLabel": "Non-Sport",
     "price": "$110–$120/box",
@@ -4158,7 +4158,7 @@ export const BRANDS = {
   },
   "sigclass_nba": {
     "name": "Topps Signature Class Basketball",
-    "tier": "High-End | Autographs",
+    "tier": "High-End",
     "cat": "sport",
     "catLabel": "NBA Basketball",
     "price": "$375–$475/box",
@@ -4186,7 +4186,7 @@ export const BRANDS = {
   },
   "chrome_pl": {
     "name": "Topps Chrome Premier League",
-    "tier": "Mid-Tier | Soccer",
+    "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "Soccer",
     "price": "$270–$320/box",
@@ -4215,7 +4215,7 @@ export const BRANDS = {
   },
   "ufc_chrome": {
     "name": "Topps Chrome UFC",
-    "tier": "Mid-Tier | Combat Sports",
+    "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "UFC",
     "price": "$200–$280/box",
@@ -4249,7 +4249,7 @@ export const BRANDS = {
   },
   "stadium_club_ufc": {
     "name": "Stadium Club UFC",
-    "tier": "Mid-Tier | Photography",
+    "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "Combat Sports",
     "price": "$130–$160/box",
@@ -4278,7 +4278,7 @@ export const BRANDS = {
   },
   "dune_chrome": {
     "name": "Topps Dune Chrome",
-    "tier": "Mid-Tier | Entertainment",
+    "tier": "Mid-Tier",
     "cat": "ent",
     "catLabel": "Entertainment",
     "price": "$130–$160/box",
@@ -4306,7 +4306,7 @@ export const BRANDS = {
   },
   "inception_nfl": {
     "name": "Topps Inception Football",
-    "tier": "Mid-Tier | Premium",
+    "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "NFL Football",
     "price": "$280–$300/box",
@@ -4335,7 +4335,7 @@ export const BRANDS = {
   },
   "cactusjack_nba": {
     "name": "Topps Chrome x Cactus Jack Basketball",
-    "tier": "High-End | Collab",
+    "tier": "High-End",
     "cat": "sport",
     "catLabel": "NBA Basketball",
     "price": "$585–$705/box",
@@ -4364,7 +4364,7 @@ export const BRANDS = {
   },
   "ufc_royalty": {
     "name": "Topps UFC Royalty",
-    "tier": "High-End | Combat Sports",
+    "tier": "High-End",
     "cat": "sport",
     "catLabel": "UFC",
     "price": "$750–$1,100/box",
@@ -4395,7 +4395,7 @@ export const BRANDS = {
   },
   "resurgence_nfl": {
     "name": "Topps Resurgence Football",
-    "tier": "Mid-Tier | NFL",
+    "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "NFL Football",
     "price": "$450–$500/box",
@@ -4424,7 +4424,7 @@ export const BRANDS = {
   },
   "gpk_chrome": {
     "name": "Garbage Pail Kids Chrome",
-    "tier": "Mid-Tier | Non-Sport",
+    "tier": "Mid-Tier",
     "cat": "nonsport",
     "catLabel": "Non-Sport Classic",
     "price": "$200–$225/box",
@@ -4455,7 +4455,7 @@ export const BRANDS = {
   },
   "royalty": {
     "name": "Topps Royalty Basketball",
-    "tier": "High-End | NBA",
+    "tier": "High-End",
     "cat": "sport",
     "catLabel": "Baseball",
     "price": "$450–$700/box",
@@ -4484,7 +4484,7 @@ export const BRANDS = {
   },
   "veefriends": {
     "name": "Topps Chrome VeeFriends",
-    "tier": "Entertainment | Mid-Tier",
+    "tier": "Mid-Tier",
     "cat": "ent",
     "catLabel": "Entertainment",
     "price": "$325–$450/box",
@@ -4549,7 +4549,7 @@ export const BRANDS = {
   },
   "disney_neon": {
     "name": "Topps Disney Neon",
-    "tier": "High-End | Entertainment",
+    "tier": "High-End",
     "cat": "ent",
     "catLabel": "Disney",
     "price": "$110–$180/box",
@@ -4578,7 +4578,7 @@ export const BRANDS = {
   },
   "star_wars": {
     "name": "Topps Star Wars",
-    "tier": "Entertainment",
+    "tier": "Entry-Level",
     "cat": "ent",
     "catLabel": "Entertainment",
     "price": "$100–$130/box",
@@ -4615,7 +4615,7 @@ export const BRANDS = {
   },
   "ucc_flagship": {
     "name": "Topps UEFA Club Competitions",
-    "tier": "Entry-Level Hobby",
+    "tier": "Entry-Level",
     "cat": "sport",
     "catLabel": "Soccer",
     "price": "$130–$195/box",
@@ -4643,7 +4643,7 @@ export const BRANDS = {
   },
   "sapphire_mls": {
     "name": "Topps Chrome Sapphire MLS",
-    "tier": "High-End | Online",
+    "tier": "High-End",
     "cat": "sport",
     "catLabel": "Soccer",
     "price": "$300–$350/box",
@@ -4672,7 +4672,7 @@ export const BRANDS = {
   },
   "sw_chrome": {
     "name": "Topps Chrome Star Wars",
-    "tier": "Mid-Tier | Entertainment",
+    "tier": "Mid-Tier",
     "cat": "ent",
     "catLabel": "Star Wars",
     "price": "$250–$325/box",
@@ -4700,7 +4700,7 @@ export const BRANDS = {
   },
   "midnight_bundesliga": {
     "name": "Topps Midnight Bundesliga",
-    "tier": "Mid-Tier | Soccer",
+    "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "Soccer",
     "price": "$150–$195/box",
