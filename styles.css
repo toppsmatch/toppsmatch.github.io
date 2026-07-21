@@ -16,10 +16,10 @@
 }
 html,body{overflow-x:hidden}
 body{font-family:var(--sans);background:var(--blue);color:#fff;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;padding:28px 20px 60px}
-/* Brand wall: a collage of Topps brand logos (site/img/brand-wall.webp?v=1784652710, built
+/* Brand wall: a collage of Topps brand logos (site/img/brand-wall.webp?v=1784653678, built
    from the Vault's _Logo_Library) behind everything, veiled in Official Blue
    so it reads as texture. Tune the veil via the rgba alphas below. */
-body::before{content:"";position:fixed;inset:0;z-index:-1;background-image:linear-gradient(rgba(9,31,64,.86),rgba(9,31,64,.86)),url('img/brand-wall.webp?v=1784652710');background-size:cover;background-position:center}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background-image:linear-gradient(rgba(9,31,64,.86),rgba(9,31,64,.86)),url('img/brand-wall.webp?v=1784653678');background-size:cover;background-position:center}
 .app{width:100%;max-width:640px}
 
 .header{text-align:center;margin-bottom:26px;padding-top:4px}
@@ -145,12 +145,12 @@ h1 em{font-style:normal;color:var(--red)}
    the type in. Everything staged is opacity/transform only, cheap on phones. */
 .reveal{position:fixed;inset:0;background:#091F40;display:flex;align-items:center;justify-content:center;z-index:50;text-align:center;padding:24px;overflow:hidden}
 /* Gus's brand-wall collage behind everything, blurred, under a navy tint */
-.reveal::before{content:"";position:absolute;inset:-24px;background:url('img/brand-wall.webp?v=1784652710') center/cover;filter:blur(5px)}
-/* Phones get Gus's portrait collage (brand-wall-mobile.webp?v=1784652710, 1080x1920) so
+.reveal::before{content:"";position:absolute;inset:-24px;background:url('img/brand-wall.webp?v=1784653678') center/cover;filter:blur(5px)}
+/* Phones get Gus's portrait collage (brand-wall-mobile.webp?v=1784653678, 1080x1920) so
    the wall isn't a center-crop of the landscape design. Same veils apply. */
 @media (max-width:700px){
-  body::before{background-image:linear-gradient(rgba(9,31,64,.86),rgba(9,31,64,.86)),url('img/brand-wall-mobile.webp?v=1784652710')}
-  .reveal::before{background-image:url('img/brand-wall-mobile.webp?v=1784652710')}
+  body::before{background-image:linear-gradient(rgba(9,31,64,.86),rgba(9,31,64,.86)),url('img/brand-wall-mobile.webp?v=1784653678')}
+  .reveal::before{background-image:url('img/brand-wall-mobile.webp?v=1784653678')}
 }
 .reveal::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 90% at 50% 38%,rgba(18,43,85,.82) 0%,rgba(9,31,64,.9) 55%,rgba(6,15,34,.95) 100%)}
 .reveal.hidden{display:none!important}
@@ -245,10 +245,10 @@ body.in-results .header{display:none}
    the top-left corner can only move DOWN (never touches the header text), and
    only the back sheet's bottom-left corner dips slightly below the card. */
 .fan{position:absolute;z-index:0;top:0;bottom:0;left:50%;width:100%;max-width:360px;border-radius:22px;pointer-events:none;box-shadow:0 10px 24px rgba(0,0,0,.35);overflow:hidden;padding:20px 22px 18px;transition:height .35s ease}
-.fan1{background:var(--card);border:1px solid var(--border);transform:translate(calc(-50% - 26px),16px) rotate(-5.5deg)}
-.fan2{background:var(--card);border:1px solid var(--border);transform:translate(calc(-50% - 52px),32px) rotate(-11deg)}
+.fan1{background:var(--card);border:1px solid var(--border);transform:translate(calc(-50% - 26px),16px) rotate(-5.5deg) scale(.96)}
+.fan2{background:var(--card);border:1px solid var(--border);transform:translate(calc(-50% - 52px),32px) rotate(-11deg) scale(.92)}
 /* the sheet that actually shows through a swipe: pinned under the top card */
-.fan-under{background:var(--card);border:1px solid var(--border);transform:translate(-50%,2px) rotate(-.6deg)}
+.fan-under{background:var(--card);border:1px solid var(--border);transform:translate(-50%,2px) rotate(-.6deg) scale(.985)}
 .fan .sc-detail,.fan .chev{display:none}
 .fan-prev{visibility:hidden}
 .deck.show-prev .fan-prev{visibility:visible}
@@ -256,9 +256,9 @@ body.in-results .header{display:none}
 .fan-lineup{display:flex;align-items:center;justify-content:center}
 .fan-lineup-in{font-size:14px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--grey)}
 @media (max-width:430px){
-  .fan1{transform:translate(calc(-50% - 20px),13px) rotate(-4.5deg)}
-  .fan2{transform:translate(calc(-50% - 40px),26px) rotate(-9deg)}
-  .fan-under{transform:translate(-50%,2px) rotate(-.5deg)}
+  .fan1{transform:translate(calc(-50% - 20px),13px) rotate(-4.5deg) scale(.96)}
+  .fan2{transform:translate(calc(-50% - 40px),26px) rotate(-9deg) scale(.92)}
+  .fan-under{transform:translate(-50%,2px) rotate(-.5deg) scale(.985)}
 }
 
 .swipe-card{position:relative;z-index:1;margin:0 auto;width:100%;max-width:360px;background:var(--card);border:1px solid var(--border);border-radius:22px;padding:20px 22px 18px;will-change:transform;touch-action:pan-y;user-select:none;cursor:grab;animation:cardIn .28s ease;
@@ -267,8 +267,19 @@ body.in-results .header{display:none}
 @keyframes cardIn{from{opacity:0}to{opacity:1}}
 
 /* Wildcard card: unmistakably NOT a match */
-.swipe-card.wild{border:1.5px dashed rgba(229,60,46,.55)}
-.swipe-card.wild .sc-label{color:var(--grey)}
+.swipe-card.wild,.fan.wild{background:var(--blue);border:1px solid rgba(255,255,255,.18)}
+.wild .sc-label{color:#E7C24F}
+.wild .sc-name{color:#fff}
+.wild .sc-tier{color:#B9C4D9}
+.wild .sc-pct-wild{color:#E7C24F}
+.wild .profile-line{color:#B9C4D9}
+.wild .profile-line strong{color:#fff}
+.wild .match-desc{color:#C7CDD9}
+.wild .sc-detail-in .match-desc{border-top-color:rgba(255,255,255,.22)}
+.wild .more-toggle{background:transparent;border-color:#fff;color:#fff;box-shadow:none}
+.wild .more-toggle:hover,.swipe-card.wild.expanded .more-toggle{background:#fff;color:var(--blue)}
+.wild .chev{color:rgba(255,255,255,.5)}
+.dot.gold{background:#E7C24F}
 
 /* Tiny swipe cues on the card edges */
 .chev{position:absolute;top:50%;transform:translateY(-50%);font-size:26px;font-weight:600;opacity:.5;line-height:1;background:none;border:none;cursor:pointer;padding:8px 10px;color:#8B96AD;z-index:3;font-family:var(--sans)}

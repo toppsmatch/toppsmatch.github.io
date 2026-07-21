@@ -1,5 +1,5 @@
-import { BRANDS, QUESTIONS } from "./data.js?v=1784652710";
-import { score, topMatches, wildcard, maxScore } from "./scoring.js?v=1784652710";
+import { BRANDS, QUESTIONS } from "./data.js?v=1784653678";
+import { score, topMatches, wildcard, maxScore } from "./scoring.js?v=1784653678";
 
 // One tally submission per page load, fire-and-forget; never blocks the reveal.
 let submitted = false;
@@ -537,8 +537,8 @@ function cardInner(card) {
     <div class="sc-tier">${esc(b.tier)}</div>
     <div class="sc-cat"><span class="match-cat ${catClass(b.cat)}">${esc(b.catLabel)}</span></div>
     ${pct}
-    ${teaser}
     <div class="sc-detail"><div class="sc-detail-in">
+      ${teaser}
       <div class="match-desc">${esc(b.desc)}</div>
       <div class="tags">
         <span class="tag price">📦 ${esc(b.price)}</span>
@@ -551,14 +551,18 @@ function renderCard() {
   const host = document.getElementById("resultsContent");
   if (deckIdx >= deck.length) { renderListView(); return; }
   const card = deck[deckIdx];
-  const waiting = deck.length - deckIdx - 1;
-  const dots = deck.map((_, i) => `<span class="dot${i === deckIdx ? " on" : ""}"></span>`).join("");
+  // only the ranked matches count as grey cards in the pile; the wildcard
+  // stays invisible until it "randomly" appears after the last real card
+  const waiting = deck.slice(deckIdx + 1).filter(c => c.pct != null).length;
+  const regular = deck.filter(c => c.pct != null);
+  const dots = regular.map((_, i) => `<span class="dot${i === deckIdx ? " on" : ""}"></span>`).join("")
+    + (card.pct == null ? `<span class="dot gold on"></span>` : "");
   // Sheets under the top card show the REAL neighbor cards, so a mid-swipe
   // reveal is never blank; past the last card it teases the list view.
   const prev = deck[deckIdx - 1];
   const next = deck[deckIdx + 1];
   const underNext = next
-    ? `<div class="fan fan-under fan-next">${cardInner(next)}</div>`
+    ? `<div class="fan fan-under fan-next${next.pct == null ? " wild" : ""}">${cardInner(next)}</div>`
     : `<div class="fan fan-under fan-next fan-lineup"><div class="fan-lineup-in">Your full lineup ↓</div></div>`;
   const underPrev = prev ? `<div class="fan fan-under fan-prev">${cardInner(prev)}</div>` : "";
   const nextStamp = next ? (next.label.split(" ").slice(1).join(" ") || next.label) : "Full lineup";
@@ -679,22 +683,38 @@ function goTo(i, flyX) {
     setTimeout(() => {
       el.style.zIndex = "-1"; // slip beneath the sheets
       el.style.transition = "transform .3s ease-out, opacity .3s ease-out";
-      el.style.transform = "translate(-46px,30px) rotate(-11deg) scale(.98)";
+      el.style.transform = "translate(-46px,30px) rotate(-11deg) scale(.92)";
       el.style.opacity = "0";
       setTimeout(land, 290);
     }, 190);
   } else {
+    // reverse of the tuck: the card slips out of the pile from behind,
+    // sweeps out left, then lands on top
+    const isWild = deck[i].pct == null;
     const ghost = document.createElement("div");
-    ghost.className = "fan";
+    ghost.className = "fan" + (isWild ? " wild" : "");
     ghost.innerHTML = cardInner(deck[i]);
-    ghost.style.cssText = `visibility:visible;z-index:4;top:${el.offsetTop}px;height:${el.offsetHeight}px;bottom:auto;opacity:.75;transform:translate(calc(-50% - 52px),32px) rotate(-11deg)`;
+    ghost.style.cssText = `visibility:visible;z-index:-1;top:${el.offsetTop}px;height:${el.offsetHeight}px;bottom:auto;opacity:0;transform:translate(calc(-50% - 46px),30px) rotate(-11deg) scale(.92)`;
     deckEl.appendChild(ghost);
+    const safety = setTimeout(land, 900); // never strand the deck on a missed event
+    let phase = 1;
+    ghost.addEventListener("transitionend", e => {
+      if (e.propertyName !== "transform") return;
+      if (phase === 1) {
+        phase = 2;
+        ghost.style.zIndex = "4";
+        ghost.style.transition = "transform .22s ease-out";
+        ghost.style.transform = "translate(-50%,0) rotate(0deg) scale(1)";
+      } else {
+        clearTimeout(safety);
+        land();
+      }
+    });
     requestAnimationFrame(() => requestAnimationFrame(() => {
-      ghost.style.transition = "transform .34s cubic-bezier(.2,.8,.3,1), opacity .34s ease";
-      ghost.style.transform = "translate(-50%,0) rotate(0deg)";
+      ghost.style.transition = "transform .26s ease-in, opacity .1s linear";
       ghost.style.opacity = "1";
+      ghost.style.transform = "translateX(-165%) rotate(-10deg) scale(1)";
     }));
-    setTimeout(land, 350);
   }
 }
 
