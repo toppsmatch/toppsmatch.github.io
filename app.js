@@ -1,5 +1,5 @@
-import { BRANDS, QUESTIONS } from "./data.js?v=1784667344";
-import { score, topMatches, wildcard, maxScore } from "./scoring.js?v=1784667344";
+import { BRANDS, QUESTIONS } from "./data.js";
+import { score, topMatches, wildcard, maxScore } from "./scoring.js";
 
 // One tally submission per page load, fire-and-forget; never blocks the reveal.
 let submitted = false;
@@ -584,6 +584,9 @@ function sizeFans() {
     f.style.top = el.offsetTop + "px";
     f.style.height = el.offsetHeight + "px";
     f.style.bottom = "auto";
+    // the under-sheet plays "the next card": match the real card's footprint
+    // exactly, or its wildcard frame peeks past the top card's edges
+    if (f.classList.contains("fan-under")) f.style.width = el.offsetWidth + "px";
   });
 }
 

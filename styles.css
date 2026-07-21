@@ -16,10 +16,10 @@
 }
 html,body{overflow-x:hidden}
 body{font-family:var(--sans);background:var(--blue);color:#fff;min-height:100vh;display:flex;align-items:flex-start;justify-content:center;padding:28px 20px 60px}
-/* Brand wall: a collage of Topps brand logos (site/img/brand-wall.webp?v=1784667971, built
+/* Brand wall: a collage of Topps brand logos (site/img/brand-wall.webp, built
    from the Vault's _Logo_Library) behind everything, veiled in Official Blue
    so it reads as texture. Tune the veil via the rgba alphas below. */
-body::before{content:"";position:fixed;inset:0;z-index:-1;background-image:linear-gradient(rgba(9,31,64,.86),rgba(9,31,64,.86)),url('img/brand-wall.webp?v=1784667971');background-size:cover;background-position:center}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background-image:linear-gradient(rgba(9,31,64,.86),rgba(9,31,64,.86)),url('img/brand-wall.webp');background-size:cover;background-position:center}
 .app{width:100%;max-width:640px}
 
 .header{text-align:center;margin-bottom:26px;padding-top:4px}
@@ -143,12 +143,12 @@ h1 em{font-style:normal;color:var(--red)}
    the type in. Everything staged is opacity/transform only, cheap on phones. */
 .reveal{position:fixed;inset:0;background:#091F40;display:flex;align-items:center;justify-content:center;z-index:50;text-align:center;padding:24px;overflow:hidden}
 /* Gus's brand-wall collage behind everything, blurred, under a navy tint */
-.reveal::before{content:"";position:absolute;inset:-24px;background:url('img/brand-wall.webp?v=1784667971') center/cover;filter:blur(5px)}
-/* Phones get Gus's portrait collage (brand-wall-mobile.webp?v=1784667971, 1080x1920) so
+.reveal::before{content:"";position:absolute;inset:-24px;background:url('img/brand-wall.webp') center/cover;filter:blur(5px)}
+/* Phones get Gus's portrait collage (brand-wall-mobile.webp, 1080x1920) so
    the wall isn't a center-crop of the landscape design. Same veils apply. */
 @media (max-width:700px){
-  body::before{background-image:linear-gradient(rgba(9,31,64,.86),rgba(9,31,64,.86)),url('img/brand-wall-mobile.webp?v=1784667971')}
-  .reveal::before{background-image:url('img/brand-wall-mobile.webp?v=1784667971')}
+  body::before{background-image:linear-gradient(rgba(9,31,64,.86),rgba(9,31,64,.86)),url('img/brand-wall-mobile.webp')}
+  .reveal::before{background-image:url('img/brand-wall-mobile.webp')}
 }
 .reveal::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 90% at 50% 38%,rgba(18,43,85,.82) 0%,rgba(9,31,64,.9) 55%,rgba(6,15,34,.95) 100%)}
 .reveal.hidden{display:none!important}
@@ -262,20 +262,13 @@ body.in-results .header{display:none}
 @keyframes cardIn{from{opacity:0}to{opacity:1}}
 .swipe-card.no-anim{animation:none}
 
-/* Wildcard card: unmistakably NOT a match */
-.swipe-card.wild,.fan.wild{background:linear-gradient(168deg,#C43222 0%,#8F1D10 100%);border:none}
-.wild .sc-label{color:#fff}
-.wild .sc-name{color:#fff}
-.wild .sc-tier{color:rgba(255,255,255,.75)}
-.wild .sc-pct-wild{color:#fff}
-.wild .sc-cat .match-cat{background:rgba(255,255,255,.16);color:#fff}
-.wild .profile-line{color:rgba(255,255,255,.85)}
-.wild .profile-line strong{color:#fff}
-.wild .match-desc{color:rgba(255,255,255,.92)}
-.wild .sc-detail-in .match-desc{border-top-color:rgba(255,255,255,.35)}
-.wild .more-toggle{background:transparent;border-color:#fff;color:#fff;box-shadow:none}
-.wild .more-toggle:hover,.swipe-card.wild.expanded .more-toggle{background:#fff;color:var(--red)}
-.wild .chev{color:rgba(255,255,255,.6)}
+/* Wildcard card: the red parallel of the base card — same grey stock,
+   rarity signaled only by the inner frame and an occasional foil sweep */
+.swipe-card.wild,.fan.wild{background:var(--card);border:1px solid var(--border)}
+.swipe-card.wild::before,.fan.wild::before{content:"";position:absolute;inset:7px;border:2.5px solid var(--red);border-radius:15px;pointer-events:none;z-index:2}
+.swipe-card.wild::after{content:"";position:absolute;inset:0;border-radius:22px;pointer-events:none;z-index:2;background:linear-gradient(115deg,transparent 40%,rgba(255,255,255,.05) 46%,rgba(255,255,255,.55) 50%,rgba(255,255,255,.05) 54%,transparent 60%);background-size:280% 100%;background-position:100% 0;animation:foilSweep 5s ease-in-out infinite}
+@keyframes foilSweep{0%,12%{background-position:100% 0}60%,100%{background-position:0% 0}}
+@media (prefers-reduced-motion:reduce){.swipe-card.wild::after{content:none}}
 .dot.gold{background:transparent;border:1.5px solid var(--red)}
 
 /* Tiny swipe cues on the card edges */
