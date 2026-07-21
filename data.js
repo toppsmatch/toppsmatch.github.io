@@ -28,7 +28,7 @@ export const BRANDS = {
     "vibe": [
       "prestige"
     ],
-    "img": "img/royalty_tennis.webp"
+    "img": "img/royalty_tennis.png"
   },
   "bowman": {
     "name": "Bowman Baseball",
@@ -58,7 +58,7 @@ export const BRANDS = {
     "vibe": [
       "prospect"
     ],
-    "img": "img/bowman.webp"
+    "img": "img/bowman.png"
   },
   "sw_sapphire": {
     "name": "Topps Chrome Sapphire Star Wars",
@@ -87,7 +87,7 @@ export const BRANDS = {
     "vibe": [
       "prestige"
     ],
-    "img": "img/sw_sapphire.webp"
+    "img": "img/sw_sapphire.png"
   },
   "t205": {
     "name": "Topps T205",
@@ -115,7 +115,8 @@ export const BRANDS = {
     ],
     "vibe": [
       "retro"
-    ]
+    ],
+    "img": "img/t205.png"
   },
   "tribute": {
     "name": "Topps Tribute",
@@ -148,7 +149,7 @@ export const BRANDS = {
       "prestige",
       "retro"
     ],
-    "img": "img/tribute.webp"
+    "img": "img/tribute.png"
   },
   "finest_f1": {
     "name": "Topps Finest Formula 1",
@@ -176,7 +177,8 @@ export const BRANDS = {
     ],
     "vibe": [
       "flashy"
-    ]
+    ],
+    "img": "img/finest_f1.png"
   },
   "topps_now": {
     "name": "Topps NOW",
@@ -216,7 +218,7 @@ export const BRANDS = {
     "vibe": [
       "flashy"
     ],
-    "img": "img/topps_now.jpg"
+    "img": "img/topps_now.png"
   },
   "dynasty_nba": {
     "name": "Topps Dynasty Basketball",
@@ -244,7 +246,8 @@ export const BRANDS = {
     ],
     "vibe": [
       "prestige"
-    ]
+    ],
+    "img": "img/dynasty_nba.png"
   },
   "knockout": {
     "name": "Topps Knockout UFC",
@@ -277,7 +280,7 @@ export const BRANDS = {
     "vibe": [
       "flashy"
     ],
-    "img": "img/knockout.webp"
+    "img": "img/knockout.png"
   },
   "sw_hyperspace": {
     "name": "Star Wars Hyperspace",
@@ -306,7 +309,7 @@ export const BRANDS = {
     "vibe": [
       "flashy"
     ],
-    "img": "img/sw_hyperspace.webp"
+    "img": "img/sw_hyperspace.png"
   },
   "finest_ucc": {
     "name": "Topps Finest UEFA Club Competitions",
@@ -335,7 +338,7 @@ export const BRANDS = {
     "vibe": [
       "flashy"
     ],
-    "img": "img/finest_ucc.webp"
+    "img": "img/finest_ucc.png"
   },
   "marvel": {
     "name": "Topps Chrome Marvel",
@@ -369,7 +372,7 @@ export const BRANDS = {
     "vibe": [
       "flashy"
     ],
-    "img": "img/marvel.webp"
+    "img": "img/marvel.png"
   },
   "gypsy_queen": {
     "name": "Topps Gypsy Queen",
@@ -402,7 +405,7 @@ export const BRANDS = {
       "retro",
       "prestige"
     ],
-    "img": "img/gypsy_queen.webp"
+    "img": "img/gypsy_queen.png"
   },
   "pro_debut": {
     "name": "Topps Pro Debut",
@@ -431,7 +434,7 @@ export const BRANDS = {
     "vibe": [
       "prospect"
     ],
-    "img": "img/pro_debut.webp"
+    "img": "img/pro_debut.png"
   },
   "disney_wonder": {
     "name": "Topps Disney Wonder",
@@ -459,7 +462,7 @@ export const BRANDS = {
     "vibe": [
       "flashy"
     ],
-    "img": "img/disney_wonder.webp"
+    "img": "img/disney_wonder.png"
   },
   "inception_ucl": {
     "name": "Topps Inception UEFA",
@@ -487,7 +490,8 @@ export const BRANDS = {
     ],
     "vibe": [
       "prestige"
-    ]
+    ],
+    "img": "img/inception_ucl.png"
   },
   "bowman_draft_sapphire": {
     "name": "Bowman Draft Sapphire Edition",
@@ -517,7 +521,7 @@ export const BRANDS = {
     "vibe": [
       "prestige"
     ],
-    "img": "img/bowman_draft_sapphire.webp"
+    "img": "img/bowman_draft_sapphire.png"
   },
   "definitive": {
     "name": "Definitive Collection",
@@ -548,7 +552,7 @@ export const BRANDS = {
     "vibe": [
       "prestige"
     ],
-    "img": "img/definitive.jpg"
+    "img": "img/definitive.png"
   },
   "cosmic_wwe": {
     "name": "Topps Cosmic Chrome WWE",
@@ -575,7 +579,8 @@ export const BRANDS = {
     ],
     "vibe": [
       "flashy"
-    ]
+    ],
+    "img": "img/cosmic_wwe.png"
   },
   "sigclass_nfl": {
     "name": "Topps Signature Class Football",
@@ -602,7 +607,8 @@ export const BRANDS = {
     ],
     "vibe": [
       "prestige"
-    ]
+    ],
+    "img": "img/sigclass_nfl.png"
   },
   "sapphire": {
     "name": "Topps Chrome Sapphire Edition",
@@ -636,7 +642,7 @@ export const BRANDS = {
       "flashy",
       "prestige"
     ],
-    "img": "img/sapphire.webp"
+    "img": "img/sapphire.png"
   },
   "disney_genesis": {
     "name": "Topps Disney Genesis",
@@ -665,7 +671,8 @@ export const BRANDS = {
     ],
     "vibe": [
       "prestige"
-    ]
+    ],
+    "img": "img/disney_genesis.png"
   },
   "allen_ginter": {
     "name": "Allen & Ginter",
@@ -700,7 +707,7 @@ export const BRANDS = {
       "retro",
       "prestige"
     ],
-    "img": "img/allen_ginter.webp"
+    "img": "img/allen_ginter.png"
   },
   "merlin": {
     "name": "Topps Merlin",
@@ -733,7 +740,7 @@ export const BRANDS = {
     "vibe": [
       "flashy"
     ],
-    "img": "img/merlin.webp"
+    "img": "img/merlin.png"
   },
   "marvel_studios_sapphire": {
     "name": "Chrome Sapphire Marvel Studios",
@@ -762,7 +769,7 @@ export const BRANDS = {
     "vibe": [
       "prestige"
     ],
-    "img": "img/marvel_studios_sapphire.webp"
+    "img": "img/marvel_studios_sapphire.png"
   },
   "inception_nba": {
     "name": "Topps Inception Basketball",
@@ -790,7 +797,8 @@ export const BRANDS = {
     ],
     "vibe": [
       "prestige"
-    ]
+    ],
+    "img": "img/inception_nba.png"
   },
   "veefriends_sapphire": {
     "name": "Chrome Sapphire VeeFriends",
@@ -818,7 +826,8 @@ export const BRANDS = {
     ],
     "vibe": [
       "prestige"
-    ]
+    ],
+    "img": "img/veefriends_sapphire.png"
   },
   "heritage_high": {
     "name": "Topps Heritage High Number",
@@ -848,7 +857,8 @@ export const BRANDS = {
     ],
     "vibe": [
       "retro"
-    ]
+    ],
+    "img": "img/heritage_high.png"
   },
   "finest_pl": {
     "name": "Topps Finest Premier League",
@@ -876,7 +886,8 @@ export const BRANDS = {
     ],
     "vibe": [
       "flashy"
-    ]
+    ],
+    "img": "img/finest_pl.png"
   },
   "sapphire_bundesliga": {
     "name": "Topps Chrome Sapphire Bundesliga",
@@ -905,7 +916,7 @@ export const BRANDS = {
     "vibe": [
       "prestige"
     ],
-    "img": "img/sapphire_bundesliga.webp"
+    "img": "img/sapphire_bundesliga.png"
   },
   "chrome_cosmic": {
     "name": "Topps Chrome Cosmic",
@@ -941,7 +952,7 @@ export const BRANDS = {
     "vibe": [
       "flashy"
     ],
-    "img": "img/chrome_cosmic.webp"
+    "img": "img/chrome_cosmic.png"
   },
   "graphite": {
     "name": "Topps Graphite",
@@ -974,7 +985,7 @@ export const BRANDS = {
       "prestige",
       "flashy"
     ],
-    "img": "img/graphite.webp"
+    "img": "img/graphite.png"
   },
   "definitive_ucl": {
     "name": "Topps Definitive Collection UEFA",
@@ -1002,7 +1013,8 @@ export const BRANDS = {
     ],
     "vibe": [
       "prestige"
-    ]
+    ],
+    "img": "img/definitive_ucl.png"
   },
   "dynasty": {
     "name": "Topps Dynasty",
@@ -1033,7 +1045,7 @@ export const BRANDS = {
     "vibe": [
       "prestige"
     ],
-    "img": "img/dynasty.webp"
+    "img": "img/dynasty.png"
   },
   "chrome_bundesliga": {
     "name": "Topps Chrome Bundesliga",
@@ -1062,7 +1074,7 @@ export const BRANDS = {
     "vibe": [
       "flashy"
     ],
-    "img": "img/chrome_bundesliga.webp"
+    "img": "img/chrome_bundesliga.png"
   },
   "sapphire_nba": {
     "name": "Topps Chrome Sapphire Basketball",
@@ -1090,7 +1102,8 @@ export const BRANDS = {
     ],
     "vibe": [
       "prestige"
-    ]
+    ],
+    "img": "img/sapphire_nba.png"
   },
   "pristine_pl": {
     "name": "Topps Pristine Premier League",
@@ -1118,7 +1131,8 @@ export const BRANDS = {
     ],
     "vibe": [
       "prestige"
-    ]
+    ],
+    "img": "img/pristine_pl.png"
   },
   "disney_sapphire": {
     "name": "Topps Chrome Disney Sapphire Edition",
@@ -1146,7 +1160,7 @@ export const BRANDS = {
     "vibe": [
       "prestige"
     ],
-    "img": "img/disney_sapphire.webp"
+    "img": "img/disney_sapphire.png"
   },
   "triple_threads": {
     "name": "Triple Threads",
@@ -1178,7 +1192,7 @@ export const BRANDS = {
       "flashy",
       "prestige"
     ],
-    "img": "img/triple_threads.webp"
+    "img": "img/triple_threads.png"
   },
   "pl_flagship": {
     "name": "Topps Premier League",
@@ -1208,7 +1222,7 @@ export const BRANDS = {
     "vibe": [
       "flashy"
     ],
-    "img": "img/pl_flagship.webp"
+    "img": "img/pl_flagship.png"
   },
   "match_attax": {
     "name": "Match Attax",
@@ -1240,7 +1254,7 @@ export const BRANDS = {
     "vibe": [
       "retro"
     ],
-    "img": "img/match_attax.webp"
+    "img": "img/match_attax.png"
   },
   "stadium_club": {
     "name": "Stadium Club",
@@ -1274,7 +1288,7 @@ export const BRANDS = {
       "prestige",
       "retro"
     ],
-    "img": "img/stadium_club.webp"
+    "img": "img/stadium_club.png"
   },
   "finest_wwe": {
     "name": "Topps Finest WWE",
@@ -1303,7 +1317,7 @@ export const BRANDS = {
     "vibe": [
       "flashy"
     ],
-    "img": "img/finest_wwe.webp"
+    "img": "img/finest_wwe.png"
   },
   "sapphire_wwe": {
     "name": "Topps Chrome Sapphire WWE",
@@ -1332,7 +1346,7 @@ export const BRANDS = {
     "vibe": [
       "prestige"
     ],
-    "img": "img/sapphire_wwe.webp"
+    "img": "img/sapphire_wwe.png"
   },
   "definitive_nba": {
     "name": "Topps Definitive Basketball",
@@ -1360,7 +1374,8 @@ export const BRANDS = {
     ],
     "vibe": [
       "prestige"
-    ]
+    ],
+    "img": "img/definitive_nba.png"
   },
   "chrome_nfl": {
     "name": "Topps Chrome Football",
@@ -1396,7 +1411,7 @@ export const BRANDS = {
     "vibe": [
       "flashy"
     ],
-    "img": "img/chrome_nfl.webp"
+    "img": "img/chrome_nfl.png"
   },
   "dynasty_ucl": {
     "name": "Topps Dynasty UEFA",
@@ -1425,7 +1440,7 @@ export const BRANDS = {
     "vibe": [
       "prestige"
     ],
-    "img": "img/dynasty_ucl.webp"
+    "img": "img/dynasty_ucl.png"
   },
   "finest_nba": {
     "name": "Topps Finest Basketball",
@@ -1455,7 +1470,7 @@ export const BRANDS = {
       "flashy",
       "prestige"
     ],
-    "img": "img/finest_nba.webp"
+    "img": "img/finest_nba.png"
   },
   "archives": {
     "name": "Topps Archives",
@@ -1488,7 +1503,7 @@ export const BRANDS = {
     "vibe": [
       "retro"
     ],
-    "img": "img/archives.webp"
+    "img": "img/archives.png"
   },
   "flagship_nfl": {
     "name": "Topps Football",
@@ -1522,7 +1537,8 @@ export const BRANDS = {
     "vibe": [
       "retro",
       "flashy"
-    ]
+    ],
+    "img": "img/flagship_nfl.png"
   },
   "flagship_nba": {
     "name": "Topps Basketball",
@@ -1558,7 +1574,7 @@ export const BRANDS = {
       "retro",
       "flashy"
     ],
-    "img": "img/flagship_nba.webp"
+    "img": "img/flagship_nba.png"
   },
   "marvel_collector": {
     "name": "Topps Marvel The Collector",
@@ -1587,7 +1603,7 @@ export const BRANDS = {
     "vibe": [
       "prestige"
     ],
-    "img": "img/marvel_collector.webp"
+    "img": "img/marvel_collector.png"
   },
   "motif": {
     "name": "Topps Motif",
@@ -1618,7 +1634,7 @@ export const BRANDS = {
       "prestige",
       "flashy"
     ],
-    "img": "img/motif.webp"
+    "img": "img/motif.png"
   },
   "bowmans_best": {
     "name": "Bowman's Best",
@@ -1651,7 +1667,7 @@ export const BRANDS = {
       "flashy",
       "prospect"
     ],
-    "img": "img/bowmans_best.webp"
+    "img": "img/bowmans_best.png"
   },
   "sapphire_pl": {
     "name": "Topps Chrome Sapphire Premier League",
@@ -1679,7 +1695,8 @@ export const BRANDS = {
     ],
     "vibe": [
       "prestige"
-    ]
+    ],
+    "img": "img/sapphire_pl.png"
   },
   "chrome_mls": {
     "name": "Topps Chrome MLS",
@@ -1709,7 +1726,7 @@ export const BRANDS = {
     "vibe": [
       "flashy"
     ],
-    "img": "img/chrome_mls.webp"
+    "img": "img/chrome_mls.png"
   },
   "bowman_nba": {
     "name": "Bowman Basketball",
@@ -1743,7 +1760,7 @@ export const BRANDS = {
       "flashy",
       "prospect"
     ],
-    "img": "img/bowman_nba.webp"
+    "img": "img/bowman_nba.png"
   },
   "chrome_black": {
     "name": "Topps Chrome Black Baseball",
@@ -1775,7 +1792,7 @@ export const BRANDS = {
       "prestige",
       "flashy"
     ],
-    "img": "img/chrome_black.webp"
+    "img": "img/chrome_black.png"
   },
   "sapphire_ucc": {
     "name": "Topps Chrome Sapphire UEFA Club Competitions",
@@ -1803,7 +1820,8 @@ export const BRANDS = {
     ],
     "vibe": [
       "prestige"
-    ]
+    ],
+    "img": "img/sapphire_ucc.png"
   },
   "bowman_u_best": {
     "name": "Bowman University Best",
@@ -1837,7 +1855,7 @@ export const BRANDS = {
       "flashy",
       "prospect"
     ],
-    "img": "img/bowman_u_best.webp"
+    "img": "img/bowman_u_best.png"
   },
   "masterwork": {
     "name": "Star Wars Masterwork",
@@ -1870,7 +1888,7 @@ export const BRANDS = {
     "vibe": [
       "prestige"
     ],
-    "img": "img/masterwork.webp"
+    "img": "img/masterwork.png"
   },
   "gpk": {
     "name": "Garbage Pail Kids",
@@ -1906,7 +1924,7 @@ export const BRANDS = {
     "vibe": [
       "retro"
     ],
-    "img": "img/gpk.webp"
+    "img": "img/gpk.png"
   },
   "midnight_ufc": {
     "name": "Topps Midnight UFC",
@@ -1934,7 +1952,7 @@ export const BRANDS = {
     "vibe": [
       "prestige"
     ],
-    "img": "img/midnight_ufc.webp"
+    "img": "img/midnight_ufc.png"
   },
   "chrome_uwcl": {
     "name": "Topps Chrome UEFA Women's Champions League",
@@ -1965,7 +1983,7 @@ export const BRANDS = {
     "vibe": [
       "flashy"
     ],
-    "img": "img/chrome_uwcl.webp"
+    "img": "img/chrome_uwcl.png"
   },
   "sapphire_ufc": {
     "name": "Topps Chrome Sapphire UFC",
@@ -1993,7 +2011,8 @@ export const BRANDS = {
     ],
     "vibe": [
       "prestige"
-    ]
+    ],
+    "img": "img/sapphire_ufc.png"
   },
   "triumphant_tennis": {
     "name": "Topps Triumphant",
@@ -2021,7 +2040,8 @@ export const BRANDS = {
     ],
     "vibe": [
       "prestige"
-    ]
+    ],
+    "img": "img/triumphant_tennis.png"
   },
   "disney": {
     "name": "Topps Disney / Pixar",
@@ -2056,7 +2076,7 @@ export const BRANDS = {
       "retro",
       "flashy"
     ],
-    "img": "img/disney.webp"
+    "img": "img/disney.png"
   },
   "archives_sig": {
     "name": "Topps Archives Signature Series",
@@ -2085,7 +2105,8 @@ export const BRANDS = {
     ],
     "vibe": [
       "retro"
-    ]
+    ],
+    "img": "img/archives_sig.png"
   },
   "sapphire_tennis": {
     "name": "Topps Chrome Sapphire Tennis",
@@ -2114,7 +2135,7 @@ export const BRANDS = {
     "vibe": [
       "prestige"
     ],
-    "img": "img/sapphire_tennis.webp"
+    "img": "img/sapphire_tennis.png"
   },
   "sapphire_nfl": {
     "name": "Topps Chrome Sapphire Football",
@@ -2142,7 +2163,8 @@ export const BRANDS = {
     ],
     "vibe": [
       "prestige"
-    ]
+    ],
+    "img": "img/sapphire_nfl.png"
   },
   "reverence_ucl": {
     "name": "Topps Reverence UEFA",
@@ -2171,7 +2193,8 @@ export const BRANDS = {
     ],
     "vibe": [
       "prestige"
-    ]
+    ],
+    "img": "img/reverence_ucl.png"
   },
   "pixar_gold": {
     "name": "Topps Pixar Gold",
@@ -2200,7 +2223,7 @@ export const BRANDS = {
     "vibe": [
       "flashy"
     ],
-    "img": "img/pixar_gold.webp"
+    "img": "img/pixar_gold.png"
   },
   "wwe_chrome": {
     "name": "Topps Chrome WWE",
@@ -2233,7 +2256,7 @@ export const BRANDS = {
     "vibe": [
       "flashy"
     ],
-    "img": "img/wwe_chrome.webp"
+    "img": "img/wwe_chrome.png"
   },
   "spongebob_chrome": {
     "name": "Topps Chrome SpongeBob 25th Anniversary",
@@ -2263,7 +2286,7 @@ export const BRANDS = {
     "vibe": [
       "flashy"
     ],
-    "img": "img/spongebob_chrome.webp"
+    "img": "img/spongebob_chrome.png"
   },
   "sw_chrome_black": {
     "name": "Star Wars Chrome Black",
@@ -2291,7 +2314,8 @@ export const BRANDS = {
     ],
     "vibe": [
       "prestige"
-    ]
+    ],
+    "img": "img/sw_chrome_black.png"
   },
   "dynasty_f1": {
     "name": "Topps Dynasty Formula 1",
@@ -2320,7 +2344,7 @@ export const BRANDS = {
     "vibe": [
       "prestige"
     ],
-    "img": "img/dynasty_f1.webp"
+    "img": "img/dynasty_f1.png"
   },
   "marvel_comics_sapphire": {
     "name": "Chrome Sapphire Marvel Comics",
@@ -2348,7 +2372,8 @@ export const BRANDS = {
     ],
     "vibe": [
       "prestige"
-    ]
+    ],
+    "img": "img/marvel_comics_sapphire.png"
   },
   "finest_ufc": {
     "name": "Topps Finest UFC",
@@ -2376,7 +2401,7 @@ export const BRANDS = {
     "vibe": [
       "flashy"
     ],
-    "img": "img/finest_ufc.webp"
+    "img": "img/finest_ufc.png"
   },
   "bowman_u": {
     "name": "Bowman University Chrome",
@@ -2409,7 +2434,7 @@ export const BRANDS = {
       "flashy",
       "prospect"
     ],
-    "img": "img/bowman_u.webp"
+    "img": "img/bowman_u.png"
   },
   "chrome": {
     "name": "Topps Chrome Baseball",
@@ -2446,7 +2471,7 @@ export const BRANDS = {
     "vibe": [
       "flashy"
     ],
-    "img": "img/chrome.webp"
+    "img": "img/chrome.png"
   },
   "sw_galaxy": {
     "name": "Star Wars Chrome Galaxy",
@@ -2475,7 +2500,7 @@ export const BRANDS = {
     "vibe": [
       "flashy"
     ],
-    "img": "img/sw_galaxy.webp"
+    "img": "img/sw_galaxy.png"
   },
   "museum": {
     "name": "Museum Collection",
@@ -2506,7 +2531,7 @@ export const BRANDS = {
     "vibe": [
       "prestige"
     ],
-    "img": "img/museum.webp"
+    "img": "img/museum.png"
   },
   "finest_marvel": {
     "name": "Topps Finest Marvel",
@@ -2534,7 +2559,8 @@ export const BRANDS = {
     ],
     "vibe": [
       "flashy"
-    ]
+    ],
+    "img": "img/finest_marvel.png"
   },
   "tier_one": {
     "name": "Topps Tier One",
@@ -2563,7 +2589,7 @@ export const BRANDS = {
     "vibe": [
       "prestige"
     ],
-    "img": "img/tier_one.webp"
+    "img": "img/tier_one.png"
   },
   "bowman_draft": {
     "name": "Bowman Draft",
@@ -2595,7 +2621,7 @@ export const BRANDS = {
     "vibe": [
       "prospect"
     ],
-    "img": "img/bowman_draft.webp"
+    "img": "img/bowman_draft.png"
   },
   "chrome_nba": {
     "name": "Topps Chrome Basketball",
@@ -2631,7 +2657,7 @@ export const BRANDS = {
     "vibe": [
       "flashy"
     ],
-    "img": "img/chrome_nba.webp"
+    "img": "img/chrome_nba.png"
   },
   "bowman_u_sapphire": {
     "name": "Bowman University Chrome Sapphire",
@@ -2661,7 +2687,7 @@ export const BRANDS = {
     "vibe": [
       "prospect"
     ],
-    "img": "img/bowman_u_sapphire.webp"
+    "img": "img/bowman_u_sapphire.png"
   },
   "finest": {
     "name": "Topps Finest Baseball",
@@ -2695,7 +2721,7 @@ export const BRANDS = {
       "flashy",
       "prestige"
     ],
-    "img": "img/finest.webp"
+    "img": "img/finest.png"
   },
   "chrome_tennis": {
     "name": "Topps Chrome Tennis",
@@ -2725,7 +2751,7 @@ export const BRANDS = {
     "vibe": [
       "flashy"
     ],
-    "img": "img/chrome_tennis.webp"
+    "img": "img/chrome_tennis.png"
   },
   "bowman_chrome_sapphire": {
     "name": "Bowman Chrome Sapphire Edition",
@@ -2755,7 +2781,8 @@ export const BRANDS = {
     ],
     "vibe": [
       "prestige"
-    ]
+    ],
+    "img": "img/bowman_chrome_sapphire.png"
   },
   "bowman_sapphire_nba": {
     "name": "Bowman Sapphire Basketball",
@@ -2784,7 +2811,8 @@ export const BRANDS = {
     ],
     "vibe": [
       "prestige"
-    ]
+    ],
+    "img": "img/bowman_sapphire_nba.png"
   },
   "hoops": {
     "name": "NBA Hoops",
@@ -2815,7 +2843,7 @@ export const BRANDS = {
     "vibe": [
       "flashy"
     ],
-    "img": "img/hoops.webp"
+    "img": "img/hoops.png"
   },
   "f1_chrome": {
     "name": "Topps Chrome Formula 1",
@@ -2849,7 +2877,7 @@ export const BRANDS = {
     "vibe": [
       "flashy"
     ],
-    "img": "img/f1_chrome.webp"
+    "img": "img/f1_chrome.png"
   },
   "chrome_boxing": {
     "name": "Topps Chrome Boxing",
@@ -2879,7 +2907,8 @@ export const BRANDS = {
     ],
     "vibe": [
       "flashy"
-    ]
+    ],
+    "img": "img/chrome_boxing.png"
   },
   "transcendent": {
     "name": "Topps Transcendent",
@@ -2910,7 +2939,7 @@ export const BRANDS = {
     "vibe": [
       "prestige"
     ],
-    "img": "img/transcendent.webp"
+    "img": "img/transcendent.png"
   },
   "chrome_update": {
     "name": "Topps Chrome Update Series",
@@ -2939,7 +2968,7 @@ export const BRANDS = {
     "vibe": [
       "flashy"
     ],
-    "img": "img/chrome_update.webp"
+    "img": "img/chrome_update.png"
   },
   "mls_superstars": {
     "name": "Topps MLS Super Stars",
@@ -2969,7 +2998,7 @@ export const BRANDS = {
     "vibe": [
       "flashy"
     ],
-    "img": "img/mls_superstars.webp"
+    "img": "img/mls_superstars.png"
   },
   "gold_pl": {
     "name": "Topps Gold Premier League",
@@ -2997,7 +3026,8 @@ export const BRANDS = {
     ],
     "vibe": [
       "prestige"
-    ]
+    ],
+    "img": "img/gold_pl.png"
   },
   "midnight": {
     "name": "Topps Midnight Football",
@@ -3027,7 +3057,7 @@ export const BRANDS = {
       "prestige",
       "flashy"
     ],
-    "img": "img/midnight.webp"
+    "img": "img/midnight.png"
   },
   "chrome_black_nfl": {
     "name": "Topps Chrome Black Football",
@@ -3056,7 +3086,8 @@ export const BRANDS = {
     ],
     "vibe": [
       "prestige"
-    ]
+    ],
+    "img": "img/chrome_black_nfl.png"
   },
   "chrome_platinum": {
     "name": "Topps Chrome Platinum Anniversary",
@@ -3087,7 +3118,8 @@ export const BRANDS = {
     "vibe": [
       "retro",
       "flashy"
-    ]
+    ],
+    "img": "img/chrome_platinum.png"
   },
   "ucl_chrome": {
     "name": "Topps Chrome UEFA Champions League",
@@ -3121,7 +3153,7 @@ export const BRANDS = {
       "flashy",
       "prestige"
     ],
-    "img": "img/ucl_chrome.webp"
+    "img": "img/ucl_chrome.png"
   },
   "marvel_studios": {
     "name": "Topps Marvel Studios Chrome",
@@ -3151,7 +3183,7 @@ export const BRANDS = {
     "vibe": [
       "flashy"
     ],
-    "img": "img/marvel_studios.webp"
+    "img": "img/marvel_studios.png"
   },
   "sterling": {
     "name": "Topps Sterling",
@@ -3182,7 +3214,7 @@ export const BRANDS = {
     "vibe": [
       "prestige"
     ],
-    "img": "img/sterling.webp"
+    "img": "img/sterling.png"
   },
   "brooklyn_cap": {
     "name": "Topps Brooklyn Collection Captain America",
@@ -3209,7 +3241,8 @@ export const BRANDS = {
     ],
     "vibe": [
       "prestige"
-    ]
+    ],
+    "img": "img/brooklyn_cap.png"
   },
   "bowman_chrome": {
     "name": "Bowman Chrome",
@@ -3245,7 +3278,7 @@ export const BRANDS = {
       "flashy",
       "prospect"
     ],
-    "img": "img/bowman_chrome.webp"
+    "img": "img/bowman_chrome.png"
   },
   "sapphire_f1": {
     "name": "Topps Chrome Sapphire Formula 1",
@@ -3273,7 +3306,8 @@ export const BRANDS = {
     ],
     "vibe": [
       "prestige"
-    ]
+    ],
+    "img": "img/sapphire_f1.png"
   },
   "finest_mls": {
     "name": "Topps Finest MLS",
@@ -3302,7 +3336,7 @@ export const BRANDS = {
     "vibe": [
       "flashy"
     ],
-    "img": "img/finest_mls.webp"
+    "img": "img/finest_mls.png"
   },
   "heritage": {
     "name": "Topps Heritage",
@@ -3337,7 +3371,7 @@ export const BRANDS = {
     "vibe": [
       "retro"
     ],
-    "img": "img/heritage.webp"
+    "img": "img/heritage.png"
   },
   "wwe_exalted": {
     "name": "Topps Exalted WWE",
@@ -3368,7 +3402,7 @@ export const BRANDS = {
     "vibe": [
       "prestige"
     ],
-    "img": "img/wwe_exalted.webp"
+    "img": "img/wwe_exalted.png"
   },
   "sw_smugglers": {
     "name": "Star Wars Smugglers Outpost",
@@ -3395,7 +3429,7 @@ export const BRANDS = {
     "vibe": [
       "flashy"
     ],
-    "img": "img/sw_smugglers.webp"
+    "img": "img/sw_smugglers.png"
   },
   "mls_flagship": {
     "name": "Topps MLS",
@@ -3423,7 +3457,8 @@ export const BRANDS = {
     ],
     "vibe": [
       "flashy"
-    ]
+    ],
+    "img": "img/mls_flagship.png"
   },
   "royalty_wwe": {
     "name": "Topps Royalty WWE",
@@ -3484,7 +3519,7 @@ export const BRANDS = {
       "prestige",
       "flashy"
     ],
-    "img": "img/inception.webp"
+    "img": "img/inception.png"
   },
   "chrome_deadpool": {
     "name": "Topps Chrome Deadpool",
@@ -3514,7 +3549,7 @@ export const BRANDS = {
     "vibe": [
       "flashy"
     ],
-    "img": "img/chrome_deadpool.webp"
+    "img": "img/chrome_deadpool.png"
   },
   "universe_wwe": {
     "name": "Topps Universe WWE",
@@ -3544,7 +3579,7 @@ export const BRANDS = {
     "vibe": [
       "flashy"
     ],
-    "img": "img/universe_wwe.webp"
+    "img": "img/universe_wwe.png"
   },
   "pristine": {
     "name": "Topps Pristine",
@@ -3575,7 +3610,7 @@ export const BRANDS = {
     "vibe": [
       "prestige"
     ],
-    "img": "img/pristine.webp"
+    "img": "img/pristine.png"
   },
   "bowman_sapphire": {
     "name": "Bowman Sapphire Edition",
@@ -3605,7 +3640,7 @@ export const BRANDS = {
     "vibe": [
       "prestige"
     ],
-    "img": "img/bowman_sapphire.webp"
+    "img": "img/bowman_sapphire.png"
   },
   "chrome_update_nba": {
     "name": "Topps Chrome Update Basketball",
@@ -3634,7 +3669,8 @@ export const BRANDS = {
     ],
     "vibe": [
       "flashy"
-    ]
+    ],
+    "img": "img/chrome_update_nba.png"
   },
   "museum_ucl": {
     "name": "Museum Collection UEFA",
@@ -3663,7 +3699,7 @@ export const BRANDS = {
     "vibe": [
       "prestige"
     ],
-    "img": "img/museum_ucl.webp"
+    "img": "img/museum_ucl.png"
   },
   "finest_nfl": {
     "name": "Topps Finest Football",
@@ -3693,7 +3729,7 @@ export const BRANDS = {
       "flashy",
       "prestige"
     ],
-    "img": "img/finest_nfl.webp"
+    "img": "img/finest_nfl.png"
   },
   "disney_mint": {
     "name": "Topps Disney Mint",
@@ -3721,7 +3757,7 @@ export const BRANDS = {
     "vibe": [
       "prestige"
     ],
-    "img": "img/disney_mint.webp"
+    "img": "img/disney_mint.png"
   },
   "gilded": {
     "name": "Topps Gilded Collection",
@@ -3752,7 +3788,7 @@ export const BRANDS = {
     "vibe": [
       "prestige"
     ],
-    "img": "img/gilded.webp"
+    "img": "img/gilded.png"
   },
   "flagship": {
     "name": "Topps Series 1 / 2 / Update",
@@ -3784,7 +3820,7 @@ export const BRANDS = {
     "vibe": [
       "retro"
     ],
-    "img": "img/flagship.webp"
+    "img": "img/flagship.png"
   },
   "five_star": {
     "name": "Topps Five Star",
@@ -3816,7 +3852,7 @@ export const BRANDS = {
       "prestige",
       "flashy"
     ],
-    "img": "img/five_star.webp"
+    "img": "img/five_star.png"
   },
   "cosmic_nba": {
     "name": "Topps Cosmic Chrome Basketball",
@@ -3844,7 +3880,8 @@ export const BRANDS = {
     ],
     "vibe": [
       "flashy"
-    ]
+    ],
+    "img": "img/cosmic_nba.png"
   },
   "midnight_nba": {
     "name": "Topps Midnight Basketball",
@@ -3874,7 +3911,7 @@ export const BRANDS = {
       "prestige",
       "flashy"
     ],
-    "img": "img/midnight_nba.webp"
+    "img": "img/midnight_nba.png"
   },
   "toy_story_crystal": {
     "name": "Topps Crystal: 30 Years of Toy Story",
@@ -3903,7 +3940,7 @@ export const BRANDS = {
     "vibe": [
       "flashy"
     ],
-    "img": "img/toy_story_crystal.webp"
+    "img": "img/toy_story_crystal.png"
   },
   "knockout_ucl": {
     "name": "Topps Knockout UEFA Club Competitions",
@@ -3930,7 +3967,8 @@ export const BRANDS = {
     ],
     "vibe": [
       "flashy"
-    ]
+    ],
+    "img": "img/knockout_ucl.png"
   },
   "clearly": {
     "name": "Topps Clearly Authentic",
@@ -3961,7 +3999,7 @@ export const BRANDS = {
     "vibe": [
       "prestige"
     ],
-    "img": "img/clearly.webp"
+    "img": "img/clearly.png"
   },
   "holiday": {
     "name": "Topps Holiday",
@@ -3990,7 +4028,8 @@ export const BRANDS = {
     ],
     "vibe": [
       "retro"
-    ]
+    ],
+    "img": "img/holiday.png"
   },
   "big_league": {
     "name": "Topps Big League",
@@ -4020,7 +4059,8 @@ export const BRANDS = {
     ],
     "vibe": [
       "flashy"
-    ]
+    ],
+    "img": "img/big_league.png"
   },
   "living_set": {
     "name": "Topps Living Set",
@@ -4051,7 +4091,8 @@ export const BRANDS = {
     ],
     "vibe": [
       "retro"
-    ]
+    ],
+    "img": "img/living_set.png"
   },
   "inception_mls": {
     "name": "Topps Inception MLS",
@@ -4079,7 +4120,8 @@ export const BRANDS = {
     ],
     "vibe": [
       "prestige"
-    ]
+    ],
+    "img": "img/inception_mls.png"
   },
   "wacky": {
     "name": "Wacky Packages",
@@ -4112,7 +4154,7 @@ export const BRANDS = {
     "vibe": [
       "retro"
     ],
-    "img": "img/wacky.webp"
+    "img": "img/wacky.png"
   },
   "sigclass_nba": {
     "name": "Topps Signature Class Basketball",
@@ -4139,7 +4181,8 @@ export const BRANDS = {
     ],
     "vibe": [
       "prestige"
-    ]
+    ],
+    "img": "img/sigclass_nba.png"
   },
   "chrome_pl": {
     "name": "Topps Chrome Premier League",
@@ -4168,7 +4211,7 @@ export const BRANDS = {
     "vibe": [
       "flashy"
     ],
-    "img": "img/chrome_pl.webp"
+    "img": "img/chrome_pl.png"
   },
   "ufc_chrome": {
     "name": "Topps Chrome UFC",
@@ -4202,7 +4245,7 @@ export const BRANDS = {
     "vibe": [
       "flashy"
     ],
-    "img": "img/ufc_chrome.webp"
+    "img": "img/ufc_chrome.png"
   },
   "stadium_club_ufc": {
     "name": "Stadium Club UFC",
@@ -4231,7 +4274,7 @@ export const BRANDS = {
     "vibe": [
       "retro"
     ],
-    "img": "img/stadium_club_ufc.webp"
+    "img": "img/stadium_club_ufc.png"
   },
   "dune_chrome": {
     "name": "Topps Dune Chrome",
@@ -4259,7 +4302,7 @@ export const BRANDS = {
     "vibe": [
       "flashy"
     ],
-    "img": "img/dune_chrome.webp"
+    "img": "img/dune_chrome.png"
   },
   "inception_nfl": {
     "name": "Topps Inception Football",
@@ -4287,7 +4330,8 @@ export const BRANDS = {
     ],
     "vibe": [
       "prestige"
-    ]
+    ],
+    "img": "img/inception_nfl.png"
   },
   "cactusjack_nba": {
     "name": "Topps Chrome x Cactus Jack Basketball",
@@ -4316,7 +4360,7 @@ export const BRANDS = {
     "vibe": [
       "flashy"
     ],
-    "img": "img/cactusjack_nba.webp"
+    "img": "img/cactusjack_nba.png"
   },
   "ufc_royalty": {
     "name": "Topps UFC Royalty",
@@ -4347,7 +4391,7 @@ export const BRANDS = {
     "vibe": [
       "prestige"
     ],
-    "img": "img/ufc_royalty.webp"
+    "img": "img/ufc_royalty.png"
   },
   "resurgence_nfl": {
     "name": "Topps Resurgence Football",
@@ -4376,7 +4420,7 @@ export const BRANDS = {
     "vibe": [
       "flashy"
     ],
-    "img": "img/resurgence_nfl.webp"
+    "img": "img/resurgence_nfl.png"
   },
   "gpk_chrome": {
     "name": "Garbage Pail Kids Chrome",
@@ -4406,7 +4450,8 @@ export const BRANDS = {
     ],
     "vibe": [
       "retro"
-    ]
+    ],
+    "img": "img/gpk_chrome.png"
   },
   "royalty": {
     "name": "Topps Royalty Basketball",
@@ -4435,7 +4480,7 @@ export const BRANDS = {
     "vibe": [
       "prestige"
     ],
-    "img": "img/royalty.webp"
+    "img": "img/royalty.png"
   },
   "veefriends": {
     "name": "Topps Chrome VeeFriends",
@@ -4469,7 +4514,7 @@ export const BRANDS = {
     "vibe": [
       "flashy"
     ],
-    "img": "img/veefriends.webp"
+    "img": "img/veefriends.png"
   },
   "diamond_icons": {
     "name": "Topps Diamond Icons",
@@ -4500,7 +4545,7 @@ export const BRANDS = {
     "vibe": [
       "prestige"
     ],
-    "img": "img/diamond_icons.webp"
+    "img": "img/diamond_icons.png"
   },
   "disney_neon": {
     "name": "Topps Disney Neon",
@@ -4528,7 +4573,8 @@ export const BRANDS = {
     ],
     "vibe": [
       "flashy"
-    ]
+    ],
+    "img": "img/disney_neon.png"
   },
   "star_wars": {
     "name": "Topps Star Wars",
@@ -4565,7 +4611,7 @@ export const BRANDS = {
       "retro",
       "flashy"
     ],
-    "img": "img/star_wars.webp"
+    "img": "img/star_wars.png"
   },
   "ucc_flagship": {
     "name": "Topps UEFA Club Competitions",
@@ -4592,7 +4638,8 @@ export const BRANDS = {
     ],
     "vibe": [
       "flashy"
-    ]
+    ],
+    "img": "img/ucc_flagship.png"
   },
   "sapphire_mls": {
     "name": "Topps Chrome Sapphire MLS",
@@ -4621,7 +4668,7 @@ export const BRANDS = {
     "vibe": [
       "prestige"
     ],
-    "img": "img/sapphire_mls.webp"
+    "img": "img/sapphire_mls.png"
   },
   "sw_chrome": {
     "name": "Topps Chrome Star Wars",
@@ -4649,7 +4696,7 @@ export const BRANDS = {
     "vibe": [
       "flashy"
     ],
-    "img": "img/sw_chrome.webp"
+    "img": "img/sw_chrome.png"
   },
   "midnight_bundesliga": {
     "name": "Topps Midnight Bundesliga",
@@ -4678,7 +4725,7 @@ export const BRANDS = {
     "vibe": [
       "prestige"
     ],
-    "img": "img/midnight_bundesliga.webp"
+    "img": "img/midnight_bundesliga.png"
   }
 };
 
