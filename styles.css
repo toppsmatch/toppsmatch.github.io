@@ -250,7 +250,9 @@ body.in-results .header{display:none}
 .fan-under{background:var(--card);border:1px solid var(--border);transform:translate(-50%,2px) rotate(-.6deg) scale(.985)}
 .fan .sc-detail,.fan .chev{display:none}
 .card-ghost{background:var(--card);border:1px solid var(--border)}
-.fan.fade-content > *{opacity:0;transition:opacity .22s ease} /* under-sheet content clears as it recedes into the anonymous pile */
+.fan > *{transition:opacity .22s ease} /* sheet content fades both ways during shuffles */
+.fan.fade-content > *{opacity:0}
+.swipe-card.tuck-fade > *{opacity:0;transition:opacity .28s ease} /* tucking card blanks out to match the empty back sheet */
 .fan-lineup{display:flex;align-items:center;justify-content:center}
 .fan-lineup-in{font-size:14px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--grey)}
 @media (max-width:430px){

@@ -297,7 +297,7 @@ async function buildShareCard(b, pct) {
   const img = b.img ? await loadImg(b.img).catch(() => null) : null;
   // Pre-blurred 1080x1920 wall, baked offline at full res (a real Gaussian).
   // Runtime rescale-blur always upscaled a tiny buffer into pixel blocks.
-  const wall = await loadImg("img/share-bg.webp").catch(() => null);
+  const wall = await loadImg("img/share-bg.webp?v=2").catch(() => null);
 
   const W = 1080, H = 1920;
   const cv = document.createElement("canvas"); cv.width = W; cv.height = H;
@@ -656,12 +656,41 @@ function goTo(i, flyX) {
   if (!el || !deckEl || matchMedia("(prefers-reduced-motion: reduce)").matches) { land(); return; }
   if (expanded) setExpanded(false); // details retract as the card leaves
   if (flyX < 0) {
+    const fanU = deckEl.querySelector(".fan-under"), fan1 = deckEl.querySelector(".fan1"), fan2 = deckEl.querySelector(".fan2");
+    // capture each slot's transform before anything moves
+    const underT = fanU ? getComputedStyle(fanU).transform : null;
+    const fan1T = fan1 ? getComputedStyle(fan1).transform : null;
     el.style.transition = "transform .2s ease-in";
     el.style.transform = "translateX(-115%) rotate(-10deg)";
     setTimeout(() => {
       el.style.zIndex = "-1"; // slip beneath the sheets, fully visible the whole way
       el.style.transition = "transform .3s ease-out";
-      el.style.transform = "translate(-52px,32px) rotate(-11deg) scale(.92)";
+      // tuck into the back slot (keep in sync with .fan2 in styles.css)
+      el.style.transform = innerWidth <= 430
+        ? "translate(-27px,20px) rotate(-7deg) scale(.93)"
+        : "translate(-52px,32px) rotate(-11deg) scale(.92)";
+      // its content clears while it tucks, so the landing matches the empty back sheet
+      el.classList.add("tuck-fade");
+      // the stack rises one slot to meet it: the under-sheet glides up into the
+      // top position, the middle sheet becomes the under-sheet (next card's
+      // content fades in on it), and the back sheet steps up to the middle
+      if (fanU) {
+        fanU.style.transition = "transform .3s ease-out";
+        fanU.style.transform = "translate(-50%,0) rotate(0deg) scale(1)";
+      }
+      if (fan1 && underT) {
+        if (deck[i + 1]) {
+          fan1.classList.add("fade-content");
+          fan1.innerHTML = cardInner(deck[i + 1]);
+          requestAnimationFrame(() => fan1.classList.remove("fade-content"));
+        }
+        fan1.style.transition = "transform .3s ease-out";
+        fan1.style.transform = underT;
+      }
+      if (fan2 && fan1T) {
+        fan2.style.transition = "transform .3s ease-out";
+        fan2.style.transform = fan1T;
+      }
       setTimeout(land, 290);
     }, 190);
   } else {
