@@ -251,8 +251,6 @@ body.in-results .header{display:none}
 .fan .sc-detail,.fan .chev{display:none}
 .card-ghost{background:var(--card);border:1px solid var(--border)}
 .fan > *{transition:opacity .22s ease} /* sheet content fades both ways during shuffles */
-.fan{transition:opacity .25s ease,height .35s ease}
-.deck.detail-open .fan{opacity:0} /* focus mode: pile steps aside while learn-more is open */
 .fan.fade-content > *{opacity:0}
 .swipe-card.tuck-fade > *{opacity:0;transition:opacity .28s ease} /* tucking card blanks out to match the empty back sheet */
 .fan-lineup{display:flex;align-items:center;justify-content:center}
