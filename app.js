@@ -643,11 +643,19 @@ function setExpanded(v) {
   const el = document.getElementById("swipeCard");
   if (!el) return;
   el.classList.toggle("expanded", v);
-  // freeze the pile while the accordion runs, both directions: the sheets
-  // beneath must never stretch or retract with the front card. One re-sync
-  // once the card settles (a no-op visually; guards image-load races).
+  // Focus mode: the pile fades out while the detail is open. Without this the
+  // expanded card covers the sheets' bottom edges and the collapse "unveils"
+  // them upward, which reads as the pile bouncing even though it never moves.
+  const deckEl = document.getElementById("deckEl");
+  if (v) deckEl?.classList.add("detail-open");
+  // freeze the pile while the accordion runs, both directions; re-sync and
+  // fade the pile back in only once the card has fully settled
   clearTimeout(detailAnim);
-  detailAnim = setTimeout(() => { detailAnim = 0; sizeFans(); }, 420);
+  detailAnim = setTimeout(() => {
+    detailAnim = 0;
+    if (!expanded) deckEl?.classList.remove("detail-open");
+    sizeFans();
+  }, 420);
   const btn = document.getElementById("scMore");
   if (btn) btn.textContent = v ? "Show less ▴" : "Learn more ▾";
 }
@@ -661,6 +669,7 @@ function goTo(i, flyX) {
   const land = () => { deckIdx = i; expanded = false; renderCard(); };
   if (!el || !deckEl || matchMedia("(prefers-reduced-motion: reduce)").matches) { land(); return; }
   if (expanded) setExpanded(false); // details retract as the card leaves
+  deckEl.classList.remove("detail-open"); // the shuffle needs a visible pile right away
   if (flyX < 0) {
     const fanU = deckEl.querySelector(".fan-under"), fan1 = deckEl.querySelector(".fan1"), fan2 = deckEl.querySelector(".fan2");
     // capture each slot's transform before anything moves
