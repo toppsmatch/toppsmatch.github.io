@@ -565,7 +565,7 @@ function renderCard() {
 // no sheet ever pokes out below a shorter top card.
 function sizeFans() {
   const el = document.getElementById("swipeCard");
-  if (!el || expanded) return; // the pile never grows with the front card
+  if (!el || expanded || detailAnim) return; // the pile never grows with the front card
   document.querySelectorAll("#deckEl .fan").forEach(f => {
     f.style.top = el.offsetTop + "px";
     f.style.height = el.offsetHeight + "px";
@@ -637,11 +637,17 @@ function renderListView() {
 }
 
 // Expand/collapse is a class toggle, not a re-render — drag handlers stay alive.
+let detailAnim = 0; // truthy while the learn-more accordion is in flight
 function setExpanded(v) {
   expanded = v;
   const el = document.getElementById("swipeCard");
   if (!el) return;
   el.classList.toggle("expanded", v);
+  // freeze the pile while the accordion runs, both directions: the sheets
+  // beneath must never stretch or retract with the front card. One re-sync
+  // once the card settles (a no-op visually; guards image-load races).
+  clearTimeout(detailAnim);
+  detailAnim = setTimeout(() => { detailAnim = 0; sizeFans(); }, 420);
   const btn = document.getElementById("scMore");
   if (btn) btn.textContent = v ? "Show less ▴" : "Learn more ▾";
 }
