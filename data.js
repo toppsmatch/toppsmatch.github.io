@@ -64,7 +64,7 @@ export const BRANDS = {
     "name": "Topps Chrome Sapphire Star Wars",
     "tier": "High-End",
     "cat": "ent",
-    "catLabel": "Star Wars",
+    "catLabel": "Entertainment",
     "price": "$275–$400/box",
     "desc": "The full Chrome Star Wars base on all-blue Sapphire stock with four numbered parallels per box.",
     "tags": [
@@ -155,7 +155,7 @@ export const BRANDS = {
     "name": "Topps Finest Formula 1",
     "tier": "Mid-Tier",
     "cat": "sport",
-    "catLabel": "Formula 1",
+    "catLabel": "Racing",
     "price": "$650–$750/box",
     "desc": "Finest refractor tech for the grid, with race-worn relics in compact premium mini-boxes.",
     "tags": [
@@ -224,7 +224,7 @@ export const BRANDS = {
     "name": "Topps Dynasty Basketball",
     "tier": "Ultra High-End",
     "cat": "sport",
-    "catLabel": "NBA Basketball",
+    "catLabel": "Basketball",
     "price": "$1,500+/box",
     "desc": "Announced for late 2026: Dynasty's one-card, one-auto-relic format comes to the NBA.",
     "tags": [
@@ -286,7 +286,7 @@ export const BRANDS = {
     "name": "Star Wars Hyperspace",
     "tier": "Mid-Tier",
     "cat": "ent",
-    "catLabel": "Star Wars",
+    "catLabel": "Entertainment",
     "price": "$300–$350/box",
     "desc": "A new annual all-Chrome series themed to the galaxy's iconic planets, with shadowbox die-cuts.",
     "tags": [
@@ -440,7 +440,7 @@ export const BRANDS = {
     "name": "Topps Disney Wonder",
     "tier": "Mid-Tier",
     "cat": "ent",
-    "catLabel": "Disney",
+    "catLabel": "Entertainment",
     "price": "$100–$150/box",
     "desc": "A storybook-styled Disney set led by the princess lineup. Price flagged for fact-check.",
     "tags": [
@@ -586,7 +586,7 @@ export const BRANDS = {
     "name": "Topps Signature Class Football",
     "tier": "High-End",
     "cat": "sport",
-    "catLabel": "NFL Football",
+    "catLabel": "Football",
     "price": "$360–$430/box",
     "desc": "Autograph-driven acetate football: two autographs per hobby box, four in jumbo.",
     "tags": [
@@ -648,7 +648,7 @@ export const BRANDS = {
     "name": "Topps Disney Genesis",
     "tier": "High-End",
     "cat": "ent",
-    "catLabel": "Disney",
+    "catLabel": "Entertainment",
     "price": "$700–$850/box",
     "desc": "A five-card online box where every card is numbered to 99 or less, uniting Disney, Pixar, Marvel, and Lucasfilm. Cases sold out in minutes.",
     "tags": [
@@ -746,7 +746,7 @@ export const BRANDS = {
     "name": "Chrome Sapphire Marvel Studios",
     "tier": "High-End",
     "cat": "ent",
-    "catLabel": "Marvel",
+    "catLabel": "Entertainment",
     "price": "$550–$625/box",
     "desc": "Marvel Studios Chrome on Sapphire stock, an online-exclusive drop.",
     "tags": [
@@ -775,7 +775,7 @@ export const BRANDS = {
     "name": "Topps Inception Basketball",
     "tier": "Mid-Tier",
     "cat": "sport",
-    "catLabel": "NBA Basketball",
+    "catLabel": "Basketball",
     "price": "$400–$500/box",
     "desc": "Full-bleed artistic NBA designs with one autograph per hobby box. The first fully licensed Inception Basketball.",
     "tags": [
@@ -922,7 +922,7 @@ export const BRANDS = {
     "name": "Topps Chrome Cosmic",
     "tier": "Mid-Tier",
     "cat": "sport",
-    "catLabel": "Baseball + NFL",
+    "catLabel": "Baseball",
     "price": "$900–$1,000/box",
     "desc": "Chrome goes interstellar. Cosmic wraps the Chrome formula in deep-space design: nebula refractors, planetary parallels, and some of the wildest looking cards Topps prints. New in 2025 and instantly a fan favorite.",
     "tags": [
@@ -1080,7 +1080,7 @@ export const BRANDS = {
     "name": "Topps Chrome Sapphire Basketball",
     "tier": "Ultra High-End",
     "cat": "sport",
-    "catLabel": "NBA Basketball",
+    "catLabel": "Basketball",
     "price": "$3,500–$5,000/box",
     "desc": "The first NBA-licensed Sapphire edition. The full Chrome checklist on blue Sapphire stock, sold through online raffle drops.",
     "tags": [
@@ -1138,7 +1138,7 @@ export const BRANDS = {
     "name": "Topps Chrome Disney Sapphire Edition",
     "tier": "High-End",
     "cat": "ent",
-    "catLabel": "Disney",
+    "catLabel": "Entertainment",
     "price": "$1,200–$1,300/box",
     "desc": "The Chrome Disney base set on Sapphire stock.",
     "tags": [
@@ -1352,7 +1352,7 @@ export const BRANDS = {
     "name": "Topps Definitive Basketball",
     "tier": "Ultra High-End",
     "cat": "sport",
-    "catLabel": "NBA Basketball",
+    "catLabel": "Basketball",
     "price": "$3,500–$5,000/box",
     "desc": "Announced for late 2026: the all-hits Definitive Collection treatment for basketball.",
     "tags": [
@@ -1381,7 +1381,7 @@ export const BRANDS = {
     "name": "Topps Chrome Football",
     "tier": "Mid-Tier",
     "cat": "sport",
-    "catLabel": "NFL Football",
+    "catLabel": "Football",
     "price": "$550–$700/box",
     "desc": "Topps returned to the NFL in 2025 after nearly a decade away, and Chrome Football is the flagship comeback product. Chrome refractor technology applied to NFL stars and rookies, featuring the 1/1 Rookie PREM1ERE Patch Autos and Gold Shield autos exclusively through Fanatics Collectibles.",
     "tags": [
@@ -1446,7 +1446,7 @@ export const BRANDS = {
     "name": "Topps Finest Basketball",
     "tier": "High-End",
     "cat": "sport",
-    "catLabel": "NBA Basketball",
+    "catLabel": "Basketball",
     "price": "$775–$900/box",
     "desc": "The first licensed NBA Finest since 2007-08. Legendary refractor tech, two autographs per hobby box.",
     "tags": [
@@ -1510,7 +1510,7 @@ export const BRANDS = {
     "name": "Topps Football",
     "tier": "Entry-Level",
     "cat": "sport",
-    "catLabel": "NFL Football",
+    "catLabel": "Football",
     "price": "$100–$150/box",
     "desc": "Topps' flagship NFL product, the entry point for football collecting under the newly reclaimed exclusive license. Every player, every team, every rookie. The foundational football set rebuilt from the ground up through Fanatics Collectibles.",
     "tags": [
@@ -1545,7 +1545,7 @@ export const BRANDS = {
     "name": "Topps Basketball",
     "tier": "Entry-Level",
     "cat": "sport",
-    "catLabel": "NBA Basketball",
+    "catLabel": "Basketball",
     "price": "$380–$430/box",
     "desc": "Topps' flagship NBA product making its long-awaited return. Every player from all 30 teams plus select NBA legends, the most complete basketball set Topps has ever produced, launching October 23, 2025.",
     "tags": [
@@ -1581,7 +1581,7 @@ export const BRANDS = {
     "name": "Topps Marvel The Collector",
     "tier": "Ultra High-End",
     "cat": "ent",
-    "catLabel": "Marvel",
+    "catLabel": "Entertainment",
     "price": "$500–$560/box",
     "desc": "A three-card hit box: premium base, insert, and an MCU actor autograph in themed packs.",
     "tags": [
@@ -1610,7 +1610,7 @@ export const BRANDS = {
     "name": "Topps Motif",
     "tier": "Ultra High-End",
     "cat": "sport",
-    "catLabel": "NBA Basketball",
+    "catLabel": "Basketball",
     "price": "$1,400–$2,000/box",
     "desc": "Watercolor-splashed premium basketball in a one-pack format. No baseball edition exists; Motif is an NBA line through and through.",
     "tags": [
@@ -1733,7 +1733,7 @@ export const BRANDS = {
     "name": "Bowman Basketball",
     "tier": "Mid-Tier",
     "cat": "sport",
-    "catLabel": "NBA Basketball",
+    "catLabel": "Basketball",
     "price": "$400–$500/box",
     "desc": "The first Bowman basketball product since 2008, and the first licensed set to combine NBA players and NCAA athletes in one checklist. The pipeline for the next generation of NBA stars.",
     "tags": [
@@ -2142,7 +2142,7 @@ export const BRANDS = {
     "name": "Topps Chrome Sapphire Football",
     "tier": "Ultra High-End",
     "cat": "sport",
-    "catLabel": "NFL Football",
+    "catLabel": "Football",
     "price": "$2,050–$2,400/box",
     "desc": "The entire 400-card Chrome Football checklist on Sapphire stock. One of the priciest online drops of the NFL year.",
     "tags": [
@@ -2201,7 +2201,7 @@ export const BRANDS = {
     "name": "Topps Pixar Gold",
     "tier": "Mid-Tier",
     "cat": "ent",
-    "catLabel": "Disney",
+    "catLabel": "Entertainment",
     "price": "$400–$425/box",
     "desc": "A Pixar-only set spanning all 29 films and shorts, with nine Chrome cards including one encased per box.",
     "tags": [
@@ -2264,7 +2264,7 @@ export const BRANDS = {
     "name": "Topps Chrome SpongeBob 25th Anniversary",
     "tier": "Mid-Tier",
     "cat": "ent",
-    "catLabel": "Nickelodeon",
+    "catLabel": "Entertainment",
     "price": "$400–$550/box",
     "desc": "Bikini Bottom on Chrome for SpongeBob's 25th anniversary. Price flagged for fact-check.",
     "tags": [
@@ -2294,7 +2294,7 @@ export const BRANDS = {
     "name": "Star Wars Chrome Black",
     "tier": "High-End",
     "cat": "ent",
-    "catLabel": "Star Wars",
+    "catLabel": "Entertainment",
     "price": "$200–$225/box",
     "desc": "Premium all-Chrome Star Wars on black stock: an encased autograph and encased insert in every box.",
     "tags": [
@@ -2323,7 +2323,7 @@ export const BRANDS = {
     "name": "Topps Dynasty Formula 1",
     "tier": "Ultra High-End",
     "cat": "sport",
-    "catLabel": "Formula 1",
+    "catLabel": "Racing",
     "price": "$2,800–$4,600/box",
     "desc": "One encased autograph relic numbered to 10 or less per box, with race-worn patches and Senna cut signatures.",
     "tags": [
@@ -2352,7 +2352,7 @@ export const BRANDS = {
     "name": "Chrome Sapphire Marvel Comics",
     "tier": "Ultra High-End",
     "cat": "ent",
-    "catLabel": "Marvel",
+    "catLabel": "Entertainment",
     "price": "$600–$800/box",
     "desc": "The comic-art Marvel Chrome set on Sapphire stock with the Sapphire Selections chase.",
     "tags": [
@@ -2479,7 +2479,7 @@ export const BRANDS = {
     "name": "Star Wars Chrome Galaxy",
     "tier": "Mid-Tier",
     "cat": "ent",
-    "catLabel": "Star Wars",
+    "catLabel": "Entertainment",
     "price": "$370–$390/box",
     "desc": "Original Star Wars artwork on Chrome, with sketch cards and artist autographs.",
     "tags": [
@@ -2540,7 +2540,7 @@ export const BRANDS = {
     "name": "Topps Finest Marvel",
     "tier": "Mid-Tier",
     "cat": "ent",
-    "catLabel": "Marvel",
+    "catLabel": "Entertainment",
     "price": "$280–$300/box",
     "desc": "An annual rotating-theme Finest: X-Men '97 in 2025, Fantastic Four's 65th anniversary in 2026 with Pedro Pascal autographs.",
     "tags": [
@@ -2632,7 +2632,7 @@ export const BRANDS = {
     "name": "Topps Chrome Basketball",
     "tier": "Mid-Tier",
     "cat": "sport",
-    "catLabel": "NBA Basketball",
+    "catLabel": "Basketball",
     "price": "$950–$1,250/box",
     "desc": "Topps returned to NBA basketball in 2025-26 for the first time since 2010, and Chrome Basketball is the marquee product. Featuring LeBron James, Victor Wembanyama, Cooper Flagg, and Dylan Harper with Chrome refractor treatment and exclusive Fanatics Collectibles content.",
     "tags": [
@@ -2793,7 +2793,7 @@ export const BRANDS = {
     "name": "Bowman Sapphire Basketball",
     "tier": "High-End",
     "cat": "sport",
-    "catLabel": "NBA Basketball",
+    "catLabel": "Basketball",
     "price": "$2,400–$3,650/box",
     "desc": "The premium Sapphire cut of Bowman Basketball, one autograph per box, sold through online raffle drops.",
     "tags": [
@@ -2823,7 +2823,7 @@ export const BRANDS = {
     "name": "NBA Hoops",
     "tier": "Entry-Level",
     "cat": "sport",
-    "catLabel": "NBA Basketball",
+    "catLabel": "Basketball",
     "price": "$260–$300/box",
     "desc": "The most iconic name in basketball cards, now under Topps for the first time. A 300-card base set that is the easiest way into the NBA hobby.",
     "tags": [
@@ -2854,7 +2854,7 @@ export const BRANDS = {
     "name": "Topps Chrome Formula 1",
     "tier": "Mid-Tier",
     "cat": "sport",
-    "catLabel": "Formula 1",
+    "catLabel": "Racing",
     "price": "$300–$400/box",
     "desc": "The fastest-growing segment in the hobby. F1 Chrome brings the Chrome ecosystem to racing, driver autographs, helmet parallels, and refractors. The sport's explosion in global popularity has made F1 cards one of the hottest markets in collecting.",
     "tags": [
@@ -3038,7 +3038,7 @@ export const BRANDS = {
     "name": "Topps Midnight Football",
     "tier": "Mid-Tier",
     "cat": "sport",
-    "catLabel": "NFL Football",
+    "catLabel": "Football",
     "price": "$790–$900/box",
     "desc": "Dark-mode football with three Chrome autographs per box. Night-game aesthetics for the collector who likes their hits moody.",
     "tags": [
@@ -3068,7 +3068,7 @@ export const BRANDS = {
     "name": "Topps Chrome Black Football",
     "tier": "Mid-Tier",
     "cat": "sport",
-    "catLabel": "NFL Football",
+    "catLabel": "Football",
     "price": "$450–$560/box",
     "desc": "The first NFL Chrome Black: dark, minimal chromium with an on-card autograph per box.",
     "tags": [
@@ -3164,7 +3164,7 @@ export const BRANDS = {
     "name": "Topps Marvel Studios Chrome",
     "tier": "High-End",
     "cat": "ent",
-    "catLabel": "Marvel",
+    "catLabel": "Entertainment",
     "price": "$260–$380/box",
     "desc": "The first set dedicated to the MCU: 200 cards across the films and Disney+ shows with actor autographs.",
     "tags": [
@@ -3226,7 +3226,7 @@ export const BRANDS = {
     "name": "Topps Brooklyn Collection Captain America",
     "tier": "High-End",
     "cat": "ent",
-    "catLabel": "Marvel",
+    "catLabel": "Entertainment",
     "price": "$220–$285/box",
     "desc": "The first non-sport Brooklyn Collection: a one-pack, ten-card premium honoring 85 years of Captain America.",
     "tags": [
@@ -3290,7 +3290,7 @@ export const BRANDS = {
     "name": "Topps Chrome Sapphire Formula 1",
     "tier": "High-End",
     "cat": "sport",
-    "catLabel": "Formula 1",
+    "catLabel": "Racing",
     "price": "$700–$1,100/box",
     "desc": "The complete Chrome F1 set on blue Sapphire stock, sold through online raffle drops.",
     "tags": [
@@ -3416,7 +3416,7 @@ export const BRANDS = {
     "name": "Star Wars Smugglers Outpost",
     "tier": "Mid-Tier",
     "cat": "ent",
-    "catLabel": "Star Wars",
+    "catLabel": "Entertainment",
     "price": "$670–$800/box",
     "desc": "A scoundrel's-eye view of the Star Wars universe. Price and format flagged for fact-check.",
     "tags": [
@@ -3534,7 +3534,7 @@ export const BRANDS = {
     "name": "Topps Chrome Deadpool",
     "tier": "Mid-Tier",
     "cat": "ent",
-    "catLabel": "Marvel",
+    "catLabel": "Entertainment",
     "price": "$400–$440/box",
     "desc": "A character-dedicated Chrome set with Ryan Reynolds and Hugh Jackman autographs in the chase.",
     "tags": [
@@ -3656,7 +3656,7 @@ export const BRANDS = {
     "name": "Topps Chrome Update Basketball",
     "tier": "Mid-Tier",
     "cat": "sport",
-    "catLabel": "NBA Basketball",
+    "catLabel": "Basketball",
     "price": "$530–$600/box",
     "desc": "Chrome Update for the NBA with the season's rookie debuts, including the first NBA Rookie Debut Patch Autographs.",
     "tags": [
@@ -3716,7 +3716,7 @@ export const BRANDS = {
     "name": "Topps Finest Football",
     "tier": "High-End",
     "cat": "sport",
-    "catLabel": "NFL Football",
+    "catLabel": "Football",
     "price": "$630–$690/box",
     "desc": "Finest returns to football: chromium refractors and die-cuts with two autographs per hobby box.",
     "tags": [
@@ -3746,7 +3746,7 @@ export const BRANDS = {
     "name": "Topps Disney Mint",
     "tier": "High-End",
     "cat": "ent",
-    "catLabel": "Disney",
+    "catLabel": "Entertainment",
     "price": "$600–$800/box",
     "desc": "A gold-dressed premium Disney release with guaranteed hits. Price flagged for fact-check.",
     "tags": [
@@ -3870,7 +3870,7 @@ export const BRANDS = {
     "name": "Topps Cosmic Chrome Basketball",
     "tier": "High-End",
     "cat": "sport",
-    "catLabel": "NBA Basketball",
+    "catLabel": "Basketball",
     "price": "$920–$1,200/box",
     "desc": "Space-themed chromium hits the NBA for the first time. Deep-space designs and big color for the collector who wants their cards loud.",
     "tags": [
@@ -3899,7 +3899,7 @@ export const BRANDS = {
     "name": "Topps Midnight Basketball",
     "tier": "High-End",
     "cat": "sport",
-    "catLabel": "NBA Basketball",
+    "catLabel": "Basketball",
     "price": "$695–$780/box",
     "desc": "Dark-mode NBA cards averaging three on-card autographs in a seven-card box. An online-exclusive drop.",
     "tags": [
@@ -3929,7 +3929,7 @@ export const BRANDS = {
     "name": "Topps Crystal: 30 Years of Toy Story",
     "tier": "Mid-Tier",
     "cat": "ent",
-    "catLabel": "Disney",
+    "catLabel": "Entertainment",
     "price": "$150–$250/box",
     "desc": "A crystal-finish celebration of three decades of Toy Story. Price flagged for fact-check.",
     "tags": [
@@ -4078,7 +4078,7 @@ export const BRANDS = {
     "name": "Topps Living Set",
     "tier": "Entry-Level",
     "cat": "sport",
-    "catLabel": "Baseball + Soccer",
+    "catLabel": "Baseball",
     "price": "$6–$9/card",
     "desc": "The set that never ends: new cards every week on the classic 1953 design, now more than 900 cards deep.",
     "tags": [
@@ -4172,7 +4172,7 @@ export const BRANDS = {
     "name": "Topps Signature Class Basketball",
     "tier": "High-End",
     "cat": "sport",
-    "catLabel": "NBA Basketball",
+    "catLabel": "Basketball",
     "price": "$375–$475/box",
     "desc": "Autograph-driven NBA product: two autographs per hobby box, with Chrome and Crystal Clear signature variations.",
     "tags": [
@@ -4322,7 +4322,7 @@ export const BRANDS = {
     "name": "Topps Inception Football",
     "tier": "Mid-Tier",
     "cat": "sport",
-    "catLabel": "NFL Football",
+    "catLabel": "Football",
     "price": "$280–$300/box",
     "desc": "Announced for 2026: Inception's single-pack premium autograph format comes to football.",
     "tags": [
@@ -4351,7 +4351,7 @@ export const BRANDS = {
     "name": "Topps Chrome x Cactus Jack Basketball",
     "tier": "High-End",
     "cat": "sport",
-    "catLabel": "NBA Basketball",
+    "catLabel": "Basketball",
     "price": "$585–$705/box",
     "desc": "Travis Scott's Cactus Jack takes over Topps Chrome Basketball. A 100-card collab set that sits at the corner of hobby and streetwear.",
     "tags": [
@@ -4411,7 +4411,7 @@ export const BRANDS = {
     "name": "Topps Resurgence Football",
     "tier": "Mid-Tier",
     "cat": "sport",
-    "catLabel": "NFL Football",
+    "catLabel": "Football",
     "price": "$450–$500/box",
     "desc": "Electricity-themed chromium football with two autographs per box, evolved from Topps Composite.",
     "tags": [
@@ -4471,7 +4471,7 @@ export const BRANDS = {
     "name": "Topps Royalty Basketball",
     "tier": "High-End",
     "cat": "sport",
-    "catLabel": "Baseball",
+    "catLabel": "Basketball",
     "price": "$450–$700/box",
     "desc": "Ultra-premium basketball in a ten-card box: six autographs and two relics. The 2023-24 edition was the line's NBA debut, with a fully licensed version announced for late 2026.",
     "tags": [
@@ -4534,7 +4534,7 @@ export const BRANDS = {
     "name": "Topps Diamond Icons",
     "tier": "Ultra High-End",
     "cat": "sport",
-    "catLabel": "Baseball + NBA",
+    "catLabel": "Baseball",
     "price": "$4,500–$5,500/box",
     "desc": "Icons only. Diamond Icons is an ultra-premium line where every card features legends and the game's brightest stars: on-card autographs, jumbo relics, and print runs you can count on your fingers.",
     "tags": [
@@ -4566,7 +4566,7 @@ export const BRANDS = {
     "name": "Topps Disney Neon",
     "tier": "High-End",
     "cat": "ent",
-    "catLabel": "Disney",
+    "catLabel": "Entertainment",
     "price": "$110–$180/box",
     "desc": "A 200-card Disney line with Neon and Lava-finish parallels, and first-ever cards for Phineas & Ferb, Gargoyles, and Epic Mickey.",
     "tags": [
@@ -4691,7 +4691,7 @@ export const BRANDS = {
     "name": "Topps Chrome Star Wars",
     "tier": "Mid-Tier",
     "cat": "ent",
-    "catLabel": "Star Wars",
+    "catLabel": "Entertainment",
     "price": "$250–$325/box",
     "desc": "The core Star Wars set on Chrome: characters from across the saga with the full refractor rainbow.",
     "tags": [
