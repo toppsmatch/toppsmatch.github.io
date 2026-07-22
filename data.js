@@ -804,7 +804,7 @@ export const BRANDS = {
     "name": "Chrome Sapphire VeeFriends",
     "tier": "High-End",
     "cat": "nonsport",
-    "catLabel": "Non-Sport",
+    "catLabel": "Fun & Games",
     "price": "$450–$600/box",
     "desc": "The most exclusive VeeFriends drop: the Chrome set on Sapphire stock, online only.",
     "tags": [
@@ -1895,7 +1895,7 @@ export const BRANDS = {
     "name": "Garbage Pail Kids",
     "tier": "Entry-Level",
     "cat": "nonsport",
-    "catLabel": "Non-Sport",
+    "catLabel": "Fun & Games",
     "price": "$125–$450/box",
     "desc": "Since 1985, Garbage Pail Kids has been gross, irreverent, and absolutely iconic. The satirical sticker line still commands massive passion across generations, from vintage restoration sets to new annual releases. Its community is one of the most fiercely devoted in the hobby.",
     "lookingFor": "Someone who never fully grew up and is proud of it.",
@@ -4139,7 +4139,7 @@ export const BRANDS = {
     "name": "Wacky Packages",
     "tier": "Entry-Level",
     "cat": "nonsport",
-    "catLabel": "Non-Sport",
+    "catLabel": "Fun & Games",
     "price": "$110–$120/box",
     "desc": "Topps' original gross-out parody brand. Wacky Packages satirizes consumer products with twisted, punny stickers that kids have been trading since 1967. The original non-sport collectible, and a fiercely nostalgic brand with a devoted vintage collector community.",
     "tags": [
@@ -4440,7 +4440,7 @@ export const BRANDS = {
     "name": "Garbage Pail Kids Chrome",
     "tier": "Mid-Tier",
     "cat": "nonsport",
-    "catLabel": "Non-Sport",
+    "catLabel": "Fun & Games",
     "price": "$200–$225/box",
     "desc": "The original GPK series art rebuilt on Chrome, with artist autographs and comic backs.",
     "tags": [
@@ -4500,7 +4500,7 @@ export const BRANDS = {
     "name": "Topps Chrome VeeFriends",
     "tier": "Mid-Tier",
     "cat": "nonsport",
-    "catLabel": "Non-Sport",
+    "catLabel": "Fun & Games",
     "price": "$325–$450/box",
     "desc": "Where collector culture meets. VeeFriends, the character universe built by Gary Vaynerchuk, now carries the Topps Chrome label in a multi-year partnership. Chrome refractors on collectible characters with genuine community value behind them.",
     "tags": [
