@@ -718,17 +718,17 @@ function goTo(i, flyX) {
       if (phase === 1) {
         phase = 2;
         ghost.style.zIndex = "4"; // fully clear of the pile, safe to rise
-        ghost.style.transition = "transform .26s ease-out";
+        ghost.style.transition = "transform .22s ease-out";
         ghost.style.transform = "translate(-50%,0) rotate(0deg) scale(1)";
         // the stack shifts down one position underneath the landing card
-        el.style.transition = "transform .26s ease-out";
+        el.style.transition = "transform .22s ease-out";
         el.style.transform = "translateY(2px) rotate(-.6deg) scale(.985)";
         el.querySelectorAll(".chev").forEach(c => { c.style.transition = "opacity .2s"; c.style.opacity = "0"; });
         if (fanU && fan1) {
           fanU.classList.add("fade-content");
-          fanU.style.transition = "transform .26s ease-out";
+          fanU.style.transition = "transform .22s ease-out";
           fanU.style.transform = getComputedStyle(fan1).transform;
-          fan1.style.transition = "transform .26s ease-out";
+          fan1.style.transition = "transform .22s ease-out";
           if (fan2) fan1.style.transform = getComputedStyle(fan2).transform;
         }
       } else {
@@ -739,7 +739,7 @@ function goTo(i, flyX) {
     requestAnimationFrame(() => requestAnimationFrame(() => {
       // out just past the pile's flank, no further: on a phone -175% threw the
       // whole pull-out off-screen and the shuffle read as a card popping in
-      ghost.style.transition = "transform .4s ease-in-out";
+      ghost.style.transition = "transform .26s ease-in-out";
       ghost.style.transform = "translateX(-118%) translateY(26px) rotate(-9deg) scale(.95)";
     }));
   }
