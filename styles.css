@@ -176,7 +176,7 @@ h1 em{font-style:normal;color:var(--red)}
 .landed .reveal-floor{opacity:1}
 .landed .spin-card{animation:landPop .5s cubic-bezier(.2,1.6,.4,1)}
 @keyframes landPop{0%{transform:scale(1)}45%{transform:scale(1.14)}100%{transform:scale(1)}}
-.reveal-img{display:block;width:200px;height:200px;object-fit:contain;filter:drop-shadow(0 14px 30px rgba(0,0,0,.6))}
+.reveal-img{display:block;width:200px;height:200px;object-fit:contain}
 /* Match face for brands with no product shot yet: a clean name card */
 .spin-namecard{width:184px;height:204px;border-radius:16px;background:linear-gradient(160deg,#F4F6FA,#DDE0E0);color:var(--blue);font-family:var(--impact);font-size:26px;line-height:1.15;text-transform:uppercase;letter-spacing:-.01em;display:flex;align-items:center;justify-content:center;text-align:center;padding:16px;box-shadow:0 14px 30px rgba(0,0,0,.5)}
 
@@ -282,7 +282,7 @@ body.in-results .header{display:none}
 .swipe-card.expanded .chev{opacity:0;transition:opacity .2s}
 
 .sc-label{font-size:11px;font-weight:800;letter-spacing:2px;color:var(--red);text-transform:uppercase;margin-bottom:14px;text-align:center}
-.sc-img{display:block;width:172px;height:172px;object-fit:contain;margin:0 auto 16px;filter:drop-shadow(0 14px 24px rgba(9,31,64,.28));pointer-events:none}
+.sc-img{display:block;width:172px;height:172px;object-fit:contain;margin:0 auto 16px;pointer-events:none}
 .sc-img-none{display:flex;align-items:center;justify-content:center;font-size:54px;border-radius:16px;background:#fff}
 .sc-name{font-family:var(--impact);font-weight:400;font-size:21px;letter-spacing:.02em;text-transform:uppercase;color:var(--blue);text-align:center;line-height:1.15;margin-bottom:6px;min-height:2.52em;display:flex;align-items:center;justify-content:center;text-wrap:balance}
 .sc-tier{font-size:10.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--grey);text-align:center;margin-bottom:7px}
@@ -323,3 +323,15 @@ body.in-results .header{display:none}
 .btn-mini:hover{background:rgba(255,255,255,.08)}
 
 .swipe-end{text-align:center;padding:70px 20px;color:#B9C4D9}
+
+/* Mobile: tighter deck card so the pile, dots, and retake button share one screen.
+   Lives at the end of the sheet so it wins the cascade over the base rules above. */
+@media (max-width:430px){
+  .deck{padding:12px 12px 20px}
+  .swipe-card,.fan{padding:16px 18px 14px}
+  .sc-img{width:136px;height:136px;margin-bottom:12px}
+  .sc-label{margin-bottom:10px}
+  .sc-name{font-size:19px}
+  .sc-pct{font-size:17px}
+  .more-toggle{padding:8px 18px;margin-top:10px}
+}
