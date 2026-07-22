@@ -252,8 +252,8 @@ body.in-results .header{display:none}
 .fan-lineup{display:flex;align-items:center;justify-content:center}
 .fan-lineup-in{font-size:14px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--grey)}
 @media (max-width:430px){
-  .fan1{transform:translate(calc(-50% - 20px),13px) rotate(-4.5deg) scale(.96)}
-  .fan2{transform:translate(calc(-50% - 40px),26px) rotate(-9deg) scale(.92)}
+  .fan1{transform:translate(calc(-50% - 14px),10px) rotate(-3.5deg) scale(.965)}
+  .fan2{transform:translate(calc(-50% - 27px),20px) rotate(-7deg) scale(.93)}
   .fan-under{transform:translate(-50%,2px) rotate(-.5deg) scale(.985)}
 }
 
@@ -324,14 +324,10 @@ body.in-results .header{display:none}
 
 .swipe-end{text-align:center;padding:70px 20px;color:#B9C4D9}
 
-/* Mobile: tighter deck card so the pile, dots, and retake button share one screen.
-   Lives at the end of the sheet so it wins the cascade over the base rules above. */
+/* Mobile: full-size card content but a narrower card, and a slightly tighter
+   fan (see the transform block above). Lives at the end of the sheet so it
+   wins the cascade over the base rules above. */
 @media (max-width:430px){
   .deck{padding:12px 12px 20px}
-  .swipe-card,.fan{padding:16px 18px 14px}
-  .sc-img{width:136px;height:136px;margin-bottom:12px}
-  .sc-label{margin-bottom:10px}
-  .sc-name{font-size:19px}
-  .sc-pct{font-size:17px}
-  .more-toggle{padding:8px 18px;margin-top:10px}
+  .swipe-card,.fan{max-width:306px}
 }

@@ -499,6 +499,11 @@ function buildDeck() {
   if (wcKey && BRANDS[wcKey]) deck.push({ key: wcKey, pct: null, label: "🃏 Wildcard" });
   deckIdx = 0;
   expanded = false;
+  // pre-decode every deck image so card flips repaint without an iOS decode flash
+  deck.forEach(c => {
+    const src = BRANDS[c.key]?.img;
+    if (src) { const im = new Image(); im.src = src; im.decode?.().catch(() => {}); }
+  });
 }
 
 // Icon set for the action buttons (inline SVG renders identically everywhere,
@@ -512,7 +517,7 @@ const ICONS = {
 function cardInner(card) {
   const b = BRANDS[card.key];
   const img = b.img
-    ? `<img class="sc-img" src="${esc(b.img)}" alt="${esc(b.name)}" loading="lazy">`
+    ? `<img class="sc-img" src="${esc(b.img)}" alt="${esc(b.name)}" loading="eager" decoding="sync">`
     : `<div class="sc-img sc-img-none">🃏</div>`;
   const pct = card.pct != null
     ? `<div class="sc-pct">${card.pct}% match</div>`
