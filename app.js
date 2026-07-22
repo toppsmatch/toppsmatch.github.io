@@ -679,36 +679,51 @@ function goTo(i, flyX) {
       setTimeout(land, 290);
     }, 190);
   } else {
-    // visible shuffle: the returning card slides out from the very bottom of
-    // the pile IN FRONT of the sheets (but under the raised top card), sweeps
-    // out left, then lands on top. Fully opaque the whole way.
+    // Honest shuffle: the returning card starts exactly where the forward
+    // animation tucks cards (bottom of the pile, BENEATH every sheet), pulls
+    // out to the left from underneath, then arcs up and lands on top. While
+    // it lands, the rest of the stack settles down one slot: top card sinks
+    // into the under-sheet position, under-sheet recedes into the middle,
+    // middle sheet drops to the back. Fully opaque the whole way.
     const isWild = deck[i].pct == null;
     const ghost = document.createElement("div");
     ghost.className = "fan card-ghost" + (isWild ? " wild" : "");
     ghost.innerHTML = cardInner(deck[i]);
-    el.style.zIndex = "2"; // current top card stays above the traveler at first
-    // the dragged card glides home while the returning card travels
+    el.style.zIndex = "2"; // the dragged card glides home above the traveler
     el.style.transition = "transform .25s ease";
     el.style.transform = "";
-    ghost.style.cssText = `visibility:visible;z-index:1;top:${el.offsetTop}px;height:${el.offsetHeight}px;bottom:auto;transform:translate(calc(-50% - 68px),44px) rotate(-12deg) scale(.92)`;
-    deckEl.appendChild(ghost);
+    const fanU = deckEl.querySelector(".fan-under"), fan1 = deckEl.querySelector(".fan1"), fan2 = deckEl.querySelector(".fan2");
+    const start = fan2 ? getComputedStyle(fan2).transform : "translate(calc(-50% - 52px),32px) rotate(-11deg) scale(.92)";
+    ghost.style.cssText = `visibility:visible;z-index:0;top:${el.offsetTop}px;height:${el.offsetHeight}px;bottom:auto;transform:${start}`;
+    deckEl.insertBefore(ghost, deckEl.firstElementChild); // DOM-first at z0: painted beneath every sheet
     const safety = setTimeout(land, 1100); // never strand the deck on a missed event
     let phase = 1;
     ghost.addEventListener("transitionend", e => {
       if (e.propertyName !== "transform") return;
       if (phase === 1) {
         phase = 2;
-        ghost.style.zIndex = "4";
+        ghost.style.zIndex = "4"; // fully clear of the pile, safe to rise
         ghost.style.transition = "transform .26s ease-out";
         ghost.style.transform = "translate(-50%,0) rotate(0deg) scale(1)";
+        // the stack shifts down one position underneath the landing card
+        el.style.transition = "transform .26s ease-out";
+        el.style.transform = "translateY(2px) rotate(-.6deg) scale(.985)";
+        el.querySelectorAll(".chev").forEach(c => { c.style.transition = "opacity .2s"; c.style.opacity = "0"; });
+        if (fanU && fan1) {
+          fanU.classList.add("fade-content");
+          fanU.style.transition = "transform .26s ease-out";
+          fanU.style.transform = getComputedStyle(fan1).transform;
+          fan1.style.transition = "transform .26s ease-out";
+          if (fan2) fan1.style.transform = getComputedStyle(fan2).transform;
+        }
       } else {
         clearTimeout(safety);
         land();
       }
     });
     requestAnimationFrame(() => requestAnimationFrame(() => {
-      ghost.style.transition = "transform .34s ease-in-out";
-      ghost.style.transform = "translateX(-170%) rotate(-9deg) scale(.97)";
+      ghost.style.transition = "transform .36s ease-in-out";
+      ghost.style.transform = "translateX(-175%) translateY(26px) rotate(-9deg) scale(.95)";
     }));
   }
 }
