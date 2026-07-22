@@ -295,8 +295,9 @@ async function buildShareCard(b, pct) {
     document.fonts.load('italic 44px "Fan Serif"'),
   ]).catch(() => {});
   const img = b.img ? await loadImg(b.img).catch(() => null) : null;
-  // The share card is 9:16, so it uses the portrait wall (no crop needed).
-  const wall = await loadImg("img/brand-wall-mobile.webp").catch(() => null);
+  // Pre-blurred 1080x1920 wall, baked offline at full res (a real Gaussian).
+  // Runtime rescale-blur always upscaled a tiny buffer into pixel blocks.
+  const wall = await loadImg("img/share-bg.webp").catch(() => null);
 
   const W = 1080, H = 1920;
   const cv = document.createElement("canvas"); cv.width = W; cv.height = H;
@@ -306,31 +307,11 @@ async function buildShareCard(b, pct) {
   bg.addColorStop(0, "#16305e"); bg.addColorStop(.55, "#091F40"); bg.addColorStop(1, "#060f22");
   ctx.fillStyle = bg; ctx.fillRect(0, 0, W, H);
 
-  // the brand-wall collage as a dim texture. Blur via three smoothed
-  // downscale/upscale passes — ctx.filter isn't reliable on Safari, and a
-  // single tiny round-trip (the old 108px hack) upscales into pixel blocks.
+  // the brand-wall collage as a dim texture, already blurred in the asset
   if (wall) {
-    const pass = (src, w, h) => {
-      const c = document.createElement("canvas");
-      c.width = w; c.height = h;
-      const cc = c.getContext("2d");
-      cc.imageSmoothingQuality = "high";
-      cc.drawImage(src, 0, 0, w, h);
-      return c;
-    };
-    const crop = document.createElement("canvas");
-    crop.width = W; crop.height = H;
-    const cx2 = crop.getContext("2d");
-    const s = Math.max(W / wall.naturalWidth, H / wall.naturalHeight);
-    const ww = wall.naturalWidth * s, wh = wall.naturalHeight * s;
-    cx2.drawImage(wall, (W - ww) / 2, (H - wh) / 2, ww, wh);
-    // step every resize by ≤2x — single big jumps are what reintroduce blocks
-    let soft = pass(pass(pass(crop, 540, 960), 270, 480), 135, 240);
-    soft = pass(pass(pass(soft, 90, 160), 180, 320), 360, 640);
-    soft = pass(soft, 540, 960);
     ctx.globalAlpha = .2;
     ctx.imageSmoothingQuality = "high";
-    ctx.drawImage(soft, 0, 0, W, H);
+    ctx.drawImage(wall, 0, 0, W, H);
     ctx.globalAlpha = 1;
   }
 
@@ -460,7 +441,7 @@ async function buildShareCard(b, pct) {
 
   ctx.fillStyle = "#B9C4D9";
   ctx.font = '600 34px "Fan Sans", sans-serif';
-  ctx.fillText("Find yours in under two minutes", W / 2, 1768);
+  ctx.fillText("Find yours in two minutes", W / 2, 1768);
 
   ctx.fillStyle = "#fff";
   ctx.font = '700 32px "Fan Sans", sans-serif';
@@ -727,8 +708,10 @@ function goTo(i, flyX) {
       }
     });
     requestAnimationFrame(() => requestAnimationFrame(() => {
-      ghost.style.transition = "transform .36s ease-in-out";
-      ghost.style.transform = "translateX(-175%) translateY(26px) rotate(-9deg) scale(.95)";
+      // out just past the pile's flank, no further: on a phone -175% threw the
+      // whole pull-out off-screen and the shuffle read as a card popping in
+      ghost.style.transition = "transform .4s ease-in-out";
+      ghost.style.transform = "translateX(-118%) translateY(26px) rotate(-9deg) scale(.95)";
     }));
   }
 }

@@ -51,7 +51,9 @@ h1 em{font-style:normal;color:var(--red)}
 
 .opt{display:flex;align-items:center;gap:12px;padding:13px 16px;border:1.5px solid var(--border);border-radius:12px;cursor:pointer;background:#fff;color:var(--text);text-align:left;font-size:14px;font-family:var(--sans);font-weight:500;width:100%;transition:border-color .15s,background .15s;position:relative;user-select:none}
 .opts.grid2 .opt{flex-direction:column;align-items:flex-start;gap:5px;padding:14px 14px 13px}
-.opt:hover{border-color:rgba(229,60,46,.5);background:rgba(229,60,46,.03)}
+/* hover only on real pointers: touch screens "stick" :hover to the last tap
+   point, which painted a random option red on every fresh question */
+@media (hover:hover){.opt:hover{border-color:rgba(229,60,46,.5);background:rgba(229,60,46,.03)}}
 .opt.sel{border-color:var(--red);background:rgba(229,60,46,.06)}
 
 /* RANK BADGE */
