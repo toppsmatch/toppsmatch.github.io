@@ -17,7 +17,8 @@ export const BRANDS = {
       "tennis"
     ],
     "budget": [
-      "high"
+      "high",
+      "ultra"
     ],
     "identity": [
       "premium"
@@ -47,7 +48,7 @@ export const BRANDS = {
       "baseball"
     ],
     "budget": [
-      "mid_low"
+      "mid_high"
     ],
     "identity": [
       "prospect"
@@ -76,7 +77,8 @@ export const BRANDS = {
       "ent"
     ],
     "budget": [
-      "high"
+      "mid_low",
+      "mid_high"
     ],
     "identity": [
       "premium"
@@ -136,7 +138,7 @@ export const BRANDS = {
       "baseball"
     ],
     "budget": [
-      "high"
+      "ultra"
     ],
     "identity": [
       "nostalgia",
@@ -167,7 +169,7 @@ export const BRANDS = {
       "f1"
     ],
     "budget": [
-      "mid_high"
+      "high"
     ],
     "identity": [
       "premium"
@@ -207,7 +209,7 @@ export const BRANDS = {
       "multi"
     ],
     "budget": [
-      "entry"
+      "starter"
     ],
     "identity": [
       "nostalgia"
@@ -297,7 +299,6 @@ export const BRANDS = {
       "ent"
     ],
     "budget": [
-      "mid_low",
       "mid_high"
     ],
     "identity": [
@@ -327,7 +328,7 @@ export const BRANDS = {
       "soccer"
     ],
     "budget": [
-      "mid_high"
+      "mid_low"
     ],
     "identity": [
       "premium"
@@ -358,8 +359,7 @@ export const BRANDS = {
       "ent"
     ],
     "budget": [
-      "mid_low",
-      "mid_high"
+      "mid_low"
     ],
     "identity": [
       "premium",
@@ -391,7 +391,6 @@ export const BRANDS = {
       "baseball"
     ],
     "budget": [
-      "entry",
       "mid_low"
     ],
     "identity": [
@@ -480,7 +479,7 @@ export const BRANDS = {
       "soccer"
     ],
     "budget": [
-      "high"
+      "mid_low"
     ],
     "identity": [
       "premium"
@@ -509,7 +508,7 @@ export const BRANDS = {
       "baseball"
     ],
     "budget": [
-      "high"
+      "ultra"
     ],
     "identity": [
       "prospect",
@@ -569,7 +568,8 @@ export const BRANDS = {
       "wwe"
     ],
     "budget": [
-      "high"
+      "mid_low",
+      "mid_high"
     ],
     "identity": [
       "premium"
@@ -597,7 +597,7 @@ export const BRANDS = {
       "nfl"
     ],
     "budget": [
-      "high"
+      "mid_high"
     ],
     "identity": [
       "premium"
@@ -628,7 +628,6 @@ export const BRANDS = {
       "baseball"
     ],
     "budget": [
-      "mid_high",
       "high"
     ],
     "identity": [
@@ -661,7 +660,7 @@ export const BRANDS = {
       "ent"
     ],
     "budget": [
-      "mid_low"
+      "high"
     ],
     "identity": [
       "premium"
@@ -693,7 +692,6 @@ export const BRANDS = {
       "multi"
     ],
     "budget": [
-      "entry",
       "mid_low"
     ],
     "identity": [
@@ -727,8 +725,7 @@ export const BRANDS = {
       "soccer"
     ],
     "budget": [
-      "mid_low",
-      "mid_high"
+      "mid_low"
     ],
     "identity": [
       "prospect",
@@ -758,6 +755,7 @@ export const BRANDS = {
       "ent"
     ],
     "budget": [
+      "mid_high",
       "high"
     ],
     "identity": [
@@ -815,8 +813,7 @@ export const BRANDS = {
       "nonsport"
     ],
     "budget": [
-      "high",
-      "ultra"
+      "mid_high"
     ],
     "identity": [
       "premium"
@@ -845,7 +842,6 @@ export const BRANDS = {
       "baseball"
     ],
     "budget": [
-      "entry",
       "mid_low"
     ],
     "identity": [
@@ -876,7 +872,7 @@ export const BRANDS = {
       "soccer"
     ],
     "budget": [
-      "mid_high"
+      "mid_low"
     ],
     "identity": [
       "premium"
@@ -905,7 +901,7 @@ export const BRANDS = {
       "soccer"
     ],
     "budget": [
-      "high"
+      "mid_low"
     ],
     "identity": [
       "premium"
@@ -938,8 +934,7 @@ export const BRANDS = {
       "nfl"
     ],
     "budget": [
-      "mid_low",
-      "mid_high"
+      "high"
     ],
     "identity": [
       "premium",
@@ -971,8 +966,7 @@ export const BRANDS = {
       "tennis"
     ],
     "budget": [
-      "mid_low",
-      "mid_high"
+      "mid_low"
     ],
     "identity": [
       "premium",
@@ -1063,7 +1057,7 @@ export const BRANDS = {
       "soccer"
     ],
     "budget": [
-      "mid_low"
+      "mid_high"
     ],
     "identity": [
       "set"
@@ -1120,8 +1114,7 @@ export const BRANDS = {
       "soccer"
     ],
     "budget": [
-      "mid_high",
-      "high"
+      "mid_high"
     ],
     "identity": [
       "premium"
@@ -1149,7 +1142,7 @@ export const BRANDS = {
       "ent"
     ],
     "budget": [
-      "high"
+      "ultra"
     ],
     "identity": [
       "premium"
@@ -1180,7 +1173,8 @@ export const BRANDS = {
       "baseball"
     ],
     "budget": [
-      "high"
+      "high",
+      "ultra"
     ],
     "identity": [
       "premium"
@@ -1242,7 +1236,7 @@ export const BRANDS = {
       "soccer"
     ],
     "budget": [
-      "entry"
+      "starter"
     ],
     "identity": [
       "set",
@@ -1274,7 +1268,6 @@ export const BRANDS = {
       "baseball"
     ],
     "budget": [
-      "entry",
       "mid_low"
     ],
     "identity": [
@@ -1306,7 +1299,7 @@ export const BRANDS = {
       "wwe"
     ],
     "budget": [
-      "high"
+      "mid_high"
     ],
     "identity": [
       "premium"
@@ -1335,7 +1328,7 @@ export const BRANDS = {
       "wwe"
     ],
     "budget": [
-      "high"
+      "mid_high"
     ],
     "identity": [
       "premium"
@@ -1396,8 +1389,8 @@ export const BRANDS = {
       "nfl"
     ],
     "budget": [
-      "mid_low",
-      "mid_high"
+      "mid_high",
+      "high"
     ],
     "identity": [
       "prospect",
@@ -1490,8 +1483,8 @@ export const BRANDS = {
       "baseball"
     ],
     "budget": [
-      "entry",
-      "mid_low"
+      "mid_low",
+      "mid_high"
     ],
     "identity": [
       "nostalgia",
@@ -1524,7 +1517,6 @@ export const BRANDS = {
       "nfl"
     ],
     "budget": [
-      "entry",
       "mid_low"
     ],
     "identity": [
@@ -1560,8 +1552,7 @@ export const BRANDS = {
       "nba"
     ],
     "budget": [
-      "entry",
-      "mid_low"
+      "mid_high"
     ],
     "identity": [
       "set",
@@ -1593,7 +1584,7 @@ export const BRANDS = {
       "ent"
     ],
     "budget": [
-      "ultra"
+      "mid_high"
     ],
     "identity": [
       "premium"
@@ -1622,7 +1613,7 @@ export const BRANDS = {
       "nba"
     ],
     "budget": [
-      "high"
+      "ultra"
     ],
     "identity": [
       "premium"
@@ -1655,7 +1646,7 @@ export const BRANDS = {
       "baseball"
     ],
     "budget": [
-      "mid_high"
+      "high"
     ],
     "identity": [
       "prospect",
@@ -1748,7 +1739,6 @@ export const BRANDS = {
       "nba"
     ],
     "budget": [
-      "mid_low",
       "mid_high"
     ],
     "identity": [
@@ -1811,7 +1801,7 @@ export const BRANDS = {
       "soccer"
     ],
     "budget": [
-      "high"
+      "mid_high"
     ],
     "identity": [
       "premium"
@@ -1843,7 +1833,7 @@ export const BRANDS = {
       "college"
     ],
     "budget": [
-      "mid_high"
+      "mid_low"
     ],
     "identity": [
       "prospect",
@@ -1912,8 +1902,8 @@ export const BRANDS = {
       "nonsport"
     ],
     "budget": [
-      "entry",
-      "mid_low"
+      "mid_low",
+      "mid_high"
     ],
     "identity": [
       "nostalgia",
@@ -1942,7 +1932,7 @@ export const BRANDS = {
       "ufc"
     ],
     "budget": [
-      "high"
+      "mid_low"
     ],
     "identity": [
       "premium"
@@ -1971,8 +1961,7 @@ export const BRANDS = {
       "soccer"
     ],
     "budget": [
-      "entry",
-      "mid_low"
+      "entry"
     ],
     "identity": [
       "set",
@@ -2002,7 +1991,8 @@ export const BRANDS = {
       "ufc"
     ],
     "budget": [
-      "high"
+      "mid_low",
+      "mid_high"
     ],
     "identity": [
       "premium"
@@ -2031,7 +2021,7 @@ export const BRANDS = {
       "tennis"
     ],
     "budget": [
-      "high"
+      "mid_low"
     ],
     "identity": [
       "premium"
@@ -2062,8 +2052,7 @@ export const BRANDS = {
       "ent"
     ],
     "budget": [
-      "entry",
-      "mid_low"
+      "mid_high"
     ],
     "identity": [
       "nostalgia",
@@ -2095,8 +2084,7 @@ export const BRANDS = {
       "baseball"
     ],
     "budget": [
-      "mid_low",
-      "mid_high"
+      "mid_low"
     ],
     "identity": [
       "nostalgia"
@@ -2125,7 +2113,7 @@ export const BRANDS = {
       "tennis"
     ],
     "budget": [
-      "high"
+      "mid_low"
     ],
     "identity": [
       "premium"
@@ -2183,7 +2171,6 @@ export const BRANDS = {
       "soccer"
     ],
     "budget": [
-      "high",
       "ultra"
     ],
     "identity": [
@@ -2212,7 +2199,6 @@ export const BRANDS = {
       "ent"
     ],
     "budget": [
-      "mid_low",
       "mid_high"
     ],
     "identity": [
@@ -2275,7 +2261,6 @@ export const BRANDS = {
       "ent"
     ],
     "budget": [
-      "mid_low",
       "mid_high"
     ],
     "identity": [
@@ -2306,7 +2291,7 @@ export const BRANDS = {
       "ent"
     ],
     "budget": [
-      "high"
+      "mid_low"
     ],
     "identity": [
       "premium"
@@ -2364,7 +2349,7 @@ export const BRANDS = {
       "ent"
     ],
     "budget": [
-      "ultra"
+      "high"
     ],
     "identity": [
       "premium"
@@ -2392,7 +2377,7 @@ export const BRANDS = {
       "ufc"
     ],
     "budget": [
-      "mid_high"
+      "mid_low"
     ],
     "identity": [
       "premium"
@@ -2423,8 +2408,7 @@ export const BRANDS = {
       "college"
     ],
     "budget": [
-      "mid_low",
-      "mid_high"
+      "mid_low"
     ],
     "identity": [
       "prospect"
@@ -2458,8 +2442,7 @@ export const BRANDS = {
       "baseball"
     ],
     "budget": [
-      "mid_low",
-      "mid_high"
+      "mid_low"
     ],
     "identity": [
       "set",
@@ -2523,6 +2506,7 @@ export const BRANDS = {
       "baseball"
     ],
     "budget": [
+      "mid_high",
       "high"
     ],
     "identity": [
@@ -2551,8 +2535,7 @@ export const BRANDS = {
       "ent"
     ],
     "budget": [
-      "mid_low",
-      "mid_high"
+      "mid_low"
     ],
     "identity": [
       "set"
@@ -2582,6 +2565,7 @@ export const BRANDS = {
       "baseball"
     ],
     "budget": [
+      "mid_high",
       "high"
     ],
     "identity": [
@@ -2614,8 +2598,7 @@ export const BRANDS = {
       "baseball"
     ],
     "budget": [
-      "mid_low",
-      "mid_high"
+      "high"
     ],
     "identity": [
       "prospect"
@@ -2647,8 +2630,8 @@ export const BRANDS = {
       "nba"
     ],
     "budget": [
-      "mid_low",
-      "mid_high"
+      "high",
+      "ultra"
     ],
     "identity": [
       "prospect",
@@ -2680,8 +2663,8 @@ export const BRANDS = {
       "college"
     ],
     "budget": [
-      "mid_high",
-      "high"
+      "mid_low",
+      "mid_high"
     ],
     "identity": [
       "prospect"
@@ -2712,7 +2695,6 @@ export const BRANDS = {
       "baseball"
     ],
     "budget": [
-      "mid_low",
       "mid_high"
     ],
     "identity": [
@@ -2774,7 +2756,6 @@ export const BRANDS = {
       "baseball"
     ],
     "budget": [
-      "high",
       "ultra"
     ],
     "identity": [
@@ -2835,8 +2816,7 @@ export const BRANDS = {
       "nba"
     ],
     "budget": [
-      "starter",
-      "entry"
+      "mid_low"
     ],
     "identity": [
       "set",
@@ -2868,7 +2848,6 @@ export const BRANDS = {
       "f1"
     ],
     "budget": [
-      "mid_low",
       "mid_high"
     ],
     "identity": [
@@ -2900,8 +2879,7 @@ export const BRANDS = {
       "ufc"
     ],
     "budget": [
-      "mid_high",
-      "high"
+      "mid_low"
     ],
     "identity": [
       "set",
@@ -2990,7 +2968,6 @@ export const BRANDS = {
       "soccer"
     ],
     "budget": [
-      "starter",
       "entry"
     ],
     "identity": [
@@ -3021,7 +2998,7 @@ export const BRANDS = {
       "soccer"
     ],
     "budget": [
-      "mid_high"
+      "mid_low"
     ],
     "identity": [
       "premium"
@@ -3050,7 +3027,7 @@ export const BRANDS = {
       "nfl"
     ],
     "budget": [
-      "mid_high"
+      "high"
     ],
     "identity": [
       "premium"
@@ -3080,8 +3057,7 @@ export const BRANDS = {
       "nfl"
     ],
     "budget": [
-      "mid_high",
-      "high"
+      "mid_high"
     ],
     "identity": [
       "premium"
@@ -3110,8 +3086,7 @@ export const BRANDS = {
       "baseball"
     ],
     "budget": [
-      "mid_low",
-      "mid_high"
+      "mid_low"
     ],
     "identity": [
       "nostalgia",
@@ -3176,7 +3151,8 @@ export const BRANDS = {
       "ent"
     ],
     "budget": [
-      "high"
+      "mid_low",
+      "mid_high"
     ],
     "identity": [
       "premium",
@@ -3237,7 +3213,7 @@ export const BRANDS = {
       "ent"
     ],
     "budget": [
-      "high"
+      "mid_low"
     ],
     "identity": [
       "premium"
@@ -3270,8 +3246,8 @@ export const BRANDS = {
       "baseball"
     ],
     "budget": [
-      "mid_low",
-      "mid_high"
+      "mid_high",
+      "high"
     ],
     "identity": [
       "prospect"
@@ -3302,7 +3278,8 @@ export const BRANDS = {
       "f1"
     ],
     "budget": [
-      "high"
+      "high",
+      "ultra"
     ],
     "identity": [
       "premium"
@@ -3331,7 +3308,7 @@ export const BRANDS = {
       "soccer"
     ],
     "budget": [
-      "mid_high"
+      "mid_low"
     ],
     "identity": [
       "premium"
@@ -3365,7 +3342,6 @@ export const BRANDS = {
       "baseball"
     ],
     "budget": [
-      "entry",
       "mid_low"
     ],
     "identity": [
@@ -3399,7 +3375,7 @@ export const BRANDS = {
       "wwe"
     ],
     "budget": [
-      "high"
+      "mid_low"
     ],
     "identity": [
       "premium"
@@ -3426,7 +3402,7 @@ export const BRANDS = {
       "ent"
     ],
     "budget": [
-      "mid_high"
+      "high"
     ],
     "identity": [
       "set"
@@ -3514,6 +3490,7 @@ export const BRANDS = {
       "baseball"
     ],
     "budget": [
+      "mid_low",
       "mid_high"
     ],
     "identity": [
@@ -3576,8 +3553,7 @@ export const BRANDS = {
       "wwe"
     ],
     "budget": [
-      "mid_low",
-      "mid_high"
+      "mid_low"
     ],
     "identity": [
       "set"
@@ -3638,7 +3614,7 @@ export const BRANDS = {
       "baseball"
     ],
     "budget": [
-      "high"
+      "ultra"
     ],
     "identity": [
       "prospect",
@@ -3698,7 +3674,7 @@ export const BRANDS = {
       "soccer"
     ],
     "budget": [
-      "high"
+      "mid_high"
     ],
     "identity": [
       "premium"
@@ -3788,7 +3764,7 @@ export const BRANDS = {
       "baseball"
     ],
     "budget": [
-      "high"
+      "ultra"
     ],
     "identity": [
       "premium"
@@ -3819,7 +3795,6 @@ export const BRANDS = {
       "baseball"
     ],
     "budget": [
-      "entry",
       "mid_low"
     ],
     "identity": [
@@ -3852,7 +3827,7 @@ export const BRANDS = {
       "baseball"
     ],
     "budget": [
-      "high"
+      "ultra"
     ],
     "identity": [
       "premium"
@@ -3882,7 +3857,8 @@ export const BRANDS = {
       "nba"
     ],
     "budget": [
-      "high"
+      "high",
+      "ultra"
     ],
     "identity": [
       "premium"
@@ -3940,7 +3916,7 @@ export const BRANDS = {
       "ent"
     ],
     "budget": [
-      "mid_high"
+      "mid_low"
     ],
     "identity": [
       "set",
@@ -3969,7 +3945,7 @@ export const BRANDS = {
       "soccer"
     ],
     "budget": [
-      "entry"
+      "mid_low"
     ],
     "identity": [
       "set"
@@ -3999,8 +3975,7 @@ export const BRANDS = {
       "baseball"
     ],
     "budget": [
-      "mid_low",
-      "mid_high"
+      "mid_low"
     ],
     "identity": [
       "premium"
@@ -4028,8 +4003,7 @@ export const BRANDS = {
       "baseball"
     ],
     "budget": [
-      "starter",
-      "entry"
+      "starter"
     ],
     "identity": [
       "set",
@@ -4091,8 +4065,7 @@ export const BRANDS = {
       "soccer"
     ],
     "budget": [
-      "starter",
-      "entry"
+      "starter"
     ],
     "identity": [
       "set",
@@ -4154,7 +4127,7 @@ export const BRANDS = {
       "nonsport"
     ],
     "budget": [
-      "entry"
+      "mid_low"
     ],
     "identity": [
       "nostalgia",
@@ -4183,7 +4156,7 @@ export const BRANDS = {
       "nba"
     ],
     "budget": [
-      "high"
+      "mid_high"
     ],
     "identity": [
       "premium"
@@ -4212,7 +4185,8 @@ export const BRANDS = {
       "soccer"
     ],
     "budget": [
-      "mid_low"
+      "mid_low",
+      "mid_high"
     ],
     "identity": [
       "set"
@@ -4244,8 +4218,7 @@ export const BRANDS = {
       "ufc"
     ],
     "budget": [
-      "mid_low",
-      "mid_high"
+      "mid_low"
     ],
     "identity": [
       "premium",
@@ -4304,7 +4277,7 @@ export const BRANDS = {
       "ent"
     ],
     "budget": [
-      "mid_high"
+      "mid_low"
     ],
     "identity": [
       "set"
@@ -4334,7 +4307,7 @@ export const BRANDS = {
       "nfl"
     ],
     "budget": [
-      "mid_high"
+      "mid_low"
     ],
     "identity": [
       "premium"
@@ -4363,6 +4336,7 @@ export const BRANDS = {
       "nba"
     ],
     "budget": [
+      "mid_high",
       "high"
     ],
     "identity": [
@@ -4394,7 +4368,8 @@ export const BRANDS = {
       "ufc"
     ],
     "budget": [
-      "high"
+      "high",
+      "ultra"
     ],
     "identity": [
       "premium"
@@ -4452,8 +4427,7 @@ export const BRANDS = {
       "nonsport"
     ],
     "budget": [
-      "mid_low",
-      "mid_high"
+      "mid_low"
     ],
     "identity": [
       "nostalgia",
@@ -4483,7 +4457,8 @@ export const BRANDS = {
       "nba"
     ],
     "budget": [
-      "ultra"
+      "mid_high",
+      "high"
     ],
     "identity": [
       "premium"
@@ -4514,7 +4489,6 @@ export const BRANDS = {
       "nonsport"
     ],
     "budget": [
-      "mid_low",
       "mid_high"
     ],
     "identity": [
@@ -4577,7 +4551,7 @@ export const BRANDS = {
       "ent"
     ],
     "budget": [
-      "high"
+      "mid_low"
     ],
     "identity": [
       "set",
@@ -4609,9 +4583,7 @@ export const BRANDS = {
       "ent"
     ],
     "budget": [
-      "entry",
-      "mid_low",
-      "mid_high"
+      "mid_low"
     ],
     "identity": [
       "nostalgia",
@@ -4643,7 +4615,7 @@ export const BRANDS = {
       "soccer"
     ],
     "budget": [
-      "entry"
+      "mid_low"
     ],
     "identity": [
       "set"
@@ -4673,7 +4645,7 @@ export const BRANDS = {
       "soccer"
     ],
     "budget": [
-      "high"
+      "mid_high"
     ],
     "identity": [
       "premium"
@@ -4702,6 +4674,7 @@ export const BRANDS = {
       "ent"
     ],
     "budget": [
+      "mid_low",
       "mid_high"
     ],
     "identity": [
@@ -4732,7 +4705,7 @@ export const BRANDS = {
       "soccer"
     ],
     "budget": [
-      "mid_high"
+      "mid_low"
     ],
     "identity": [
       "premium"
