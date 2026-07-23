@@ -16,6 +16,15 @@ function submitResult(matchKey) {
 // All brand copy eventually comes from Airtable text typed by the team — escape before innerHTML.
 function esc(s) { return String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])); }
 
+// Brand wall: the tiny inline placeholder paints instantly (styles.css);
+// the full collage fades in only once fully decoded, so it never renders
+// half-downloaded and never competes with the app code as a preload.
+{
+  const wall = new Image();
+  wall.src = matchMedia("(max-width:700px)").matches ? "img/brand-wall-mobile.webp" : "img/brand-wall.webp";
+  (wall.decode ? wall.decode() : Promise.resolve()).catch(() => {}).then(() => document.body.classList.add("wall-ready"));
+}
+
 // ─── STATE ────────────────────────────────────────────────────────────────────
 let qIdx = 0;
 // answers[id] = string (single) or ordered array (ranked multi)
