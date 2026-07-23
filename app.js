@@ -228,14 +228,21 @@ function runSpinReveal(b) {
   }
   // Decode faces BEFORE spinning (capped wait): mid-spin src swaps on
   // undecoded PNGs skip faces entirely, and an undecoded match face left the
-  // previous product on screen for a beat at landing. The match image is
-  // always fully decoded before the wheel starts; the rest get 900ms.
+  // previous product on screen for a beat at landing. The first face and the
+  // match are always fully decoded before the wheel starts; the rest get
+  // 900ms. The card stays hidden while it waits — an src-less 200px img
+  // painted as an empty white-bordered square.
+  card.style.visibility = "hidden";
   const dec = src => { const i = new Image(); i.src = src; return i.decode ? i.decode().catch(() => {}) : Promise.resolve(); };
-  Promise.all([
+  const ready = Promise.all([
+    dec(faces[0]),
     b.img ? dec(b.img) : Promise.resolve(),
     Promise.race([Promise.all(faces.filter(Boolean).map(dec)), new Promise(r => setTimeout(r, 900))]),
-  ]).then(() => {
+  ]);
+  // 1.6s ceiling: a stalled network must never soft-lock the reveal
+  Promise.race([ready, new Promise(r => setTimeout(r, 1600))]).then(() => {
     img.src = faces[0];
+    card.style.visibility = "";
     requestAnimationFrame(frame);
   });
 }
