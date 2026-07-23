@@ -770,10 +770,10 @@ function wireCard() {
   document.getElementById("chevL")?.addEventListener("click", () => { if (deckIdx > 0) goTo(deckIdx - 1, 140); });
   document.getElementById("chevR")?.addEventListener("click", () => goTo(deckIdx + 1, -140));
 
-  let startX = 0, baseX = 0, dx = 0, dragging = false;
+  let startX = 0, startY = 0, baseX = 0, dx = 0, dragging = false;
   el.addEventListener("pointerdown", e => {
     if (e.target.closest("button")) return; // buttons click normally
-    dragging = true; startX = e.clientX; dx = 0;
+    dragging = true; startX = e.clientX; startY = e.clientY; dx = 0;
     const t = getComputedStyle(el).transform;
     baseX = t && t !== "none" ? new DOMMatrixReadOnly(t).m41 : 0;
     try { el.setPointerCapture(e.pointerId); } catch {}
@@ -797,14 +797,22 @@ function wireCard() {
     }
     if (intent === "h") e.preventDefault();
   }, { passive: false });
-  const end = () => {
+  const end = e => {
     if (!dragging) return;
     dragging = false;
     const x = baseX + dx;
     el.style.transition = "transform .3s cubic-bezier(.2,.9,.3,1.2), opacity .3s ease";
     if (x < -80) goTo(deckIdx + 1, -140);
     else if (x > 80 && deckIdx > 0) goTo(deckIdx - 1, 140);
-    else { el.style.transform = ""; }
+    else {
+      el.style.transform = "";
+      // A tap (not a drag) anywhere on the card opens the details on touch
+      // screens: testers keep tapping the product image expecting more info.
+      // Expand only — closing stays on the Show Less button, so a stray tap
+      // mid-read can't slam it shut. pointercancel (scroll takeover) is not a tap.
+      if (e.type === "pointerup" && e.pointerType === "touch" && !expanded &&
+          Math.abs(dx) < 6 && Math.abs(e.clientY - startY) < 6) setExpanded(true);
+    }
   };
   el.addEventListener("pointerup", end);
   el.addEventListener("pointercancel", end);
