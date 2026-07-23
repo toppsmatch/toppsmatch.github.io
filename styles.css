@@ -135,7 +135,10 @@ h1 em{font-style:normal;color:var(--red)}
 .wc-text{font-family:var(--serif);font-style:italic;font-size:14px;color:#DDE0E0;line-height:1.6}
 .wc-text strong{color:#fff;font-family:var(--sans);font-style:normal}
 
-.btn-restart{width:100%;padding:14px;background:transparent;border:2px solid rgba(255,255,255,.55);color:#fff;border-radius:8px;font-size:13px;font-family:var(--sans);font-weight:600;cursor:pointer;transition:all .15s;margin-top:4px}
+/* Found your match -> go buy it: the official Topps store locator */
+.btn-shops{display:block;width:100%;padding:15px;background:var(--red);color:#fff;text-align:center;text-decoration:none;border-radius:8px;font-size:14px;font-family:var(--sans);font-weight:700;transition:opacity .15s;margin-top:10px}
+.btn-shops:hover{opacity:.88}
+.btn-restart{width:100%;padding:14px;background:transparent;border:2px solid rgba(255,255,255,.55);color:#fff;border-radius:8px;font-size:13px;font-family:var(--sans);font-weight:600;cursor:pointer;transition:all .15s;margin-top:10px}
 .btn-restart:hover{background:rgba(255,255,255,.08)}
 .hidden{display:none!important}
 
