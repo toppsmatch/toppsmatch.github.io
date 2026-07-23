@@ -183,6 +183,7 @@ function runSpinReveal(b) {
     const calm = others.slice(0, 4);
     if (!calm.length) { land(); return; }
     calm.forEach(src => { new Image().src = src; });
+    if (b.img) { const i = new Image(); i.src = b.img; i.decode?.().catch(() => {}); } // landing shot decodes during the crossfades
     img.style.transition = "opacity .16s ease";
     let k = -1;
     (function step() {
@@ -201,9 +202,7 @@ function runSpinReveal(b) {
   }
   const TURNS = 5; // 10 half-turn face swaps
   const faces = others.slice(0, TURNS * 2);
-  faces.forEach(src => { new Image().src = src; }); // warm the cache
   faces.push(b.img || null); // null face = the namecard shows at landing
-  img.src = faces[0];
 
   const DUR = 2800, TOTAL = TURNS * 360;
   const ease = t => 1 - Math.pow(1 - t, 3);
@@ -227,7 +226,18 @@ function runSpinReveal(b) {
     if (t < 1) requestAnimationFrame(frame);
     else land();
   }
-  requestAnimationFrame(frame);
+  // Decode faces BEFORE spinning (capped wait): mid-spin src swaps on
+  // undecoded PNGs skip faces entirely, and an undecoded match face left the
+  // previous product on screen for a beat at landing. The match image is
+  // always fully decoded before the wheel starts; the rest get 900ms.
+  const dec = src => { const i = new Image(); i.src = src; return i.decode ? i.decode().catch(() => {}) : Promise.resolve(); };
+  Promise.all([
+    b.img ? dec(b.img) : Promise.resolve(),
+    Promise.race([Promise.all(faces.filter(Boolean).map(dec)), new Promise(r => setTimeout(r, 900))]),
+  ]).then(() => {
+    img.src = faces[0];
+    requestAnimationFrame(frame);
+  });
 }
 
 // Confetti loops for as long as the reveal is up (Gus's call, July 17: the
