@@ -16,14 +16,6 @@ function submitResult(matchKey) {
 // All brand copy eventually comes from Airtable text typed by the team — escape before innerHTML.
 function esc(s) { return String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])); }
 
-// Brand wall: the tiny inline placeholder paints instantly (styles.css);
-// the full collage fades in only once fully decoded, so it never renders
-// half-downloaded and never competes with the app code as a preload.
-{
-  const wall = new Image();
-  wall.src = matchMedia("(max-width:700px)").matches ? "img/brand-wall-mobile.webp" : "img/brand-wall.webp";
-  (wall.decode ? wall.decode() : Promise.resolve()).catch(() => {}).then(() => document.body.classList.add("wall-ready"));
-}
 
 // ─── STATE ────────────────────────────────────────────────────────────────────
 let qIdx = 0;
@@ -182,7 +174,10 @@ function runSpinReveal(b) {
     sharePromise = buildShareCard(b, lastResults.top[0].pct).catch(() => null);
   };
   // Faces the spin flashes through: other products, the match itself last.
-  const others = Object.values(BRANDS).filter(o => o.img && o.img !== b.img).map(o => o.img);
+  // Mid-spin faces use 400px webp thumbs (~25KB vs ~600KB full PNGs) so the
+  // wheel streams full variety on any connection; only the landing is full-res.
+  const thumb = src => src.replace(/^img\//, "img/thumbs/").replace(/\.png$/, ".webp");
+  const others = Object.values(BRANDS).filter(o => o.img && o.img !== b.img).map(o => thumb(o.img));
   for (let i = others.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [others[i], others[j]] = [others[j], others[i]]; }
 
   // Reduced motion (common iPhone accessibility setting): no 3D spin, but the
@@ -209,9 +204,33 @@ function runSpinReveal(b) {
     })();
     return;
   }
-  const TURNS = 5; // 10 half-turn face swaps
-  const faces = others.slice(0, TURNS * 2);
-  faces.push(b.img || null); // null face = the namecard shows at landing
+  // READY-POOL WHEEL. The old design swapped src through a fixed face list
+  // mid-spin and prayed each PNG was decoded in time — on phones it never
+  // reliably was (blank flashes, skipped faces, empty stage: pick a browser,
+  // pick a failure). The wheel now draws every face from a pool that only
+  // contains FULLY DECODED images, filled in the background. By construction
+  // it cannot show a blank or half-loaded face. The pool keeps growing while
+  // the wheel spins, so variety improves with every half-turn.
+  const TURNS = 5; // 10 half-turn face swaps, then the match
+  const LAST = TURNS * 2;
+  // ready(src, cb): fire cb exactly once when the image is usable. decode()
+  // is the ideal signal but hangs/rejects on some engines, so the load event
+  // is a fallback — a loaded-but-undecoded face beats an absent one.
+  const ready = (src, cb, priority) => {
+    const im = new Image();
+    if (priority) im.fetchPriority = "high";
+    let done = false;
+    const fire = () => { if (!done) { done = true; cb(); } };
+    im.onload = () => setTimeout(fire, 50); // grace for decode-on-paint
+    im.src = src;
+    if (im.decode) im.decode().then(fire, () => setTimeout(fire, 120));
+  };
+  let matchReady = !b.img; // no art: the namecard is always "ready"
+  if (b.img) ready(b.img, () => { matchReady = true; }, true); // match first, highest priority
+  const pool = [];
+  others.slice(0, 24).forEach(src => ready(src, () => pool.push(src)));
+  let poolIdx = 0;
+  const nextFace = () => pool.length ? pool[poolIdx++ % pool.length] : null;
 
   const DUR = 2800, TOTAL = TURNS * 360;
   const ease = t => 1 - Math.pow(1 - t, 3);
@@ -220,12 +239,14 @@ function runSpinReveal(b) {
     if (start === null) start = now;
     const t = Math.min((now - start) / DUR, 1);
     const deg = ease(t) * TOTAL;
-    const face = Math.min(Math.floor((deg + 90) / 180), faces.length - 1);
+    const face = Math.min(Math.floor((deg + 90) / 180), LAST);
     if (face !== lastFace) {
       lastFace = face;
-      const src = faces[face];
-      if (src) { img.src = src; img.style.display = ""; namecard.style.display = "none"; }
-      else { img.style.display = "none"; namecard.style.display = "flex"; }
+      // final face: the match itself, but only once decoded (else one more
+      // pool face fills the beat and land() completes the swap)
+      const src = face >= LAST ? (matchReady ? b.img : nextFace()) : nextFace();
+      if (face >= LAST && !b.img) { img.style.display = "none"; namecard.style.display = "flex"; }
+      else if (src) { img.src = src; img.style.display = ""; namecard.style.display = "none"; }
     }
     const m = deg % 360;
     const flip = (m > 90 && m < 270) ? "rotateY(180deg)" : "";
@@ -235,20 +256,19 @@ function runSpinReveal(b) {
     if (t < 1) requestAnimationFrame(frame);
     else land();
   }
-  // Warm every face (match included) in the background, but gate the wheel
-  // ONLY on the first face with a short ceiling. Safari's decode() is far
-  // slower than Chromium's on big PNGs — gating on all of them held an empty
-  // stage for 1.5s+. The match warms from t0 and has the whole 2.8s spin to
-  // finish, so the landing stays correct; the card stays hidden briefly so an
-  // src-less img never paints as an empty white square.
+  // start as soon as the first face is decoded (600ms ceiling so a dead
+  // network can't hold the stage); hidden until then so an src-less img
+  // never paints as an empty white square
   card.style.visibility = "hidden";
-  const dec = src => { const i = new Image(); i.src = src; return i.decode ? i.decode().catch(() => {}) : Promise.resolve(); };
-  const warm = faces.filter(Boolean).map(dec);
-  Promise.race([warm[0] ?? Promise.resolve(), new Promise(r => setTimeout(r, 600))]).then(() => {
-    img.src = faces[0];
-    card.style.visibility = "";
-    requestAnimationFrame(frame);
-  });
+  const t0 = performance.now();
+  (function waitFirst() {
+    if (pool.length || performance.now() - t0 > 600) {
+      const first = nextFace() || others[0]; // dead-network fallback: progressive render beats nothing
+      if (first) img.src = first;
+      card.style.visibility = "";
+      requestAnimationFrame(frame);
+    } else requestAnimationFrame(waitFirst);
+  })();
 }
 
 // Confetti loops for as long as the reveal is up (Gus's call, July 17: the
