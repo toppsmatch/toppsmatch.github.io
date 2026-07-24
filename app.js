@@ -16,6 +16,11 @@ function submitResult(matchKey) {
 // All brand copy eventually comes from Airtable text typed by the team — escape before innerHTML.
 function esc(s) { return String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])); }
 
+// 400px webp thumb for any product image: card faces and the spin wheel show
+// at <=200px, so thumbs (~25KB) are sharper than needed and load instantly —
+// full PNGs (~600KB) streamed in mid-animation as ugly partial slivers.
+const thumbSrc = src => src.replace(/^img\//, "img/thumbs/").replace(/\.png$/, ".webp");
+
 
 // ─── STATE ────────────────────────────────────────────────────────────────────
 let qIdx = 0;
@@ -176,8 +181,7 @@ function runSpinReveal(b) {
   // Faces the spin flashes through: other products, the match itself last.
   // Mid-spin faces use 400px webp thumbs (~25KB vs ~600KB full PNGs) so the
   // wheel streams full variety on any connection; only the landing is full-res.
-  const thumb = src => src.replace(/^img\//, "img/thumbs/").replace(/\.png$/, ".webp");
-  const others = Object.values(BRANDS).filter(o => o.img && o.img !== b.img).map(o => thumb(o.img));
+  const others = Object.values(BRANDS).filter(o => o.img && o.img !== b.img).map(o => thumbSrc(o.img));
   for (let i = others.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [others[i], others[j]] = [others[j], others[i]]; }
 
   // Reduced motion (common iPhone accessibility setting): no 3D spin, but the
@@ -524,7 +528,7 @@ function buildDeck() {
   // pre-decode every deck image so card flips repaint without an iOS decode flash
   deck.forEach(c => {
     const src = BRANDS[c.key]?.img;
-    if (src) { const im = new Image(); im.src = src; im.decode?.().catch(() => {}); }
+    if (src) { const im = new Image(); im.src = thumbSrc(src); im.decode?.().catch(() => {}); }
   });
 }
 
@@ -539,7 +543,7 @@ const ICONS = {
 function cardInner(card, deco = false) {
   const b = BRANDS[card.key];
   const img = b.img
-    ? `<img class="sc-img" src="${esc(b.img)}" alt="${esc(b.name)}" loading="eager" decoding="sync">`
+    ? `<img class="sc-img" src="${esc(thumbSrc(b.img))}" alt="${esc(b.name)}" loading="eager" decoding="sync">`
     : `<div class="sc-img sc-img-none">🃏</div>`;
   const pct = card.pct != null
     ? `<div class="sc-pct">${card.pct}% match</div>`
@@ -636,7 +640,7 @@ function renderListView() {
       <div class="match-body">
         <div class="match-row">
           <div class="match-id">
-            ${b.img ? `<img class="match-img" src="${esc(b.img)}" alt="${esc(b.name)}" loading="lazy">` : ""}
+            ${b.img ? `<img class="match-img" src="${esc(thumbSrc(b.img))}" alt="${esc(b.name)}" loading="lazy">` : ""}
             <div>
               <div class="match-name">${esc(b.name)}</div>
               <div class="match-tier">${esc((b.tier || "").split("|")[0].trim())}</div>
@@ -702,10 +706,21 @@ function setExpanded(v) {
 // Carousel navigation with deck-physics: going forward the card flies out
 // and tucks into the BACK of the pile; going back the previous card rises
 // from the pile to the front. flyX < 0 means forward.
+let settleNav = null; // hard-finishes the in-flight flip; overlapping flips compound transforms
+// Step relative to where the deck ACTUALLY is: a tap that lands mid-flip must
+// settle the flip first, then step from the settled index — computing the
+// target from a stale deckIdx made rapid taps eat inputs.
+function goStep(delta, flyX) {
+  if (settleNav) settleNav();
+  const t = deckIdx + delta;
+  if (t < 0 || t >= deck.length) return;
+  goTo(t, flyX);
+}
 function goTo(i, flyX) {
+  if (settleNav) settleNav(); // settle the previous flip's end state FIRST (fresh DOM below)
   const el = document.getElementById("swipeCard");
   const deckEl = document.getElementById("deckEl");
-  const land = () => { deckIdx = i; expanded = false; renderCard(); };
+  const land = () => { settleNav = null; deckIdx = i; expanded = false; renderCard(); };
   if (!el || !deckEl || matchMedia("(prefers-reduced-motion: reduce)").matches) { land(); return; }
   if (expanded) setExpanded(false); // details retract as the card leaves
   if (flyX < 0) {
@@ -715,7 +730,9 @@ function goTo(i, flyX) {
     const fan1T = fan1 ? getComputedStyle(fan1).transform : null;
     el.style.transition = "transform .2s ease-in";
     el.style.transform = "translateX(-115%) rotate(-10deg)";
-    setTimeout(() => {
+    let tuckTimer = 0, landTimer = 0;
+    settleNav = () => { clearTimeout(tuckTimer); clearTimeout(landTimer); land(); };
+    tuckTimer = setTimeout(() => {
       el.style.zIndex = "-1"; // slip beneath the sheets, fully visible the whole way
       el.style.transition = "transform .3s ease-out";
       // tuck into the back slot (keep in sync with .fan2 in styles.css)
@@ -744,7 +761,7 @@ function goTo(i, flyX) {
         fan2.style.transition = "transform .3s ease-out";
         fan2.style.transform = fan1T;
       }
-      setTimeout(land, 290);
+      landTimer = setTimeout(land, 290);
     }, 190);
   } else {
     // Honest shuffle: the returning card starts exactly where the forward
@@ -765,6 +782,7 @@ function goTo(i, flyX) {
     ghost.style.cssText = `visibility:visible;z-index:0;top:${el.offsetTop}px;height:${el.offsetHeight}px;bottom:auto;transform:${start}`;
     deckEl.insertBefore(ghost, deckEl.firstElementChild); // DOM-first at z0: painted beneath every sheet
     const safety = setTimeout(land, 1100); // never strand the deck on a missed event
+    settleNav = () => { clearTimeout(safety); land(); };
     let phase = 1;
     ghost.addEventListener("transitionend", e => {
       if (e.propertyName !== "transform") return;
@@ -809,8 +827,8 @@ function wireCard() {
   fanRO = new ResizeObserver(sizeFans);
   fanRO.observe(el);
   document.getElementById("scMore")?.addEventListener("click", () => setExpanded(!expanded));
-  document.getElementById("chevL")?.addEventListener("click", () => { if (deckIdx > 0) goTo(deckIdx - 1, 140); });
-  document.getElementById("chevR")?.addEventListener("click", () => goTo(deckIdx + 1, -140));
+  document.getElementById("chevL")?.addEventListener("click", () => goStep(-1, 140));
+  document.getElementById("chevR")?.addEventListener("click", () => goStep(1, -140));
 
   let startX = 0, startY = 0, baseX = 0, dx = 0, dragging = false;
   el.addEventListener("pointerdown", e => {
@@ -844,8 +862,8 @@ function wireCard() {
     dragging = false;
     const x = baseX + dx;
     el.style.transition = "transform .3s cubic-bezier(.2,.9,.3,1.2), opacity .3s ease";
-    if (x < -80) goTo(deckIdx + 1, -140);
-    else if (x > 80 && deckIdx > 0) goTo(deckIdx - 1, 140);
+    if (x < -80) goStep(1, -140);
+    else if (x > 80) goStep(-1, 140);
     else {
       el.style.transform = "";
       // A tap (not a drag) anywhere on the card opens the details on touch
@@ -865,8 +883,8 @@ document.addEventListener("keydown", e => {
   if (!["ArrowLeft", "ArrowRight", "ArrowDown", "ArrowUp"].includes(e.key)) return;
   const el = document.getElementById("swipeCard");
   if (!el || document.getElementById("results").classList.contains("hidden")) return;
-  if (e.key === "ArrowLeft") { if (deckIdx > 0) goTo(deckIdx - 1, 140); }
-  else if (e.key === "ArrowRight") goTo(deckIdx + 1, -140);
+  if (e.key === "ArrowLeft") goStep(-1, 140);
+  else if (e.key === "ArrowRight") goStep(1, -140);
   else if (e.key === "ArrowDown") { e.preventDefault(); if (!expanded) setExpanded(true); }
   else { e.preventDefault(); if (expanded) setExpanded(false); }
 });
