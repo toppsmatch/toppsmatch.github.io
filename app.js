@@ -536,7 +536,7 @@ const ICONS = {
   up: `<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 14.5l7-7 7 7"/></svg>`,
 };
 
-function cardInner(card) {
+function cardInner(card, deco = false) {
   const b = BRANDS[card.key];
   const img = b.img
     ? `<img class="sc-img" src="${esc(b.img)}" alt="${esc(b.name)}" loading="eager" decoding="sync">`
@@ -563,7 +563,7 @@ function cardInner(card) {
         <span class="tag price">📦 ${esc(b.price)}</span>
         ${(b.tags || []).map(t => `<span class="tag">${esc(t)}</span>`).join("")}
       </div>
-    </div></div>`;
+    </div></div>${deco ? '<button class="more-toggle" tabindex="-1" aria-hidden="true">Learn more \u25be</button>' : ""}`;
 }
 
 function renderCard() {
@@ -582,7 +582,7 @@ function renderCard() {
   // the sheet under the top card is ALWAYS the next card down: the card you
   // return to comes from the bottom of the pile, never from under the top
   const underNext = next
-    ? `<div class="fan fan-under fan-next${next.pct == null ? " wild" : ""}">${cardInner(next)}</div>`
+    ? `<div class="fan fan-under fan-next${next.pct == null ? " wild" : ""}">${cardInner(next, true)}</div>`
     : `<div class="fan fan-under fan-next fan-lineup"><div class="fan-lineup-in">Your full lineup ↓</div></div>`;
   host.innerHTML = `
     <div class="deck" id="deckEl">
@@ -734,7 +734,7 @@ function goTo(i, flyX) {
       if (fan1 && underT) {
         if (deck[i + 1]) {
           fan1.classList.add("fade-content");
-          fan1.innerHTML = cardInner(deck[i + 1]);
+          fan1.innerHTML = cardInner(deck[i + 1], true);
           requestAnimationFrame(() => fan1.classList.remove("fade-content"));
         }
         fan1.style.transition = "transform .3s ease-out";
@@ -756,7 +756,7 @@ function goTo(i, flyX) {
     const isWild = deck[i].pct == null;
     const ghost = document.createElement("div");
     ghost.className = "fan card-ghost" + (isWild ? " wild" : "");
-    ghost.innerHTML = cardInner(deck[i]);
+    ghost.innerHTML = cardInner(deck[i], true);
     el.style.zIndex = "2"; // the dragged card glides home above the traveler
     el.style.transition = "transform .25s ease";
     el.style.transform = "";
@@ -851,7 +851,7 @@ function wireCard() {
       // screens: testers keep tapping the product image expecting more info.
       // Expand only — closing stays on the Show Less button, so a stray tap
       // mid-read can't slam it shut. pointercancel (scroll takeover) is not a tap.
-      if (e.type === "pointerup" && e.pointerType === "touch" && !expanded &&
+      if (e.type === "pointerup" && !expanded &&
           Math.abs(dx) < 6 && Math.abs(e.clientY - startY) < 6) setExpanded(true);
     }
   };
@@ -861,11 +861,13 @@ function wireCard() {
 
 // Laptop support: ← → arrow keys page through the deck.
 document.addEventListener("keydown", e => {
-  if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+  if (!["ArrowLeft", "ArrowRight", "ArrowDown", "ArrowUp"].includes(e.key)) return;
   const el = document.getElementById("swipeCard");
   if (!el || document.getElementById("results").classList.contains("hidden")) return;
   if (e.key === "ArrowLeft") { if (deckIdx > 0) goTo(deckIdx - 1, 140); }
-  else goTo(deckIdx + 1, -140);
+  else if (e.key === "ArrowRight") goTo(deckIdx + 1, -140);
+  else if (e.key === "ArrowDown") { e.preventDefault(); if (!expanded) setExpanded(true); }
+  else { e.preventDefault(); if (expanded) setExpanded(false); }
 });
 
 function restart(){
