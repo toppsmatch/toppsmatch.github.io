@@ -775,7 +775,8 @@ function goTo(i, flyX) {
         ghost.style.transform = "translate(-50%,0) rotate(0deg) scale(1)";
         // the stack shifts down one position underneath the landing card
         el.style.transition = "transform .22s ease-out";
-        el.style.transform = "translateY(2px) rotate(-.6deg) scale(.985)";
+        el.style.transformOrigin = "50% 100%"; // sink about the bottom: the button zone stays put
+        el.style.transform = "rotate(-.6deg) scale(.985)";
         el.querySelectorAll(".chev").forEach(c => { c.style.transition = "opacity .2s"; c.style.opacity = "0"; });
         if (fanU && fan1) {
           fanU.classList.add("fade-content");
