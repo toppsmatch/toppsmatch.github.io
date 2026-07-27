@@ -95,7 +95,7 @@ h1 em{font-style:normal;color:var(--red)}
   .pill-track{animation:none;flex-wrap:wrap;justify-content:center;width:auto}
   .pill-track .pill:nth-child(n+15){display:none} /* hide the duplicate half */
 }
-.pill{font-size:11px;font-weight:700;padding:4px 10px;border-radius:999px;background:#fff;color:var(--blue);white-space:nowrap;margin-right:6px}
+.pill{display:inline-flex;align-items:center;line-height:1;font-size:11px;font-weight:700;padding:5px 10px;border-radius:999px;background:#fff;color:var(--blue);white-space:nowrap;margin-right:6px}
 .btn-start{width:100%;padding:17px;background:var(--red);color:#fff;border:none;border-radius:8px;font-size:15px;font-family:var(--sans);font-weight:700;cursor:pointer;transition:opacity .15s}
 .btn-start:hover{opacity:.88}
 .btn-start:disabled{opacity:.4;cursor:default}
@@ -115,7 +115,7 @@ h1 em{font-style:normal;color:var(--red)}
 .match-row{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:12px}
 .match-name{font-size:18px;font-weight:800;line-height:1.2;color:var(--blue)}
 .match-tier{font-size:10px;color:var(--grey);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-top:4px}
-.match-cat{display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:999px;margin-top:6px;letter-spacing:.5px}
+.match-cat{display:inline-flex;align-items:center;line-height:1;font-size:10px;font-weight:700;padding:4px 10px;border-radius:999px;margin-top:6px;letter-spacing:.5px}
 .cat-sport,.cat-ent,.cat-nonsport{background:rgba(9,31,64,.09);color:var(--blue)}
 .score-col{text-align:right;flex-shrink:0}
 .score-num{font-size:28px;font-weight:900;color:var(--red);line-height:1}
@@ -126,7 +126,7 @@ h1 em{font-style:normal;color:var(--red)}
 .match:not(.top) .bar{background:var(--blue)}
 .match-desc{font-size:13px;color:var(--grey);line-height:1.65;margin-bottom:14px}
 .tags{display:flex;flex-wrap:wrap;gap:5px}
-.tag{font-size:10px;font-weight:700;padding:3px 9px;border-radius:999px;background:#fff;color:var(--grey)}
+.tag{display:inline-flex;align-items:center;line-height:1;font-size:10px;font-weight:700;padding:4px 9px;border-radius:999px;background:#fff;color:var(--grey)}
 .tag.price{background:rgba(9,31,64,.10);color:var(--blue)}
 
 .section-lbl{font-size:10px;font-weight:800;letter-spacing:2px;color:#B9C4D9;text-transform:uppercase;margin:18px 0 10px;padding:0 2px}
