@@ -590,7 +590,7 @@ function renderCard() {
       <div class="fan fan1"></div>
       ${underNext}
       <div class="swipe-card${card.pct == null ? " wild" : ""}${firstDeckRender ? "" : " no-anim"}" id="swipeCard">
-        <button class="chev chev-l" id="chevL" aria-label="Previous match"${deckIdx === 0 ? " disabled" : ""}>‹</button>
+        <button class="chev chev-l" id="chevL" aria-label="${deckIdx === 0 ? "Back to your match reveal" : "Previous match"}">‹</button>
         <button class="chev chev-r" id="chevR" aria-label="Next match">›</button>
         ${cardInner(card)}
         <button class="more-toggle" id="scMore">Learn more ▾</button>
@@ -705,10 +705,21 @@ let settleNav = null; // hard-finishes the in-flight flip; overlapping flips com
 function goStep(delta, flyX) {
   if (settleNav) settleNav();
   const t = deckIdx + delta;
+  // back past the first card returns to the It's-a-Match reveal
+  if (t === -1) { backToReveal(); return; }
   // t === deck.length is a REAL destination: one past the wildcard = the full
   // lineup list view (renderCard hands off to renderListView there)
   if (t < 0 || t > deck.length) return;
   goTo(t, flyX);
+}
+
+// Reverse of meetMatch: the reveal is still in the DOM in its landed state,
+// so stepping back from card 1 just lifts the curtain again.
+function backToReveal() {
+  document.getElementById("results").classList.add("hidden");
+  document.body.classList.remove("in-results");
+  document.documentElement.style.overflow = "hidden";
+  document.getElementById("reveal").classList.remove("hidden");
 }
 function goTo(i, flyX) {
   if (settleNav) settleNav(); // settle the previous flip's end state FIRST (fresh DOM below)
