@@ -548,9 +548,6 @@ function cardInner(card, deco = false) {
   const pct = card.pct != null
     ? `<div class="sc-pct">${card.pct}% match</div>`
     : `<div class="sc-pct sc-pct-wild">outside your usual lane</div>`;
-  const teaser =
-    (b.lookingFor ? `<div class="profile-line">💚 ${esc(b.lookingFor)}</div>` : "") +
-    (b.redFlag ? `<div class="profile-line">🚩 ${esc(b.redFlag)}</div>` : "");
   // Detail is ALWAYS in the DOM; .expanded reveals it with a pure-CSS height
   // transition. No re-render on expand/collapse = drags stay smooth.
   return `
@@ -561,7 +558,6 @@ function cardInner(card, deco = false) {
     <div class="sc-cat"><span class="match-cat ${catClass(b.cat)}">${esc(b.catLabel)}</span></div>
     ${pct}
     <div class="sc-detail"><div class="sc-detail-in">
-      ${teaser}
       <div class="match-desc">${esc(b.desc)}</div>
       <div class="tags">
         <span class="tag price">📦 ${esc(b.price)}</span>
@@ -631,9 +627,6 @@ function renderListView() {
   top.forEach((m, i) => {
     const b = BRANDS[m.key];
     if (!b) return;
-    const profile =
-      (b.lookingFor ? `<div class="profile-line">💚 ${esc(b.lookingFor)}</div>` : "") +
-      (b.redFlag ? `<div class="profile-line">🚩 ${esc(b.redFlag)}</div>` : "");
     html += `
     <div class="match${i === 0 ? " top" : ""}">
       <div class="match-banner${i === 0 ? "" : " alt"}">${labels[i] || "Another Match"}</div>
@@ -654,7 +647,6 @@ function renderListView() {
         </div>
         <div class="bar-wrap"><div class="bar" style="width:${m.pct}%"></div></div>
         <div class="match-desc">${esc(b.desc)}</div>
-        ${profile}
         <div class="tags">
           <span class="tag price">📦 ${esc(b.price)}</span>
           ${(b.tags || []).map(t => `<span class="tag">${esc(t)}</span>`).join("")}

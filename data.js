@@ -1888,8 +1888,6 @@ export const BRANDS = {
     "catLabel": "Fun & Games",
     "price": "$125–$450/box",
     "desc": "Since 1985, Garbage Pail Kids has been gross, irreverent, and absolutely iconic. The satirical sticker line still commands massive passion across generations, from vintage restoration sets to new annual releases. Its community is one of the most fiercely devoted in the hobby.",
-    "lookingFor": "Someone who never fully grew up and is proud of it.",
-    "redFlag": "Gross-out humor is not a phase. It's a lifestyle.",
     "tags": [
       "GPK",
       "Non-Sport",
@@ -2429,8 +2427,6 @@ export const BRANDS = {
     "catLabel": "Baseball",
     "price": "$385–$400/box",
     "desc": "The universal crowd-pleaser. Chrome takes the flagship set and supercharges it, rainbow refractors, rookie auto parallels, and a pull-rate that keeps you ripping. If you want one product that does everything well, this is it.",
-    "lookingFor": "Someone who appreciates a good refractor and isn't afraid of a little shine.",
-    "redFlag": "Will make you check eBay comps at 1am.",
     "tags": [
       "Baseball",
       "Refractors",
@@ -3233,8 +3229,6 @@ export const BRANDS = {
     "catLabel": "Baseball",
     "price": "$500–$650/box",
     "desc": "Bowman elevated. Chrome technology turns prospect autos into shimmering refractors. The most popular prospecting product in the hobby, enormous community, massive lottery pull rates, and the most coveted prospect autos in baseball.",
-    "lookingFor": "A believer. Someone who falls in love with potential.",
-    "redFlag": "Talks about prospects you've never heard of like you know them.",
     "tags": [
       "Baseball",
       "Chrome",
@@ -3329,8 +3323,6 @@ export const BRANDS = {
     "catLabel": "Baseball",
     "price": "$160–$190/box",
     "desc": "A love letter to the golden age of the hobby. Heritage recreates iconic classic Topps designs from decades past, the 1968 wood grain, the 1975 two-tone, with today's players. Pure nostalgia with modern collectibility.",
-    "lookingFor": "An old soul who thinks they were born in the wrong decade.",
-    "redFlag": "Will explain the 1975 two-tone design at parties. Repeatedly.",
     "tags": [
       "Baseball",
       "Retro",
