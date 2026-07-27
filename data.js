@@ -92,7 +92,7 @@ export const BRANDS = {
     "img": "img/sw_sapphire.png"
   },
   "t205": {
-    "name": "Topps T205",
+    "name": "Topps T205 Baseball",
     "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "Baseball",
@@ -121,7 +121,7 @@ export const BRANDS = {
     "img": "img/t205.png"
   },
   "tribute": {
-    "name": "Topps Tribute",
+    "name": "Topps Tribute Baseball",
     "tier": "Ultra High-End",
     "cat": "sport",
     "catLabel": "Baseball",
@@ -375,7 +375,7 @@ export const BRANDS = {
     "img": "img/marvel.png"
   },
   "gypsy_queen": {
-    "name": "Topps Gypsy Queen",
+    "name": "Topps Gypsy Queen Baseball",
     "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "Baseball",
@@ -407,7 +407,7 @@ export const BRANDS = {
     "img": "img/gypsy_queen.png"
   },
   "pro_debut": {
-    "name": "Topps Pro Debut",
+    "name": "Topps Pro Debut Baseball",
     "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "Baseball",
@@ -493,7 +493,7 @@ export const BRANDS = {
     "img": "img/inception_ucl.png"
   },
   "bowman_draft_sapphire": {
-    "name": "Bowman Draft Sapphire Edition",
+    "name": "Bowman Draft Sapphire Edition Baseball",
     "tier": "High-End",
     "cat": "sport",
     "catLabel": "Baseball",
@@ -523,7 +523,7 @@ export const BRANDS = {
     "img": "img/bowman_draft_sapphire.png"
   },
   "definitive": {
-    "name": "Definitive Collection",
+    "name": "Definitive Collection Baseball",
     "tier": "Ultra High-End",
     "cat": "sport",
     "catLabel": "Baseball",
@@ -611,7 +611,7 @@ export const BRANDS = {
     "img": "img/sigclass_nfl.png"
   },
   "sapphire": {
-    "name": "Topps Chrome Sapphire Edition",
+    "name": "Topps Chrome Sapphire Edition Baseball",
     "tier": "High-End",
     "cat": "sport",
     "catLabel": "Baseball",
@@ -674,7 +674,7 @@ export const BRANDS = {
     "img": "img/disney_genesis.png"
   },
   "allen_ginter": {
-    "name": "Allen & Ginter",
+    "name": "Allen & Ginter Baseball",
     "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "Multi-Sport",
@@ -708,7 +708,7 @@ export const BRANDS = {
     "img": "img/allen_ginter.png"
   },
   "merlin": {
-    "name": "Topps Merlin",
+    "name": "Topps Merlin Soccer",
     "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "Soccer",
@@ -827,7 +827,7 @@ export const BRANDS = {
     "img": "img/veefriends_sapphire.png"
   },
   "heritage_high": {
-    "name": "Topps Heritage High Number",
+    "name": "Topps Heritage High Number Baseball",
     "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "Baseball",
@@ -915,7 +915,7 @@ export const BRANDS = {
     "img": "img/sapphire_bundesliga.png"
   },
   "chrome_cosmic": {
-    "name": "Topps Chrome Cosmic",
+    "name": "Topps Cosmic Chrome Baseball",
     "tier": "High-End",
     "cat": "sport",
     "catLabel": "Baseball",
@@ -950,7 +950,7 @@ export const BRANDS = {
     "img": "img/chrome_cosmic.png"
   },
   "graphite": {
-    "name": "Topps Graphite",
+    "name": "Topps Graphite Tennis",
     "tier": "High-End",
     "cat": "sport",
     "catLabel": "Tennis",
@@ -1011,7 +1011,7 @@ export const BRANDS = {
     "img": "img/definitive_ucl.png"
   },
   "dynasty": {
-    "name": "Topps Dynasty",
+    "name": "Topps Dynasty Baseball",
     "tier": "Ultra High-End",
     "cat": "sport",
     "catLabel": "Baseball",
@@ -1156,7 +1156,7 @@ export const BRANDS = {
     "img": "img/disney_sapphire.png"
   },
   "triple_threads": {
-    "name": "Triple Threads",
+    "name": "Triple Threads Baseball",
     "tier": "High-End",
     "cat": "sport",
     "catLabel": "Baseball",
@@ -1219,7 +1219,7 @@ export const BRANDS = {
     "img": "img/pl_flagship.png"
   },
   "match_attax": {
-    "name": "Match Attax",
+    "name": "Match Attax Soccer",
     "tier": "Entry-Level",
     "cat": "sport",
     "catLabel": "Soccer",
@@ -1251,7 +1251,7 @@ export const BRANDS = {
     "img": "img/match_attax.png"
   },
   "stadium_club": {
-    "name": "Stadium Club",
+    "name": "Stadium Club Baseball",
     "tier": "Entry-Level",
     "cat": "sport",
     "catLabel": "Baseball",
@@ -1466,7 +1466,7 @@ export const BRANDS = {
     "img": "img/finest_nba.png"
   },
   "archives": {
-    "name": "Topps Archives",
+    "name": "Topps Archives Baseball",
     "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "Baseball",
@@ -1598,7 +1598,7 @@ export const BRANDS = {
     "img": "img/marvel_collector.png"
   },
   "motif": {
-    "name": "Topps Motif",
+    "name": "Topps Motif Basketball",
     "tier": "High-End",
     "cat": "sport",
     "catLabel": "Basketball",
@@ -1629,7 +1629,7 @@ export const BRANDS = {
     "img": "img/motif.png"
   },
   "bowmans_best": {
-    "name": "Bowman's Best",
+    "name": "Bowman's Best Baseball",
     "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "Baseball",
@@ -2004,7 +2004,7 @@ export const BRANDS = {
     "img": "img/sapphire_ufc.png"
   },
   "triumphant_tennis": {
-    "name": "Topps Triumphant",
+    "name": "Topps Triumphant Tennis",
     "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "Tennis",
@@ -2067,7 +2067,7 @@ export const BRANDS = {
     "img": "img/disney.png"
   },
   "archives_sig": {
-    "name": "Topps Archives Signature Series",
+    "name": "Topps Archives Signature Series Baseball",
     "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "Baseball",
@@ -2485,7 +2485,7 @@ export const BRANDS = {
     "img": "img/sw_galaxy.png"
   },
   "museum": {
-    "name": "Museum Collection",
+    "name": "Museum Collection Baseball",
     "tier": "High-End",
     "cat": "sport",
     "catLabel": "Baseball",
@@ -2546,7 +2546,7 @@ export const BRANDS = {
     "img": "img/finest_marvel.png"
   },
   "tier_one": {
-    "name": "Topps Tier One",
+    "name": "Topps Tier One Baseball",
     "tier": "High-End",
     "cat": "sport",
     "catLabel": "Baseball",
@@ -2577,7 +2577,7 @@ export const BRANDS = {
     "img": "img/tier_one.png"
   },
   "bowman_draft": {
-    "name": "Bowman Draft",
+    "name": "Bowman Draft Baseball",
     "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "Baseball",
@@ -2737,7 +2737,7 @@ export const BRANDS = {
     "img": "img/chrome_tennis.png"
   },
   "bowman_chrome_sapphire": {
-    "name": "Bowman Chrome Sapphire Edition",
+    "name": "Bowman Chrome Sapphire Edition Baseball",
     "tier": "High-End",
     "cat": "sport",
     "catLabel": "Baseball",
@@ -2890,7 +2890,7 @@ export const BRANDS = {
     "img": "img/chrome_boxing.png"
   },
   "transcendent": {
-    "name": "Topps Transcendent",
+    "name": "Topps Transcendent Baseball",
     "tier": "Ultra High-End",
     "cat": "sport",
     "catLabel": "Baseball",
@@ -2921,7 +2921,7 @@ export const BRANDS = {
     "img": "img/transcendent.png"
   },
   "chrome_update": {
-    "name": "Topps Chrome Update Series",
+    "name": "Topps Chrome Update Series Baseball",
     "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "Baseball",
@@ -3067,7 +3067,7 @@ export const BRANDS = {
     "img": "img/chrome_black_nfl.png"
   },
   "chrome_platinum": {
-    "name": "Topps Chrome Platinum Anniversary",
+    "name": "Topps Chrome Platinum Anniversary Baseball",
     "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "Baseball",
@@ -3163,7 +3163,7 @@ export const BRANDS = {
     "img": "img/marvel_studios.png"
   },
   "sterling": {
-    "name": "Topps Sterling",
+    "name": "Topps Sterling Baseball",
     "tier": "Ultra High-End",
     "cat": "sport",
     "catLabel": "Baseball",
@@ -3223,7 +3223,7 @@ export const BRANDS = {
     "img": "img/brooklyn_cap.png"
   },
   "bowman_chrome": {
-    "name": "Bowman Chrome",
+    "name": "Bowman Chrome Baseball",
     "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "Baseball",
@@ -3317,7 +3317,7 @@ export const BRANDS = {
     "img": "img/finest_mls.png"
   },
   "heritage": {
-    "name": "Topps Heritage",
+    "name": "Topps Heritage Baseball",
     "tier": "Entry-Level",
     "cat": "sport",
     "catLabel": "Baseball",
@@ -3466,7 +3466,7 @@ export const BRANDS = {
     "img": "img/royalty_wwe.png"
   },
   "inception": {
-    "name": "Topps Inception",
+    "name": "Topps Inception Baseball",
     "tier": "High-End",
     "cat": "sport",
     "catLabel": "Baseball",
@@ -3559,7 +3559,7 @@ export const BRANDS = {
     "img": "img/universe_wwe.png"
   },
   "pristine": {
-    "name": "Topps Pristine",
+    "name": "Topps Pristine Baseball",
     "tier": "High-End",
     "cat": "sport",
     "catLabel": "Baseball",
@@ -3591,7 +3591,7 @@ export const BRANDS = {
     "img": "img/pristine.png"
   },
   "bowman_sapphire": {
-    "name": "Bowman Sapphire Edition",
+    "name": "Bowman Sapphire Edition Baseball",
     "tier": "High-End",
     "cat": "sport",
     "catLabel": "Baseball",
@@ -3739,7 +3739,7 @@ export const BRANDS = {
     "img": "img/disney_mint.png"
   },
   "gilded": {
-    "name": "Topps Gilded Collection",
+    "name": "Topps Gilded Collection Baseball",
     "tier": "Ultra High-End",
     "cat": "sport",
     "catLabel": "Baseball",
@@ -3771,7 +3771,7 @@ export const BRANDS = {
     "img": "img/gilded.png"
   },
   "flagship": {
-    "name": "Topps Series 1 / 2 / Update",
+    "name": "Topps Series 1 / 2 / Update Baseball",
     "tier": "Entry-Level",
     "cat": "sport",
     "catLabel": "Baseball",
@@ -3802,7 +3802,7 @@ export const BRANDS = {
     "img": "img/flagship.png"
   },
   "five_star": {
-    "name": "Topps Five Star",
+    "name": "Topps Five Star Baseball",
     "tier": "Ultra High-End",
     "cat": "sport",
     "catLabel": "Baseball",
@@ -3951,7 +3951,7 @@ export const BRANDS = {
     "img": "img/knockout_ucl.png"
   },
   "clearly": {
-    "name": "Topps Clearly Authentic",
+    "name": "Topps Clearly Authentic Baseball",
     "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "Baseball",
@@ -3981,7 +3981,7 @@ export const BRANDS = {
     "img": "img/clearly.png"
   },
   "holiday": {
-    "name": "Topps Holiday",
+    "name": "Topps Holiday Baseball",
     "tier": "Entry-Level",
     "cat": "sport",
     "catLabel": "Baseball",
@@ -4010,7 +4010,7 @@ export const BRANDS = {
     "img": "img/holiday.png"
   },
   "big_league": {
-    "name": "Topps Big League",
+    "name": "Topps Big League Baseball",
     "tier": "Entry-Level",
     "cat": "sport",
     "catLabel": "Baseball",
@@ -4497,7 +4497,7 @@ export const BRANDS = {
     "img": "img/veefriends.png"
   },
   "diamond_icons": {
-    "name": "Topps Diamond Icons",
+    "name": "Topps Diamond Icons Baseball",
     "tier": "Ultra High-End",
     "cat": "sport",
     "catLabel": "Baseball",
