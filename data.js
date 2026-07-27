@@ -1815,7 +1815,7 @@ export const BRANDS = {
     "img": "img/sapphire_ucc.png"
   },
   "bowman_u_best": {
-    "name": "Bowman University Best",
+    "name": "Bowman University Best Basketball",
     "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "College Sports",
@@ -1831,8 +1831,7 @@ export const BRANDS = {
     ],
     "sport": [
       "college",
-      "nba",
-      "nfl"
+      "nba"
     ],
     "budget": [
       "mid_low"
@@ -2391,7 +2390,7 @@ export const BRANDS = {
     "img": "img/finest_ufc.png"
   },
   "bowman_u": {
-    "name": "Bowman University Chrome",
+    "name": "Bowman University Chrome Football",
     "tier": "Mid-Tier",
     "cat": "sport",
     "catLabel": "College Sports",
@@ -2406,8 +2405,7 @@ export const BRANDS = {
     ],
     "sport": [
       "college",
-      "nfl",
-      "nba"
+      "nfl"
     ],
     "budget": [
       "mid_low"
@@ -2649,7 +2647,7 @@ export const BRANDS = {
     "img": "img/chrome_nba.png"
   },
   "bowman_u_sapphire": {
-    "name": "Bowman University Chrome Sapphire",
+    "name": "Bowman University Chrome Sapphire Basketball",
     "tier": "High-End",
     "cat": "sport",
     "catLabel": "College Sports",
@@ -2662,7 +2660,6 @@ export const BRANDS = {
     ],
     "sport": [
       "college",
-      "nfl",
       "nba"
     ],
     "budget": [
