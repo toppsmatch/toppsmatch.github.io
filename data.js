@@ -67,7 +67,7 @@ export const BRANDS = {
     "cat": "ent",
     "catLabel": "Entertainment",
     "price": "$275–$400/box",
-    "desc": "The full Chrome Star Wars base on all-blue Sapphire stock with four numbered parallels per box.",
+    "desc": "All-blue Sapphire Chrome for a galaxy far, far away: a 100-card base set, four numbered parallels guaranteed per box, and original cast autographs in the hunt.",
     "tags": [
       "Star Wars",
       "Sapphire",
@@ -97,7 +97,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Baseball",
     "price": "$65–$85/box",
-    "desc": "A revival of the 1911 T205 Gold Border minis with on-card autographs, sold online.",
+    "desc": "Baseball's golden age revived at throwback tobacco size: gold borders, period-inspired artistry, on-card autographs one in four boxes, and presidents tossing first pitches in the insert chase.",
     "tags": [
       "Baseball",
       "Vintage",
@@ -188,7 +188,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Multi-Sport",
     "price": "$9–$12/card",
-    "desc": "Print-to-order cards of real moments, live within 24 hours across baseball, basketball, football, soccer, F1, UFC, WWE, and college. You collect the news.",
+    "desc": "A card printed for the moment, right after it happens: on sale for as little as 24 hours, then the run locks at the exact number sold and is never printed again.",
     "tags": [
       "Baseball",
       "Soccer",
@@ -290,7 +290,7 @@ export const BRANDS = {
     "cat": "ent",
     "catLabel": "Entertainment",
     "price": "$300–$350/box",
-    "desc": "A new annual all-Chrome series themed to the galaxy's iconic planets, with shadowbox die-cuts.",
+    "desc": "A travel guide to the galaxy in card form: each edition tours iconic Star Wars planets through their characters, creatures, and ships, with four numbered parallels per box.",
     "tags": [
       "Star Wars",
       "Chrome"
@@ -318,7 +318,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Soccer",
     "price": "$260–$300/box",
-    "desc": "Finest refractors for the Champions League with two on-card autographs per box.",
+    "desc": "Champions League and Europa League stars on a rainbow of parallels, two autographs in every box, and dual autos that pair the game's greatest rivals.",
     "tags": [
       "Soccer",
       "UCL",
@@ -347,7 +347,7 @@ export const BRANDS = {
     "cat": "ent",
     "catLabel": "Entertainment",
     "price": "$280–$300/box",
-    "desc": "Chrome meets the Marvel Universe. Topps Chrome Marvel brings the refractor treatment to your favorite heroes and villains, on-card autographs from cast members, character art parallels, and the most visually stunning Marvel cards ever produced.",
+    "desc": "Comic-book Marvel in full refractor shine: a 200-card base of heroes and villains, original art from legendary comic artists, sketch cards, and cut signatures from icons like Stan Lee.",
     "tags": [
       "Marvel",
       "Entertainment",
@@ -469,7 +469,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Soccer",
     "price": "$250–$300/box",
-    "desc": "Artistic premium UCC with an autograph and two numbered cards per box, plus the Only1 one-of-one chase.",
+    "desc": "Football's modern art gallery: vibrant colors, layered textures, and cards that feel like collectible art pieces, with meaningful autograph and relic hits in every box.",
     "tags": [
       "Soccer",
       "UCL",
@@ -528,7 +528,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Baseball",
     "price": "$4,000–$5,000/box",
-    "desc": "The pinnacle. Definitive Collection exists in a tier most collectors only read about, tiny print runs, on-card autos from the game's biggest names, and production quality that makes every card feel like a masterpiece.",
+    "desc": "The name is a promise: on-card autographs, oversized uniform patches, and eight guaranteed hits per box, six autographs or auto relics plus two relics.",
     "tags": [
       "Baseball",
       "On-Card Autos",
@@ -588,7 +588,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Football",
     "price": "$360–$430/box",
-    "desc": "Autograph-driven acetate football: two autographs per hobby box, four in jumbo.",
+    "desc": "An autograph in every slot it can find: over 130 top rookies on the signing list, hobby-exclusive acetate and chrome autos, and five signatures per hobby box.",
     "tags": [
       "NFL",
       "Autographs"
@@ -649,7 +649,7 @@ export const BRANDS = {
     "cat": "ent",
     "catLabel": "Entertainment",
     "price": "$700–$850/box",
-    "desc": "A five-card online box where every card is numbered to 99 or less, uniting Disney, Pixar, Marvel, and Lucasfilm. Cases sold out in minutes.",
+    "desc": "One five-card pack per box and every card numbered to 99 or less. Disney, Pixar, Marvel, and Lucasfilm icons finally share one checklist, exclusively on Topps.com.",
     "tags": [
       "Disney",
       "Pixar",
@@ -679,7 +679,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Multi-Sport",
     "price": "$190–$260/box",
-    "desc": "The quirky, beloved wildcard of the hobby. A&G blends baseball with historical figures, world curiosities, and non-sport subjects. For the collector who thinks a set should have a personality.",
+    "desc": "Tobacco-era minis, rip cards, and framed autos where Jeopardy champions share a checklist with MVPs. Two hits per hobby box and a set that dares to get weird.",
     "tags": [
       "Multi-Sport",
       "Quirky",
@@ -745,7 +745,7 @@ export const BRANDS = {
     "cat": "ent",
     "catLabel": "Entertainment",
     "price": "$550–$625/box",
-    "desc": "Marvel Studios Chrome on Sapphire stock, an online-exclusive drop.",
+    "desc": "The MCU on Sapphire Chrome: a 200-card character library with 1/1 sketch cards, the elusive padparadscha parallel, and medallion debuts marking first-ever card appearances.",
     "tags": [
       "Marvel",
       "MCU",
@@ -775,7 +775,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Basketball",
     "price": "$400–$500/box",
-    "desc": "Full-bleed artistic NBA designs with one autograph per hobby box. The first fully licensed Inception Basketball.",
+    "desc": "Where rookies become legends: bold artistic designs, two autographs in every hobby box, and rookie jumbo relic autos worth losing sleep over.",
     "tags": [
       "NBA",
       "Autographs",
@@ -832,7 +832,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Baseball",
     "price": "$125–$150/box",
-    "desc": "Heritage's second act each year: cards #501 and up with the second-half rookie class and Real One autographs.",
+    "desc": "Heritage's midseason encore: traded stars, rookie call-ups, and fresh signings land in the vintage design, with Real One autographs, Chrome refractors, and short prints to hunt.",
     "tags": [
       "Baseball",
       "Vintage",
@@ -891,7 +891,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Soccer",
     "price": "$180–$220/box",
-    "desc": "Bundesliga Chrome recut on Sapphire stock for the German football devotee.",
+    "desc": "German football's finest recut on Sapphire Chrome: a rainbow of sapphire parallels for every player, with one autograph, three parallels, and two Ultrabeam inserts guaranteed per box.",
     "tags": [
       "Soccer",
       "Bundesliga",
@@ -1016,7 +1016,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Baseball",
     "price": "$2,500–$3,500/box",
-    "desc": "Multi-relic dynasty content, massive patch booklets, powerful on-card autos, and the kind of hits that anchor a serious collection. For the collector who measures their hobby in legacy.",
+    "desc": "Straight to the grail: every box carries an on-card autograph relic numbered to 10 or less, or a 1/1 cut signature. Royalty in card form.",
     "tags": [
       "Baseball",
       "Patches",
@@ -1076,7 +1076,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Basketball",
     "price": "$3,500–$5,000/box",
-    "desc": "The first NBA-licensed Sapphire edition. The full Chrome checklist on blue Sapphire stock, sold through online raffle drops.",
+    "desc": "The full NBA Chrome experience recut on Sapphire-exclusive stock: a 200-card base of rookies, vets, and legends, with a refractor ladder climbing to the 1/1 Padparadscha.",
     "tags": [
       "NBA",
       "Sapphire",
@@ -1133,7 +1133,7 @@ export const BRANDS = {
     "cat": "ent",
     "catLabel": "Entertainment",
     "price": "$1,200–$1,300/box",
-    "desc": "The Chrome Disney base set on Sapphire stock.",
+    "desc": "Storybook magic on jewel-toned Chrome: a 200-card Sapphire checklist of Mickey, Moana, and Jack Sparrow, with real autograph cards getting the Sapphire treatment for the first time.",
     "tags": [
       "Disney",
       "Sapphire"
@@ -1223,7 +1223,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Soccer",
     "price": "$270–$315/box",
-    "desc": "The first Topps Premier League flagship after taking the license from Panini, with three hits per box.",
+    "desc": "The world's most-watched league gets its official Topps flagship: bold designs, vibrant parallels, and exclusive autographs, built for everyone from binder builders to grail hunters.",
     "tags": [
       "Soccer",
       "Premier League"
@@ -1603,7 +1603,7 @@ export const BRANDS = {
     "cat": "ent",
     "catLabel": "Entertainment",
     "price": "$500–$560/box",
-    "desc": "A three-card hit box: premium base, insert, and an MCU actor autograph in themed packs.",
+    "desc": "Step inside the Collector's cosmic gallery: three one-card premium packs building from Perfection base to a Golden Pack autograph from Marvel's biggest stars.",
     "tags": [
       "Marvel",
       "MCU",
@@ -1632,7 +1632,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Basketball",
     "price": "$1,400–$2,000/box",
-    "desc": "Watercolor-splashed premium basketball in a one-pack format. No baseball edition exists; Motif is an NBA line through and through.",
+    "desc": "Watercolor artistry meets hit density: a 100-card base plus five autographs and a memorabilia card in every box, from Splatter Signatures to Acrylic Drip autos.",
     "tags": [
       "NBA",
       "Autographs",
@@ -1663,7 +1663,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Baseball",
     "price": "$650–$750/box",
-    "desc": "Premium Bowman. Better odds on top prospects, sharper design, and a higher floor on every pull. For the prospecting collector who wants the same hunt with more upside.",
+    "desc": "Prospecting with the volume turned up: a 100-card all-Chrome base, a deep refractor rainbow, and four Chrome autographs guaranteed in every hobby box.",
     "tags": [
       "Baseball",
       "Prospects",
@@ -1884,7 +1884,7 @@ export const BRANDS = {
     "cat": "ent",
     "catLabel": "Entertainment",
     "price": "$700–$750/box",
-    "desc": "The crown jewel of Star Wars collecting, now ten years running. Masterwork is the premium Star Wars line: hard-signed autographs, sketch cards, and true one-of-one artwork from across the galaxy. For the collector whose favorite legends carry lightsabers.",
+    "desc": "The high-end corner of the galaxy: thick 72pt cards, two autographs per master box with one on-card guaranteed, plus one-of-one sketch cards and armor relics.",
     "tags": [
       "Star Wars",
       "Entertainment",
@@ -1917,7 +1917,7 @@ export const BRANDS = {
     "cat": "nonsport",
     "catLabel": "Fun & Games",
     "price": "$125–$450/box",
-    "desc": "Since 1985, Garbage Pail Kids has been gross, irreverent, and absolutely iconic. The satirical sticker line still commands massive passion across generations, from vintage restoration sets to new annual releases. Its community is one of the most fiercely devoted in the hobby.",
+    "desc": "Gross, goofy, and iconic: sticker-style chaos for collectors who dare. The hobby's most lovable troublemakers, proudly repulsive and impossible to put down.",
     "tags": [
       "GPK",
       "Non-Sport",
@@ -2009,7 +2009,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Combat Sports",
     "price": "$250–$340/box",
-    "desc": "The full Chrome UFC base recut on Sapphire stock with one autograph per box.",
+    "desc": "The octagon goes Sapphire: exclusive Sapphire base parallels on a full Chrome release of the UFC's top fighters, with one autograph guaranteed per box.",
     "tags": [
       "UFC",
       "Sapphire",
@@ -2039,7 +2039,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Tennis",
     "price": "$130–$160/box",
-    "desc": "Hit-driven premium tennis, new in 2025. Five cards per box, three autographs, every card numbered to 99 or less.",
+    "desc": "A collector-first tribute to the global game, from legacy legends to rising stars. Chase gold foil numbered to 50, tennis-ball yellow to 15, and dual or triple autos falling one in ten boxes.",
     "tags": [
       "Tennis",
       "Autographs",
@@ -2102,7 +2102,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Baseball",
     "price": "$165–$210/box",
-    "desc": "One encased, hard-signed buyback card per box: real vintage cards autographed by the players on them.",
+    "desc": "A treasure hunt through the Topps vault: a wide variety of signed buyback cards, every single one serial numbered to 99 or fewer.",
     "tags": [
       "Baseball",
       "Autographs",
@@ -2189,7 +2189,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Soccer",
     "price": "$2,250–$2,500/box",
-    "desc": "A super-premium debut: encased autographed jewel relic cards for European club football.",
+    "desc": "Eight cards per box and half of them are hits, with at least three encased autographs guaranteed and case-hit Crowned Legend cards set with genuine diamonds.",
     "tags": [
       "Soccer",
       "UCL",
@@ -2218,7 +2218,7 @@ export const BRANDS = {
     "cat": "ent",
     "catLabel": "Entertainment",
     "price": "$400–$425/box",
-    "desc": "A Pixar-only set spanning all 29 films and shorts, with nine Chrome cards including one encased per box.",
+    "desc": "Eight Chrome cards and one encased card in every box from the 100-card Gilded Pixar set, with Dipped In Gold chases and dual autograph cards in the mix.",
     "tags": [
       "Pixar",
       "Disney"
@@ -2280,7 +2280,7 @@ export const BRANDS = {
     "cat": "ent",
     "catLabel": "Entertainment",
     "price": "$400–$550/box",
-    "desc": "Bikini Bottom on Chrome for SpongeBob's 25th anniversary. Price flagged for fact-check.",
+    "desc": "Bikini Bottom gets the Chrome treatment: a 200-card base set with voice cast autographs, shadowbox chases, and 1-of-1 DoodleBob sketch cards drawn by the show's creators.",
     "tags": [
       "SpongeBob",
       "Chrome"
@@ -2396,7 +2396,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Combat Sports",
     "price": "$230–$290/box",
-    "desc": "Finest brings its refractor shine to the octagon: a 300-card tiered base with two autographs per box.",
+    "desc": "Pure chrome, pure fight: a 300-card tiered base loaded with legends and rising stars, a rich refractor rainbow, and two autographs in every hobby box.",
     "tags": [
       "UFC",
       "Refractors"
@@ -2681,7 +2681,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "College Sports",
     "price": "$230–$400/box",
-    "desc": "The all-Sapphire online version of Bowman University Chrome. NIL prospect autographs on blue Sapphire stock.",
+    "desc": "Tomorrow's pros land their very first Bowman cards here, on campus and on blue Sapphire stock, with a Chrome autograph guaranteed in every box.",
     "tags": [
       "College",
       "NIL",
@@ -2775,7 +2775,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Baseball",
     "price": "$1,000–$1,250/box",
-    "desc": "Bowman Chrome's base and prospects on Sapphire stock with one autograph per box.",
+    "desc": "The prospect pipeline in shimmering Sapphire blue: 100 base cards, 100 Chrome prospects, and an autograph plus three exclusive colored parallels in every box.",
     "tags": [
       "Baseball",
       "Prospects",
@@ -2865,7 +2865,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Racing",
     "price": "$300–$400/box",
-    "desc": "The fastest-growing segment in the hobby. F1 Chrome brings the Chrome ecosystem to racing, driver autographs, helmet parallels, and refractors. The sport's explosion in global popularity has made F1 cards one of the hottest markets in collecting.",
+    "desc": "The whole grid gets the Chrome treatment: rising young talents, reigning superstars, and racing legends, all shining on one checklist built for speed.",
     "tags": [
       "Formula 1",
       "Chrome",
@@ -2898,7 +2898,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Combat Sports",
     "price": "$250–$300/box",
-    "desc": "The first Topps boxing set since 1951. Multi-promoter checklist running from Tyson to Fury on Chrome.",
+    "desc": "Boxing back under the Topps banner after 70 years away, in full Chrome shine. The 100-card base spans Top Rank, Golden Boy, and Matchroom, from reigning champs to first-time signers.",
     "tags": [
       "Boxing",
       "Chrome",
@@ -2928,7 +2928,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Baseball",
     "price": "$20,000–$26,000/box",
-    "desc": "The most exclusive Topps product made. Transcendent is a VIP experience, multiple legendary autos, massive relics, and content you simply cannot find anywhere else. Extremely limited. This isn't just collecting, it's an event.",
+    "desc": "The most premium rip in the hobby: one meticulously crafted 42-card box stacked with autographs and jumbo patches, plus shots at cut signatures and VIP event invitations.",
     "tags": [
       "Baseball",
       "VIP",
@@ -3046,7 +3046,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Football",
     "price": "$790–$900/box",
-    "desc": "Dark-mode football with three Chrome autographs per box. Night-game aesthetics for the collector who likes their hits moody.",
+    "desc": "Black Chrome with a lunar streak: three Chrome autographs per box, Stroke of Midnight signatures, and a 1-of-1 Black Light parallel waiting at the end of the night.",
     "tags": [
       "NFL",
       "Autographs",
@@ -3170,7 +3170,7 @@ export const BRANDS = {
     "cat": "ent",
     "catLabel": "Entertainment",
     "price": "$260–$380/box",
-    "desc": "The first set dedicated to the MCU: 200 cards across the films and Disney+ shows with actor autographs.",
+    "desc": "The MCU finally gets its Topps set: 200 cards spanning the films and shows, medallion debuts marking first-ever card appearances, and a Snap variation numbered to 99.",
     "tags": [
       "Marvel",
       "MCU",
@@ -3355,7 +3355,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Baseball",
     "price": "$160–$190/box",
-    "desc": "A love letter to the golden age of the hobby. Heritage recreates iconic classic Topps designs from decades past, the 1968 wood grain, the 1975 two-tone, with today's players. Pure nostalgia with modern collectibility.",
+    "desc": "Time travel in wax form: each set jumps back to a classic vintage Topps design and brings a heavy dose of nostalgia along for the ride.",
     "tags": [
       "Baseball",
       "Retro",
@@ -3504,7 +3504,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Baseball",
     "price": "$275–$400/box",
-    "desc": "On-card autos at a mid-tier price, the best value play in the premium space. Tight print runs and pen-to-card autographs without the four-figure price tag.",
+    "desc": "Bold color and curated ink for baseball's newest arrivals: recently debuted MLB names on one of the hobby's most visually distinctive designs, with bat knob autographs and jumbo patch hits in the chase.",
     "tags": [
       "Baseball",
       "On-Card Autos",
@@ -3568,7 +3568,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Wrestling",
     "price": "$180–$210/box",
-    "desc": "A 300-card galactic-design WWE set with two autographs and a relic guaranteed in every hobby box.",
+    "desc": "Superstars collide with the cosmos: 300 base cards wrapped in galactic patterns, with two autographs and a relic guaranteed in every hobby box.",
     "tags": [
       "WWE",
       "Autographs",
@@ -3629,7 +3629,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Baseball",
     "price": "$1,250–$1,500/box",
-    "desc": "The flagship Bowman checklist recut on blue Sapphire chrome, a Topps.com exclusive for prospect hunters.",
+    "desc": "The Bowman prospect checklist reborn on exclusive blue Sapphire Chrome: a 150-card base set with at least three colored parallels and an autograph in every box.",
     "tags": [
       "Baseball",
       "Prospects",
@@ -3659,7 +3659,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Basketball",
     "price": "$530–$600/box",
-    "desc": "Chrome Update for the NBA with the season's rookie debuts, including the first NBA Rookie Debut Patch Autographs.",
+    "desc": "Home of the hobby's crown jewel: 1-of-1 Rookie Debut Patch Autographs with game-worn debut patches, plus a 200-card Chrome set refreshed with in-season photography and a deep parallel rainbow.",
     "tags": [
       "NBA",
       "Rookies",
@@ -3689,7 +3689,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Soccer",
     "price": "$390–$550/box",
-    "desc": "Framed autographs and match-worn relics: three hits in every eight-card box.",
+    "desc": "One eight-card pack per box with four hits inside: a numbered parallel, an autograph, a relic, and an autograph relic, plus framed autos and museum-worthy book cards.",
     "tags": [
       "Soccer",
       "UCL",
@@ -3719,7 +3719,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Football",
     "price": "$630–$690/box",
-    "desc": "Finest returns to football: chromium refractors and die-cuts with two autographs per hobby box.",
+    "desc": "Pure 90s energy in a premium Chrome finish: a 300-card base loaded with the inserts that made the brand famous, plus a Landmark Metal chase printed on real metal.",
     "tags": [
       "NFL",
       "Refractors",
@@ -3749,7 +3749,7 @@ export const BRANDS = {
     "cat": "ent",
     "catLabel": "Entertainment",
     "price": "$600–$800/box",
-    "desc": "A gold-dressed premium Disney release with guaranteed hits. Price flagged for fact-check.",
+    "desc": "Disney's most iconic characters on thick foil stock: three silver and two gold cards in every pack, voice actor ink, and a Queen of Hearts acetate playing deck for the Wonderland faithful.",
     "tags": [
       "Disney",
       "Premium"
@@ -3902,7 +3902,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Basketball",
     "price": "$695–$780/box",
-    "desc": "Dark-mode NBA cards averaging three on-card autographs in a seven-card box. An online-exclusive drop.",
+    "desc": "Hoops after dark: premium autograph sets like Stroke of Midnight and Dark Matter, plus the season's first Rookie Patch Autographs of the new draft class.",
     "tags": [
       "NBA",
       "Autographs",
@@ -4110,7 +4110,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Soccer",
     "price": "$300–$350/box",
-    "desc": "Inception's artistic premium format debuts for MLS with on-card autographs and relics.",
+    "desc": "High-end style meets the beautiful game: seven cards per box with an on-card autograph, a relic, and a parallel numbered to 35 or less. From Messi's magic to breakout rookies.",
     "tags": [
       "Soccer",
       "MLS",
@@ -4139,7 +4139,7 @@ export const BRANDS = {
     "cat": "nonsport",
     "catLabel": "Fun & Games",
     "price": "$110–$120/box",
-    "desc": "Topps' original gross-out parody brand. Wacky Packages satirizes consumer products with twisted, punny stickers that kids have been trading since 1967. The original non-sport collectible, and a fiercely nostalgic brand with a devoted vintage collector community.",
+    "desc": "Brand new gags every series from fan-favorite parody artists, with sketch cards, foil parallels, and coupons in the mix. A laugh riot in every pack.",
     "tags": [
       "Non-Sport",
       "Stickers",
@@ -4200,7 +4200,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Soccer",
     "price": "$270–$320/box",
-    "desc": "The Premier League's Chrome debut: refractors, Chrome King legends, and an autograph per box.",
+    "desc": "The world's most-watched league gets the Chrome treatment: a 200-card base covering all 20 clubs, radiant refractors, and a guaranteed autograph in every hobby box.",
     "tags": [
       "Soccer",
       "Premier League",
@@ -4264,7 +4264,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Combat Sports",
     "price": "$130–$160/box",
-    "desc": "Stadium Club's legendary photography turned on the octagon: a 300-card set built on the best fight photos, two autographs per box.",
+    "desc": "Fight night through a photographer's lens: full-bleed Octagon action on high-end card stock, with two autographs in every box. The closest you can get to the cage without taking a punch.",
     "tags": [
       "UFC",
       "Photography"
@@ -4293,7 +4293,7 @@ export const BRANDS = {
     "cat": "ent",
     "catLabel": "Entertainment",
     "price": "$130–$160/box",
-    "desc": "Arrakis on Chrome: the Dune saga's characters and moments. Price flagged for fact-check.",
+    "desc": "The spice must flow, and so do the parallels: Arrakis brought to life on Chrome with striking designs and rare chase cards for collectors and film fans alike.",
     "tags": [
       "Dune",
       "Chrome"
@@ -4322,7 +4322,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Football",
     "price": "$280–$300/box",
-    "desc": "Announced for 2026: Inception's single-pack premium autograph format comes to football.",
+    "desc": "Rookie patch heaven: jumbo relic autos, Franchise Foundation signatures, dual relic autographs, and two autograph cards guaranteed in every box.",
     "tags": [
       "NFL",
       "Autographs",
@@ -4351,7 +4351,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Basketball",
     "price": "$585–$705/box",
-    "desc": "Travis Scott's Cactus Jack takes over Topps Chrome Basketball. A 100-card collab set that sits at the corner of hobby and streetwear.",
+    "desc": "Travis Scott's ultra-limited takeover of Chrome hoops: a 100-card All-Star exclusive with parallels starting at /50, on-card autos as low as /25, and the Sicko Stars chase.",
     "tags": [
       "NBA",
       "Travis Scott",
@@ -4381,7 +4381,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Combat Sports",
     "price": "$750–$1,100/box",
-    "desc": "Elite treatment for elite fighters. UFC Royalty brings a premium high-end experience to combat sports, regal design, top-tier autos, and production quality that signals you're serious about the sport.",
+    "desc": "The Octagon's throne room: a fully serial-numbered base set with five autographs and three relics in every box, plus the coveted Liquid Silver chase.",
     "tags": [
       "UFC",
       "MMA",
@@ -4413,7 +4413,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Football",
     "price": "$450–$500/box",
-    "desc": "Electricity-themed chromium football with two autographs per box, evolved from Topps Composite.",
+    "desc": "Gridiron heat in high-energy designs: hobby boxes stack two autographs plus a rookie relic auto, with Blue and Orange Spark parallels exclusive to mega boxes.",
     "tags": [
       "NFL",
       "Chrome",
@@ -4472,7 +4472,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Basketball",
     "price": "$450–$700/box",
-    "desc": "Ultra-premium basketball in a ten-card box: six autographs and two relics. The 2023-24 edition was the line's NBA debut, with a fully licensed version announced for late 2026.",
+    "desc": "Every card numbered to 99 or less, and every box a payload: four autographs, two memorabilia cards, one base, one parallel, with rookie patch autos in the chase.",
     "tags": [
       "NBA",
       "Autographs",
@@ -4502,7 +4502,7 @@ export const BRANDS = {
     "cat": "nonsport",
     "catLabel": "Fun & Games",
     "price": "$325–$450/box",
-    "desc": "Where collector culture meets. VeeFriends, the character universe built by Gary Vaynerchuk, now carries the Topps Chrome label in a multi-year partnership. Chrome refractors on collectible characters with genuine community value behind them.",
+    "desc": "Gary Vee's character universe in full Chrome shine: manga variations, 1-of-1 comic cut relics, and on-card autographs from Gary himself. Positivity you can pull, refractors included.",
     "tags": [
       "VeeFriends",
       "Gary Vee",
@@ -4535,7 +4535,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Baseball",
     "price": "$4,500–$5,500/box",
-    "desc": "Icons only. Diamond Icons is an ultra-premium line where every card features legends and the game's brightest stars: on-card autographs, jumbo relics, and print runs you can count on your fingers.",
+    "desc": "Eleven cards per box and nine are autographs or autograph relics, all low-numbered. The chase tops out at a one-of-one card set with ten actual diamonds.",
     "tags": [
       "Baseball",
       "NBA",
@@ -4596,7 +4596,7 @@ export const BRANDS = {
     "cat": "ent",
     "catLabel": "Entertainment",
     "price": "$100–$130/box",
-    "desc": "A galaxy of cards, 50 years in the making. Topps has produced Star Wars cards since 1977. From the original trilogy to The Mandalorian, there's a set for every era, from accessible entry sets to premium sketch-card and autograph releases.",
+    "desc": "A whole galaxy to collect: cards spanning every era and saga, where heroes, scoundrels, and droids all get their cardboard due.",
     "tags": [
       "Star Wars",
       "Entertainment",
@@ -4720,7 +4720,7 @@ export const BRANDS = {
     "cat": "sport",
     "catLabel": "Soccer",
     "price": "$150–$195/box",
-    "desc": "Midnight's dark-mode treatment for the Bundesliga: three Chrome autographs in a seven-card box.",
+    "desc": "Bundesliga after dark: night-sky inserts, parallels themed to the phases of the night, and three autographs in every seven-card box. For collectors who do their best ripping at 2am.",
     "tags": [
       "Soccer",
       "Bundesliga",
@@ -4905,7 +4905,7 @@ export const QUESTIONS = [
     "id": "identity",
     "ranked": true,
     "eyebrow": "Question 4 · Collector Identity",
-    "title": "What matters most to you?",
+    "title": "What are you looking for?",
     "hint": "Different collectors want different things.",
     "layout": "grid2",
     "opts": [
