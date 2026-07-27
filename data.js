@@ -4957,7 +4957,7 @@ export const QUESTIONS = [
       {
         "icon": "🎲",
         "label": "Surprise me",
-        "sub": "Big box, big risk, big reward",
+        "sub": "Looking for that hidden potential",
         "val": "thrill"
       },
       {
