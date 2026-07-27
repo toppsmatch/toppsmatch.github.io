@@ -549,8 +549,8 @@ function cardInner(card, deco = false) {
     ? `<div class="sc-pct">${card.pct}% match</div>`
     : `<div class="sc-pct sc-pct-wild">outside your usual lane</div>`;
   const teaser =
-    (b.lookingFor ? `<div class="profile-line"><strong>Looking for:</strong> ${esc(b.lookingFor)}</div>` : "") +
-    (b.redFlag ? `<div class="profile-line"><strong>Red flag:</strong> ${esc(b.redFlag)}</div>` : "");
+    (b.lookingFor ? `<div class="profile-line">💚 ${esc(b.lookingFor)}</div>` : "") +
+    (b.redFlag ? `<div class="profile-line">🚩 ${esc(b.redFlag)}</div>` : "");
   // Detail is ALWAYS in the DOM; .expanded reveals it with a pure-CSS height
   // transition. No re-render on expand/collapse = drags stay smooth.
   return `
@@ -632,8 +632,8 @@ function renderListView() {
     const b = BRANDS[m.key];
     if (!b) return;
     const profile =
-      (b.lookingFor ? `<div class="profile-line"><strong>Looking for:</strong> ${esc(b.lookingFor)}</div>` : "") +
-      (b.redFlag ? `<div class="profile-line"><strong>Red flag:</strong> ${esc(b.redFlag)}</div>` : "");
+      (b.lookingFor ? `<div class="profile-line">💚 ${esc(b.lookingFor)}</div>` : "") +
+      (b.redFlag ? `<div class="profile-line">🚩 ${esc(b.redFlag)}</div>` : "");
     html += `
     <div class="match${i === 0 ? " top" : ""}">
       <div class="match-banner${i === 0 ? "" : " alt"}">${labels[i] || "Another Match"}</div>
