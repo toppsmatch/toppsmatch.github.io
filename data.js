@@ -1830,7 +1830,9 @@ export const BRANDS = {
       "Premium"
     ],
     "sport": [
-      "college"
+      "college",
+      "nba",
+      "nfl"
     ],
     "budget": [
       "mid_low"
@@ -2403,7 +2405,9 @@ export const BRANDS = {
       "Autos"
     ],
     "sport": [
-      "college"
+      "college",
+      "nfl",
+      "nba"
     ],
     "budget": [
       "mid_low"
@@ -2591,7 +2595,8 @@ export const BRANDS = {
       "Annual"
     ],
     "sport": [
-      "baseball"
+      "baseball",
+      "college"
     ],
     "budget": [
       "high"
@@ -2656,7 +2661,9 @@ export const BRANDS = {
       "Sapphire"
     ],
     "sport": [
-      "college"
+      "college",
+      "nfl",
+      "nba"
     ],
     "budget": [
       "mid_low",
