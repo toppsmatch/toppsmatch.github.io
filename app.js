@@ -705,7 +705,9 @@ let settleNav = null; // hard-finishes the in-flight flip; overlapping flips com
 function goStep(delta, flyX) {
   if (settleNav) settleNav();
   const t = deckIdx + delta;
-  if (t < 0 || t >= deck.length) return;
+  // t === deck.length is a REAL destination: one past the wildcard = the full
+  // lineup list view (renderCard hands off to renderListView there)
+  if (t < 0 || t > deck.length) return;
   goTo(t, flyX);
 }
 function goTo(i, flyX) {
