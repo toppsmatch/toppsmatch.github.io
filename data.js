@@ -1155,6 +1155,35 @@ export const BRANDS = {
     ],
     "img": "img/disney_sapphire.png"
   },
+  "holiday_nba": {
+    "name": "Topps Holiday Basketball",
+    "tier": "Entry-Level",
+    "cat": "sport",
+    "catLabel": "Basketball",
+    "price": "$30–$45/box",
+    "desc": "The hobby's Christmas tradition comes to the hardwood: snowflake and candy-cane parallels of NBA stars in a retail mega box.",
+    "tags": [
+      "Basketball",
+      "Seasonal"
+    ],
+    "sport": [
+      "nba"
+    ],
+    "budget": [
+      "starter"
+    ],
+    "identity": [
+      "set",
+      "new"
+    ],
+    "risk": [
+      "balanced"
+    ],
+    "vibe": [
+      "retro"
+    ],
+    "img": "img/holiday_nba.png"
+  },
   "triple_threads": {
     "name": "Triple Threads Baseball",
     "tier": "High-End",
