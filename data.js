@@ -4950,12 +4950,12 @@ export const QUESTIONS = [
   {
     "id": "risk",
     "ranked": false,
-    "eyebrow": "Question 5 · Risk Tolerance",
-    "title": "How do you like your odds?",
-    "hint": "Some boxes hide one massive pull in a sea of cards. Others promise big hits every time.",
+    "eyebrow": "Question 5 · Your Collecting Style",
+    "title": "How do you want to build your collection?",
+    "hint": "Some boxes are stacked with cards to sort and trade. Others focus everything on a few premium pulls.",
     "opts": [
       {
-        "icon": "🎲",
+        "icon": "🎁",
         "label": "Surprise me",
         "sub": "Looking for that hidden potential",
         "val": "thrill"
@@ -4963,13 +4963,13 @@ export const QUESTIONS = [
       {
         "icon": "⚖️",
         "label": "Somewhere in the middle",
-        "sub": "A real chance at something big without betting it all",
+        "sub": "Plenty to open with something special in the mix",
         "val": "balanced"
       },
       {
         "icon": "🎯",
         "label": "I want to know what I'm getting",
-        "sub": "Fewer cards, more guaranteed hits",
+        "sub": "Fewer cards, an autograph promised every box",
         "val": "guaranteed"
       }
     ]
