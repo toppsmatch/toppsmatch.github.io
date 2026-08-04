@@ -209,7 +209,7 @@ export const BRANDS = {
       "multi"
     ],
     "budget": [
-      "starter"
+      "entry"
     ],
     "identity": [
       "nostalgia"
@@ -1170,7 +1170,7 @@ export const BRANDS = {
       "nba"
     ],
     "budget": [
-      "starter"
+      "entry"
     ],
     "identity": [
       "set",
@@ -1265,7 +1265,7 @@ export const BRANDS = {
       "soccer"
     ],
     "budget": [
-      "starter"
+      "entry"
     ],
     "identity": [
       "set",
@@ -4028,7 +4028,7 @@ export const BRANDS = {
       "baseball"
     ],
     "budget": [
-      "starter"
+      "entry"
     ],
     "identity": [
       "set",
@@ -4058,7 +4058,6 @@ export const BRANDS = {
       "baseball"
     ],
     "budget": [
-      "starter",
       "entry"
     ],
     "identity": [
@@ -4090,7 +4089,7 @@ export const BRANDS = {
       "soccer"
     ],
     "budget": [
-      "starter"
+      "entry"
     ],
     "identity": [
       "set",
@@ -4864,15 +4863,9 @@ export const QUESTIONS = [
     "hint": "There's a great Topps product at every budget.",
     "opts": [
       {
-        "icon": "🪙",
-        "label": "Under $50",
-        "sub": "Just getting started",
-        "val": "starter"
-      },
-      {
         "icon": "💵",
-        "label": "$50-$100",
-        "sub": "Casual and fun, no major commitment",
+        "label": "Under $100",
+        "sub": "Just getting started, casual and fun",
         "val": "entry"
       },
       {
